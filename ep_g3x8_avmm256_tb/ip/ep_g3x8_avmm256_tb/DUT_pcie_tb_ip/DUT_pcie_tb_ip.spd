@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/altpcietb_ltssm_mon.v"
+   type="VERILOG"
+   library="altera_pcie_a10_tbed_171">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/altpcietb_pipe_phy.v"
+   type="VERILOG"
+   library="altera_pcie_a10_tbed_171">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/altpcietb_pipe32_hip_interface.v"
+   type="VERILOG"
+   library="altera_pcie_a10_tbed_171">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/altpcietb_pipe32_driver.v"
+   type="VERILOG"
+   library="altera_pcie_a10_tbed_171">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/altpcie_a10_tbed_hwtcl.v"
+   type="VERILOG"
+   library="altera_pcie_a10_tbed_171">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/stratixiv_hssi_atoms.v"
+   type="VERILOG"
+   library="altera_pcie_a10_tbed_171">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/stratixiv_pcie_hip_atoms.v"
+   type="VERILOG"
+   library="altera_pcie_a10_tbed_171">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/mentor/stratixv_hssi_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="modelsim">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/synopsys/stratixv_hssi_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="vcs">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/cadence/stratixv_hssi_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="ncsim">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/aldec/stratixv_hssi_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="riviera">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/mentor/stratixv_pcie_hip_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="modelsim">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/synopsys/stratixv_pcie_hip_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="vcs">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/cadence/stratixv_pcie_hip_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="ncsim">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/aldec/stratixv_pcie_hip_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="riviera">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/mentor/pcie_stratixv_hssi_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="modelsim">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/synopsys/pcie_stratixv_hssi_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="vcs">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/cadence/pcie_stratixv_hssi_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="ncsim">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/aldec/pcie_stratixv_hssi_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="riviera">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/mentor/pcie_stratixv_pcie_hip_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="modelsim">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/synopsys/pcie_stratixv_pcie_hip_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="vcs">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/cadence/pcie_stratixv_pcie_hip_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="ncsim">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/aldec/pcie_stratixv_pcie_hip_atoms.v"
+   type="VERILOG_ENCRYPT"
+   library="altera_pcie_a10_tbed_171"
+   simulator="riviera">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_top_rp.v"
+   type="VERILOG"
+   library="altera_pcie_a10_tbed_171">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/altpcierd_tl_cfg_sample.v"
+   type="VERILOG"
+   library="altera_pcie_a10_tbed_171">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/altpcied_a10_hwtcl.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_pcie_a10_tbed_171">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_pcie_a10_tbed_171">
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_shmem.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_bfm_tlp_inspector.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_configure.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_constants.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_rdwr.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_req_intf.v" />
+  <include path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_shmem.v" />
+  <include
+     path="altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_vc_intf_ast_common.v" />
+ </file>
+ <file
+   path="sim/DUT_pcie_tb_ip.v"
+   type="VERILOG"
+   library="DUT_pcie_tb_ip"
+   hasInlineConfiguration="true" />
+ <topLevel name="DUT_pcie_tb_ip.DUT_pcie_tb_ip" />
+ <deviceFamily name="arria10" />
+</simPackage>

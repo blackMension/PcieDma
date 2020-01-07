@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2019.04.20.10:23:40"
+ outputDirectory="/home/dai/WorkStation/fpga/project/intel/PcieDma/ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Arria 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="10AT115S2F45E2SG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_RDDCM_MASTER_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_RDDCM_MASTER_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_WRDCM_MASTER_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_WRDCM_MASTER_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="MsiInterface" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="MsiInterface_i" direction="input" role="msi_intfc" width="82" />
+  </interface>
+  <interface name="RdDCM_Master" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="false" />
+   <property name="doStreamWrites" value="false" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="false" />
+   <property name="isWriteable" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="RdDCMAddress_o" direction="output" role="address" width="64" />
+   <port name="RdDCMWrite_o" direction="output" role="write" width="1" />
+   <port
+       name="RdDCMWriteData_o"
+       direction="output"
+       role="writedata"
+       width="32" />
+   <port name="RdDCMRead_o" direction="output" role="read" width="1" />
+   <port
+       name="RdDCMByteEnable_o"
+       direction="output"
+       role="byteenable"
+       width="4" />
+   <port
+       name="RdDCMWaitRequest_i"
+       direction="input"
+       role="waitrequest"
+       width="1" />
+   <port name="RdDCMReadData_i" direction="input" role="readdata" width="32" />
+   <port
+       name="RdDCMReadDataValid_i"
+       direction="input"
+       role="readdatavalid"
+       width="1" />
+  </interface>
+  <interface name="RdDCS_slave" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="256" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port
+       name="RdDCSChipSelect_i"
+       direction="input"
+       role="chipselect"
+       width="1" />
+   <port name="RdDCSWrite_i" direction="input" role="write" width="1" />
+   <port name="RdDCSAddress_i" direction="input" role="address" width="8" />
+   <port name="RdDCSWriteData_i" direction="input" role="writedata" width="32" />
+   <port
+       name="RdDCSByteEnable_i"
+       direction="input"
+       role="byteenable"
+       width="4" />
+   <port
+       name="RdDCSWaitRequest_o"
+       direction="output"
+       role="waitrequest"
+       width="1" />
+   <port name="RdDCSRead_i" direction="input" role="read" width="1" />
+   <port name="RdDCSReadData_o" direction="output" role="readdata" width="32" />
+  </interface>
+  <interface name="RdDMA_Rx" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="32" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="prSafe" value="false" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="RdDmaRxData_i" direction="input" role="data" width="32" />
+   <port name="RdDmaRxValid_i" direction="input" role="valid" width="1" />
+  </interface>
+  <interface name="RdDMA_Tx" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="160" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="prSafe" value="false" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="RdDmaTxData_o" direction="output" role="data" width="160" />
+   <port name="RdDmaTxValid_o" direction="output" role="valid" width="1" />
+   <port name="RdDmaTxReady_i" direction="input" role="ready" width="1" />
+  </interface>
+  <interface name="RdDTS_slave" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="8192" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port
+       name="RdDTSChipSelect_i"
+       direction="input"
+       role="chipselect"
+       width="1" />
+   <port name="RdDTSWrite_i" direction="input" role="write" width="1" />
+   <port
+       name="RdDTSBurstCount_i"
+       direction="input"
+       role="burstcount"
+       width="5" />
+   <port name="RdDTSAddress_i" direction="input" role="address" width="8" />
+   <port
+       name="RdDTSWriteData_i"
+       direction="input"
+       role="writedata"
+       width="256" />
+   <port
+       name="RdDTSWaitRequest_o"
+       direction="output"
+       role="waitrequest"
+       width="1" />
+  </interface>
+  <interface name="Resetn" kind="reset" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="synchronousEdges" value="BOTH" />
+   <port name="Rstn_i" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="WrDCM_Master" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="false" />
+   <property name="doStreamWrites" value="false" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="false" />
+   <property name="isWriteable" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="WrDCMAddress_o" direction="output" role="address" width="64" />
+   <port name="WrDCMWrite_o" direction="output" role="write" width="1" />
+   <port
+       name="WrDCMWriteData_o"
+       direction="output"
+       role="writedata"
+       width="32" />
+   <port name="WrDCMRead_o" direction="output" role="read" width="1" />
+   <port
+       name="WrDCMByteEnable_o"
+       direction="output"
+       role="byteenable"
+       width="4" />
+   <port
+       name="WrDCMWaitRequest_i"
+       direction="input"
+       role="waitrequest"
+       width="1" />
+   <port
+       name="WrDCMReadDataValid_i"
+       direction="input"
+       role="readdatavalid"
+       width="1" />
+   <port name="WrDCMReadData_i" direction="input" role="readdata" width="32" />
+  </interface>
+  <interface name="WrDCS_slave" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="256" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port
+       name="WrDCSChipSelect_i"
+       direction="input"
+       role="chipselect"
+       width="1" />
+   <port name="WrDCSWrite_i" direction="input" role="write" width="1" />
+   <port name="WrDCSAddress_i" direction="input" role="address" width="8" />
+   <port name="WrDCSWriteData_i" direction="input" role="writedata" width="32" />
+   <port
+       name="WrDCSByteEnable_i"
+       direction="input"
+       role="byteenable"
+       width="4" />
+   <port
+       name="WrDCSWaitRequest_o"
+       direction="output"
+       role="waitrequest"
+       width="1" />
+   <port name="WrDCSRead_i" direction="input" role="read" width="1" />
+   <port name="WrDCSReadData_o" direction="output" role="readdata" width="32" />
+  </interface>
+  <interface name="WrDMA_Rx" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="32" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="prSafe" value="false" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="WrDmaRxData_i" direction="input" role="data" width="32" />
+   <port name="WrDmaRxValid_i" direction="input" role="valid" width="1" />
+  </interface>
+  <interface name="WrDMA_Tx" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="160" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="prSafe" value="false" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="WrDmaTxData_o" direction="output" role="data" width="160" />
+   <port name="WrDmaTxValid_o" direction="output" role="valid" width="1" />
+   <port name="WrDmaTxReady_i" direction="input" role="ready" width="1" />
+  </interface>
+  <interface name="WrDTS_slave" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="8192" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port
+       name="WrDTSChipSelect_i"
+       direction="input"
+       role="chipselect"
+       width="1" />
+   <port name="WrDTSWrite_i" direction="input" role="write" width="1" />
+   <port
+       name="WrDTSBurstCount_i"
+       direction="input"
+       role="burstcount"
+       width="5" />
+   <port name="WrDTSAddress_i" direction="input" role="address" width="8" />
+   <port
+       name="WrDTSWriteData_i"
+       direction="input"
+       role="writedata"
+       width="256" />
+   <port
+       name="WrDTSWaitRequest_o"
+       direction="output"
+       role="waitrequest"
+       width="1" />
+  </interface>
+  <interface name="clock" kind="clock" start="0">
+   <property name="clockRate" value="250000000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="Clk_i" direction="input" role="clk" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="ep_g3x8_avmm256_dma_control_0"
+   version="1.0"
+   name="ep_g3x8_avmm256_dma_control_0">
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_WRDCM_MASTER_ADDRESS_WIDTH" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="10AT115S2F45E2SG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
+  <parameter name="AUTO_RDDCM_MASTER_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_RDDCM_MASTER_ADDRESS_WIDTH" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <parameter name="AUTO_WRDCM_MASTER_ADDRESS_MAP" value="" />
+  <generatedFiles>
+   <file
+       path="/home/dai/WorkStation/fpga/project/intel/PcieDma/ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0/synth/ep_g3x8_avmm256_dma_control_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/dai/WorkStation/fpga/project/intel/PcieDma/ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0/synth/ep_g3x8_avmm256_dma_control_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/dai/WorkStation/fpga/project/intel/PcieDma/ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/tools/intelFPGA_pro/17.1/ip/altera/altera_pcie/altera_pcie_hip_256_avmm/dynamic_controller/dma_control_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="ep_g3x8_avmm256_dma_control_0">"Generating: ep_g3x8_avmm256_dma_control_0"</message>
+   <message level="Info" culprit="ep_g3x8_avmm256_dma_control_0">"Generating: dma_control"</message>
+  </messages>
+ </entity>
+ <entity kind="dma_control" version="17.1" name="dma_control">
+  <parameter name="DMA_WIDTH" value="256" />
+  <generatedFiles>
+   <file
+       path="/home/dai/WorkStation/fpga/project/intel/PcieDma/ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0/dma_control_171/synth/dma_controller.sv"
+       attributes="TOP_LEVEL_FILE" />
+   <file
+       path="/home/dai/WorkStation/fpga/project/intel/PcieDma/ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0/dma_control_171/synth/altpcie_dynamic_control.sv"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/dai/WorkStation/fpga/project/intel/PcieDma/ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0/dma_control_171/synth/dma_controller.sv"
+       attributes="TOP_LEVEL_FILE" />
+   <file
+       path="/home/dai/WorkStation/fpga/project/intel/PcieDma/ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0/dma_control_171/synth/altpcie_dynamic_control.sv"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/tools/intelFPGA_pro/17.1/ip/altera/altera_pcie/altera_pcie_hip_256_avmm/dynamic_controller/dma_control_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="ep_g3x8_avmm256_dma_control_0" as="dma_control_0" />
+  <messages>
+   <message level="Info" culprit="ep_g3x8_avmm256_dma_control_0">"Generating: dma_control"</message>
+  </messages>
+ </entity>
+</deploy>

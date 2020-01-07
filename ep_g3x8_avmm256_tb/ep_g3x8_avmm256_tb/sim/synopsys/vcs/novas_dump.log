@@ -1,0 +1,461 @@
+ANF: vcsd_register_1st_RTL_rfn('./simv: undefined symbol: vcsd_register_1st_RTL_rfn')
+ANF: vcsd_register_1st_sequential_rfn('./simv: undefined symbol: vcsd_register_1st_sequential_rfn')
+ANF: vcsd_register_2nd_RTL_rfn('./simv: undefined symbol: vcsd_register_2nd_RTL_rfn')
+ANF: vcsd_register_2nd_sequential_rfn('./simv: undefined symbol: vcsd_register_2nd_sequential_rfn')
+ANF: scsd_xprop_is_enabled('./simv: undefined symbol: scsd_xprop_is_enabled')
+ANF: scsd_xprop_sig_is_promoted('./simv: undefined symbol: scsd_xprop_sig_is_promoted')
+ANF: scsd_xprop_int_xvalue('./simv: undefined symbol: scsd_xprop_int_xvalue')
+ANF: scsd_xprop_bool_xvalue('./simv: undefined symbol: scsd_xprop_bool_xvalue')
+ANF: scsd_xprop_enum_xvalue('./simv: undefined symbol: scsd_xprop_enum_xvalue')
+ANF: scsd_xprop_register_merge_mode_cb('./simv: undefined symbol: scsd_xprop_register_merge_mode_cb')
+ANF: scsd_xprop_delete_merge_mode_cb('./simv: undefined symbol: scsd_xprop_delete_merge_mode_cb')
+ANF: scsd_xprop_get_merge_mode('./simv: undefined symbol: scsd_xprop_get_merge_mode')
+ANF: msvEnableDumpingMode('./simv: undefined symbol: msvEnableDumpingMode')
+ANF: msvGetVersion('./simv: undefined symbol: msvGetVersion')
+ANF: msvGetInstProp('./simv: undefined symbol: msvGetInstProp')
+ANF: msvIsSpiceEngineReady('./simv: undefined symbol: msvIsSpiceEngineReady')
+ANF: msvSetAddProbeCallback('./simv: undefined symbol: msvSetAddProbeCallback')
+ANF: msvGetInstHandle('./simv: undefined symbol: msvGetInstHandle')
+ANF: msvGetProbeByInst('./simv: undefined symbol: msvGetProbeByInst')
+ANF: msvGetSigHandle('./simv: undefined symbol: msvGetSigHandle')
+ANF: msvGetProbeBySig('./simv: undefined symbol: msvGetProbeBySig')
+ANF: msvGetProbeInfo('./simv: undefined symbol: msvGetProbeInfo')
+ANF: msvRelease('./simv: undefined symbol: msvRelease')
+ANF: msvSetVcCallbackFunc('./simv: undefined symbol: msvSetVcCallbackFunc')
+ANF: msvCheckVcCallback('./simv: undefined symbol: msvCheckVcCallback')
+ANF: msvAddVcCallback('./simv: undefined symbol: msvAddVcCallback')
+ANF: msvRemoveVcCallback('./simv: undefined symbol: msvRemoveVcCallback')
+ANF: msvGetLatestValue('./simv: undefined symbol: msvGetLatestValue')
+ANF: msvSetEndofSimCallback('./simv: undefined symbol: msvSetEndofSimCallback')
+ANF: msvIgnoredProbe('./simv: undefined symbol: msvIgnoredProbe')
+ANF: msvGetThruNetInfo('./simv: undefined symbol: msvGetThruNetInfo')
+ANF: msvFreeThruNetInfo('./simv: undefined symbol: msvFreeThruNetInfo')
+ANF: PI_ace_get_output_time_unit('./simv: undefined symbol: PI_ace_get_output_time_unit')
+ANF: PI_ace_sim_sync('./simv: undefined symbol: PI_ace_sim_sync')
+ANF: msvGetRereadInitFile('./simv: undefined symbol: msvGetRereadInitFile')
+ANF: msvSetBeforeRereadCallback('./simv: undefined symbol: msvSetBeforeRereadCallback')
+ANF: msvSetAfterRereadCallback('./simv: undefined symbol: msvSetAfterRereadCallback')
+ANF: msvSetForceCallback('./simv: undefined symbol: msvSetForceCallback')
+ANF: msvSetReleaseCallback('./simv: undefined symbol: msvSetReleaseCallback')
+ANF: msvGetForceStatus('./simv: undefined symbol: msvGetForceStatus')
+ANF: vhdi_dt_get_type('./simv: undefined symbol: vhdi_dt_get_type')
+ANF: vhdi_dt_get_key('./simv: undefined symbol: vhdi_dt_get_key')
+ANF: vhdi_dt_get_vhdl_enum_info('./simv: undefined symbol: vhdi_dt_get_vhdl_enum_info')
+ANF: vhdi_dt_get_vhdl_physical_info('./simv: undefined symbol: vhdi_dt_get_vhdl_physical_info')
+ANF: vhdi_dt_get_vhdl_array_info('./simv: undefined symbol: vhdi_dt_get_vhdl_array_info')
+ANF: vhdi_dt_get_vhdl_record_info('./simv: undefined symbol: vhdi_dt_get_vhdl_record_info')
+ANF: vhdi_def_traverse_module('./simv: undefined symbol: vhdi_def_traverse_module')
+ANF: vhdi_def_traverse_scope('./simv: undefined symbol: vhdi_def_traverse_scope')
+ANF: vhdi_def_traverse_variable('./simv: undefined symbol: vhdi_def_traverse_variable')
+ANF: vhdi_def_get_module_id_by_vhpi('./simv: undefined symbol: vhdi_def_get_module_id_by_vhpi')
+ANF: vhdi_def_get_handle_by_module_id('./simv: undefined symbol: vhdi_def_get_handle_by_module_id')
+ANF: vhdi_def_free('./simv: undefined symbol: vhdi_def_free')
+ANF: vhdi_ist_traverse_scope('./simv: undefined symbol: vhdi_ist_traverse_scope')
+ANF: vhdi_ist_traverse_variable('./simv: undefined symbol: vhdi_ist_traverse_variable')
+ANF: vhdi_ist_convert_by_vhpi('./simv: undefined symbol: vhdi_ist_convert_by_vhpi')
+ANF: vhdi_ist_clone('./simv: undefined symbol: vhdi_ist_clone')
+ANF: vhdi_ist_free('./simv: undefined symbol: vhdi_ist_free')
+ANF: vhdi_ist_hash_key('./simv: undefined symbol: vhdi_ist_hash_key')
+ANF: vhdi_ist_compare('./simv: undefined symbol: vhdi_ist_compare')
+ANF: vhdi_ist_get_value_addr('./simv: undefined symbol: vhdi_ist_get_value_addr')
+ANF: vhdi_set_scsd_callback('./simv: undefined symbol: vhdi_set_scsd_callback')
+ANF: vhdi_ist_check_scsd_callback('./simv: undefined symbol: vhdi_ist_check_scsd_callback')
+ANF: vhdi_ist_add_scsd_callback('./simv: undefined symbol: vhdi_ist_add_scsd_callback')
+ANF: vhdi_ist_remove_scsd_callback('./simv: undefined symbol: vhdi_ist_remove_scsd_callback')
+ANF: vhdi_ist_get_scsd_user_data('./simv: undefined symbol: vhdi_ist_get_scsd_user_data')
+ANF: vhdi_add_time_change_callback('./simv: undefined symbol: vhdi_add_time_change_callback')
+ANF: vhdi_get_real_value_by_value_addr('./simv: undefined symbol: vhdi_get_real_value_by_value_addr')
+ANF: vhdi_get_64_value_by_value_addr('./simv: undefined symbol: vhdi_get_64_value_by_value_addr')
+ANF: vhdi_xprop_inst_is_promoted('./simv: undefined symbol: vhdi_xprop_inst_is_promoted')
+VCS compile option:
+ option[0]: ./simv
+ option[1]: +dump
+ option[2]: -l
+ option[3]: sim.log
+ option[4]: /home/dalys/Synopsys/vcs/linux64/bin/vcs1
+ option[5]: -Mcc=gcc-4.8
+ option[6]: -Mcplusplus=g++-4.8
+ option[7]: -Masflags=
+ option[8]: -Mcfl= -pipe -fPIC -O -I/home/dalys/Synopsys/vcs/include 
+ option[9]: -Mxcflags= -pipe -fPIC -I/home/dalys/Synopsys/vcs/include
+ option[10]: -Mldflags= -Wl,--no-as-needed -rdynamic 
+ option[11]: -Mout=simv
+ option[12]: -Mamsrun=
+ option[13]: -Mvcsaceobjs=
+ option[14]: -Mobjects= /home/dalys/Synopsys/vcs/linux64/lib/libvirsim.so /home/dalys/Synopsys/vcs/linux64/lib/liberrorinf.so /home/dalys/Synopsys/vcs/linux64/lib/libsnpsmalloc.so /home/dalys/Synopsys/verdi/share/PLI/VCS/LINUX64/pli.a 
+ option[15]: -Mexternalobj=
+ option[16]: -Msaverestoreobj=/home/dalys/Synopsys/vcs/linux64/lib/vcs_save_restore_new.o
+ option[17]: -Mcrt0=
+ option[18]: -Mcrtn=
+ option[19]: -Mcsrc=
+ option[20]: -Msyslibs=-ldl -lm 
+ option[21]: -l
+ option[22]: compile.log
+ option[23]: -full64
+ option[24]: -lca
+ option[25]: -timescale=1ps/1ps
+ option[26]: +verilog2001ext+.v
+ option[27]: +lint=TFIPC-L
+ option[28]: -P
+ option[29]: /home/dalys/Synopsys/verdi/share/PLI/VCS/LINUX64/novas.tab
+ option[30]: -top
+ option[31]: ep_g3x8_avmm256_tb
+ option[32]: -picarchive
+ option[33]: -sverilog
+ option[34]: -gen_obj
+ option[35]: -v
+ option[36]: /home/dalys/MySpace/libs/sim_lib/altera_primitives.v
+ option[37]: -v
+ option[38]: /home/dalys/MySpace/libs/sim_lib/220model.v
+ option[39]: -v
+ option[40]: /home/dalys/MySpace/libs/sim_lib/sgate.v
+ option[41]: -v
+ option[42]: /home/dalys/MySpace/libs/sim_lib/altera_mf.v
+ option[43]: /home/dalys/MySpace/libs/sim_lib/altera_lnsim.sv
+ option[44]: -v
+ option[45]: /home/dalys/MySpace/libs/sim_lib/twentynm_atoms.v
+ option[46]: -v
+ option[47]: /home/dalys/MySpace/libs/sim_lib/synopsys/twentynm_atoms_ncrypt.v
+ option[48]: -v
+ option[49]: /home/dalys/MySpace/libs/sim_lib/synopsys/twentynm_hssi_atoms_ncrypt.v
+ option[50]: -v
+ option[51]: /home/dalys/MySpace/libs/sim_lib/twentynm_hssi_atoms.v
+ option[52]: -v
+ option[53]: /home/dalys/MySpace/libs/sim_lib/synopsys/twentynm_hip_atoms_ncrypt.v
+ option[54]: -v
+ option[55]: /home/dalys/MySpace/libs/sim_lib/twentynm_hip_atoms.v
+ option[56]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_clk_0/sim/ep_g3x8_avmm256_clk_0.v
+ option[57]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0/dma_control_171/sim/dma_controller.sv
+ option[58]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0/dma_control_171/sim/altpcie_dynamic_control.sv
+ option[59]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0/sim/ep_g3x8_avmm256_dma_control_0.v
+ option[60]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_onchip_memory2_0/altera_avalon_onchip_memory2_171/sim/ep_g3x8_avmm256_onchip_memory2_0_altera_avalon_onchip_memory2_171_2hwxsvq.v
+ option[61]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_onchip_memory2_0/sim/ep_g3x8_avmm256_onchip_memory2_0.v
+ option[62]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/altera_xcvr_native_a10_functions_h.sv
+ option[63]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/alt_xcvr_resync.sv
+ option[64]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/alt_xcvr_arbiter.sv
+ option[65]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/twentynm_pcs.sv
+ option[66]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/twentynm_pma.sv
+ option[67]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/twentynm_xcvr_avmm.sv
+ option[68]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/twentynm_xcvr_native.sv
+ option[69]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/a10_avmm_h.sv
+ option[70]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/alt_xcvr_native_pipe_retry.sv
+ option[71]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/alt_xcvr_native_avmm_csr.sv
+ option[72]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/alt_xcvr_native_prbs_accum.sv
+ option[73]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/alt_xcvr_native_odi_accel.sv
+ option[74]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/alt_xcvr_native_rcfg_arb.sv
+ option[75]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/altera_xcvr_native_pcie_dfe_params_h.sv
+ option[76]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/pcie_mgmt_commands_h.sv
+ option[77]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/pcie_mgmt_functions_h.sv
+ option[78]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/pcie_mgmt_program.sv
+ option[79]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/pcie_mgmt_cpu.sv
+ option[80]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/pcie_mgmt_master.sv
+ option[81]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/altera_xcvr_native_pcie_dfe_ip.sv
+ option[82]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/ep_g3x8_avmm256_DUT_altera_xcvr_native_a10_1711_qsxpgua.sv
+ option[83]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_native_a10_1711/sim/alt_xcvr_native_rcfg_opt_logic_qsxpgua.sv
+ option[84]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/phy_g3x8.v
+ option[85]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_fpll_a10_171/sim/altera_xcvr_fpll_a10.sv
+ option[86]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_fpll_a10_171/sim/alt_xcvr_native_avmm_nf.sv
+ option[87]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_fpll_a10_171/sim/alt_xcvr_pll_embedded_debug.sv
+ option[88]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_fpll_a10_171/sim/alt_xcvr_pll_avmm_csr.sv
+ option[89]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/fpll_g3.v
+ option[90]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_atx_pll_a10_171/sim/alt_xcvr_atx_pll_rcfg_arb.sv
+ option[91]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_atx_pll_a10_171/sim/a10_xcvr_atx_pll.sv
+ option[92]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_atx_pll_a10_171/sim/ep_g3x8_avmm256_DUT_altera_xcvr_atx_pll_a10_171_pufnv4i.sv
+ option[93]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_xcvr_atx_pll_a10_171/sim/alt_xcvr_atx_pll_rcfg_opt_logic_pufnv4i.sv
+ option[94]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/lcpll_g3xn.v
+ option[95]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/ep_g3x8_avmm256_DUT_altera_pcie_a10_hip_171_ik6fnxi.v
+ option[96]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_a10_hip_pipen1b.v
+ option[97]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_sc_bitsync.v
+ option[98]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_reset_delay_sync.v
+ option[99]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_rs_a10_hip.v
+ option[100]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_a10_hip_pllnphy.v
+ option[101]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/skp_det_g3.v
+ option[102]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altera_xcvr_functions.sv
+ option[103]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_monitor_a10_dlhip_sim.sv
+ option[104]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_tlp_inspector_a10.v
+ option[105]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_tlp_inspector_cseb_a10.sv
+ option[106]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_tlp_inspector_monitor_a10.sv
+ option[107]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_tlp_inspector_trigger_a10.v
+ option[108]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_tlp_inspector_pcsig_drive_a10.v
+ option[109]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_a10_gbfifo.v
+ option[110]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_scfifo_a10.v
+ option[111]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_a10_scfifo_ext.v
+ option[112]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcierd_hip_rs.v
+ option[113]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_256_app.sv
+ option[114]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_hip_interface.sv
+ option[115]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_dma_rxm.sv
+ option[116]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_dma_txs.sv
+ option[117]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_dma_rd.sv
+ option[118]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_dma_wr_2.sv
+ option[119]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_dma_wr_readmem_2.sv
+ option[120]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_dma_wr_tlpgen_2.sv
+ option[121]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_dma_wr_wdalign_2.sv
+ option[122]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav128_dma_wr.sv
+ option[123]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav128_dma_wr_readmem.sv
+ option[124]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav128_dma_wr_tlpgen.sv
+ option[125]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav128_dma_wr_wdalign.sv
+ option[126]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_arbiter.sv
+ option[127]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_cra.sv
+ option[128]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcie_fifo.sv
+ option[129]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_dma_hprxm_rdwr.sv
+ option[130]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_dma_hprxm_cpl.sv
+ option[131]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_dma_hprxm_txctrl.sv
+ option[132]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/altera_pcie_a10_hip_171/sim/altpcieav_dma_hprxm.sv
+ option[133]: ./../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT/sim/ep_g3x8_avmm256_DUT.v
+ option[134]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_master_translator_171/sim/altera_merlin_master_translator.sv
+ option[135]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_slave_translator_171/sim/altera_merlin_slave_translator.sv
+ option[136]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_master_agent_171/sim/altera_merlin_master_agent.sv
+ option[137]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_slave_agent_171/sim/altera_merlin_slave_agent.sv
+ option[138]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_slave_agent_171/sim/altera_merlin_burst_uncompressor.sv
+ option[139]: ./../..//../../../ep_g3x8_avmm256/altera_avalon_sc_fifo_171/sim/altera_avalon_sc_fifo.v
+ option[140]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_router_171/sim/ep_g3x8_avmm256_altera_merlin_router_171_23jcmrq.sv
+ option[141]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_router_171/sim/ep_g3x8_avmm256_altera_merlin_router_171_vyttjzq.sv
+ option[142]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_demultiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_demultiplexer_171_xojy6ca.sv
+ option[143]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_multiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_multiplexer_171_iamyjly.sv
+ option[144]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_multiplexer_171/sim/altera_merlin_arbitrator.sv
+ option[145]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_demultiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_demultiplexer_171_bdho4xy.sv
+ option[146]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_multiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_multiplexer_171_lgwlboa.sv
+ option[147]: ./../..//../../../ep_g3x8_avmm256/error_adapter_171/sim/ep_g3x8_avmm256_error_adapter_171_nt3czwq.sv
+ option[148]: ./../..//../../../ep_g3x8_avmm256/altera_avalon_st_adapter_171/sim/ep_g3x8_avmm256_altera_avalon_st_adapter_171_yxzsrmq.v
+ option[149]: ./../..//../../../ep_g3x8_avmm256/altera_mm_interconnect_171/sim/ep_g3x8_avmm256_altera_mm_interconnect_171_7t36psq.v
+ option[150]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_router_171/sim/ep_g3x8_avmm256_altera_merlin_router_171_gwxgora.sv
+ option[151]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_router_171/sim/ep_g3x8_avmm256_altera_merlin_router_171_g6qpmsi.sv
+ option[152]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_router_171/sim/ep_g3x8_avmm256_altera_merlin_router_171_tdiu6gq.sv
+ option[153]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_router_171/sim/ep_g3x8_avmm256_altera_merlin_router_171_ts3z7ji.sv
+ option[154]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_burst_adapter_171/sim/altera_merlin_burst_adapter.sv
+ option[155]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_burst_adapter_171/sim/altera_merlin_burst_adapter_uncmpr.sv
+ option[156]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_burst_adapter_171/sim/altera_merlin_burst_adapter_13_1.sv
+ option[157]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_burst_adapter_171/sim/altera_merlin_burst_adapter_new.sv
+ option[158]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_burst_adapter_171/sim/altera_incr_burst_converter.sv
+ option[159]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_burst_adapter_171/sim/altera_wrap_burst_converter.sv
+ option[160]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_burst_adapter_171/sim/altera_default_burst_converter.sv
+ option[161]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_burst_adapter_171/sim/altera_merlin_address_alignment.sv
+ option[162]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_burst_adapter_171/sim/altera_avalon_st_pipeline_stage.sv
+ option[163]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_burst_adapter_171/sim/altera_avalon_st_pipeline_base.v
+ option[164]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_demultiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_demultiplexer_171_eqvhaxq.sv
+ option[165]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_demultiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_demultiplexer_171_uehjzdy.sv
+ option[166]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_multiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_multiplexer_171_sdxk4oa.sv
+ option[167]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_multiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_multiplexer_171_cckx4ta.sv
+ option[168]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_demultiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_demultiplexer_171_3kxwkza.sv
+ option[169]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_multiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_multiplexer_171_wyhqm3q.sv
+ option[170]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_multiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_multiplexer_171_36d27bi.sv
+ option[171]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_width_adapter_171/sim/altera_merlin_width_adapter.sv
+ option[172]: ./../..//../../../ep_g3x8_avmm256/error_adapter_171/sim/ep_g3x8_avmm256_error_adapter_171_t2hnnza.sv
+ option[173]: ./../..//../../../ep_g3x8_avmm256/altera_avalon_st_adapter_171/sim/ep_g3x8_avmm256_altera_avalon_st_adapter_171_l5ksb3y.v
+ option[174]: ./../..//../../../ep_g3x8_avmm256/altera_mm_interconnect_171/sim/ep_g3x8_avmm256_altera_mm_interconnect_171_m6w4bsa.v
+ option[175]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_router_171/sim/ep_g3x8_avmm256_altera_merlin_router_171_eb7dply.sv
+ option[176]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_router_171/sim/ep_g3x8_avmm256_altera_merlin_router_171_fpb3wlq.sv
+ option[177]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_demultiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_demultiplexer_171_zgmngca.sv
+ option[178]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_multiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_multiplexer_171_frt5vea.sv
+ option[179]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_multiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_multiplexer_171_mhqksua.sv
+ option[180]: ./../..//../../../ep_g3x8_avmm256/altera_mm_interconnect_171/sim/ep_g3x8_avmm256_altera_mm_interconnect_171_glb5asi.v
+ option[181]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_router_171/sim/ep_g3x8_avmm256_altera_merlin_router_171_oruwnoi.sv
+ option[182]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_router_171/sim/ep_g3x8_avmm256_altera_merlin_router_171_j5jg6hi.sv
+ option[183]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_traffic_limiter_171/sim/altera_merlin_traffic_limiter.sv
+ option[184]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_traffic_limiter_171/sim/altera_merlin_reorder_memory.sv
+ option[185]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_demultiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_demultiplexer_171_wuqxuai.sv
+ option[186]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_multiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_multiplexer_171_l5g5vfy.sv
+ option[187]: ./../..//../../../ep_g3x8_avmm256/altera_merlin_multiplexer_171/sim/ep_g3x8_avmm256_altera_merlin_multiplexer_171_azrzo4q.sv
+ option[188]: ./../..//../../../ep_g3x8_avmm256/altera_mm_interconnect_171/sim/ep_g3x8_avmm256_altera_mm_interconnect_171_66vd26y.v
+ option[189]: ./../..//../../../ep_g3x8_avmm256/timing_adapter_171/sim/ep_g3x8_avmm256_timing_adapter_171_cjew6aq.sv
+ option[190]: ./../..//../../../ep_g3x8_avmm256/altera_avalon_st_adapter_171/sim/ep_g3x8_avmm256_altera_avalon_st_adapter_171_5moluky.v
+ option[191]: ./../..//../../../ep_g3x8_avmm256/altera_reset_controller_171/sim/altera_reset_controller.v
+ option[192]: ./../..//../../../ep_g3x8_avmm256/altera_reset_controller_171/sim/altera_reset_synchronizer.v
+ option[193]: ./../..//../../../ep_g3x8_avmm256/sim/ep_g3x8_avmm256.v
+ option[194]: ./../..//../../ip/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst_reconfig_xcvr_reset_bfm_ip/altera_avalon_reset_source_171/sim/verbosity_pkg.sv
+ option[195]: ./../..//../../ip/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst_reconfig_xcvr_reset_bfm_ip/altera_avalon_reset_source_171/sim/altera_avalon_reset_source.sv
+ option[196]: ./../..//../../ip/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst_reconfig_xcvr_reset_bfm_ip/sim/ep_g3x8_avmm256_inst_reconfig_xcvr_reset_bfm_ip.v
+ option[197]: ./../..//../../ip/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm_ip/altera_avalon_clock_source_171/sim/altera_avalon_clock_source.sv
+ option[198]: ./../..//../../ip/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm_ip/sim/ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm_ip.v
+ option[199]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[200]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_ltssm_mon.v
+ option[201]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[202]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_pipe_phy.v
+ option[203]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[204]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_pipe32_hip_interface.v
+ option[205]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[206]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_pipe32_driver.v
+ option[207]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[208]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcie_a10_tbed_hwtcl.v
+ option[209]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[210]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/stratixiv_hssi_atoms.v
+ option[211]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[212]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/stratixiv_pcie_hip_atoms.v
+ option[213]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[214]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/synopsys/stratixv_hssi_atoms.v
+ option[215]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[216]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/synopsys/stratixv_pcie_hip_atoms.v
+ option[217]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[218]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/synopsys/pcie_stratixv_hssi_atoms.v
+ option[219]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[220]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/synopsys/pcie_stratixv_pcie_hip_atoms.v
+ option[221]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[222]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_top_rp.v
+ option[223]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[224]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcierd_tl_cfg_sample.v
+ option[225]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[226]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcied_a10_hwtcl.sv
+ option[227]: +incdir+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/
+ option[228]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv
+ option[229]: ./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/sim/DUT_pcie_tb_ip.v
+ option[230]: ./../..//ep_g3x8_avmm256_tb.v
+ option[231]: timescale=1ps/1ps
+Chronologic Simulation VCS Release L-2016.06_Full64
+Linux 5.3.0-24-generic #26-Ubuntu SMP Thu Nov 14 01:33:18 UTC 2019 x86_64
+CPU cores: 4
+Limit information:
+======================================
+cputime			unlimited
+filesize		unlimited
+datasize		unlimited
+stacksize		8225 kbytes
+coredumpsize	0 kbytes
+memoryuse		unlimited
+vmemoryuse		unlimited
+descriptors		1048576
+memorylocked	65536 kbytes
+maxproc			31523
+======================================
+(Special)Runtime environment variables:
+
+Runtime environment variables:
+SHELL=/usr/bin/zsh
+LSCOLORS=Gxfxcxdxbxegedabagacad
+SESSION_MANAGER=local/Arch:@/tmp/.ICE-unix/1866,unix/Arch:/tmp/.ICE-unix/1866
+COLORTERM=truecolor
+VCS_ARCH_OVERRIDE=linux
+XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+LESS=-R
+SYNOPSYS=/home/dalys/Synopsys
+VCS_TARGET_ARCH=amd64
+XDG_MENU_PREFIX=gnome-
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+GTK_IM_MODULE=ibus
+HOSTNAME=Arch
+VCS_HOME=/home/dalys/Synopsys/vcs
+SPYGLASS_HOME=/home/dalys/Synopsys/SpyGlass/SpyGlass/SPYGLASS_HOME
+QT4_IM_MODULE=ibus
+GNOME_SHELL_SESSION_MODE=ubuntu
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+XMODIFIERS=@im=ibus
+VERDI_HOME=/home/dalys/Synopsys/verdi
+DESKTOP_SESSION=ubuntu
+SSH_AGENT_PID=1750
+GTK_MODULES=gail:atk-bridge
+PWD=/home/dalys/MySpace/FPGA/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_tb/sim/synopsys/vcs
+LOGNAME=dalys
+XDG_SESSION_DESKTOP=ubuntu
+XDG_SESSION_TYPE=x11
+GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+XAUTHORITY=/run/user/1000/gdm/Xauthority
+UVM_RTl=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/rtl/src
+GJS_DEBUG_TOPICS=JS ERROR;JS LOG
+WINDOWPATH=2
+SCL_HOME=/home/dalys/Synopsys/scl
+HOME=/home/dalys
+USERNAME=dalys
+IM_CONFIG_PHASE=1
+LANG=en_US.UTF-8
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36::di=94
+XDG_CURRENT_DESKTOP=ubuntu:GNOME
+VTE_VERSION=5802
+RTL_REG=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/rtl/reg
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/4fe5a82d_38ba_414d_acf7_237a0bb9d8aa
+UVM_HOME=/home/dalys/Synopsys/uvm-1.1d
+UVM_REG=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/rtl/reg
+UVM_VERIF=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/uvm/verif/
+INVOCATION_ID=7da74ea19b504dc29afddd23b547b42b
+MANAGERPID=1640
+CLUTTER_IM_MODULE=ibus
+GJS_DEBUG_OUTPUT=stderr
+XDG_SESSION_CLASS=user
+SNPSLMD_LICENSE_FILE=27000@Arch
+PYTHONPATH=/home/dalys/llvm/tools/clang/bindings/python/
+TERM=xterm-256color
+ZSH=/home/dalys/.oh-my-zsh
+USER=dalys
+GNOME_TERMINAL_SERVICE=:1.112
+DISPLAY=:0
+SHLVL=2
+PAGER=less
+QT_IM_MODULE=ibus
+LM_LICENSE_FILE=27000@Arch
+LD_LIBRARY_PATH=/usr/lib/llvm-9/lib
+XDG_RUNTIME_DIR=/run/user/1000
+JOURNAL_STREAM=9:54564
+DVE_HOME=/home/dalys/Synopsys/vcs/gui/dve
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+PATH=/home/dalys/Synopsys/SpyGlass/SpyGlass/SPYGLASS_HOME/bin:/home/dalys/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/dalys/Synopsys/vcs/gui/dve/bin:/home/dalys/Synopsys/vcs/bin:/home/dalys/Synopsys/verdi/bin:/home/dalys/Synopsys/verdi/platform/LINUX64/bin:/home/dalys/Synopsys/scl/linux64/bin:/home/dalys/WorkStation/ASIC/Rio/asic/trunk/uvm/script:/home/dalys/WorkStation/ASIC/Rio/asic/trunk/scripts:/home/dalys/WorkStation/ASIC/Rio/asic/trunk/scripts/vweave:/home/dalys/.local/bin
+GDMSESSION=ubuntu
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+UVM=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/uvm
+FSDB_HOME=/home/dalys/Synopsys/verdi/share/PLI/VCS/LINUX64
+PROJECT=/home/dalys/WorkStation/ASIC/Rio/asic/trunk
+OLDPWD=/home/dalys/MySpace/FPGA/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_tb/sim/synopsys/vcs
+NOVAS_HOME=/home/dalys/Synopsys/verdi
+_=./simv
+VCS_PATHMAP_PRELOAD_DONE=1
+LC_ALL=C
+DVE=/home/dalys/Synopsys/vcs/gui/dve
+SPECMAN_OUTPUT_TO_TTY=1
+Runtime command line arguments:
+argv[0]=./simv
+argv[1]=+dump
+argv[2]=-l
+argv[3]=sim.log
+405 profile - 100
+          CPU/Mem usage: 0.200 sys,  0.510 user,  289.01M sys,  0.00M vm
+406 VC callback profile - scalar:0 vector:0
+407 Sun Jan  5 10:49:03 2020
+408 pliAppInit
+409 *Verdi3* : FSDB_GATE is set.
+410 *Verdi3* : FSDB_RTL is set.
+411 *Verdi3* : Enable Parallel Dumping.
+412 pliAppMiscSet: New Sim Round
+413 pliEntryInit
+414 LIBSSCORE=found /home/dalys/Synopsys/verdi/share/PLI/lib/LINUXAMD64/libsscore_vcs201606.so through $NOVAS_HOME setting.
+415 FSDB Dumper for VCS, Release Verdi3_L-2016.06-1, Linux x86_64/64bit, 07/10/2016
+416 (C) 1996 - 2016 by Synopsys, Inc.
+417 sps_call_fsdbDumpon at 0 : ./../..//ep_g3x8_avmm256_tb.v(246)
+418 *Verdi3* WARNING: fsdbDumpon - The FSDB file has not been created.
+419 sps_call_fsdbDumpfile at 0 : ./../..//ep_g3x8_avmm256_tb.v(247)
+420 argv[0]: ./PcieDma.fsdb
+421 *Verdi3* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+422 *Verdi3* : Create FSDB file './PcieDma.fsdb'
+423 sps_call_fsdbDumpvars at 0 : ./../..//ep_g3x8_avmm256_tb.v(248)
+424 argv[0]: 0
+425 argv[1]: (handle)0x6d66ec8 ep_g3x8_avmm256_tb
+426 *Verdi3* : Begin traversing the scope (ep_g3x8_avmm256_tb), layer (0).
+427 *Verdi3* WARNING: Var 'shmem' will be ignored because its total element is larger than or equal to 2097152.
+428 *Verdi3* : End of traversing.
+429 fsdbDumpvars traverse var: profile - 
+          CPU/Mem usage: 0.250 sys,  0.860 user,  410.16M sys,  0.00M vm
+                   incr: 0.030 sys,  0.310 user,  37.08M sys,  0.00M vm
+                   accu: 0.030 sys,  0.310 user,  37.08M sys,  0.00M vm
+              accu incr: 0.030 sys,  0.310 user,  37.08M sys,  0.00M vm
+
+          Count usage: 51338 var,  29047 idcode,  18279 callback
+                 incr: 51338 var,  29047 idcode,  18279 callback
+                 accu: 51338 var,  29047 idcode,  18279 callback
+            accu incr: 51338 var,  29047 idcode,  18279 callback
+430 VC callback profile - scalar:0 vector:0
+431 Sun Jan  5 10:49:03 2020
+432 fsdbDumpvars: profile - 
+          CPU/Mem usage: 0.250 sys,  0.860 user,  411.35M sys,  0.00M vm
+                   incr: 0.000 sys,  0.000 user,  1.19M sys,  0.00M vm
+                   accu: 0.030 sys,  0.310 user,  38.27M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.000 user,  1.19M sys,  0.00M vm
+
+          Count usage: 51338 var,  29047 idcode,  18279 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 51338 var,  29047 idcode,  18279 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+433 VC callback profile - scalar:13975 vector:6433
+434 Sun Jan  5 10:49:03 2020
+435 End of simulation at 72482610000
+436 VC callback profile - scalar:56102587 vector:16470139
+437 Sun Jan  5 10:50:18 2020
+438 Parallel profile    -  Flush:4 Expand:0 ProduceWait:0 ConsumerWait:483 BlockUsed:507
+439                        ProduceTime:76.421894778 ConsumerTime:8.804591056 Buffer:64MB
+440 SimExit
+441 Sim process exit

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/ep_g3x8_avmm256_clk_0.v"
+   type="VERILOG"
+   library="ep_g3x8_avmm256_clk_0"
+   hasInlineConfiguration="true" />
+ <topLevel name="ep_g3x8_avmm256_clk_0.ep_g3x8_avmm256_clk_0" />
+ <deviceFamily name="arria10" />
+</simPackage>

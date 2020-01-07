@@ -1,0 +1,19 @@
+# system info ep_g3x8_avmm256_dma_control_0 on 2019.04.20.11:03:47
+system_info:
+name,value
+DEVICE,10AT115S2F45E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,0
+#
+#
+# Files generated for ep_g3x8_avmm256_dma_control_0 on 2019.04.20.11:03:47
+files:
+filepath,kind,attributes,module,is_top
+sim/ep_g3x8_avmm256_dma_control_0.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,ep_g3x8_avmm256_dma_control_0,true
+dma_control_171/sim/dma_controller.sv,SYSTEM_VERILOG,,dma_control,false
+dma_control_171/sim/altpcie_dynamic_control.sv,SYSTEM_VERILOG,,dma_control,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+ep_g3x8_avmm256_dma_control_0.dma_control_0,dma_control

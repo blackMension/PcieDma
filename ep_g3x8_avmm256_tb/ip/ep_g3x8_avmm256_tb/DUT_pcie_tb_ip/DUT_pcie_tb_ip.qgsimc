@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altera="http://www.altera.com/XMLSchema/Qsys/SystemTree">
+  <instanceKey xsi:type="xs:string">DUT_pcie_tb_ip</instanceKey>
+  <instanceData xsi:type="data">
+    <parameters></parameters>
+    <interconnectAssignments>
+      <interconnectAssignment>
+        <name>qsys_mm.clockCrossingAdapter</name>
+        <value>HANDSHAKE</value>
+      </interconnectAssignment>
+      <interconnectAssignment>
+        <name>qsys_mm.maxAdditionalLatency</name>
+        <value>0</value>
+      </interconnectAssignment>
+    </interconnectAssignments>
+    <className>DUT_pcie_tb_ip</className>
+    <version>1.0</version>
+    <name>DUT_pcie_tb_ip</name>
+    <uniqueName>DUT_pcie_tb_ip</uniqueName>
+    <nonce>0</nonce>
+    <incidentConnections></incidentConnections>
+  </instanceData>
+  <children>
+    <node>
+      <instanceKey xsi:type="xs:string">DUT_pcie_tb</instanceKey>
+      <instanceData xsi:type="data">
+        <parameters>
+          <parameter>
+            <name>apps_type_hwtcl</name>
+            <value>6</value>
+          </parameter>
+          <parameter>
+            <name>bfm_drive_interface_clk_hwtcl</name>
+            <value>1</value>
+          </parameter>
+          <parameter>
+            <name>bfm_drive_interface_control_hwtcl</name>
+            <value>1</value>
+          </parameter>
+          <parameter>
+            <name>bfm_drive_interface_npor_hwtcl</name>
+            <value>1</value>
+          </parameter>
+          <parameter>
+            <name>bfm_drive_interface_pipe_hwtcl</name>
+            <value>1</value>
+          </parameter>
+          <parameter>
+            <name>deemphasis_enable_hwtcl</name>
+            <value>false</value>
+          </parameter>
+          <parameter>
+            <name>ecrc_check_capable_hwtcl</name>
+            <value>0</value>
+          </parameter>
+          <parameter>
+            <name>ecrc_gen_capable_hwtcl</name>
+            <value>0</value>
+          </parameter>
+          <parameter>
+            <name>enable_pipe32_phyip_ser_driver_hwtcl</name>
+            <value>0</value>
+          </parameter>
+          <parameter>
+            <name>gen123_lane_rate_mode_hwtcl</name>
+            <value>Gen3 (8.0 Gbps)</value>
+          </parameter>
+          <parameter>
+            <name>lane_mask_hwtcl</name>
+            <value>x8</value>
+          </parameter>
+          <parameter>
+            <name>millisecond_cycle_count_hwtcl</name>
+            <value>124250</value>
+          </parameter>
+          <parameter>
+            <name>pld_clk_MHz</name>
+            <value>125</value>
+          </parameter>
+          <parameter>
+            <name>pll_refclk_freq_hwtcl</name>
+            <value>100 MHz</value>
+          </parameter>
+          <parameter>
+            <name>port_type_hwtcl</name>
+            <value>Native endpoint</value>
+          </parameter>
+          <parameter>
+            <name>serial_sim_hwtcl</name>
+            <value>1</value>
+          </parameter>
+          <parameter>
+            <name>use_crc_forwarding_hwtcl</name>
+            <value>0</value>
+          </parameter>
+        </parameters>
+        <interconnectAssignments></interconnectAssignments>
+        <className>altera_pcie_a10_tbed</className>
+        <version>17.1</version>
+        <name>DUT_pcie_tb</name>
+        <uniqueName>altpcie_a10_tbed_hwtcl</uniqueName>
+        <fixedName>altpcie_a10_tbed_hwtcl</fixedName>
+        <nonce>0</nonce>
+        <incidentConnections></incidentConnections>
+        <path>DUT_pcie_tb_ip.DUT_pcie_tb</path>
+      </instanceData>
+      <children></children>
+    </node>
+  </children>
+</node>

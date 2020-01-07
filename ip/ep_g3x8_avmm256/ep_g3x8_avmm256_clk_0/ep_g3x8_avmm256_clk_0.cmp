@@ -1,0 +1,9 @@
+	component ep_g3x8_avmm256_clk_0 is
+		port (
+			clk_out     : out std_logic;        -- clk
+			in_clk      : in  std_logic := 'X'; -- clk
+			reset_n     : in  std_logic := 'X'; -- reset_n
+			reset_n_out : out std_logic         -- reset_n
+		);
+	end component ep_g3x8_avmm256_clk_0;
+

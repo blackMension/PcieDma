@@ -1,0 +1,16 @@
+# system info ep_g3x8_avmm256_clk_0 on 2019.04.20.11:03:46
+system_info:
+name,value
+DEVICE,10AT115S2F45E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,0
+#
+#
+# Files generated for ep_g3x8_avmm256_clk_0 on 2019.04.20.11:03:46
+files:
+filepath,kind,attributes,module,is_top
+sim/ep_g3x8_avmm256_clk_0.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,ep_g3x8_avmm256_clk_0,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module

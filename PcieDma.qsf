@@ -1,0 +1,110 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 17.1.2 Build 304 01/31/2018 SJ Pro Edition
+# Date created = 10:17:13  April 20, 2019
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		PcieDma_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Arria 10"
+set_global_assignment -name DEVICE 10AT115S2F45E2SG
+set_global_assignment -name TOP_LEVEL_ENTITY PcieDmaTop
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.2
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:17:13  APRIL 20, 2019"
+set_global_assignment -name LAST_QUARTUS_VERSION "17.1.2 Pro Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 2
+set_global_assignment -name POWER_AUTO_COMPUTE_TJ ON
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE PcieDmaTop.v
+set_global_assignment -name QSYS_FILE ep_g3x8_avmm256.qsys
+set_global_assignment -name IP_FILE ip/ep_g3x8_avmm256/ep_g3x8_avmm256_clk_0.ip
+set_global_assignment -name IP_FILE ip/ep_g3x8_avmm256/ep_g3x8_avmm256_onchip_memory2_0.ip
+set_global_assignment -name IP_FILE ip/ep_g3x8_avmm256/ep_g3x8_avmm256_DUT.ip
+set_global_assignment -name IP_FILE ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0.ip
+set_location_assignment PIN_BC30 -to pcie_rstN
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to pcie_rstN -entity PcieDmaTop
+set_location_assignment PIN_AJ37 -to pcie_refclk
+set_instance_assignment -name IO_STANDARD HCSL -to pcie_refclk -entity PcieDmaTop
+set_location_assignment PIN_AJ38 -to "pcie_refclk(n)"
+set_location_assignment PIN_AT40 -to hip_serial_rx_in0
+set_location_assignment PIN_AP40 -to hip_serial_rx_in1
+set_location_assignment PIN_AN42 -to hip_serial_rx_in2
+set_location_assignment PIN_AM40 -to hip_serial_rx_in3
+set_location_assignment PIN_AL42 -to hip_serial_rx_in4
+set_location_assignment PIN_AK40 -to hip_serial_rx_in5
+set_location_assignment PIN_AJ42 -to hip_serial_rx_in6
+set_location_assignment PIN_AH40 -to hip_serial_rx_in7
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to hip_serial_rx_in0 -entity PcieDmaTop
+set_location_assignment PIN_AT39 -to "hip_serial_rx_in0(n)"
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to hip_serial_rx_in1 -entity PcieDmaTop
+set_location_assignment PIN_AP39 -to "hip_serial_rx_in1(n)"
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to hip_serial_rx_in2 -entity PcieDmaTop
+set_location_assignment PIN_AN41 -to "hip_serial_rx_in2(n)"
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to hip_serial_rx_in3 -entity PcieDmaTop
+set_location_assignment PIN_AM39 -to "hip_serial_rx_in3(n)"
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to hip_serial_rx_in4 -entity PcieDmaTop
+set_location_assignment PIN_AL41 -to "hip_serial_rx_in4(n)"
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to hip_serial_rx_in5 -entity PcieDmaTop
+set_location_assignment PIN_AK39 -to "hip_serial_rx_in5(n)"
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to hip_serial_rx_in6 -entity PcieDmaTop
+set_location_assignment PIN_AJ41 -to "hip_serial_rx_in6(n)"
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to hip_serial_rx_in7 -entity PcieDmaTop
+set_location_assignment PIN_AH39 -to "hip_serial_rx_in7(n)"
+set_location_assignment PIN_BB44 -to hip_serial_tx_out0
+set_location_assignment PIN_BA42 -to hip_serial_tx_out1
+set_location_assignment PIN_AY44 -to hip_serial_tx_out2
+set_location_assignment PIN_AW42 -to hip_serial_tx_out3
+set_location_assignment PIN_AV44 -to hip_serial_tx_out4
+set_location_assignment PIN_AU42 -to hip_serial_tx_out5
+set_location_assignment PIN_AT44 -to hip_serial_tx_out6
+set_location_assignment PIN_AR42 -to hip_serial_tx_out7
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to hip_serial_tx_out0 -entity PcieDmaTop
+set_location_assignment PIN_BB43 -to "hip_serial_tx_out0(n)"
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to hip_serial_tx_out1 -entity PcieDmaTop
+set_location_assignment PIN_BA41 -to "hip_serial_tx_out1(n)"
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to hip_serial_tx_out2 -entity PcieDmaTop
+set_location_assignment PIN_AY43 -to "hip_serial_tx_out2(n)"
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to hip_serial_tx_out3 -entity PcieDmaTop
+set_location_assignment PIN_AW41 -to "hip_serial_tx_out3(n)"
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to hip_serial_tx_out4 -entity PcieDmaTop
+set_location_assignment PIN_AV43 -to "hip_serial_tx_out4(n)"
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to hip_serial_tx_out5 -entity PcieDmaTop
+set_location_assignment PIN_AU41 -to "hip_serial_tx_out5(n)"
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to hip_serial_tx_out6 -entity PcieDmaTop
+set_location_assignment PIN_AT43 -to "hip_serial_tx_out6(n)"
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to hip_serial_tx_out7 -entity PcieDmaTop
+set_location_assignment PIN_AR41 -to "hip_serial_tx_out7(n)"

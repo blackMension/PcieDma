@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/ep_g3x8_avmm256_tb.v"
+   type="VERILOG"
+   library="ep_g3x8_avmm256_tb"
+   hasInlineConfiguration="true" />
+ <topLevel name="ep_g3x8_avmm256_tb.ep_g3x8_avmm256_tb" />
+ <deviceFamily name="arria10" />
+ <modelMap
+   controllerPath="ep_g3x8_avmm256_tb.ep_g3x8_avmm256_inst.onchip_memory2_0"
+   modelPath="ep_g3x8_avmm256_tb.ep_g3x8_avmm256_inst.onchip_memory2_0" />
+</simPackage>

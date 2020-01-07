@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="dma_control_171/sim/dma_controller.sv"
+   type="SYSTEM_VERILOG"
+   library="dma_control_171" />
+ <file
+   path="dma_control_171/sim/altpcie_dynamic_control.sv"
+   type="SYSTEM_VERILOG"
+   library="dma_control_171" />
+ <file
+   path="sim/ep_g3x8_avmm256_dma_control_0.v"
+   type="VERILOG"
+   library="ep_g3x8_avmm256_dma_control_0"
+   hasInlineConfiguration="true" />
+ <topLevel name="ep_g3x8_avmm256_dma_control_0.ep_g3x8_avmm256_dma_control_0" />
+ <deviceFamily name="arria10" />
+</simPackage>

@@ -1,0 +1,52 @@
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_TOOL_VERSION "17.1.2"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -library "ep_g3x8_avmm256_dma_control_0" -name SOPCINFO_FILE [file join $::quartus(qip_path) "ep_g3x8_avmm256_dma_control_0.sopcinfo"]
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name SLD_INFO "QSYS_NAME ep_g3x8_avmm256_dma_control_0 HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "ep_g3x8_avmm256_dma_control_0" -name MISC_FILE [file join $::quartus(qip_path) "ep_g3x8_avmm256_dma_control_0.cmp"]
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_TARGETED_DEVICE_FAMILY "Arria 10"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_GENERATED_DEVICE_FAMILY "{Arria 10}"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "ep_g3x8_avmm256_dma_control_0" -name MISC_FILE [file join $::quartus(qip_path) "../ep_g3x8_avmm256_dma_control_0.ip"]
+
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_NAME "ZG1hX2NvbnRyb2w="
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_DISPLAY_NAME "RXhhbXBsZSA6IERNQSBEZXNjcmlwdG9yIENvbnRyb2xsZXIgZm9yIFBDSSBFeHByZXNz"
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_INTERNAL "On"
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_VERSION "MTcuMQ=="
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_DESCRIPTION "RGVzY3JpcHRvciBDb250cm9sIG1vZHVsZSBtYW5hZ2VzIFJlYWQgYW5kIFdyaXRlIERNQSBvcGVyYXRpb25zLiBIb3N0IHNvZnR3YXJlIHByb2dyYW1zIHRoaXMgY29tcG9uZW50Lg=="
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_PARAMETER "RE1BX1dJRFRI::MjU2::RE1BX1dJRFRI"
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_GROUP "SW50ZXJmYWNlIFByb3RvY29scy9QQ0kgRXhwcmVzcy9FeGFtcGxlIERlc2lnbiBDb21wb25lbnRz"
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cDovL3d3dy5hbHRlcmEuY29tL2xpdGVyYXR1cmUvdWcvdWdfYTEwX3BjaWVfYXZtbV9kbWEucGRm"
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cDovL3d3dy5hbHRlcmEuY29tL2xpdGVyYXR1cmUvdWcvdWdfYTVnel9wY2llX2F2bW1fZG1hLnBkZg=="
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cDovL3d3dy5hbHRlcmEuY29tL2xpdGVyYXR1cmUvdWcvdWdfczVfcGNpZV9hdm1tX2RtYS5wZGY="
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cDovL3d3dy5hbHRlcmEuY29tL2xpdGVyYXR1cmUvdWcvdWdfYTVfcGNpZS5wZGY="
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cDovL3d3dy5hbHRlcmEuY29tL2xpdGVyYXR1cmUvdWcvdWdfYzVfcGNpZS5wZGY="
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly9kb2N1bWVudGF0aW9uLmFsdGVyYS5jb20vIy9saW5rL2hjbzE0MjE2OTgwNDIwODcvaGNvMTQyMTY5ODAxMzQwOA=="
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_NAME "ZXBfZzN4OF9hdm1tMjU2X2RtYV9jb250cm9sXzA="
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::QXJyaWEgMTA=::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBBVDExNVMyRjQ1RTJTRw==::QXV0byBERVZJQ0U="
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Mg==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_PARAMETER "QVVUT19SRERDTV9NQVNURVJfQUREUkVTU19XSURUSA==::LTE=::QXV0byBBRERSRVNTX1dJRFRI"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_PARAMETER "QVVUT19XUkRDTV9NQVNURVJfQUREUkVTU19XSURUSA==::LTE=::QXV0byBBRERSRVNTX1dJRFRI"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19DTE9DS19SQVRF::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19DTE9DS19ET01BSU4=::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "ep_g3x8_avmm256_dma_control_0" -library "ep_g3x8_avmm256_dma_control_0" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19SRVNFVF9ET01BSU4=::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+
+
+set_global_assignment -library "dma_control_171" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dma_control_171/synth/dma_controller.sv"]
+set_global_assignment -library "dma_control_171" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "dma_control_171/synth/altpcie_dynamic_control.sv"]
+set_global_assignment -library "ep_g3x8_avmm256_dma_control_0" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/ep_g3x8_avmm256_dma_control_0.v"]
+
+
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_TOOL_NAME "dma_control"
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_TOOL_VERSION "17.1"
+set_global_assignment -entity "dma_control" -library "dma_control_171" -name IP_TOOL_ENV "QsysPrimePro"
+

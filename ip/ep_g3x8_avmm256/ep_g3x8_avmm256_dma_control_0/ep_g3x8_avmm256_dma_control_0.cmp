@@ -1,0 +1,62 @@
+	component ep_g3x8_avmm256_dma_control_0 is
+		port (
+			MsiInterface_i       : in  std_logic_vector(81 downto 0)  := (others => 'X'); -- msi_intfc
+			RdDCMAddress_o       : out std_logic_vector(63 downto 0);                     -- address
+			RdDCMWrite_o         : out std_logic;                                         -- write
+			RdDCMWriteData_o     : out std_logic_vector(31 downto 0);                     -- writedata
+			RdDCMRead_o          : out std_logic;                                         -- read
+			RdDCMByteEnable_o    : out std_logic_vector(3 downto 0);                      -- byteenable
+			RdDCMWaitRequest_i   : in  std_logic                      := 'X';             -- waitrequest
+			RdDCMReadData_i      : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- readdata
+			RdDCMReadDataValid_i : in  std_logic                      := 'X';             -- readdatavalid
+			RdDCSChipSelect_i    : in  std_logic                      := 'X';             -- chipselect
+			RdDCSWrite_i         : in  std_logic                      := 'X';             -- write
+			RdDCSAddress_i       : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- address
+			RdDCSWriteData_i     : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- writedata
+			RdDCSByteEnable_i    : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- byteenable
+			RdDCSWaitRequest_o   : out std_logic;                                         -- waitrequest
+			RdDCSRead_i          : in  std_logic                      := 'X';             -- read
+			RdDCSReadData_o      : out std_logic_vector(31 downto 0);                     -- readdata
+			RdDmaRxData_i        : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- data
+			RdDmaRxValid_i       : in  std_logic                      := 'X';             -- valid
+			RdDmaTxData_o        : out std_logic_vector(159 downto 0);                    -- data
+			RdDmaTxValid_o       : out std_logic;                                         -- valid
+			RdDmaTxReady_i       : in  std_logic                      := 'X';             -- ready
+			RdDTSChipSelect_i    : in  std_logic                      := 'X';             -- chipselect
+			RdDTSWrite_i         : in  std_logic                      := 'X';             -- write
+			RdDTSBurstCount_i    : in  std_logic_vector(4 downto 0)   := (others => 'X'); -- burstcount
+			RdDTSAddress_i       : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- address
+			RdDTSWriteData_i     : in  std_logic_vector(255 downto 0) := (others => 'X'); -- writedata
+			RdDTSWaitRequest_o   : out std_logic;                                         -- waitrequest
+			Rstn_i               : in  std_logic                      := 'X';             -- reset_n
+			WrDCMAddress_o       : out std_logic_vector(63 downto 0);                     -- address
+			WrDCMWrite_o         : out std_logic;                                         -- write
+			WrDCMWriteData_o     : out std_logic_vector(31 downto 0);                     -- writedata
+			WrDCMRead_o          : out std_logic;                                         -- read
+			WrDCMByteEnable_o    : out std_logic_vector(3 downto 0);                      -- byteenable
+			WrDCMWaitRequest_i   : in  std_logic                      := 'X';             -- waitrequest
+			WrDCMReadDataValid_i : in  std_logic                      := 'X';             -- readdatavalid
+			WrDCMReadData_i      : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- readdata
+			WrDCSChipSelect_i    : in  std_logic                      := 'X';             -- chipselect
+			WrDCSWrite_i         : in  std_logic                      := 'X';             -- write
+			WrDCSAddress_i       : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- address
+			WrDCSWriteData_i     : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- writedata
+			WrDCSByteEnable_i    : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- byteenable
+			WrDCSWaitRequest_o   : out std_logic;                                         -- waitrequest
+			WrDCSRead_i          : in  std_logic                      := 'X';             -- read
+			WrDCSReadData_o      : out std_logic_vector(31 downto 0);                     -- readdata
+			WrDmaRxData_i        : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- data
+			WrDmaRxValid_i       : in  std_logic                      := 'X';             -- valid
+			WrDmaTxData_o        : out std_logic_vector(159 downto 0);                    -- data
+			WrDmaTxValid_o       : out std_logic;                                         -- valid
+			WrDmaTxReady_i       : in  std_logic                      := 'X';             -- ready
+			WrDTSChipSelect_i    : in  std_logic                      := 'X';             -- chipselect
+			WrDTSWrite_i         : in  std_logic                      := 'X';             -- write
+			WrDTSBurstCount_i    : in  std_logic_vector(4 downto 0)   := (others => 'X'); -- burstcount
+			WrDTSAddress_i       : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- address
+			WrDTSWriteData_i     : in  std_logic_vector(255 downto 0) := (others => 'X'); -- writedata
+			WrDTSWaitRequest_o   : out std_logic;                                         -- waitrequest
+			Clk_i                : in  std_logic                      := 'X'              -- clk
+		);
+	end component ep_g3x8_avmm256_dma_control_0;
+

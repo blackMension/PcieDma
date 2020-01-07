@@ -1,0 +1,20 @@
+# system info ep_g3x8_avmm256_tb on 2019.04.20.11:04:39
+system_info:
+name,value
+DEVICE,10AT115S2F45E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,0
+#
+#
+# Files generated for ep_g3x8_avmm256_tb on 2019.04.20.11:04:39
+files:
+filepath,kind,attributes,module,is_top
+sim/ep_g3x8_avmm256_tb.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,ep_g3x8_avmm256_tb,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+ep_g3x8_avmm256_tb.DUT_pcie_tb,DUT_pcie_tb_ip
+ep_g3x8_avmm256_tb.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm,ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm_ip
+ep_g3x8_avmm256_tb.ep_g3x8_avmm256_inst_reconfig_xcvr_reset_bfm,ep_g3x8_avmm256_inst_reconfig_xcvr_reset_bfm_ip
+ep_g3x8_avmm256_tb.ep_g3x8_avmm256_inst,ep_g3x8_avmm256
