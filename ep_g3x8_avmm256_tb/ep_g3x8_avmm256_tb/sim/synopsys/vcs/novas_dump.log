@@ -308,7 +308,7 @@ Limit information:
 cputime			unlimited
 filesize		unlimited
 datasize		unlimited
-stacksize		8225 kbytes
+stacksize		8198 kbytes
 coredumpsize	0 kbytes
 memoryuse		unlimited
 vmemoryuse		unlimited
@@ -360,7 +360,7 @@ LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd
 XDG_CURRENT_DESKTOP=ubuntu:GNOME
 VTE_VERSION=5802
 RTL_REG=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/rtl/reg
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/4fe5a82d_38ba_414d_acf7_237a0bb9d8aa
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/d62e9595_1d07_45ab_afc1_e3c3f159a37c
 UVM_HOME=/home/dalys/Synopsys/uvm-1.1d
 UVM_REG=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/rtl/reg
 UVM_VERIF=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/uvm/verif/
@@ -391,7 +391,7 @@ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 UVM=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/uvm
 FSDB_HOME=/home/dalys/Synopsys/verdi/share/PLI/VCS/LINUX64
 PROJECT=/home/dalys/WorkStation/ASIC/Rio/asic/trunk
-OLDPWD=/home/dalys/MySpace/FPGA/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_tb/sim/synopsys/vcs
+OLDPWD=/home/dalys/MySpace/FPGA/PcieDma
 NOVAS_HOME=/home/dalys/Synopsys/verdi
 _=./simv
 VCS_PATHMAP_PRELOAD_DONE=1
@@ -404,9 +404,9 @@ argv[1]=+dump
 argv[2]=-l
 argv[3]=sim.log
 405 profile - 100
-          CPU/Mem usage: 0.200 sys,  0.510 user,  289.01M sys,  0.00M vm
+          CPU/Mem usage: 0.210 sys,  0.530 user,  289.02M sys,  0.00M vm
 406 VC callback profile - scalar:0 vector:0
-407 Sun Jan  5 10:49:03 2020
+407 Tue Jan  7 20:15:29 2020
 408 pliAppInit
 409 *Verdi3* : FSDB_GATE is set.
 410 *Verdi3* : FSDB_RTL is set.
@@ -424,38 +424,38 @@ argv[3]=sim.log
 422 *Verdi3* : Create FSDB file './PcieDma.fsdb'
 423 sps_call_fsdbDumpvars at 0 : ./../..//ep_g3x8_avmm256_tb.v(248)
 424 argv[0]: 0
-425 argv[1]: (handle)0x6d66ec8 ep_g3x8_avmm256_tb
+425 argv[1]: (handle)0x6679358 ep_g3x8_avmm256_tb
 426 *Verdi3* : Begin traversing the scope (ep_g3x8_avmm256_tb), layer (0).
 427 *Verdi3* WARNING: Var 'shmem' will be ignored because its total element is larger than or equal to 2097152.
 428 *Verdi3* : End of traversing.
 429 fsdbDumpvars traverse var: profile - 
-          CPU/Mem usage: 0.250 sys,  0.860 user,  410.16M sys,  0.00M vm
-                   incr: 0.030 sys,  0.310 user,  37.08M sys,  0.00M vm
-                   accu: 0.030 sys,  0.310 user,  37.08M sys,  0.00M vm
-              accu incr: 0.030 sys,  0.310 user,  37.08M sys,  0.00M vm
+          CPU/Mem usage: 0.280 sys,  0.910 user,  410.07M sys,  0.00M vm
+                   incr: 0.040 sys,  0.310 user,  36.98M sys,  0.00M vm
+                   accu: 0.040 sys,  0.310 user,  36.98M sys,  0.00M vm
+              accu incr: 0.040 sys,  0.310 user,  36.98M sys,  0.00M vm
 
           Count usage: 51338 var,  29047 idcode,  18279 callback
                  incr: 51338 var,  29047 idcode,  18279 callback
                  accu: 51338 var,  29047 idcode,  18279 callback
             accu incr: 51338 var,  29047 idcode,  18279 callback
 430 VC callback profile - scalar:0 vector:0
-431 Sun Jan  5 10:49:03 2020
+431 Tue Jan  7 20:15:30 2020
 432 fsdbDumpvars: profile - 
-          CPU/Mem usage: 0.250 sys,  0.860 user,  411.35M sys,  0.00M vm
-                   incr: 0.000 sys,  0.000 user,  1.19M sys,  0.00M vm
-                   accu: 0.030 sys,  0.310 user,  38.27M sys,  0.00M vm
-              accu incr: 0.000 sys,  0.000 user,  1.19M sys,  0.00M vm
+          CPU/Mem usage: 0.280 sys,  0.920 user,  411.40M sys,  0.00M vm
+                   incr: 0.000 sys,  0.010 user,  1.33M sys,  0.00M vm
+                   accu: 0.040 sys,  0.320 user,  38.31M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.010 user,  1.33M sys,  0.00M vm
 
           Count usage: 51338 var,  29047 idcode,  18279 callback
                  incr: 0 var,  0 idcode,  0 callback
                  accu: 51338 var,  29047 idcode,  18279 callback
             accu incr: 0 var,  0 idcode,  0 callback
 433 VC callback profile - scalar:13975 vector:6433
-434 Sun Jan  5 10:49:03 2020
-435 End of simulation at 72482610000
-436 VC callback profile - scalar:56102587 vector:16470139
-437 Sun Jan  5 10:50:18 2020
-438 Parallel profile    -  Flush:4 Expand:0 ProduceWait:0 ConsumerWait:483 BlockUsed:507
-439                        ProduceTime:76.421894778 ConsumerTime:8.804591056 Buffer:64MB
+434 Tue Jan  7 20:15:30 2020
+435 End of simulation at 71482610000
+436 VC callback profile - scalar:54442017 vector:16013323
+437 Tue Jan  7 20:16:43 2020
+438 Parallel profile    -  Flush:4 Expand:0 ProduceWait:0 ConsumerWait:468 BlockUsed:492
+439                        ProduceTime:74.919174415 ConsumerTime:8.772564358 Buffer:64MB
 440 SimExit
 441 Sim process exit
