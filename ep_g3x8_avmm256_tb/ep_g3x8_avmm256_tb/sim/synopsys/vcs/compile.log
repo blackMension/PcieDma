@@ -187,7 +187,7 @@ Command: vcs -full64 -lca -cpp g++-4.8 -cc gcc-4.8 -LDFLAGS -Wl,--no-as-needed -
 -top ep_g3x8_avmm256_tb
 *** Using c compiler gcc-4.8 instead of cc ...
                          Chronologic VCS (TM)
-         Version L-2016.06_Full64 -- Tue Jan  7 20:13:08 2020
+         Version L-2016.06_Full64 -- Tue Jan 14 15:34:24 2020
                Copyright (c) 1991-2016 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -494,7 +494,7 @@ Parsing included file './../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/alter
 Back to file './../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv'.
 
 Note-[SV-LCM-PPWI] Package previously wildcard imported
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 29489
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 29491
 $unit
   Package 'altera_xcvr_functions_sv_bfm' already wildcard imported. 
   Ignoring altera_xcvr_functions_sv_bfm::*
@@ -503,7 +503,7 @@ $unit
 
 Warning-[OPD] Override previous declaration
   "./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv",
-  32344
+  32346
   Source info: module altera_avalon_sc_fifo
   Previously declared 
   at:"./../..//../../../ep_g3x8_avmm256/altera_avalon_sc_fifo_171/sim/altera_avalon_sc_fifo.v",
@@ -513,14 +513,14 @@ Warning-[OPD] Override previous declaration
 
 
 Warning-[TMBIN] Too many bits in Based Number
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 37511
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 37513
   The specified width is '128' bits, actually got '256' bits.
   The offending number is : 
   'FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF'.
 
 
 Note-[SV-LCM-PPWI] Package previously wildcard imported
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 59227
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 59229
 $unit
   Package 'altera_xcvr_functions_sv_bfm' already wildcard imported. 
   Ignoring altera_xcvr_functions_sv_bfm::*
@@ -528,7 +528,7 @@ $unit
 
 
 Note-[SV-LCM-PPWI] Package previously wildcard imported
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 66218
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 66220
 $unit
   Package 'altera_xcvr_functions_sv_bfm' already wildcard imported. 
   Ignoring altera_xcvr_functions_sv_bfm::*
@@ -536,7 +536,7 @@ $unit
 
 
 Note-[SV-LCM-PPWI] Package previously wildcard imported
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 67836
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 67838
 $unit
   Package 'altera_xcvr_functions_sv_bfm' already wildcard imported. 
   Ignoring altera_xcvr_functions_sv_bfm::*
@@ -544,7 +544,7 @@ $unit
 
 
 Note-[SV-LCM-PPWI] Package previously wildcard imported
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 69878
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 69880
 $unit
   Package 'altera_xcvr_functions_sv_bfm' already wildcard imported. 
   Ignoring altera_xcvr_functions_sv_bfm::*
@@ -552,7 +552,7 @@ $unit
 
 
 Note-[SV-LCM-PPWI] Package previously wildcard imported
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 73790
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 73792
 $unit
   Package 'altera_xcvr_functions_sv_bfm' already wildcard imported. 
   Ignoring altera_xcvr_functions_sv_bfm::*
@@ -560,7 +560,7 @@ $unit
 
 
 Note-[SV-LCM-PPWI] Package previously wildcard imported
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 74770
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 74772
 $unit
   Package 'altera_xcvr_functions_sv_bfm' already wildcard imported. 
   Ignoring altera_xcvr_functions_sv_bfm::*
@@ -879,7 +879,7 @@ Lint-[TFIPC-L] Too few instance port connections
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 74545
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 74547
 "stratixv_atx_pll #(.reference_clock_frequency(refclk_freq_fnl), .output_clock_frequency(outclk_freq_fnl), .refclk_sel(refclk_source_sel_fnl), .fbclk_sel(feedback_clk_fnl), .sel_buf8g(ENABLE_BUF8G), .sel_buf14g(ENABLE_BUF14G), .lcpll_hclk_driver_enable(HCLK_ENABLE_ATX), .enabled_for_reconfig(enabled_for_reconfig), .sim_use_fast_model(sim_use_fast_model), .lc_cmu_pdb("true")) tx_pll( .avmmaddress (local_avmm_address),  .avmmbyteen (local_avmm_byteen),  .avmmclk (local_avmm_clk),  .avmmread (local_avmm_read),  .avmmrstn (local_avmm_rstn),  .avmmwrite (local_avmm_write),  .avmmwritedata (local_avmm_writedata),  .avmmreaddata (atx_avmm_readdata),  .blockselect (atx_avmm_blockselect),  .iqclklc (mux_refclk_out_atx),  .extfbclk (fbclk_in),  .pllfbswblc (pll_fb ... "
   The above instance has fewer port connections than the module definition,
   input port 'fixedclklc' is not connected,
@@ -907,7 +907,7 @@ Lint-[TFIPC-L] Too few instance port connections
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 65036
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 65038
 "stratixv_hssi_gen3_tx_pcs #(.encoder(pcs_g3_tx_encoder), .mode(pcs_g3_tx_mode), .prbs_generator(pcs_g3_tx_prbs_generator), .reverse_lpbk(pcs_g3_tx_reverse_lpbk), .scrambler(pcs_g3_tx_scrambler), .sup_mode(pcs_g3_tx_sup_mode), .tx_bitslip(pcs_g3_tx_tx_bitslip), .tx_bitslip_data(pcs_g3_tx_tx_bitslip_data), .tx_clk_sel(pcs_g3_tx_tx_clk_sel), .tx_g3_dcbal(pcs_g3_tx_tx_g3_dcbal), .tx_gbox_byp(pcs_g3_tx_tx_gbox_byp), .tx_lane_num(pcs_g3_tx_tx_lane_num), .tx_pol_compl(pcs_g3_tx_tx_pol_compl), .use_default_base_address(pcs_g3_tx_use_default_base_address), .user_base_address(pcs_g3_tx_user_base_address)) inst_sv_hssi_gen3_tx_pcs( .avmmreaddata (w_pcs_g3_tx_avmmreaddata),  .blockselect (w_pcs_g3_tx_blockselect),  .dataout (w_pcs_g3_tx_dataout),  .errencode (w_pcs ... "
   The above instance has fewer port connections than the module definition,
   input port 'txpth' is not connected.
@@ -929,7 +929,7 @@ Lint-[TFIPC-L] Too few instance port connections
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 65480
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 65482
 "stratixv_hssi_gen3_rx_pcs #(.block_sync(pcs_g3_rx_block_sync), .block_sync_sm(pcs_g3_rx_block_sync_sm), .decoder(pcs_g3_rx_decoder), .descrambler(pcs_g3_rx_descrambler), .descrambler_lfsr_check(pcs_g3_rx_descrambler_lfsr_check), .lpbk_force(pcs_g3_rx_lpbk_force), .mode(pcs_g3_rx_mode), .parallel_lpbk(pcs_g3_rx_parallel_lpbk), .rate_match_fifo(pcs_g3_rx_rate_match_fifo), .rate_match_fifo_latency(pcs_g3_rx_rate_match_fifo_latency), .reverse_lpbk(pcs_g3_rx_reverse_lpbk), .rmfifo_empty(pcs_g3_rx_rmfifo_empty), .rmfifo_empty_data(pcs_g3_rx_rmfifo_empty_data), .rmfifo_full(pcs_g3_rx_rmfifo_full), .rmfifo_full_data(pcs_g3_rx_rmfifo_full_data), .rmfifo_pempty(pcs_g3_rx_rmfifo_pempty), .rmfifo_pempty_data(pcs_g3_rx_rmfifo_pempty_data), .rmfifo_pfull(pcs_g3_rx_rm ... "
   The above instance has fewer port connections than the module definition,
   output port 'blklockdint' is not connected,
@@ -938,14 +938,14 @@ Lint-[TFIPC-L] Too few instance port connections
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 72662
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 72664
 "sv_xcvr_emsip_adapter #(.lanes(lanes), .total_lanes(TOTAL_LANES), .deser_factor(deser_factor), .word_size(WORD_SIZE), .hip_hard_reset(hip_hard_reset)) sv_xcvr_emsip_adapter_inst( .pipe_txdata (pipe_txdata),  .pipe_txdatak (pipe_txdatak),  .pipe_txcompliance (pipe_txcompliance),  .pipe_txelecidle (pipe_txelecidle),  .pipe_rxpolarity (pipe_rxpolarity),  .pipe_txdetectrx_loopback (pipe_txdetectrx_loopback),  .pipe_txswing (pipe_txswing),  .pipe_txmargin (pipe_txmargin),  .pipe_txdeemph (pipe_txdeemph),  .pipe_rate (pipe_rate),  .rate_ctrl (rate_ctrl),  .pipe_powerdown (pipe_powerdown),  .rx_eidleinfersel (rx_eidleinfersel),  .pipe_tx_data_valid (pipe_tx_data_valid),  .pipe_tx_blk_start (pipe_tx_blk_start),  .pipe_tx_sync_hdr (pipe_tx_sync_hdr),  .pipe_phys ... "
   The above instance has fewer port connections than the module definition,
   output port 'masktxplllock' is not connected.
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 73467
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 73469
 "sv_xcvr_native #(.rx_enable(1), .tx_enable(1), .bonded_lanes(TOTAL_LANES), .pma_bonding_master(PMA_BONDING_MASTER), .pma_bonding_type("old_xN"), .bonding_master_only(PMA_BONDING_MASTER_ONLY), .pma_prot_mode(PROT_MODE), .plls(NUM_TX_PLLS), .pll_sel(0), .pma_mode(PMA_MODE), .pma_data_rate(PMA_DATA_RATE), .cdr_reference_clock_frequency(pll_refclk_freq), .auto_negotiation(PMA_AUTO_NEGOTIATION), .cgb_sync("pcs_sync_rst"), .pll_feedback("non_pll_feedback"), .pcie_rst(CGB_CNTR_RESET), .pcie_g3_x8(((protocol_version == "Gen 3") ? "pcie_g3_x8" : "non_pcie_g3_x8")), .tx_clk_div(INT_TX_CLK_DIV), .in_cvp_mode(in_cvp_mode), .hip_hard_reset(hip_hard_reset), .reset_scheme(RESET_SCHEME), .bonding_master_ch(BONDING_MASTER_CH), .enable_10g_rx("false"), .enable_10g_tx("fa ... "
   The above instance has fewer port connections than the module definition,
   input port 'in_pld_txdetectrx' is not connected,
@@ -953,7 +953,7 @@ Lint-[TFIPC-L] Too few instance port connections
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 40008
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 40010
 "sv_xcvr_pipe_native #(.lanes(LANES), .starting_channel_number(starting_channel_number), .protocol_version(protocol_version), .deser_factor(deser_factor), .pll_refclk_freq(pll_refclk_freq), .hip_hard_reset(hip_hard_reset), .hip_enable(hip_enable), .pipe_low_latency_syncronous_mode(pipe_low_latency_syncronous_mode), .pipe12_rpre_emph_a_val(rpre_emph_a_val), .pipe12_rpre_emph_b_val(rpre_emph_b_val), .pipe12_rpre_emph_c_val(rpre_emph_c_val), .pipe12_rpre_emph_d_val(rpre_emph_d_val), .pipe12_rpre_emph_e_val(rpre_emph_e_val), .pipe12_rvod_sel_a_val(rvod_sel_a_val), .pipe12_rvod_sel_b_val(rvod_sel_b_val), .pipe12_rvod_sel_c_val(rvod_sel_c_val), .pipe12_rvod_sel_d_val(rvod_sel_d_val), .pipe12_rvod_sel_e_val(rvod_sel_e_val)) sv_xcvr_pipe_native( .pll_powerdown ( ... "
   The above instance has fewer port connections than the module definition,
   input port 'pipe_g3_txdeemph' is not connected,
@@ -975,7 +975,7 @@ Lint-[TFIPC-L] Too few instance port connections
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 39313
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 39315
 "stratixv_hssi_gen3_pcie_hip #(.func_mode("enable"), .bonding_mode((((low_str(gen123_lane_rate_mode) == "gen1_gen2_gen3") && (low_str(lane_mask) == "x8")) ? "x8_g3" : ((low_str(lane_mask) == "x8") ? "x8_g1g2" : ((low_str(lane_mask) == "x4") ? "x4" : ((low_str(lane_mask) == "x2") ? "x2" : "x1"))))), .prot_mode(((low_str(gen123_lane_rate_mode) == "gen1_gen2_gen3") ? "pipe_g3" : ((low_str(gen123_lane_rate_mode) == "gen1_gen2") ? "pipe_g2" : "pipe_g1"))), .vc_enable(vc_enable), .enable_slot_register(enable_slot_register), .pcie_mode(pcie_mode), .bypass_cdc(bypass_cdc), .enable_rx_reordering(enable_rx_reordering), .enable_rx_buffer_checking(enable_rx_buffer_checking), .single_rx_detect_data(single_rx_detect), .use_crc_forwarding(use_crc_forwarding), .bypass_t ... "
   The above instance has fewer port connections than the module definition,
   output port 'dpriostatus' is not connected,
@@ -1012,7 +1012,7 @@ Lint-[TFIPC-L] Too few instance port connections
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 41008
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 41010
 "generic_pll #(.reference_clock_frequency(pll_refclk_freq), .output_clock_frequency("250.0 MHz")) refclk_to_250mhz( .refclk (refclk),  .outclk (clk250_out),  .locked (open_locked),  .fboutclk (open_fbclkout),  .rst (1'b0),  .fbclk (fbclkout));"
   The above instance has fewer port connections than the module definition,
   input port 'writerefclkdata' is not connected,
@@ -1026,7 +1026,7 @@ Lint-[TFIPC-L] Too few instance port connections
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 41011
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 41013
 "generic_pll #(.reference_clock_frequency(pll_refclk_freq), .output_clock_frequency("500.0 MHz")) pll_100mhz_to_500mhz( .refclk (refclk),  .outclk (clk500_out),  .locked (open_locked),  .fboutclk (open_fbclkout),  .rst (1'b0),  .fbclk (fbclkout));"
   The above instance has fewer port connections than the module definition,
   input port 'writerefclkdata' is not connected,
@@ -1040,7 +1040,7 @@ Lint-[TFIPC-L] Too few instance port connections
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 47485
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 47487
 "altpcie_hip_256_pipen1b #(.ACDS_V10(ACDS_V10), .MEM_CHECK(MEM_CHECK), .USE_INTERNAL_250MHZ_PLL(USE_INTERNAL_250MHZ_PLL), .pll_refclk_freq(pll_refclk_freq), .enable_pipe32_sim(enable_pipe32_sim), .enable_tl_only_sim(enable_tl_only_sim), .set_pld_clk_x1_625MHz(set_pld_clk_x1_625MHz_hwtcl), .enable_slot_register(enable_slot_register), .pcie_mode(pcie_mode), .hip_reconfig(hip_reconfig_hwtcl), .bypass_cdc(bypass_cdc), .enable_rx_buffer_checking(enable_rx_buffer_checking), .single_rx_detect(single_rx_detect), .use_crc_forwarding(use_crc_forwarding), .gen123_lane_rate_mode(gen123_lane_rate_mode), .lane_mask(lane_mask), .disable_link_x2_support(disable_link_x2_support), .hip_hard_reset(hip_hard_reset), .use_atx_pll(use_atx_pll), .dis_paritychk(dis_paritychk), . ... "
   The above instance has fewer port connections than the module definition,
   output port 'txdatavalid0_ext' is not connected,
@@ -1054,7 +1054,7 @@ Lint-[TFIPC-L] Too few instance port connections
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 4299
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 4300
 "scfifo #(.add_ram_output_register("OFF"), .intended_device_family("Stratix II GX"), .lpm_numwords(TXFIFO_DEPTH), .lpm_showahead("ON"), .lpm_type("scfifo"), .lpm_width(TXFIFO_WIDTH), .lpm_widthu(TXFIFO_WIDTHU), .overflow_checking("OFF"), .underflow_checking("OFF"), .almost_full_value((TXFIFO_DEPTH / 2)), .use_eab("OFF")) tx_data_fifo( .clock (clk_500),  .sclr ((~rstn)),  .data (tx_stream_data_0_int),  .wrreq (tx_st_valid_128),  .rdreq ((tx_st_ready & (~empty))),  .q ({tx_st_sop_int, tx_st_eop_int, tx_st_empty_int, tx_st_data_int[127:0]}),  .empty (empty),  .full (full),  .almost_full (almost_full));"
   The above instance has fewer port connections than the module definition,
   input port 'aclr' is not connected,
@@ -1063,7 +1063,7 @@ Lint-[TFIPC-L] Too few instance port connections
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 4314
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 4315
 "altpcietb_bfm_vc_intf_128 #(.VC_NUM(VC_NUM)) vc_intf_128( .clk_in (clk_500),  .rstn (rstn),  .rx_mask (rx_mask),  .rx_be (rx_st_be_int),  .tx_cred (tx_cred),  .tx_st_ready (tx_ready_int),  .rx_st_sop (rx_st_sop_128),  .rx_st_eop (rx_st_eop_128),  .rx_st_empty (rx_st_empty_128),  .rx_st_data (rx_st_data_128),  .rx_st_valid (rx_st_valid_128),  .rx_st_ready (rx_st_ready_128),  .tx_st_sop (tx_st_sop_128),  .tx_st_eop (tx_st_eop_128),  .tx_st_empty (tx_st_empty_128),  .tx_st_data (tx_st_data_128),  .tx_st_valid (tx_st_valid_128),  .tx_fifo_empty (tx_fifo_empty));"
   The above instance has fewer port connections than the module definition,
   input port 'rx_ecrc_err' is not connected,
@@ -1074,14 +1074,14 @@ Lint-[TFIPC-L] Too few instance port connections
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 3933
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 3934
 "altpcietb_bfm_vc_intf_256 #(.VC_NUM(VC_NUM)) vc_intf_256( .clk_in (clk_in),  .rstn (rstn),  .rx_mask (rx_mask),  .rx_be (rx_st_be_int),  .tx_cred (tx_cred),  .tx_st_ready (tx_st_ready_int),  .rx_st_sop (rx_st_sop_int),  .rx_st_eop (rx_st_eop_int),  .rx_st_empty (rx_st_empty_int),  .rx_st_data (rx_st_data_int),  .rx_st_valid (rx_valid_int),  .rx_st_ready (rx_st_ready_int),  .tx_st_sop (tx_st_sop_int),  .tx_st_eop (tx_st_eop_int),  .tx_st_empty (tx_st_empty_int),  .tx_st_data (tx_st_data_int),  .tx_st_valid (tx_st_valid_int),  .tx_fifo_empty (tx_fifo_empty));"
   The above instance has fewer port connections than the module definition,
   output port 'tx_err' is not connected.
 
 
 Lint-[TFIPC-L] Too few instance port connections
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 3894
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 3895
 "scfifo #(.add_ram_output_register("OFF"), .intended_device_family("Stratix II GX"), .lpm_numwords(RXFIFO_DEPTH), .lpm_showahead("ON"), .lpm_type("scfifo"), .lpm_width(RXFIFO_WIDTH), .lpm_widthu(RXFIFO_WIDTHU), .overflow_checking("OFF"), .underflow_checking("OFF"), .almost_full_value((RXFIFO_DEPTH / 2)), .use_eab("OFF")) rx_data_fifo( .clock (clk_in),  .sclr ((~rstn)),  .data ({rx_stream_data_2_int, rx_stream_data_1_int, rx_stream_data_0_int}),  .wrreq (rx_st_valid_int),  .rdreq ((rx_st_ready_int & (~empty))),  .q ({rx_st_data_int[255:128], rx_st_sop_int[1], rx_st_eop_int[1], rx_st_be_int[15:8], rx_st_empty_int, unused_st[15:8], rx_st_data_int[127:64], rx_st_be_int[7:0], rx_st_sop_int[0], rx_st_eop_int[0], unused_st[7:0], rx_st_data_int[63:0]}),  .empty  ... "
   The above instance has fewer port connections than the module definition,
   output port 'eccstatus' is not connected.
@@ -1769,13 +1769,13 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[IWNF] Implicit wire has no fanin
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 4318
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 4319
   Implicit wire 'rx_st_be_int' does not have any driver, please make sure this
   is intended.
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 4314
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 4315
 "altpcietb_bfm_vc_intf_128 #(VC_NUM, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ) vc_intf_128( .clk_in (clk_500),  .rstn (rstn),  .rx_mask (rx_mask),  .rx_be (rx_st_be_int),  .tx_cred (tx_cred),  .tx_st_ready (tx_ready_int),  .rx_st_sop (rx_st_sop_128),  .rx_st_eop (rx_st_eop_128),  .rx_st_empty (rx_st_empty_128),  .rx_st_data (rx_st_data_128),  .rx_st_valid (rx_st_valid_128),  .rx_st_ready (rx_st_ready_128),  .tx_st_sop (tx_st_sop_128),  .tx_st_eop (tx_st_eop_128),  .tx_st_empty (tx_st_empty_128),  .tx_st_data (tx_st_data_128),  .tx_st_valid (tx_st_valid_128),  .tx_fifo_empty (tx_fifo_empty));"
   The following 1-bit expression is connected to 16-bit port "rx_be" of module
   "altpcietb_bfm_vc_intf_128", instance "vc_intf_128".
@@ -2240,13 +2240,13 @@ Warning-[SIOB] Select index out of bounds
 
 
 Warning-[IWNF] Implicit wire has no fanin
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 41008
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 41010
   Implicit wire 'fbclkout' does not have any driver, please make sure this is 
   intended.
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 39313
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 39315
 "stratixv_hssi_gen3_pcie_hip #("enable", in_cvp_mode, (((low_str(gen123_lane_rate_mode) == "gen1_gen2_gen3") && (low_str(lane_mask) == "x8")) ? "x8_g3" : ((low_str(lane_mask) == "x8") ? "x8_g1g2" : ((low_str(lane_mask) == "x4") ? "x4" : ((low_str(lane_mask) == "x2") ? "x2" : "x1")))), ((low_str(gen123_lane_rate_mode) == "gen1_gen2_gen3") ? "pipe_g3" : ((low_str(gen123_lane_rate_mode) == "gen1_gen2") ? "pipe_g2" : "pipe_g1")), , vc_enable, enable_slot_register, pcie_mode, bypass_cdc, enable_rx_reordering, enable_rx_buffer_checking, single_rx_detect, , use_crc_forwarding, bypass_tl, gen123_lane_rate_mode, lane_mask, disable_link_x2_support, national_inst_thru_enhance, hip_hard_reset, dis_paritychk, wrong_device_id, data_pack_rx, ast_width, ((low_str(ast_wi ... "
   The following 1-bit expression is connected to 7-bit port "swdnout" of 
   module "stratixv_hssi_gen3_pcie_hip", instance 
@@ -2256,7 +2256,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 39313
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 39315
 "stratixv_hssi_gen3_pcie_hip #("enable", in_cvp_mode, (((low_str(gen123_lane_rate_mode) == "gen1_gen2_gen3") && (low_str(lane_mask) == "x8")) ? "x8_g3" : ((low_str(lane_mask) == "x8") ? "x8_g1g2" : ((low_str(lane_mask) == "x4") ? "x4" : ((low_str(lane_mask) == "x2") ? "x2" : "x1")))), ((low_str(gen123_lane_rate_mode) == "gen1_gen2_gen3") ? "pipe_g3" : ((low_str(gen123_lane_rate_mode) == "gen1_gen2") ? "pipe_g2" : "pipe_g1")), , vc_enable, enable_slot_register, pcie_mode, bypass_cdc, enable_rx_reordering, enable_rx_buffer_checking, single_rx_detect, , use_crc_forwarding, bypass_tl, gen123_lane_rate_mode, lane_mask, disable_link_x2_support, national_inst_thru_enhance, hip_hard_reset, dis_paritychk, wrong_device_id, data_pack_rx, ast_width, ((low_str(ast_wi ... "
   The following 1-bit expression is connected to 3-bit port "swupout" of 
   module "stratixv_hssi_gen3_pcie_hip", instance 
@@ -2266,7 +2266,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 39313
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 39315
 "stratixv_hssi_gen3_pcie_hip #("enable", in_cvp_mode, (((low_str(gen123_lane_rate_mode) == "gen1_gen2_gen3") && (low_str(lane_mask) == "x8")) ? "x8_g3" : ((low_str(lane_mask) == "x8") ? "x8_g1g2" : ((low_str(lane_mask) == "x4") ? "x4" : ((low_str(lane_mask) == "x2") ? "x2" : "x1")))), ((low_str(gen123_lane_rate_mode) == "gen1_gen2_gen3") ? "pipe_g3" : ((low_str(gen123_lane_rate_mode) == "gen1_gen2") ? "pipe_g2" : "pipe_g1")), , vc_enable, enable_slot_register, pcie_mode, bypass_cdc, enable_rx_reordering, enable_rx_buffer_checking, single_rx_detect, , use_crc_forwarding, bypass_tl, gen123_lane_rate_mode, lane_mask, disable_link_x2_support, national_inst_thru_enhance, hip_hard_reset, dis_paritychk, wrong_device_id, data_pack_rx, ast_width, ((low_str(ast_wi ... "
   The following 30-bit expression is connected to 32-bit port "reservedin" of 
   module "stratixv_hssi_gen3_pcie_hip", instance 
@@ -2277,7 +2277,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 38250
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 38252
 " altpcie_rs_serdes g_soft_reset.genblk1.altpcie_rs_serdes( .pld_clk (pld_clk),  .test_in ({33'b0, test_in[6], 5'b0, test_in[0]}),  .ltssm (ltssmstate_int),  .dlup_exit (dlup_exit),  .hotrst_exit (hotrst_exit),  .l2_exit (l2_exit),  .npor_serdes (((PIPE32_SIM_ONLY == 1) ? 1'b0 : ((pipe8_sim_only == 1'b1) ? 1'b0 : npor_int))),  .npor_core ((npor_int & pld_clk_inuse)),  .tx_cal_busy ((|serdes_tx_cal_busy)),  .rx_cal_busy ((|serdes_rx_cal_busy)),  .pll_locked (serdes_pll_locked),  .rx_freqlocked (((LANES == 1) ? {7'h7f, serdes_rx_is_lockedtodata[(LANES - 1):0]} : ((LANES == 2) ? {6'h3f, serdes_rx_is_lockedtodata[(LANES - 1):0]} : ((LANES == 4) ? {4'hf, serdes_rx_is_lockedtodata[(LANES - 1):0]} : serdes_rx_is_lockedtodata[(LANES - 1):0])))),  .rx_pll_locked  ... "
   The following 15-bit expression is connected to 8-bit port "rx_freqlocked" 
   of module "altpcie_rs_serdes", instance 
@@ -2289,7 +2289,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 38250
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 38252
 " altpcie_rs_serdes g_soft_reset.genblk1.altpcie_rs_serdes( .pld_clk (pld_clk),  .test_in ({33'b0, test_in[6], 5'b0, test_in[0]}),  .ltssm (ltssmstate_int),  .dlup_exit (dlup_exit),  .hotrst_exit (hotrst_exit),  .l2_exit (l2_exit),  .npor_serdes (((PIPE32_SIM_ONLY == 1) ? 1'b0 : ((pipe8_sim_only == 1'b1) ? 1'b0 : npor_int))),  .npor_core ((npor_int & pld_clk_inuse)),  .tx_cal_busy ((|serdes_tx_cal_busy)),  .rx_cal_busy ((|serdes_rx_cal_busy)),  .pll_locked (serdes_pll_locked),  .rx_freqlocked (((LANES == 1) ? {7'h7f, serdes_rx_is_lockedtodata[(LANES - 1):0]} : ((LANES == 2) ? {6'h3f, serdes_rx_is_lockedtodata[(LANES - 1):0]} : ((LANES == 4) ? {4'hf, serdes_rx_is_lockedtodata[(LANES - 1):0]} : serdes_rx_is_lockedtodata[(LANES - 1):0])))),  .rx_pll_locked  ... "
   The following 15-bit expression is connected to 8-bit port "rx_pll_locked" 
   of module "altpcie_rs_serdes", instance 
@@ -2301,7 +2301,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 38250
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 38252
 " altpcie_rs_serdes g_soft_reset.genblk1.altpcie_rs_serdes( .pld_clk (pld_clk),  .test_in ({33'b0, test_in[6], 5'b0, test_in[0]}),  .ltssm (ltssmstate_int),  .dlup_exit (dlup_exit),  .hotrst_exit (hotrst_exit),  .l2_exit (l2_exit),  .npor_serdes (((PIPE32_SIM_ONLY == 1) ? 1'b0 : ((pipe8_sim_only == 1'b1) ? 1'b0 : npor_int))),  .npor_core ((npor_int & pld_clk_inuse)),  .tx_cal_busy ((|serdes_tx_cal_busy)),  .rx_cal_busy ((|serdes_rx_cal_busy)),  .pll_locked (serdes_pll_locked),  .rx_freqlocked (((LANES == 1) ? {7'h7f, serdes_rx_is_lockedtodata[(LANES - 1):0]} : ((LANES == 2) ? {6'h3f, serdes_rx_is_lockedtodata[(LANES - 1):0]} : ((LANES == 4) ? {4'hf, serdes_rx_is_lockedtodata[(LANES - 1):0]} : serdes_rx_is_lockedtodata[(LANES - 1):0])))),  .rx_pll_locked  ... "
   The following 15-bit expression is connected to 8-bit port "rx_signaldetect"
   of module "altpcie_rs_serdes", instance 
@@ -2313,7 +2313,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 40008
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 40010
 " sv_xcvr_pipe_native #(LANES, starting_channel_number, protocol_version, , , pll_refclk_freq, deser_factor, pipe_low_latency_syncronous_mode, , , , , hip_enable, hip_hard_reset, , , rpre_emph_a_val, rpre_emph_b_val, rpre_emph_c_val, rpre_emph_d_val, rpre_emph_e_val, rvod_sel_a_val, rvod_sel_b_val, rvod_sel_c_val, rvod_sel_d_val, rvod_sel_e_val, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ) g_xcvr.genblk1.sv_xcvr_pipe_native( .pll_powerdown (1'b0),  .tx_digitalreset (serdes_tx_digitalreset[(LANES - 1):0]),  .rx_analogreset (serdes_rx_analogreset[(LANES - 1):0]),  .tx_analogreset ((serdes_tx_analogreset | serdes_txpma_rst_g3)),  .rx_digitalreset ((serdes_rx_digitalreset[(LANES - 1):0] | ser ... "
   The following 770-bit expression is connected to 1050-bit port 
   "reconfig_to_xcvr" of module "sv_xcvr_pipe_native", instance 
@@ -2323,7 +2323,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 40008
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 40010
 " sv_xcvr_pipe_native #(LANES, starting_channel_number, protocol_version, , , pll_refclk_freq, deser_factor, pipe_low_latency_syncronous_mode, , , , , hip_enable, hip_hard_reset, , , rpre_emph_a_val, rpre_emph_b_val, rpre_emph_c_val, rpre_emph_d_val, rpre_emph_e_val, rvod_sel_a_val, rvod_sel_b_val, rvod_sel_c_val, rvod_sel_d_val, rvod_sel_e_val, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ) g_xcvr.genblk1.sv_xcvr_pipe_native( .pll_powerdown (1'b0),  .tx_digitalreset (serdes_tx_digitalreset[(LANES - 1):0]),  .rx_analogreset (serdes_rx_analogreset[(LANES - 1):0]),  .tx_analogreset ((serdes_tx_analogreset | serdes_txpma_rst_g3)),  .rx_digitalreset ((serdes_rx_digitalreset[(LANES - 1):0] | ser ... "
   The following 506-bit expression is connected to 690-bit port 
   "reconfig_from_xcvr" of module "sv_xcvr_pipe_native", instance 
@@ -2477,7 +2477,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 73467
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 73469
 "sv_xcvr_native #(1, 1, BONDING_MASTER_CH, PMA_BONDING_MASTER, PMA_BONDING_MASTER_ONLY, , "old_xN", NUM_TX_PLLS, 0, PROT_MODE, PMA_MODE, PMA_DATA_RATE, pll_refclk_freq, , , , , PMA_AUTO_NEGOTIATION, INT_TX_CLK_DIV, , "pcs_sync_rst", ((protocol_version == "Gen 3") ? "pcie_g3_x8" : "non_pcie_g3_x8"), "non_pll_feedback", RESET_SCHEME, CGB_CNTR_RESET, in_cvp_mode, hip_hard_reset, , , "false", "false", "true", "true", "false", "true", (((protocol_version == "Gen 3") || (hip_enable == "true")) ? "true" : "false"), ((protocol_version == "Gen 3") ? "true" : "false"), ((protocol_version == "Gen 3") ? "true" : "false"), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,  ... "
   The following 8-bit expression is connected to 9-bit port "tx_cal_busy" of 
   module "sv_xcvr_native", instance "inst_sv_xcvr_native".
@@ -2486,7 +2486,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 73467
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 73469
 "sv_xcvr_native #(1, 1, BONDING_MASTER_CH, PMA_BONDING_MASTER, PMA_BONDING_MASTER_ONLY, , "old_xN", NUM_TX_PLLS, 0, PROT_MODE, PMA_MODE, PMA_DATA_RATE, pll_refclk_freq, , , , , PMA_AUTO_NEGOTIATION, INT_TX_CLK_DIV, , "pcs_sync_rst", ((protocol_version == "Gen 3") ? "pcie_g3_x8" : "non_pcie_g3_x8"), "non_pll_feedback", RESET_SCHEME, CGB_CNTR_RESET, in_cvp_mode, hip_hard_reset, , , "false", "false", "true", "true", "false", "true", (((protocol_version == "Gen 3") || (hip_enable == "true")) ? "true" : "false"), ((protocol_version == "Gen 3") ? "true" : "false"), ((protocol_version == "Gen 3") ? "true" : "false"), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,  ... "
   The following 8-bit expression is connected to 9-bit port "rx_cal_busy" of 
   module "sv_xcvr_native", instance "inst_sv_xcvr_native".
@@ -2495,7 +2495,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 72662
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 72664
 " sv_xcvr_emsip_adapter #(lanes, TOTAL_LANES, deser_factor, WORD_SIZE, hip_hard_reset) genblk1.sv_xcvr_emsip_adapter_inst( .pipe_txdata (pipe_txdata),  .pipe_txdatak (pipe_txdatak),  .pipe_txcompliance (pipe_txcompliance),  .pipe_txelecidle (pipe_txelecidle),  .pipe_rxpolarity (pipe_rxpolarity),  .pipe_txdetectrx_loopback (pipe_txdetectrx_loopback),  .pipe_txswing (pipe_txswing),  .pipe_txmargin (pipe_txmargin),  .pipe_txdeemph (pipe_txdeemph),  .pipe_rate (pipe_rate),  .rate_ctrl (rate_ctrl),  .pipe_powerdown (pipe_powerdown),  .rx_eidleinfersel (rx_eidleinfersel),  .pipe_tx_data_valid (pipe_tx_data_valid),  .pipe_tx_blk_start (pipe_tx_blk_start),  .pipe_tx_sync_hdr (pipe_tx_sync_hdr),  .pipe_phystatus (pipe_phystatus),  .pipe_rxdata (pipe_rxdata),  .pi ... "
   The following 9-bit expression is connected to 8-bit port "rx_signaldetect" 
   of module "sv_xcvr_emsip_adapter", instance 
@@ -2505,7 +2505,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 71930
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 71932
 "sv_xcvr_avmm #(bonded_lanes, bonding_master_ch, bonding_master_only, pma_reserved_ch, rx_enable, tx_enable, 0, enable_10g_tx, enable_10g_rx, enable_8g_tx, enable_8g_rx, request_adce_cont, request_adce_single, request_adce_cancel, request_dcd, request_dfe, request_vrc, request_offset, , , , ) inst_sv_xcvr_avmm( .reconfig_to_xcvr (reconfig_to_xcvr),  .reconfig_from_xcvr (reconfig_from_xcvr),  .in_pld_10g_rx_prbs_err_clr (in_pld_10g_rx_prbs_err_clr),  .seriallpbken (seriallpbken),  .in_pld_8g_pld_rx_clk (in_pld_8g_pld_rx_clk),  .in_pld_10g_rx_pld_clk (in_pld_10g_rx_pld_clk),  .in_pld_8g_txurstpcs_n (in_pld_8g_txurstpcs_n),  .in_pld_8g_rxurstpcs_n (in_pld_8g_rxurstpcs_n),  .in_pld_10g_tx_rst_n (in_pld_10g_tx_rst_n),  .in_pld_10g_rx_rst_n (in_pld_10g_rx_rst_ ... "
   The following 1-bit expression is connected to 9-bit port "pma_adaptdone" of
   module "sv_xcvr_avmm", instance "inst_sv_xcvr_avmm".
@@ -2514,7 +2514,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 71930
+./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv, 71932
 "sv_xcvr_avmm #(bonded_lanes, bonding_master_ch, bonding_master_only, pma_reserved_ch, rx_enable, tx_enable, 0, enable_10g_tx, enable_10g_rx, enable_8g_tx, enable_8g_rx, request_adce_cont, request_adce_single, request_adce_cancel, request_dcd, request_dfe, request_vrc, request_offset, , , , ) inst_sv_xcvr_avmm( .reconfig_to_xcvr (reconfig_to_xcvr),  .reconfig_from_xcvr (reconfig_from_xcvr),  .in_pld_10g_rx_prbs_err_clr (in_pld_10g_rx_prbs_err_clr),  .seriallpbken (seriallpbken),  .in_pld_8g_pld_rx_clk (in_pld_8g_pld_rx_clk),  .in_pld_10g_rx_pld_clk (in_pld_10g_rx_pld_clk),  .in_pld_8g_txurstpcs_n (in_pld_8g_txurstpcs_n),  .in_pld_8g_rxurstpcs_n (in_pld_8g_rxurstpcs_n),  .in_pld_10g_tx_rst_n (in_pld_10g_tx_rst_n),  .in_pld_10g_rx_rst_n (in_pld_10g_rx_rst_ ... "
   The following 1-bit expression is connected to 9-bit port 
   "pma_hardoccaldone" of module "sv_xcvr_avmm", instance "inst_sv_xcvr_avmm".
@@ -2530,18 +2530,158 @@ Notice: Ports coerced to inout, use -notice for details
 Starting vcs inline pass...
 610 unique modules to generate
 143 modules and 0 UDP read. 
-	However, due to incremental compilation, only 2 modules need to be compiled. 
+recompiling package _vcs_unit__1038955760
+recompiling package std
+recompiling package altera_lnsim_functions
+recompiling package altera_generic_pll_functions
+recompiling module generic_pll
+recompiling package fourteennm_iopll_functions
+recompiling package twentynm_prblock_test_pkg
+recompiling module ep_g3x8_avmm256_clk_0
+recompiling module altpcie_dynamic_control
+recompiling module ep_g3x8_avmm256_dma_control_0
+recompiling module ep_g3x8_avmm256_onchip_memory2_0
+recompiling package altera_xcvr_native_a10_functions_h
+recompiling module twentynm_pma_rev_20nm5
+recompiling module twentynm_xcvr_avmm
+recompiling module twentynm_xcvr_native
+recompiling package a10_avmm_h
+recompiling package altera_xcvr_native_pcie_dfe_params_h
+recompiling package pcie_mgmt_commands_h
+recompiling package pcie_mgmt_functions_h
+recompiling package pcie_mgmt_program
+recompiling module phy_g3x8
+recompiling module dps_pulse_ctrl
+recompiling module dps_reset_gen
+recompiling module fpll_g3
+recompiling module alt_xcvr_atx_pll_rcfg_opt_logic_pufnv4i
+recompiling module altpcie_a10_hip_pipen1b
+recompiling module altpcie_sc_bitsync_node
+recompiling module altpcie_reset_delay_sync
+recompiling module altpcie_a10_hip_pllnphy
+recompiling package altera_xcvr_functions
+recompiling module altpcie_monitor_a10_dlhip_sim
+recompiling module altpcieav_hip_interface
+recompiling module altpcieav_dma_rxm
+recompiling module altpcieav_dma_txs
+recompiling module altpcieav_dma_rd
+recompiling module altpcieav_dma_wr_tlpgen_2
+recompiling module altpcieav_dma_wr_wdalign_2
+recompiling module altpcieav_arbiter
+recompiling module altpcieav_cra
+recompiling module altpcie_fifo
+recompiling module altera_merlin_master_translator
+recompiling module altera_merlin_slave_translator
+recompiling module altera_merlin_master_agent
+recompiling module altera_merlin_slave_agent
+recompiling module altera_merlin_burst_uncompressor
+recompiling module ep_g3x8_avmm256_altera_merlin_router_171_23jcmrq
+recompiling module ep_g3x8_avmm256_altera_merlin_demultiplexer_171_xojy6ca
+recompiling module altera_merlin_arbitrator
+recompiling module ep_g3x8_avmm256_altera_mm_interconnect_171_7t36psq
+recompiling module ep_g3x8_avmm256_altera_merlin_router_171_tdiu6gq
+50 of 143 modules done
+recompiling module altera_merlin_burst_adapter_subtractor
+recompiling module altera_merlin_burst_adapter_min
+recompiling module altera_merlin_address_alignment
+recompiling module ep_g3x8_avmm256_altera_merlin_demultiplexer_171_eqvhaxq
+recompiling module ep_g3x8_avmm256_altera_merlin_demultiplexer_171_uehjzdy
+recompiling module ep_g3x8_avmm256_altera_merlin_multiplexer_171_cckx4ta
+recompiling module ep_g3x8_avmm256_altera_merlin_demultiplexer_171_3kxwkza
+recompiling module ep_g3x8_avmm256_altera_merlin_multiplexer_171_wyhqm3q
+recompiling module ep_g3x8_avmm256_altera_merlin_multiplexer_171_36d27bi
+recompiling module altera_merlin_width_adapter
+recompiling module ep_g3x8_avmm256_altera_avalon_st_adapter_171_l5ksb3y
+recompiling module ep_g3x8_avmm256_altera_mm_interconnect_171_m6w4bsa
+recompiling module ep_g3x8_avmm256_altera_merlin_multiplexer_171_frt5vea
+recompiling module ep_g3x8_avmm256_altera_merlin_multiplexer_171_mhqksua
+recompiling module ep_g3x8_avmm256_altera_mm_interconnect_171_glb5asi
+recompiling module ep_g3x8_avmm256_altera_merlin_router_171_j5jg6hi
+recompiling module ep_g3x8_avmm256_altera_mm_interconnect_171_66vd26y
+recompiling module ep_g3x8_avmm256_altera_avalon_st_adapter_171_5moluky
+recompiling module altera_reset_controller
+recompiling module ep_g3x8_avmm256
+recompiling package verbosity_pkg
+recompiling module ep_g3x8_avmm256_inst_reconfig_xcvr_reset_bfm_ip
+recompiling module ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm_ip
+recompiling module altpcietb_ltssm_mon
+recompiling module altpcietb_pipe_phy
+recompiling module altpcietb_pipe_xtx2yrx
+recompiling module <protected>
+recompiling module altpcied_a10_hwtcl
+recompiling module altpcietb_rst_clk
 recompiling module altpcietb_bfm_driver_rp
+recompiling module altpcietb_bfm_log_common
+recompiling module altpcietb_bfm_req_intf_common
+recompiling module altpcietb_bfm_shmem_common
+recompiling package altera_xcvr_functions_sv_bfm
+recompiling package sv_xcvr_h
+recompiling package pcie_tbed_alt_xcvr_reconfig_h
+recompiling package sv_xcvr_dfe_cal_sweep_h
+recompiling module altera_avalon_sc_fifo
+recompiling module altpcietb_bfm_rxpipe_8bit_to_32_bit
+recompiling module altpcietb_bfm_txpipe_8bit_to_32_bit
+recompiling module altpcie_rs_serdes
+recompiling module sv_hssi_8g_rx_pcs_rbc
+recompiling module sv_hssi_8g_tx_pcs_rbc
+recompiling module sv_hssi_common_pcs_pma_interface_rbc
+recompiling module sv_hssi_common_pld_pcs_interface_rbc
+recompiling module sv_hssi_pipe_gen3_rbc
+recompiling module sv_hssi_rx_pcs_pma_interface_rbc
+recompiling module sv_hssi_rx_pld_pcs_interface_rbc
+recompiling module sv_hssi_tx_pcs_pma_interface_rbc
+recompiling module sv_hssi_tx_pld_pcs_interface_rbc
+100 of 143 modules done
+recompiling module sv_pcs_ch
+recompiling module sv_pma
+recompiling module sv_reconfig_bundle_to_xcvr
+recompiling module sv_tx_pma_ch
+recompiling module sv_xcvr_avmm_csr
+recompiling module sv_xcvr_emsip_adapter
+recompiling module sv_xcvr_pipe_native
+recompiling module ep_g3x8_avmm256_tb
+recompiling module lpm_add_sub
+recompiling module altsyncram
+recompiling module scfifo
+recompiling module ALTERA_DEVICE_FAMILIES
+recompiling module twentynm_cmu_fpll
 recompiling module twentynm_hssi_10g_rx_pcs
-All of 2 modules done
+recompiling module twentynm_hssi_10g_tx_pcs
+recompiling module twentynm_hssi_8g_rx_pcs
+recompiling module twentynm_hssi_8g_tx_pcs
+recompiling module twentynm_hssi_common_pcs_pma_interface
+recompiling module twentynm_hssi_common_pld_pcs_interface
+recompiling module twentynm_hssi_fifo_rx_pcs
+recompiling module twentynm_hssi_fifo_tx_pcs
+recompiling module twentynm_hssi_gen3_rx_pcs
+recompiling module twentynm_hssi_gen3_tx_pcs
+recompiling module twentynm_hssi_krfec_rx_pcs
+recompiling module twentynm_hssi_krfec_tx_pcs
+recompiling module twentynm_hssi_pipe_gen3
+recompiling module twentynm_hssi_pma_cdr_refclk_select_mux
+recompiling module twentynm_hssi_pma_cgb_master
+recompiling module twentynm_hssi_pma_channel_pll
+recompiling module twentynm_hssi_pma_lc_refclk_select_mux
+recompiling module twentynm_hssi_pma_rx_buf
+recompiling module twentynm_hssi_pma_rx_deser
+recompiling module twentynm_hssi_pma_rx_dfe
+recompiling module twentynm_hssi_pma_rx_odi
+recompiling module twentynm_hssi_pma_rx_sd
+recompiling module twentynm_hssi_pma_tx_buf
+recompiling module twentynm_hssi_pma_tx_cgb
+recompiling module twentynm_hssi_pma_tx_ser
+recompiling module twentynm_hssi_rx_pcs_pma_interface
+recompiling module twentynm_hssi_rx_pld_pcs_interface
+recompiling module twentynm_hssi_tx_pcs_pma_interface
+recompiling module twentynm_hssi_tx_pld_pcs_interface
+recompiling module twentynm_hssi_gen3_x8_pcie_hip
+All of 143 modules done
 rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
-ld -shared  -o .//../simv.daidir//_csrc0.so objs/a/amcQw_d.o 
-rm -f _csrc0.so
 if [ -x ../simv ]; then chmod -x ../simv; fi
 g++-4.8  -o ../simv   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ \
 -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -Wl,--no-as-needed -rdynamic   amcQwB.o \
-_65651_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so     rmapats_mop.o \
-rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /home/dalys/Synopsys/vcs/linux64/lib/libzerosoft_rt_stubs.so \
+objs/a/amcQw_d.o   _44899_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o rmar.o \
+rmar_llvm_0_1.o rmar_llvm_0_0.o          /home/dalys/Synopsys/vcs/linux64/lib/libzerosoft_rt_stubs.so \
 /home/dalys/Synopsys/vcs/linux64/lib/libvirsim.so /home/dalys/Synopsys/vcs/linux64/lib/liberrorinf.so \
 /home/dalys/Synopsys/vcs/linux64/lib/libsnpsmalloc.so /home/dalys/Synopsys/verdi/share/PLI/VCS/LINUX64/pli.a \
 /home/dalys/Synopsys/vcs/linux64/lib/libvcsnew.so /home/dalys/Synopsys/vcs/linux64/lib/libsimprofile.so \
@@ -2549,4 +2689,4 @@ rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /home/dalys/Synopsys/
 -Wl,-no-whole-archive        _vcs_pli_stub_.o   /home/dalys/Synopsys/vcs/linux64/lib/vcs_save_restore_new.o \
 -ldl -lm  -lc -lpthread -ldl 
 ../simv up to date
-CPU time: 134.006 seconds to compile + 4.799 seconds to elab + 1.116 seconds to link
+CPU time: 120.772 seconds to compile + 4.589 seconds to elab + 1.048 seconds to link

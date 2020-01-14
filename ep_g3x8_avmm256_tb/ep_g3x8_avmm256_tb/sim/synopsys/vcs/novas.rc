@@ -216,7 +216,7 @@ prefKey_Link-LineWidth = 1
 Selection-LineColor = ID_BLUE2
 Selection-LineWidth = 1
 [FSM_Dlg-Print]
-Orientation = Landscape     
+Orientation = Landscape   
 [FileBrowser]
 nWaveOpenFsdbDirHistory = "\"/home/dalys/MySpace/FPGA/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_tb/sim/synopsys/vcs/PcieDma.fsdb\"" "\"/home/dalys/MySpace/FPGA/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_tb/sim/synopsys/vcs\""
 nWaveRestoreRCDirHistory = "\"/home/dalys/MySpace/FPGA/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_tb/sim/synopsys/vcs/save.rc\"" "\"/home/dalys/MySpace/FPGA/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_tb/sim/synopsys/vcs\""
@@ -356,9 +356,9 @@ saveFsdbStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
-QwWarnMsgDlg = 919,830,600,250
 importDesignForm = 677,265,634,611
-QwUserAskDlg = 833,507,324,130
+QwWarnMsgDlg = 919,676,600,250
+QwUserAskDlg = 832,430,324,130
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]
@@ -539,7 +539,7 @@ pdmlCommand = ID_BLACK
 pdmlMacro = ID_BLACK
 font = COURIER12
 [Text.1]
-viewport = 69 26 1850 1016 45
+viewport = 69 26 1848 862 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -1139,7 +1139,7 @@ AddImportArgument = TRUE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -tcl
 [turboSchema_Printer_Options]
-Orientation = Landscape     
+Orientation = Landscape   
 [turbo_library]
 bdb_load_scope = 
 [verisity]

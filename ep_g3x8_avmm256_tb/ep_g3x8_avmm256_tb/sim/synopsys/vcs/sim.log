@@ -1,7 +1,7 @@
 Command: ./simv +dump -l sim.log
 Chronologic VCS simulator copyright 1991-2016
 Contains Synopsys proprietary information.
-Compiler version L-2016.06_Full64; Runtime version L-2016.06_Full64;  Jan  7 20:15 2020
+Compiler version L-2016.06_Full64; Runtime version L-2016.06_Full64;  Jan 14 15:36 2020
                    0: INFO: ep_g3x8_avmm256_tb.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm.__hello: - Hello from altera_clock_source.
                    0: INFO: ep_g3x8_avmm256_tb.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm.__hello: -   $Revision: #1 $
                    0: INFO: ep_g3x8_avmm256_tb.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm.__hello: -   $Date: 2017/08/13 $
@@ -12621,7 +12621,6 @@ INFO:         altpcie_reset_delay_sync:: SDC is -name SDC_STATEMENT "set_false_p
 FSDB Dumper for VCS, Release Verdi3_L-2016.06-1, Linux x86_64/64bit, 07/10/2016
 (C) 1996 - 2016 by Synopsys, Inc.
 *Verdi3* WARNING: fsdbDumpon - The FSDB file has not been created.
-*Verdi3* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
 *Verdi3* : Create FSDB file './PcieDma.fsdb'
 *Verdi3* : Begin traversing the scope (ep_g3x8_avmm256_tb), layer (0).
 *Verdi3* WARNING: Var 'shmem' will be ignored because its total element is larger than or equal to 2097152.
@@ -12777,46 +12776,52 @@ DMA Read Shmem Write : [NO.0] 0000000000000000000000000000000000000020
 DMA Read Shmem Write : [NO.1] 0000008000000000000000800000000000040020
 DMA Read Shmem Write : [NO.2] 0000010000000000000001000000000000080020
 DMA Read Shmem Write : [NO.3] 00000180000000000000018000000000000c0020
-INFO:           69438 ns DMA Read: Got Status                                                                                
-INFO:           69438 ns Setup DMA-Write descriptor entries in host memory                                                   
-INFO:           69438 ns Starting DMA Write....                                                                              
-INFO:           71482 ns DMA Write: Got Status                                                                               
-INFO:           71482 ns Passed: 0128 same bytes in BFM mem addr 0x00000000 and 0x00004000                                   
-INFO:           71482 ns                                                                                                     
-INFO:           71482 ns Shared Memory Data Display:                                                                         
-INFO:           71482 ns Address  Data                                                                                       
-INFO:           71482 ns -------  ----                                                                                       
-INFO:           71482 ns 00000080 00000020 00000021 00000022 00000023                                                        
-INFO:           71482 ns 00000090 00000024 00000025 00000026 00000027                                                        
-INFO:           71482 ns 000000A0 00000028 00000029 0000002A 0000002B                                                        
-INFO:           71482 ns 000000B0 0000002C 0000002D 0000002E 0000002F                                                        
-INFO:           71482 ns 000000C0 00000030 00000031 00000032 00000033                                                        
-INFO:           71482 ns 000000D0 00000034 00000035 00000036 00000037                                                        
-INFO:           71482 ns 000000E0 00000038 00000039 0000003A 0000003B                                                        
-INFO:           71482 ns 000000F0 0000003C 0000003D 0000003E 0000003F                                                        
-INFO:           71482 ns                                                                                                     
-INFO:           71482 ns Shared Memory Data Display:                                                                         
-INFO:           71482 ns Address  Data                                                                                       
-INFO:           71482 ns -------  ----                                                                                       
-INFO:           71482 ns 00004080 00000000 00000000 00000000 00000000                                                        
-INFO:           71482 ns 00004090 00000000 00000000 00000000 00000000                                                        
-INFO:           71482 ns 000040A0 00000000 00000000 00000000 00000000                                                        
-INFO:           71482 ns 000040B0 00000000 00000000 00000000 00000000                                                        
-INFO:           71482 ns 000040C0 00000000 00000000 00000000 00000000                                                        
-INFO:           71482 ns 000040D0 00000000 00000000 00000000 00000000                                                        
-INFO:           71482 ns 000040E0 00000000 00000000 00000000 00000000                                                        
-INFO:           71482 ns 000040F0 00000000 00000000 00000000 00000000                                                        
-INFO:           71482 ns  A: 0x00000081: 00000020                                                                            
-INFO:           71482 ns  B: 0x00004081: 00000000                                                                            
-FATAL:          71482 ns Different memory content for 0128 bytes test                                                        
+DMA Read Shmem Write : [NO.4] 0000020000000000000002000000000000100020
+DMA Read Shmem Write : [NO.5] 0000028000000000000002800000000000140020
+DMA Read Shmem Write : [NO.6] 0000030000000000000003000000000000180020
+DMA Read Shmem Write : [NO.7] 00000380000000000000038000000000001c0020
+DMA Read Shmem Write : [NO.8] 0000040000000000000004000000000000200020
+DMA Read Shmem Write : [NO.9] 0000048000000000000004800000000000240020
+INFO:           69566 ns DMA Read: Got Status                                                                                
+INFO:           69566 ns Setup DMA-Write descriptor entries in host memory                                                   
+INFO:           69566 ns Starting DMA Write....                                                                              
+INFO:           71802 ns DMA Write: Got Status                                                                               
+INFO:           71802 ns Passed: 0128 same bytes in BFM mem addr 0x00000000 and 0x00004000                                   
+INFO:           71802 ns                                                                                                     
+INFO:           71802 ns Shared Memory Data Display:                                                                         
+INFO:           71802 ns Address  Data                                                                                       
+INFO:           71802 ns -------  ----                                                                                       
+INFO:           71802 ns 00000080 00000020 00000021 00000022 00000023                                                        
+INFO:           71802 ns 00000090 00000024 00000025 00000026 00000027                                                        
+INFO:           71802 ns 000000A0 00000028 00000029 0000002A 0000002B                                                        
+INFO:           71802 ns 000000B0 0000002C 0000002D 0000002E 0000002F                                                        
+INFO:           71802 ns 000000C0 00000030 00000031 00000032 00000033                                                        
+INFO:           71802 ns 000000D0 00000034 00000035 00000036 00000037                                                        
+INFO:           71802 ns 000000E0 00000038 00000039 0000003A 0000003B                                                        
+INFO:           71802 ns 000000F0 0000003C 0000003D 0000003E 0000003F                                                        
+INFO:           71802 ns                                                                                                     
+INFO:           71802 ns Shared Memory Data Display:                                                                         
+INFO:           71802 ns Address  Data                                                                                       
+INFO:           71802 ns -------  ----                                                                                       
+INFO:           71802 ns 00004080 00000000 00000000 00000000 00000000                                                        
+INFO:           71802 ns 00004090 00000000 00000000 00000000 00000000                                                        
+INFO:           71802 ns 000040A0 00000000 00000000 00000000 00000000                                                        
+INFO:           71802 ns 000040B0 00000000 00000000 00000000 00000000                                                        
+INFO:           71802 ns 000040C0 00000000 00000000 00000000 00000000                                                        
+INFO:           71802 ns 000040D0 00000000 00000000 00000000 00000000                                                        
+INFO:           71802 ns 000040E0 00000000 00000000 00000000 00000000                                                        
+INFO:           71802 ns 000040F0 00000000 00000000 00000000 00000000                                                        
+INFO:           71802 ns  A: 0x00000081: 00000020                                                                            
+INFO:           71802 ns  B: 0x00004081: 00000000                                                                            
+FATAL:          71802 ns Different memory content for 0128 bytes test                                                        
                                  FAILURE: Simulation stopped due to Fatal error!
 FAILURE: Simulation stopped due to error!
 $finish called from file "./../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v", line 118.
 INFO:         altpcie_monitor_a10_dlhip_sim::---------------------------------------------------------------------------------------------
 INFO:         altpcie_monitor_a10_dlhip_sim:: Generated TLP log dump file    altpcie_monitor_a10_dlhip_tlp_file_log.log
 INFO:         altpcie_monitor_a10_dlhip_sim::---------------------------------------------------------------------------------------------
-$finish at simulation time          71482610000
+$finish at simulation time          71802610000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 71482610000 fs
-CPU Time:     83.690 seconds;       Data structure size:  36.8Mb
-Tue Jan  7 20:16:44 2020
+Time: 71802610000 fs
+CPU Time:     79.530 seconds;       Data structure size: 276.8Mb
+Tue Jan 14 15:37:43 2020

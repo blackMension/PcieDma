@@ -308,7 +308,7 @@ Limit information:
 cputime			unlimited
 filesize		unlimited
 datasize		unlimited
-stacksize		8198 kbytes
+stacksize		8225 kbytes
 coredumpsize	0 kbytes
 memoryuse		unlimited
 vmemoryuse		unlimited
@@ -321,7 +321,7 @@ maxproc			31523
 Runtime environment variables:
 SHELL=/usr/bin/zsh
 LSCOLORS=Gxfxcxdxbxegedabagacad
-SESSION_MANAGER=local/Arch:@/tmp/.ICE-unix/1866,unix/Arch:/tmp/.ICE-unix/1866
+SESSION_MANAGER=local/Arch:@/tmp/.ICE-unix/1918,unix/Arch:/tmp/.ICE-unix/1918
 COLORTERM=truecolor
 VCS_ARCH_OVERRIDE=linux
 XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
@@ -340,7 +340,7 @@ SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 XMODIFIERS=@im=ibus
 VERDI_HOME=/home/dalys/Synopsys/verdi
 DESKTOP_SESSION=ubuntu
-SSH_AGENT_PID=1750
+SSH_AGENT_PID=1801
 GTK_MODULES=gail:atk-bridge
 PWD=/home/dalys/MySpace/FPGA/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_tb/sim/synopsys/vcs
 LOGNAME=dalys
@@ -360,12 +360,12 @@ LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd
 XDG_CURRENT_DESKTOP=ubuntu:GNOME
 VTE_VERSION=5802
 RTL_REG=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/rtl/reg
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/d62e9595_1d07_45ab_afc1_e3c3f159a37c
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/c897d96c_3f5f_4d23_8347_4f60d22ed2ae
 UVM_HOME=/home/dalys/Synopsys/uvm-1.1d
 UVM_REG=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/rtl/reg
 UVM_VERIF=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/uvm/verif/
-INVOCATION_ID=7da74ea19b504dc29afddd23b547b42b
-MANAGERPID=1640
+INVOCATION_ID=c8df58c9bcae4d4ba9a22836d0908193
+MANAGERPID=1692
 CLUTTER_IM_MODULE=ibus
 GJS_DEBUG_OUTPUT=stderr
 XDG_SESSION_CLASS=user
@@ -382,7 +382,7 @@ QT_IM_MODULE=ibus
 LM_LICENSE_FILE=27000@Arch
 LD_LIBRARY_PATH=/usr/lib/llvm-9/lib
 XDG_RUNTIME_DIR=/run/user/1000
-JOURNAL_STREAM=9:54564
+JOURNAL_STREAM=9:55463
 DVE_HOME=/home/dalys/Synopsys/vcs/gui/dve
 XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 PATH=/home/dalys/Synopsys/SpyGlass/SpyGlass/SPYGLASS_HOME/bin:/home/dalys/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/dalys/Synopsys/vcs/gui/dve/bin:/home/dalys/Synopsys/vcs/bin:/home/dalys/Synopsys/verdi/bin:/home/dalys/Synopsys/verdi/platform/LINUX64/bin:/home/dalys/Synopsys/scl/linux64/bin:/home/dalys/WorkStation/ASIC/Rio/asic/trunk/uvm/script:/home/dalys/WorkStation/ASIC/Rio/asic/trunk/scripts:/home/dalys/WorkStation/ASIC/Rio/asic/trunk/scripts/vweave:/home/dalys/.local/bin
@@ -391,7 +391,7 @@ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 UVM=/home/dalys/WorkStation/ASIC/Rio/asic/trunk/uvm
 FSDB_HOME=/home/dalys/Synopsys/verdi/share/PLI/VCS/LINUX64
 PROJECT=/home/dalys/WorkStation/ASIC/Rio/asic/trunk
-OLDPWD=/home/dalys/MySpace/FPGA/PcieDma
+OLDPWD=/home/dalys
 NOVAS_HOME=/home/dalys/Synopsys/verdi
 _=./simv
 VCS_PATHMAP_PRELOAD_DONE=1
@@ -404,9 +404,9 @@ argv[1]=+dump
 argv[2]=-l
 argv[3]=sim.log
 405 profile - 100
-          CPU/Mem usage: 0.210 sys,  0.530 user,  289.02M sys,  0.00M vm
+          CPU/Mem usage: 0.250 sys,  1.550 user,  539.98M sys,  0.00M vm
 406 VC callback profile - scalar:0 vector:0
-407 Tue Jan  7 20:15:29 2020
+407 Tue Jan 14 15:36:33 2020
 408 pliAppInit
 409 *Verdi3* : FSDB_GATE is set.
 410 *Verdi3* : FSDB_RTL is set.
@@ -420,42 +420,41 @@ argv[3]=sim.log
 418 *Verdi3* WARNING: fsdbDumpon - The FSDB file has not been created.
 419 sps_call_fsdbDumpfile at 0 : ./../..//ep_g3x8_avmm256_tb.v(247)
 420 argv[0]: ./PcieDma.fsdb
-421 *Verdi3* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-422 *Verdi3* : Create FSDB file './PcieDma.fsdb'
-423 sps_call_fsdbDumpvars at 0 : ./../..//ep_g3x8_avmm256_tb.v(248)
-424 argv[0]: 0
-425 argv[1]: (handle)0x6679358 ep_g3x8_avmm256_tb
-426 *Verdi3* : Begin traversing the scope (ep_g3x8_avmm256_tb), layer (0).
-427 *Verdi3* WARNING: Var 'shmem' will be ignored because its total element is larger than or equal to 2097152.
-428 *Verdi3* : End of traversing.
-429 fsdbDumpvars traverse var: profile - 
-          CPU/Mem usage: 0.280 sys,  0.910 user,  410.07M sys,  0.00M vm
-                   incr: 0.040 sys,  0.310 user,  36.98M sys,  0.00M vm
-                   accu: 0.040 sys,  0.310 user,  36.98M sys,  0.00M vm
-              accu incr: 0.040 sys,  0.310 user,  36.98M sys,  0.00M vm
+421 *Verdi3* : Create FSDB file './PcieDma.fsdb'
+422 sps_call_fsdbDumpvars at 0 : ./../..//ep_g3x8_avmm256_tb.v(248)
+423 argv[0]: 0
+424 argv[1]: (handle)0x168e3da8 ep_g3x8_avmm256_tb
+425 *Verdi3* : Begin traversing the scope (ep_g3x8_avmm256_tb), layer (0).
+426 *Verdi3* WARNING: Var 'shmem' will be ignored because its total element is larger than or equal to 2097152.
+427 *Verdi3* : End of traversing.
+428 fsdbDumpvars traverse var: profile - 
+          CPU/Mem usage: 0.280 sys,  1.950 user,  668.18M sys,  0.00M vm
+                   incr: 0.030 sys,  0.320 user,  44.15M sys,  0.00M vm
+                   accu: 0.030 sys,  0.320 user,  44.15M sys,  0.00M vm
+              accu incr: 0.030 sys,  0.320 user,  44.15M sys,  0.00M vm
 
           Count usage: 51338 var,  29047 idcode,  18279 callback
                  incr: 51338 var,  29047 idcode,  18279 callback
                  accu: 51338 var,  29047 idcode,  18279 callback
             accu incr: 51338 var,  29047 idcode,  18279 callback
-430 VC callback profile - scalar:0 vector:0
-431 Tue Jan  7 20:15:30 2020
-432 fsdbDumpvars: profile - 
-          CPU/Mem usage: 0.280 sys,  0.920 user,  411.40M sys,  0.00M vm
-                   incr: 0.000 sys,  0.010 user,  1.33M sys,  0.00M vm
-                   accu: 0.040 sys,  0.320 user,  38.31M sys,  0.00M vm
-              accu incr: 0.000 sys,  0.010 user,  1.33M sys,  0.00M vm
+429 VC callback profile - scalar:0 vector:0
+430 Tue Jan 14 15:36:34 2020
+431 fsdbDumpvars: profile - 
+          CPU/Mem usage: 0.280 sys,  1.950 user,  669.51M sys,  0.00M vm
+                   incr: 0.000 sys,  0.000 user,  1.33M sys,  0.00M vm
+                   accu: 0.030 sys,  0.320 user,  45.48M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.000 user,  1.33M sys,  0.00M vm
 
           Count usage: 51338 var,  29047 idcode,  18279 callback
                  incr: 0 var,  0 idcode,  0 callback
                  accu: 51338 var,  29047 idcode,  18279 callback
             accu incr: 0 var,  0 idcode,  0 callback
-433 VC callback profile - scalar:13975 vector:6433
-434 Tue Jan  7 20:15:30 2020
-435 End of simulation at 71482610000
-436 VC callback profile - scalar:54442017 vector:16013323
-437 Tue Jan  7 20:16:43 2020
-438 Parallel profile    -  Flush:4 Expand:0 ProduceWait:0 ConsumerWait:468 BlockUsed:492
-439                        ProduceTime:74.919174415 ConsumerTime:8.772564358 Buffer:64MB
-440 SimExit
-441 Sim process exit
+432 VC callback profile - scalar:13975 vector:6433
+433 Tue Jan 14 15:36:34 2020
+434 End of simulation at 71802610000
+435 VC callback profile - scalar:54975538 vector:16165576
+436 Tue Jan 14 15:37:42 2020
+437 Parallel profile    -  Flush:4 Expand:0 ProduceWait:0 ConsumerWait:473 BlockUsed:497
+438                        ProduceTime:71.139084030 ConsumerTime:8.399120843 Buffer:64MB
+439 SimExit
+440 Sim process exit
