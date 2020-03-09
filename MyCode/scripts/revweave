@@ -1,0 +1,33 @@
+## module vweave
+if [ $1 = "RxTdm" ]; then
+   ## RxTdm
+   vweave RxTdmMacGrpAccMemCtl.v
+   vweave RxTdmMacGrpAcc.v
+   vweave RxTdmMiscAccMemCtl.v
+   vweave RxTdmMiscAcc.v
+   vweave RxTdmXgmacAcc1MemCtl.v
+   vweave RxTdmXgmacAcc1.v
+   vweave RxTdm.v
+elif [ $1 = "TxTdm" ]; then
+   ## TxTdm
+   vweave TxTdmMacGrpTxMemCtl.v
+   vweave TxTdmMacGrpTx.v
+   vweave TxTdmMiscTxMemCtl.v
+   vweave TxTdmMiscTx.v
+   vweave TxTdmXgmacTxMemCtl.v
+   vweave TxTdmXgmacTx.v
+   vweave TxTdm.v
+elif [ $1 = "Mac4Ctrl" ]; then
+   ## Mac4Ctrl
+   vweave Mac4CtrlTxCtrl.v
+   vweave Mac4Ctrl.v
+elif [ $1 = "MiscCtrl" ]; then
+   ## MiscCtrl
+   vweave MiscCtrlTxCtrl.v
+   vweave MiscCtrl.v
+elif [ $1 = "CpuGmac" ]; then
+   ## CpuGmac
+   vweave CpuGmacCoreRx.v
+   vweave CpuGmacCoreTx.v
+   vweave CpuGmac.v
+fi

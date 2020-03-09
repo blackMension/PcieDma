@@ -1,0 +1,9 @@
+# use this script in rtl/src/[Module Name]
+# command example : genreg IgrParser
+
+filename="Reg.txt"
+modulename="Reg.v"
+microname="Reg.h"
+../../../scripts/genregs.pl -f ../../reg/$1$filename
+../../../scripts/sync2async.pl -w -f $1$modulename
+mv $1$microname ../Include

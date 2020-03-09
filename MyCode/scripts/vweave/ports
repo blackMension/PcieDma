@@ -1,0 +1,209 @@
+#!/usr/bin/perl
+# Copyright (C) 1998-2000 Raydiant
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public LIcense
+# as published by the Free Software Foundation;  either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABLILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+($VHome = $0) =~ s/([^\/]*)$//;
+
+require "${VHome}/VerilogPreProcessor.pl";
+
+$verbose = 0;
+$debug = 0;
+	
+sub processLine
+{
+    my $currentLine = "";
+    my $currentDelim = "";
+    my ($ptr,$type,$bus,$alwaysinitial,$instance);
+    
+	 
+    if ( $debug ) {
+		  while (1) {
+				$tok = &getToken('\n\s;');
+		  }
+    }
+	 
+    $alwaysinitial = 0;
+    $type = ' ';
+	 
+    while (1) {
+		  
+		  $tok = &getToken('\n\s;');
+		  $type = ' ';
+		  $ignore = 0;
+		  if (    $tok =~ /^module/ ) { $type = 'm'; $inmodule = 1; }
+		  elsif ( $tok =~ /^input/  ) { $type = 'i'; }
+		  elsif ( $tok =~ /^output/ ) { $type = 'o'; }
+		  elsif ( $tok =~ /^inout/  ) { $type = 'b'; }
+		  elsif ( $tok =~ /^reg/    ) { $type = 'r'; }
+		  elsif ( $tok =~ /^wire/   ) { $type = 'w'; }
+		  elsif ( $tok =~ /^\`define/ ) { $type = 'x'; $ignore = 1; }
+		  elsif ( $tok =~ /^\`include/ ) { $ignore = 1; }
+		  elsif ( $tok =~ /^assign/   ) { $ignore = 1; 
+                                        while ( &getDelim() !~ /;/ ) {
+                                            &getToken('\n\s;');
+                                        }
+                                    }
+		  elsif ( $tok =~ /^endmodule/   ) { printf "em\n"; $ignore = 1; $inmodule = 0; }
+		  elsif ( $tok =~ /^begin/   ) { $beginend++; }
+		  elsif ( $tok =~ /^always/   ) { $alwaysinitial = 1; }
+		  elsif ( $tok =~ /^initial/   ) { $alwaysinitial = 1; }
+		  elsif ( $tok =~ /^task/   ) { $type = 't'; $intask = 1; }
+		  elsif ( $tok =~ /^function/   ) { $type = 'f'; $infunction = 1; }
+		  elsif ( $tok =~ /^endtask/   ) { printf "et\n"; $intask = 0; }
+		  elsif ( $tok =~ /^endfunction/   ) { printf "ef\n"; $infunction = 0; }
+		  elsif ( $tok =~ /^end/   ) { $beginend--; }
+		  else {
+				if (!$intask && !$infunction && !$alwaysinitial && !$beginend && $inmodule) {
+					 if (!$instance) {
+						  $instance = 1;
+                    $tok = &getToken('\n\s');
+                    printf ("n %s\n", $tok);
+					 } else {
+						  if ( $tok =~ /\(/ ) {
+                        $striptok = $tok;
+                        $striptok =~ s/[{}()]//g;
+                        $striptok =~ s/\[/ \[/g;
+                        $striptok =~ s/,$//g;
+                        @striptoklist = split(/,/, $striptok);
+                        for ($i=0; $i <= $#striptoklist; $i=$i+1) {
+                            printf ("p %s\n", $striptoklist[$i]) if ($striptok =~ /\w/);
+                        }
+                        while ( $tok !~ /\)/ ) {
+                            $tok = &getToken('\n\s,');
+                            $striptok = $tok;
+                            $striptok =~ s/[{}(),]//g;
+                            $striptok =~ s/\[/ \[/g;
+                            printf ("p %s\n", $striptok) if ($striptok !~ /^\./);
+                            
+                        }
+						  }
+                    if ( &getDelim() =~ /;/ ) {
+                        $instance = 0;
+                    }
+					 }
+				}
+		  }
+		  
+#		  next if ( $intask || $infunction );  # don't report tokens in tasks/functions
+		  
+		  if ( $type =~ /(x)/ ) {
+			  my ($def,$val);
+
+			  $tok = &getToken('\n');
+
+			  $tok =~ m/\s*(\w*)\s*(.*)$/;
+
+			  $def = $1;
+			  $val = $2;
+
+			  printf ("$type $def $val\n");
+
+		  } elsif ( $type =~ /(f)/ ) {
+
+			  $tok = &getToken('\s;');
+			  
+			  if ( $tok =~ /\[/ ) {       # remove leading width specification
+				  while ( $tok !~ /\]/ ) {
+					  $tok = &getToken('\s;');
+				  }
+				  $tok = &getToken('\s;');
+			  }
+
+			  printf "%s %s\n", $type, $tok;
+			  while ( &getDelim() !~ /;/ ) {&getToken('\n\s;');}
+
+		  } elsif ( $type =~ /(m|t)/ ) {
+
+			  $tok = &getToken('\s;');
+
+			  printf "%s %s\n", $type, $tok;
+			  while ( &getDelim() !~ /;/ ) {&getToken('\n\s;');}
+
+		  } elsif ( $type =~ /(i|o|b|r|w)/ ) {
+			  
+
+			  $tok = &getToken('\n;');
+
+			  while ( &getDelim() !~ ';' ) { $tok .= &getToken('\n;'); }
+			  $tok .= ";";
+
+			  print "tok = $tok\n" if ($verbose);
+			  
+			  $tok =~ s/^\s*(\[[^\]]*\])?//;
+			  $bus = $1;
+			  
+			  while ( $tok =~ m/^\s*(\w+)\s*(\[[^\]]*\])?\s*(=[^,;]*)?[,;](.*)/ ) {
+				  $name = $1; $mem=$2; $tok = $4;
+				  printf ("%s %s %s\n", $type, $name, $bus, $mem);
+			  }
+		  }
+		  
+	  }
+	
+sub getDelim
+{
+	 return $currentDelim;
+}
+
+sub getToken 
+{
+	 my $delim = @_[0];
+	 my $token = "";
+	 my $t = "";
+	 my $d = "";
+    my $done = 0;
+	 
+	 while ( $t eq "" ) {
+
+        if ($currentLine =~ /^\s*$/) {
+            while ( <FD> ) {
+                last;
+            }
+            s/\/\/.*\n$/\n/g;      # remove comments
+            $currentLine = "$_";
+            $done++ if eof;
+        }
+		  $currentLine =~ s/([^$delim]*)([$delim])//s;
+		  
+		  $t = $1; 
+		  $currentDelim=$2;
+		  $token .= $t;
+        exit 0 if ($done && ( $t eq "" ));
+	 }
+	 if ( $verbose ) {
+		  my $dd = $currentDelim;
+		  $dd =~ s/\n/\\n/g;
+		  $dd =~ s/\s/\\s/g;
+		  printf "Token:Delim = |$token|$dd|\n";
+	 }
+	 return $token;
+}
+
+}
+
+
+
+# MOdified to VPP the code BEFORE trying to figure out what it is.....
+$top =  (@ARGV[0]);
+
+open(FD, "cat $top | perl ${VHome}vpp |");
+
+&processLine;
+
+close (FD);
+
+
+
