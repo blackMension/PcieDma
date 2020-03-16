@@ -1,30 +1,31 @@
-module RequestTraffic(
+module DmaRequest(
     /*AUTOARG*/
    // Outputs
-   SqPop, RqPop, RdDCSChipSelect, RdDCSWrite, RdDCSAddress,
-   RdDCSWriteData, RdDCSByteEnable, RdDCSRead, WrDCSChipSelect,
-   WrDCSWrite, WrDCSAddress, WrDCSWriteData, WrDCSByteEnable,
-   WrDCSRead,
+   SqDmaFifoPop, RqDmaFifoPop, RdDCSChipSelect, RdDCSWrite,
+   RdDCSAddress, RdDCSWriteData, RdDCSByteEnable, RdDCSRead,
+   WrDCSChipSelect, WrDCSWrite, WrDCSAddress, WrDCSWriteData,
+   WrDCSByteEnable, WrDCSRead,
    // Inputs
-   clock, reset, SqData, SqEmpty, SqFifoDepth, Sqfull, RqData,
-   RqEmpty, RqFifoDepth, Rqfull, RdDCSWaitRequest, RdDCSReadData,
-   WrDCSWaitRequest, WrDCSReadData
+   clock, reset, SqDmaFifoData, SqDmaFifoEmpty, SqDmaFifoDepth,
+   SqDmaFifoFull, RqDmaFifoData, RqDmaFifoEmpty, RqDmaFifoDepth,
+   RqDmaFifoFull, RdDCSWaitRequest, RdDCSReadData, WrDCSWaitRequest,
+   WrDCSReadData
    );
 // global
     input            clock;
     input            reset;
-// QP to RT
-    output          SqPop;
-    input  [111:0]  SqData;
-    input           SqEmpty;
-    input           SqFifoDepth;
-    input           Sqfull;
+// DmaFifoReqFifo to RT
+    output          SqDmaFifoPop;
+    input  [111:0]  SqDmaFifoData;
+    input           SqDmaFifoEmpty;
+    input           SqDmaFifoDepth;
+    input           SqDmaFifoFull;
 
-    output          RqPop;
-    input  [111:0]  RqData;
-    input           RqEmpty;
-    input           RqFifoDepth;
-    input           Rqfull;      
+    output          RqDmaFifoPop;
+    input  [111:0]  RqDmaFifoData;
+    input           RqDmaFifoEmpty;
+    input           RqDmaFifoDepth;
+    input           RqDmaFifoFull;      
 // RT to DMA
     // PCIe Read
 	output           RdDCSChipSelect;    //  RdDCS_slave.chipselect
@@ -48,17 +49,17 @@ module RequestTraffic(
 
 wire [63:0]  rd_dma_status_addr      = 64'h6000;
 wire [63:0]  wr_dma_status_addr      = 64'h7000;
-wire  [2:0]  sqDataNumberM1 = SqData[107:105] - 3'd1;
-wire  [2:0]  rqDataNumberM1 = RqData[107:105] - 3'd1;
-wire  [159:0]   wrDescriptor = {wr_dma_status_addr[31:0],wr_dma_status_addr[63:32],SqData[31:0],SqData[63:32],29'd0,sqDataNumberM1};
-wire  [159:0]   rdDescriptor = {rd_dma_status_addr[31:0],rd_dma_status_addr[63:32],RqData[31:0],RqData[63:32],29'd0,rqDataNumberM1};
+wire  [2:0]  SqDmaFifoDataNumberM1 = SqDmaFifoData[106:104] - 3'd1;
+wire  [2:0]  rqDataNumberM1 = RqDmaFifoData[106:104] - 3'd1;
+wire  [159:0]   wrDescriptor = {wr_dma_status_addr[31:0],wr_dma_status_addr[63:32],RqDmaFifoData[31:0],RqDmaFifoData[63:32],29'd0,rqDataNumberM1};
+wire  [159:0]   rdDescriptor = {rd_dma_status_addr[31:0],rd_dma_status_addr[63:32],SqDmaFifoData[31:0],SqDmaFifoData[63:32],29'd0,SqDmaFifoDataNumberM1};
 
 wire  [2:0] wrCounterInt;
 reg   [2:0] wrCounter;
 wire  [2:0] rdCounterInt;
 reg   [2:0] rdCounter;
 
-assign wrCounterInt = (~SqEmpty & (wrCounter == 3'd5)) ? 3'd0 : ( ~SqEmpty & ~WrDCSWaitRequest) ? wrCounterInt + 3'd1 : wrCounter ;
+assign wrCounterInt = (~RqDmaFifoEmpty & (wrCounter == 3'd5)) ? 3'd0 : ( ~RqDmaFifoEmpty & ~WrDCSWaitRequest) ? wrCounter + 3'd1 : wrCounter ;
 always @(posedge clock or negedge reset) begin
     if(!reset) begin
         wrCounter <= 3'd5;
@@ -67,16 +68,16 @@ always @(posedge clock or negedge reset) begin
         wrCounter <= wrCounterInt;
     end
 end
-assign SqPop           = wrCounter == 3'd4;
+assign RqDmaFifoPop           = (wrCounter == 3'd4) & ~RqDmaFifoEmpty & ~WrDCSWaitRequest;
 assign WrDCSWrite      = (wrCounter != 3'd5);
 assign WrDCSChipSelect = WrDCSWrite;
 assign WrDCSAddress    = {3'd0,wrCounter,2'd0};
-assign WrDCSWriteData  = (wrCounter == 3'd0) ? wrDescriptor[31:0]   :
-                         (wrCounter == 3'd1) ? wrDescriptor[63:32]  :
+assign WrDCSWriteData  = (wrCounter == 3'd4) ? wrDescriptor[31:0]   :
+                         (wrCounter == 3'd3) ? wrDescriptor[63:32]  :
                          (wrCounter == 3'd2) ? wrDescriptor[95:64]  :
-                         (wrCounter == 3'd3) ? wrDescriptor[127:96] : wrDescriptor[159:128];
+                         (wrCounter == 3'd1) ? wrDescriptor[127:96] : wrDescriptor[159:128];
                          
-assign rdCounterInt = (~RqEmpty & (rdCounter == 3'd5)) ? 3'd0 : ( ~RqEmpty & ~RdDCSWaitRequest) ? rdCounterInt + 3'd1 : rdCounter;
+assign rdCounterInt = (~SqDmaFifoEmpty & (rdCounter == 3'd5)) ? 3'd0 : ( ~SqDmaFifoEmpty & ~RdDCSWaitRequest) ? rdCounter + 3'd1 : rdCounter;
 always @(posedge clock or negedge reset) begin
     if(!reset) begin
         rdCounter <= 3'd5;
@@ -85,16 +86,21 @@ always @(posedge clock or negedge reset) begin
         rdCounter <= rdCounterInt;
     end
 end
-assign RqPop           = rdCounter == 3'd4;
+assign SqDmaFifoPop           = (rdCounter == 3'd4) & ~SqDmaFifoEmpty & ~RdDCSWaitRequest;
 assign RdDCSWrite      = (rdCounter != 3'd5);
 assign RdDCSChipSelect = RdDCSWrite;
 assign RdDCSAddress    = {3'd0,rdCounter,2'd0};
-assign RdDCSWriteData  = (rdCounter == 3'd0) ? rdDescriptor[31:0]   :
-                         (rdCounter == 3'd1) ? rdDescriptor[63:32]  :
+assign RdDCSWriteData  = (rdCounter == 3'd4) ? rdDescriptor[31:0]   :
+                         (rdCounter == 3'd3) ? rdDescriptor[63:32]  :
                          (rdCounter == 3'd2) ? rdDescriptor[95:64]  :
-                         (rdCounter == 3'd3) ? rdDescriptor[127:96] : rdDescriptor[159:128];
+                         (rdCounter == 3'd1) ? rdDescriptor[127:96] : rdDescriptor[159:128];
+
+assign RdDCSRead = 1'd0;
+assign WrDCSRead = 1'd0;
+assign RdDCSByteEnable = 4'hf;
+assign WrDCSByteEnable = 4'hf;
 endmodule // RequestTraffic
-// GenRamFifo16D112W SqPrefetch(
+// GenRamFifo16D112W SqDmaFifofetch(
 // 	// Outputs;
 // 	dataOut                            (data),
 // 	full                               (full),

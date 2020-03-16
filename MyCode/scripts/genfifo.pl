@@ -27,7 +27,7 @@ $current_dir =~ s/\s+//;
 $topdir =~ s/\s+//;
 
 $gen_file_dir = "$current_dir/fifo/";
-##print "$gen_file_dir\n";
+print "$gen_file_dir\n";
 
 chdir("$current_dir");
 

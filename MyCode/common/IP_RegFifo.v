@@ -188,41 +188,41 @@ always @ ( posedge clockCore ) begin
 end
 
 
-// synopsys translate_off
-assert_overrun : assert property (@ (posedge clockCore) disable iff (resetCore!=1'd1) !(push & ~pop & fifoFull))
-                                                        else $fatal(0,"%m %t [FATAL] : Fifo overrun,\t ",$time);	
+// // synopsys translate_off
+// assert_overrun : assert property (@ (posedge clockCore) disable iff (resetCore!=1'd1) !(push & ~pop & fifoFull))
+//                                                         else $fatal(0,"%m %t [FATAL] : Fifo overrun,\t ",$time);	
 
-assert_underrun : assert property (@ (posedge clockCore) disable iff (resetCore!=1'd1) !(pop & empty))
-                                                         else $fatal(0,"%m %t [FATAL] : Fifo underrun,\t ",$time);
+// assert_underrun : assert property (@ (posedge clockCore) disable iff (resetCore!=1'd1) !(pop & empty))
+//                                                          else $fatal(0,"%m %t [FATAL] : Fifo underrun,\t ",$time);
 
-assert_push_unknown : assert property (@ (posedge clockCore) disable iff (resetCore!=1'd1) ((push == 1'd1) | (push == 1'd0)) )
-                                                             else $fatal(0,"%m %t [FATAL] : push unknown,\t ",$time);	
+// assert_push_unknown : assert property (@ (posedge clockCore) disable iff (resetCore!=1'd1) ((push == 1'd1) | (push == 1'd0)) )
+//                                                              else $fatal(0,"%m %t [FATAL] : push unknown,\t ",$time);	
 
-assert_pop_unknown : assert property (@ (posedge clockCore) disable iff (resetCore!=1'd1) ((pop == 1'd1) | (pop == 1'd0)) )
-                                                            else $fatal(0,"%m %t [FATAL] : pop unknown,\t ",$time);	
+// assert_pop_unknown : assert property (@ (posedge clockCore) disable iff (resetCore!=1'd1) ((pop == 1'd1) | (pop == 1'd0)) )
+//                                                             else $fatal(0,"%m %t [FATAL] : pop unknown,\t ",$time);	
 
-`ifdef FIFO_ANALYSIS                                                                                                               
-   //FIFO_ANALYSIS                                                                                                                    
-   int    maxFifoDepth;                                                                                                               
-   real    usage;                                                                                                                     
+// `ifdef FIFO_ANALYSIS                                                                                                               
+//    //FIFO_ANALYSIS                                                                                                                    
+//    int    maxFifoDepth;                                                                                                               
+//    real    usage;                                                                                                                     
                                                                                                                                       
-   always @(fifoDepth) begin                                                                                                          
-       if(fifoDepth > maxFifoDepth) begin                                                                                             
-           maxFifoDepth = fifoDepth;                                                                                                  
-       end                                                                                                                            
-   end                                                                                                                                
+//    always @(fifoDepth) begin                                                                                                          
+//        if(fifoDepth > maxFifoDepth) begin                                                                                             
+//            maxFifoDepth = fifoDepth;                                                                                                  
+//        end                                                                                                                            
+//    end                                                                                                                                
                                                                                                                                       
-   final begin : FIFO_ANALYSIS                                                                                                        
-       usage = maxFifoDepth * 100.0 / DEPTH;                                                                                     
-       if (usage > 80 ) begin                                                                                                         
-           $display ("%m  Fifo Depth %3d, maxFifoDepth %3d, UsageHigh %3.2f%s" , DEPTH, maxFifoDepth, usage, "%");             
-       end else if (usage < 20) begin                                                                                                 
-           $display ("%m  Fifo Depth %3d, maxFifoDepth %3d, UsageLow %3.2f%s" , DEPTH, maxFifoDepth, usage, "%");              
-       end else begin                                                                                                                 
-           $display ("%m  Fifo Depth %3d, maxFifoDepth %3d, Usage %3.2f%s" , DEPTH, maxFifoDepth, usage, "%");                 
-       end                                                                                                                            
-   end : FIFO_ANALYSIS                                                                                                                
-`endif                                                                                                                             
+//    final begin : FIFO_ANALYSIS                                                                                                        
+//        usage = maxFifoDepth * 100.0 / DEPTH;                                                                                     
+//        if (usage > 80 ) begin                                                                                                         
+//            $display ("%m  Fifo Depth %3d, maxFifoDepth %3d, UsageHigh %3.2f%s" , DEPTH, maxFifoDepth, usage, "%");             
+//        end else if (usage < 20) begin                                                                                                 
+//            $display ("%m  Fifo Depth %3d, maxFifoDepth %3d, UsageLow %3.2f%s" , DEPTH, maxFifoDepth, usage, "%");              
+//        end else begin                                                                                                                 
+//            $display ("%m  Fifo Depth %3d, maxFifoDepth %3d, Usage %3.2f%s" , DEPTH, maxFifoDepth, usage, "%");                 
+//        end                                                                                                                            
+//    end : FIFO_ANALYSIS                                                                                                                
+// `endif                                                                                                                             
 
 // synopsys translate_on
 

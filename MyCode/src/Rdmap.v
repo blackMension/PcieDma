@@ -7,7 +7,12 @@
 // wires;
 //
 // instance "QueuePair.v" ,"uQueuePair";
-// instance "RequestTraffic.v","uRequestTraffic";
+// instance "DmaRequest.v","uDmaRequest";
+// instance "RdmaOptr.v","uRdmaOptr";
+// # instance "RdmapLoop.v","uRdmapLoop";
+// instance "HeaderGen.v","uHeaderGen";
+// instance "HeaderProc.v","uHeaderProc";
+// # instance "Loop.v","uLoop";
 // endmodule
 // VWEAVE: END PERL
 // VWEAVE: BEGIN GENERATED
@@ -30,7 +35,17 @@ module Rdmap (
                 WrDCSReadData,
                 WrDCSWaitRequest,
                 clock,
+                dataNumRdData,
+                ddp2RdmapControl,
+                ddp2RdmapHdrValid,
+                ddp2RdmapHeader,
+                lastNum,
+                poolEmpty,
+                poolFull,
+                queueNumRd,
+                queueNumRdAddr,
                 reset,
+                rgstrPtr,
 
                 // outputs
                 RQReadData_o,
@@ -48,7 +63,17 @@ module Rdmap (
                 WrDCSChipSelect,
                 WrDCSRead,
                 WrDCSWrite,
-                WrDCSWriteData
+                WrDCSWriteData,
+                bufRegister,
+                dataNumRd,
+                dataNumRdAddr,
+                queueNumRdData,
+                rdmap2DdpCtrl,
+                rdmap2DdpHdrValid,
+                rdmap2DdpHeader,
+                reqInfo,
+                reqValid,
+                rgstrNum
 );
 
 input   [7:0]      RQAddress_i;
@@ -68,7 +93,17 @@ input              SQWrite_i;
 input   [31:0]     WrDCSReadData;
 input              WrDCSWaitRequest;
 input              clock;
+input   [2:0]      dataNumRdData;
+input   [7:0]      ddp2RdmapControl;
+input              ddp2RdmapHdrValid;
+input   [47:0]     ddp2RdmapHeader;
+input   [4:0]      lastNum;
+input              poolEmpty;
+input              poolFull;
+input              queueNumRd;
+input   [7:0]      queueNumRdAddr;
 input              reset;
+input   [4:0]      rgstrPtr;
 
 output  [31:0]     RQReadData_o;
 output             RQWaitRequest_o;
@@ -86,18 +121,50 @@ output             WrDCSChipSelect;
 output             WrDCSRead;
 output             WrDCSWrite;
 output  [31:0]     WrDCSWriteData;
+output             bufRegister;
+output             dataNumRd;
+output  [7:0]      dataNumRdAddr;
+output  [15:0]     queueNumRdData;
+output  [7:0]      rdmap2DdpCtrl;
+output             rdmap2DdpHdrValid;
+output  [47:0]     rdmap2DdpHeader;
+output  [47:0]     reqInfo;
+output             reqValid;
+output  [2:0]      rgstrNum;
 
 
    wire [111:0]    RqData;
+   wire [111:0]    RqDmaFifoData;
+   wire [4:0]      RqDmaFifoDepth;
+   wire            RqDmaFifoEmpty;
+   wire            RqDmaFifoFull;
+   wire            RqDmaFifoPop;
    wire            RqEmpty;
-   wire            RqFifoDepth;
+   wire [4:0]      RqFifoDepth;
+   wire            RqFull;
    wire            RqPop;
-   wire            Rqfull;
    wire [111:0]    SqData;
+   wire [111:0]    SqDmaFifoData;
+   wire [4:0]      SqDmaFifoDepth;
+   wire            SqDmaFifoEmpty;
+   wire            SqDmaFifoFull;
+   wire            SqDmaFifoPop;
    wire            SqEmpty;
    wire            SqFifoDepth;
+   wire            SqFull;
    wire            SqPop;
-   wire            Sqfull;
+   wire [27:0]     ackFifoDataIn;
+   wire            ackFifoFull;
+   wire            ackFifoPush;
+   wire            infoValid;
+   wire [7:0]      offloadFifoDataIn;
+   wire            offloadFifoFull;
+   wire            offloadFifoPush;
+   wire [15:0]     rdmaControl;
+   wire [47:0]     rdmaWR;
+   wire [7:0]      wrDoneFifoDataIn;
+   wire            wrDoneFifoFull;
+   wire            wrDoneFifoPush;
 
 QueuePair  uQueuePair (
    .RQAddress_i                   (RQAddress_i[7:0]),
@@ -121,27 +188,27 @@ QueuePair  uQueuePair (
    .RQWaitRequest_o               (RQWaitRequest_o),
    .RqData                        (RqData[111:0]),
    .RqEmpty                       (RqEmpty),
-   .RqFifoDepth                   (RqFifoDepth),
-   .Rqfull                        (Rqfull),
+   .RqFifoDepth                   (RqFifoDepth[4:0]),
+   .RqFull                        (RqFull),
    .SQReadData_o                  (SQReadData_o[31:0]),
    .SQWaitRequest_o               (SQWaitRequest_o),
    .SqData                        (SqData[111:0]),
    .SqEmpty                       (SqEmpty),
    .SqFifoDepth                   (SqFifoDepth),
-   .Sqfull                        (Sqfull)
+   .SqFull                        (SqFull)
 );
 
-RequestTraffic  uRequestTraffic (
+DmaRequest  uDmaRequest (
    .RdDCSReadData                 (RdDCSReadData[31:0]),
    .RdDCSWaitRequest              (RdDCSWaitRequest),
-   .RqData                        (RqData[111:0]),
-   .RqEmpty                       (RqEmpty),
-   .RqFifoDepth                   (RqFifoDepth),
-   .Rqfull                        (Rqfull),
-   .SqData                        (SqData[111:0]),
-   .SqEmpty                       (SqEmpty),
-   .SqFifoDepth                   (SqFifoDepth),
-   .Sqfull                        (Sqfull),
+   .RqDmaFifoData                 (RqDmaFifoData[111:0]),
+   .RqDmaFifoDepth                (RqDmaFifoDepth),
+   .RqDmaFifoEmpty                (RqDmaFifoEmpty),
+   .RqDmaFifoFull                 (RqDmaFifoFull),
+   .SqDmaFifoData                 (SqDmaFifoData[111:0]),
+   .SqDmaFifoDepth                (SqDmaFifoDepth),
+   .SqDmaFifoEmpty                (SqDmaFifoEmpty),
+   .SqDmaFifoFull                 (SqDmaFifoFull),
    .WrDCSReadData                 (WrDCSReadData[31:0]),
    .WrDCSWaitRequest              (WrDCSWaitRequest),
    .clock                         (clock),
@@ -153,14 +220,96 @@ RequestTraffic  uRequestTraffic (
    .RdDCSRead                     (RdDCSRead),
    .RdDCSWrite                    (RdDCSWrite),
    .RdDCSWriteData                (RdDCSWriteData[31:0]),
-   .RqPop                         (RqPop),
-   .SqPop                         (SqPop),
+   .RqDmaFifoPop                  (RqDmaFifoPop),
+   .SqDmaFifoPop                  (SqDmaFifoPop),
    .WrDCSAddress                  (WrDCSAddress[7:0]),
    .WrDCSByteEnable               (WrDCSByteEnable[3:0]),
    .WrDCSChipSelect               (WrDCSChipSelect),
    .WrDCSRead                     (WrDCSRead),
    .WrDCSWrite                    (WrDCSWrite),
    .WrDCSWriteData                (WrDCSWriteData[31:0])
+);
+
+RdmaOptr  uRdmaOptr (
+   .RqData                        (RqData[111:0]),
+   .RqDmaFifoPop                  (RqDmaFifoPop),
+   .RqEmpty                       (RqEmpty),
+   .RqFifoDepth                   (RqFifoDepth),
+   .RqFull                        (RqFull),
+   .SqData                        (SqData[111:0]),
+   .SqDmaFifoPop                  (SqDmaFifoPop),
+   .SqEmpty                       (SqEmpty),
+   .SqFifoDepth                   (SqFifoDepth),
+   .SqFull                        (SqFull),
+   .ackFifoDataIn                 (ackFifoDataIn[27:0]),
+   .ackFifoPush                   (ackFifoPush),
+   .clock                         (clock),
+   .offloadFifoDataIn             (offloadFifoDataIn[7:0]),
+   .offloadFifoPush               (offloadFifoPush),
+   .reset                         (reset),
+   .wrDoneFifoDataIn              (wrDoneFifoDataIn[7:0]),
+   .wrDoneFifoPush                (wrDoneFifoPush),
+
+   .RqDmaFifoData                 (RqDmaFifoData[111:0]),
+   .RqDmaFifoDepth                (RqDmaFifoDepth[4:0]),
+   .RqDmaFifoEmpty                (RqDmaFifoEmpty),
+   .RqDmaFifoFull                 (RqDmaFifoFull),
+   .RqPop                         (RqPop),
+   .SqDmaFifoData                 (SqDmaFifoData[111:0]),
+   .SqDmaFifoDepth                (SqDmaFifoDepth[4:0]),
+   .SqDmaFifoEmpty                (SqDmaFifoEmpty),
+   .SqDmaFifoFull                 (SqDmaFifoFull),
+   .SqPop                         (SqPop),
+   .ackFifoFull                   (ackFifoFull),
+   .infoValid                     (infoValid),
+   .offloadFifoFull               (offloadFifoFull),
+   .rdmaControl                   (rdmaControl[15:0]),
+   .rdmaWR                        (rdmaWR[47:0]),
+   .wrDoneFifoFull                (wrDoneFifoFull)
+);
+
+HeaderGen  uHeaderGen (
+   .clock                         (clock),
+   .infoValid                     (infoValid),
+   .lastNum                       (lastNum[4:0]),
+   .poolEmpty                     (poolEmpty),
+   .poolFull                      (poolFull),
+   .rdmaControl                   (rdmaControl[15:0]),
+   .rdmaWR                        (rdmaWR[47:0]),
+   .reset                         (reset),
+   .rgstrPtr                      (rgstrPtr[4:0]),
+
+   .bufRegister                   (bufRegister),
+   .rdmap2DdpCtrl                 (rdmap2DdpCtrl[7:0]),
+   .rdmap2DdpHdrValid             (rdmap2DdpHdrValid),
+   .rdmap2DdpHeader               (rdmap2DdpHeader[47:0]),
+   .rgstrNum                      (rgstrNum[2:0])
+);
+
+HeaderProc  uHeaderProc (
+   .ackFifoFull                   (ackFifoFull),
+   .clock                         (clock),
+   .dataNumRdData                 (dataNumRdData[2:0]),
+   .ddp2RdmapControl              (ddp2RdmapControl[7:0]),
+   .ddp2RdmapHdrValid             (ddp2RdmapHdrValid),
+   .ddp2RdmapHeader               (ddp2RdmapHeader[47:0]),
+   .offloadFifoFull               (offloadFifoFull),
+   .queueNumRd                    (queueNumRd),
+   .queueNumRdAddr                (queueNumRdAddr[7:0]),
+   .reset                         (reset),
+   .wrDoneFifoFull                (wrDoneFifoFull),
+
+   .ackFifoDataIn                 (ackFifoDataIn[27:0]),
+   .ackFifoPush                   (ackFifoPush),
+   .dataNumRd                     (dataNumRd),
+   .dataNumRdAddr                 (dataNumRdAddr[7:0]),
+   .offloadFifoDataIn             (offloadFifoDataIn[7:0]),
+   .offloadFifoPush               (offloadFifoPush),
+   .queueNumRdData                (queueNumRdData[15:0]),
+   .reqInfo                       (reqInfo[47:0]),
+   .reqValid                      (reqValid),
+   .wrDoneFifoDataIn              (wrDoneFifoDataIn[7:0]),
+   .wrDoneFifoPush                (wrDoneFifoPush)
 );
 
 endmodule
