@@ -1,3 +1,4 @@
+`include "MacroDefine.h"
 module DdpHdrGen(
     /*AUTOARG*/
    // Outputs
@@ -12,11 +13,11 @@ input clock;
 input reset;
 
 // From HeaderGen
-input  [47:0]   rdmap2DdpHeader;
+input  [55:0]   rdmap2DdpHeader;
 input  [7:0]    rdmap2DdpCtrl;
 input           rdmap2DdpHdrValid;
 // To Pkt Encapsulation
-output [47:0]   gen2PkgRdmapHeader;
+output [55:0]   gen2PkgRdmapHeader;
 output [15:0]   gen2PkgDdpHeader;
 output [7:0]    gen2PkgRdmapCtrl;
 output [7:0]    gen2PkgDdpCtrl;
@@ -40,19 +41,19 @@ parameter       RD_DONE_OPCODE  = 4'b0100;
 
 // Info Fifo
 wire          infoFifoPush;
-wire [55:0]   infoFifoDataIn;
+wire [63:0]   infoFifoDataIn;
 wire          infoFifoFull;
 wire          infoFifoPop;
-wire [55:0]   infoFifoData;
+wire [63:0]   infoFifoData;
 wire          infoFifoEmpty;
 
-wire [47:0]   rdmapHeader;
+wire [55:0]   rdmapHeader;
 wire [7:0]    rdmapCtrl;
 
 assign infoFifoPush = rdmap2DdpHdrValid & ~infoFifoFull;
 assign infoFifoDataIn = {rdmap2DdpCtrl,rdmap2DdpHeader};
 assign {rdmapCtrl,rdmapHeader} =  infoFifoData;
-GenRegFifo8D56W uRdmapInfoFifo(
+GenRegFifo8D64W uRdmapInfoFifo(
     // Outputs;
     .dataOut                            (infoFifoData ),
     .full                               (infoFifoFull ),
@@ -90,10 +91,10 @@ wire           dataNumRd;
 
 wire [7:0]     dataLenWrAddr;
 wire           dataLenWr;
-wire [31:0]    dataLenWrData;
+wire [36:0]    dataLenWrData;
 wire [7:0]     dataLenRdAddr;
 wire           dataLenRd;
-wire [31:0]    dataLenRdData;
+wire [36:0]    dataLenRdData;
 assign reqDdpHdr = {1'd0,2'd0,4'd0,9'd6};
 assign ackDdpHdr = {1'd0,2'd0,4'd0,9'd4};
 assign reqAckDdpCtrl = {1'd1,1'd1,6'd0};
@@ -110,11 +111,11 @@ GenRam2P256D3W uDataNum(
     .writeData    ( dataNumWrData ) 
     );
 assign dataNumWr = isReq & gen2PkgValid;
-assign dataNumWrAddr = rdmapHeader[39:32];
-assign dataNumWrData = rdmapHeader[42:40];
+assign dataNumWrAddr = rdmapHeader[`PKT_TID_RANGE];
+assign dataNumWrData = rdmapHeader[`PKT_DATA_NUM_RANGE];
 assign dataNumRd     = dataNumSendRd | dataNumProcRd;
 assign dataNumRdAddr = dataNumSendRd ? dataNumSendRdAddr : dataNumProcRdAddr;
-GenRam2P256D32W uDataLen(
+GenRam2P256D36W uDataLen(
     // Outputs;
     .readData     ( dataLenRdData ),
     // Inputs;    
@@ -126,18 +127,18 @@ GenRam2P256D32W uDataLen(
     .writeData    ( dataLenWrData ) 
     );
 assign dataLenWr     = isReq & gen2PkgValid;
-assign dataLenWrData = rdmapHeader[31:0];
-assign dataLenWrAddr = rdmapHeader[39:32];
+assign dataLenWrAddr = rdmapHeader[`PKT_TID_RANGE];
+assign dataLenWrData = rdmapHeader[`REQ_LEN_RANGE];
 //==================
 // Send Proc
 parameter IDLE = 3'd0, RD_TBL = 3'd1, SEND_INFO=3'd2, WAIT = 3'd3,POP=3'd4;
 reg [2:0] CS,NS;
 reg       tblRdValid;
 reg [2:0]  dataNumF1;
-reg [31:0] dataLenF1;
+reg [35:0] dataLenF1;
 reg [31:0] queueNumF1;
 wire [2:0]  payloadNum;
-wire [31:0] payloadLen;
+wire [35:0] payloadLen;
 wire [15:0] payloadQN;
 wire [2:0]  PID; 
 wire [15:0] sendHdr;
@@ -182,7 +183,7 @@ always@(*) begin
         default: NS = IDLE;
     endcase
 end
-assign dataNumSendRdAddr = rdmapHeader[47:40] ;
+assign dataNumSendRdAddr = rdmapHeader[`PKT_TID_RANGE] ;
 assign dataNumSendRd     = CS == RD_TBL;
 assign dataLenRd         = dataNumSendRd;
 assign dataLenRdAddr     = dataNumSendRdAddr;
@@ -194,7 +195,7 @@ assign counterInt =  (counter == (payloadNum - 3'd1)) ? 3'd0 :
                       sendOnePiece ? counter + 3'd1 : counter;
 assign sendCpl    = counter == (payloadNum - 3'd1);
 assign queueNumRd = CS == RD_TBL;
-assign queueNumRdAddr = rdmapHeader[47:40];
+assign queueNumRdAddr = rdmapHeader[`PKT_TID_RANGE];
 always @(posedge clock or negedge reset) begin
     if(!reset) begin
         counter <= 3'd0;
@@ -210,11 +211,11 @@ wire      sop;
 wire      eop;
 always @(*) begin
     case (counter)
-        3'd0 : rdmapPktLen = payloadLen[7:0] + 3'd1;
-        3'd1 : rdmapPktLen = payloadLen[15:8] + 3'd1;
-        3'd2 : rdmapPktLen = payloadLen[23:16] + 3'd1;
-        3'd3 : rdmapPktLen = payloadLen[31:24] + 3'd1; 
-        default: rdmapPktLen = 3'd0;
+        3'd0 : rdmapPktLen = payloadLen[8:0]   + 9'd1;
+        3'd1 : rdmapPktLen = payloadLen[17:9]  + 9'd1;
+        3'd2 : rdmapPktLen = payloadLen[26:18] + 9'd1;
+        3'd3 : rdmapPktLen = payloadLen[35:27] + 9'd1; 
+        default: rdmapPktLen = 9'd0;
     endcase
 end
 always @(*) begin
@@ -223,7 +224,7 @@ always @(*) begin
         3'd1 : rdmapPktQN = payloadQN[7:4];
         3'd2 : rdmapPktQN = payloadQN[11:8];
         3'd3 : rdmapPktQN = payloadQN[15:12]; 
-        default: rdmapPktQN = 3'd0;
+        default: rdmapPktQN = 4'd0;
     endcase
 end
 assign PID = counter;

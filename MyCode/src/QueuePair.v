@@ -34,13 +34,13 @@ module QueuePair(
 
     // Pop Data
         input            SqPop;
-        output  [111:0]  SqData;
+        output  [115:0]  SqData;
         output           SqEmpty;
         output           SqFifoDepth;
         output           SqFull;
 
         input            RqPop;
-        output  [111:0]  RqData;
+        output  [115:0]  RqData;
         output           RqEmpty;
         output  [4:0]    RqFifoDepth;
         output           RqFull;      
@@ -111,7 +111,7 @@ module WorkQueue(
 
     // Pop Data
         input            fifoPop;
-        output  [111:0]  data;
+        output  [115:0]  data;
         output           empty;
         output           fifoDepth;
         output           full;
@@ -130,29 +130,30 @@ assign slot3 = select & write & ( address[3:0] == 4'hc );
 
 reg [4:0] opcode;
 reg [2:0] dataNum;
-reg [7:0] dataLen0;
-reg [7:0] dataLen1;
-reg [7:0] dataLen2;
-reg [7:0] dataLen3;
+reg [8:0] dataLen0;
+reg [8:0] dataLen1;
+reg [8:0] dataLen2;
+reg [8:0] dataLen3;
 reg [7:0] TID;
-reg [15:0] descTableAddrHi;
+reg [11:0] descTableAddrHi;
 reg [31:0] descTableAddrMe;
 // reg [7:0]  TID;
-wire [15:0] descTableAddrLo;
+wire [19:0] descTableAddrLo;
 always @(posedge clock or negedge reset) begin
     if(slot0) begin
         opcode   <= wrData[31:27];
         dataNum  <= wrData[26:24];
         TID      <= wrData[23:16];
-        dataLen0 <= wrData[15:8];
-        dataLen1 <= wrData[7:0];
+        dataLen0 <= wrData[15:7];
+        dataLen1[8:2] <= wrData[6:0];
     end
 end
 always @(posedge clock or negedge reset) begin
     if(slot1) begin
-        dataLen2  <= wrData[31:24];
-        dataLen3  <= wrData[24:16];
-        descTableAddrHi <= wrData[15:0];
+        dataLen1[1:0] <= wrData[31:30];
+        dataLen2  <= wrData[29:21];
+        dataLen3  <= wrData[20:12];
+        descTableAddrHi <= wrData[11:0];
     end
 end
 always @(posedge clock or negedge reset) begin
@@ -160,12 +161,12 @@ always @(posedge clock or negedge reset) begin
         descTableAddrMe <= wrData;
     end
 end
-assign descTableAddrLo = wrData[31:16];
+assign descTableAddrLo = wrData[31:12];
 wire         fifoPush;
-wire [111:0] fifoDataIn;
+wire [115:0] fifoDataIn;
 assign fifoPush = slot3;
 assign fifoDataIn = {opcode,dataNum,TID,dataLen0,dataLen1,dataLen2,dataLen3,descTableAddrHi,descTableAddrMe,descTableAddrLo};
-GenRamFifo16D112W WorkFifo(
+GenRamFifo16D116W WorkFifo(
     // Outputs;
     .dataOut                            (data),
     .full                               (full),

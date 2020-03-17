@@ -16,13 +16,13 @@ module DmaRequest(
     input            reset;
 // DmaFifoReqFifo to RT
     output          SqDmaFifoPop;
-    input  [111:0]  SqDmaFifoData;
+    input  [115:0]  SqDmaFifoData;
     input           SqDmaFifoEmpty;
     input           SqDmaFifoDepth;
     input           SqDmaFifoFull;
 
     output          RqDmaFifoPop;
-    input  [111:0]  RqDmaFifoData;
+    input  [115:0]  RqDmaFifoData;
     input           RqDmaFifoEmpty;
     input           RqDmaFifoDepth;
     input           RqDmaFifoFull;      
@@ -49,8 +49,8 @@ module DmaRequest(
 
 wire [63:0]  rd_dma_status_addr      = 64'h6000;
 wire [63:0]  wr_dma_status_addr      = 64'h7000;
-wire  [2:0]  SqDmaFifoDataNumberM1 = SqDmaFifoData[106:104] - 3'd1;
-wire  [2:0]  rqDataNumberM1 = RqDmaFifoData[106:104] - 3'd1;
+wire  [2:0]  SqDmaFifoDataNumberM1 = SqDmaFifoData[110:108] - 3'd1;
+wire  [2:0]  rqDataNumberM1 = RqDmaFifoData[110:108] - 3'd1;
 wire  [159:0]   wrDescriptor = {wr_dma_status_addr[31:0],wr_dma_status_addr[63:32],RqDmaFifoData[31:0],RqDmaFifoData[63:32],29'd0,rqDataNumberM1};
 wire  [159:0]   rdDescriptor = {rd_dma_status_addr[31:0],rd_dma_status_addr[63:32],SqDmaFifoData[31:0],SqDmaFifoData[63:32],29'd0,SqDmaFifoDataNumberM1};
 

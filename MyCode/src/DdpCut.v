@@ -16,7 +16,7 @@ output  [3:0]    QN;
 output           push;
 output  [255:0]  pushData;
 // From AsyncFifo
-input  [264:0]   ddpPktDataOut; // sop : 1 , eop :1 , byteenable : 7, pkt : 256
+input  [266:0]   ddpPktDataOut; // sop : 1 , eop :1 , byteenable : 9, pkt : 256
 input            ddpPktPop;
 output           ddpPktEmpty;
 // From DdpAssmble;
@@ -26,15 +26,15 @@ input            sendDoneValid;
 // To HeaderProc
 output           ddp2RdmapHdrValid;
 output  [7:0]    ddp2RdmapControl;
-output  [47:0]   ddp2RdmapHeader;
+output  [55:0]   ddp2RdmapHeader;
 
 wire sop;
 wire eop;
-wire [7:0] byteEnable;
+wire [8:0] byteEnable;
 
 wire [7:0]  ddpCtrl;
 wire [7:0]  rdmapCtrl;
-wire [47:0] rdmapHdr;
+wire [55:0] rdmapHdr;
 wire [15:0] ddpHdr;
 
 wire [255:0]  sendDataSlice;
@@ -47,12 +47,16 @@ reg           dataValidF1;
 reg           eopF1;
 reg           sopF1;
 reg           isSendF1;
+wire          pEdgeIsSend;
 reg  [3:0]    sendQN;
+wire          lastDataValid;
+reg           lastDataValidF1;
+wire          pEdgeLastDataValid;
 wire  isReq =    (rdmapCtrl[3:0] == `REQ_OPCODE) & ~ddpPktEmpty & sop;
 wire  isAck =    (rdmapCtrl[3:0] == `ACK_OPCODE) & ~ddpPktEmpty & sop;
 wire  isSend =   (rdmapCtrl[3:0] == `SEND_OPCODE)& ~ddpPktEmpty & sop;
-
-assign {sop,eop,byteEnable,ddpCtrl,rdmapCtrl,ddpHdr,rdmapHdr} = ddpPktDataOut[264:176];
+assign pEdgeIsSend = isSend & ~isSendF1;
+assign {sop,eop,byteEnable,ddpCtrl,rdmapCtrl,ddpHdr,rdmapHdr} = ddpPktDataOut[266:168];
 
 assign dataLen = ddpHdr[8:0] - 9'd1;
 always @(posedge clock or negedge reset) begin
@@ -62,19 +66,25 @@ always @(posedge clock or negedge reset) begin
         sopF1 <= 1'd0;
         sendQN <= 4'd0;
         dataValidF1 <= 1'd0;
+        isSendF1 <= 1'd0;
+        lastDataValidF1 <= 1'd0;
     end
     else begin
         eopF1 <= eop;
         sopF1 <= sop;
         dataValidF1 <= dataValid;
+        isSendF1 <= isSend;
+        lastDataValidF1 <= lastDataValid;
         if(isSend) begin
             lastDataLen <= {3'd0,dataLen[4:0]};
-            sendQN      <= ddpCtrl[11:8];
+            sendQN      <= ddpHdr[12:9];
         end
     end
 end
-assign sendDataSlice = sop ? {ddpPktDataOut[215:0],40'd0} : ddpPktDataOut[255:0];
-assign dataValid = isSend | (~sop & ~ddpPktEmpty); 
+assign lastDataValid = ~sop & eop & ~ddpPktEmpty & ( byteEnable > 9'd5); 
+assign pEdgeLastDataValid = lastDataValid & ~lastDataValidF1;
+assign sendDataSlice = sop ? {40'd0,ddpPktDataOut[215:0]} : ddpPktDataOut[255:0];
+assign dataValid = pEdgeIsSend | (~sop & ~ddpPktEmpty) | pEdgeLastDataValid; 
 always @(posedge clock) begin
     if(dataValid) begin
         {sendDataAligned,sendDataLast} <= {sendDataLast,sendDataSlice};
@@ -83,9 +93,9 @@ end
 assign QN = sendQN;
 assign pushData = sendDataAligned;
 assign push     = dataValidF1 & eopF1 | dataValidF1 & ~sopF1 & ~eopF1;
-assign ddpPktPop = dataValidF1 & ~eopF1 | eop;
+assign ddpPktPop = ((~lastDataValid & (dataValid | eop)) | pEdgeLastDataValid) & ~ddpPktEmpty;
 
-assign ddp2RdmapHdrValid = eop;
+assign ddp2RdmapHdrValid = eop & ~ddpPktEmpty;
 assign ddp2RdmapHeader   = rdmapHdr;
 assign ddp2RdmapControl  = rdmapCtrl;
 endmodule // DdpCut

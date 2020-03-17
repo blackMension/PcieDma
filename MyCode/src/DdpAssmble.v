@@ -1,3 +1,4 @@
+`include "MacroDefine.h"
 module DdpAssmble(
     /*AUTOARG*/
    // Outputs
@@ -17,12 +18,12 @@ input            ready;
 input   [3:0]    emptyArray;
 
 // To AsyncFifo
-output  [264:0]  ddpPktDataIn; // sop : 1 , eop :1 , byteenable : 7, pkt : 256
+output  [266:0]  ddpPktDataIn; // sop : 1 , eop :1 , byteenable : 8, pkt : 256
 output           ddpPktPush;
 input            ddpPktFull;
 
 // To Pkt Encapsulation
-input [47:0]   gen2PkgRdmapHeader;
+input [55:0]   gen2PkgRdmapHeader;
 input [15:0]   gen2PkgDdpHeader;
 input [7:0]    gen2PkgRdmapCtrl;
 input [7:0]    gen2PkgDdpCtrl;
@@ -42,11 +43,11 @@ parameter       RD_DONE_OPCODE  = 4'b0100;
 
 // Info Fifo
 wire          pkgFifoPop;
-wire [79:0]   pkgFifoData;
+wire [87:0]   pkgFifoData;
 wire          pkgFifoEmpty;
 wire          pkgFifoPush;
-wire [79:0]   pkgFifoDataIn;
-wire [47:0]   rdmapHeader;
+wire [87:0]   pkgFifoDataIn;
+wire [55:0]   rdmapHeader;
 wire [15:0]   ddpHeader;
 wire [7:0]    rdmapCtrl;
 wire [7:0]    ddpCtrl;
@@ -54,7 +55,7 @@ wire [7:0]    ddpCtrl;
 assign pkgFifoPush   = gen2PkgValid;
 assign pkgFifoDataIn = {gen2PkgDdpCtrl,gen2PkgRdmapCtrl,gen2PkgDdpHeader,gen2PkgRdmapHeader};
 assign {ddpCtrl,rdmapCtrl,ddpHeader,rdmapHeader} = pkgFifoData;
-GenRegFifo16D80W uPkgFifo(
+GenRegFifo16D88W uPkgFifo(
     // Outputs;
     .dataOut                            (pkgFifoData),
     .full                               (pkgFifoFull),
@@ -70,7 +71,7 @@ GenRegFifo16D80W uPkgFifo(
     .push                               (pkgFifoPush) ,
     .dataIn                             (pkgFifoDataIn)   ,
     .pop                                (pkgFifoPop),
-    .almostFullThreshold                (5'd4),
+    .almostFullThreshold                (5'd16),
     .almostEmptyThreshold               (5'd0) 
 );
 wire  isReq =    (rdmapCtrl[3:0] == REQ_OPCODE) & ~pkgFifoEmpty;
@@ -89,12 +90,12 @@ wire       curEmpty;
 wire       sendAllData;
 wire       tranLast;
 wire [2:0] PID;
-wire [7:0] dataLen;
-wire [7:0] totalLen;
-wire [7:0] sendLen;
-reg  [7:0] sendLenReg;
-wire [7:0] lastLenNxt;
-reg  [7:0] lastLenCur;
+wire [8:0] dataLen;
+wire [8:0] totalLen;
+wire [8:0] sendLen;
+reg  [8:0] sendLenReg;
+wire [8:0] lastLenNxt;
+reg  [8:0] lastLenCur;
 
 wire        sendSlice1Int;
 reg         sendSlice1;
@@ -103,10 +104,10 @@ reg  [39:0] lastDataSlice;
 reg  [255:0] currentDataSlice;
 
 wire          sendPush;
-wire [264:0]  sendPktSlice;
+wire [266:0]  sendPktSlice;
 wire          totalLenSmall32;
 wire          lastLenSmall32;
-wire [7:0]    curLen;
+wire [8:0]    curLen;
 wire          sendSop;
 wire          sendEop;
 
@@ -150,10 +151,10 @@ end
 // input            ddpPktFull;
 
 wire         reqAckPush;
-wire [264:0] reqAckPkt;
+wire [266:0] reqAckPkt;
 assign reqAckPush = (CS == TRAN_PKT) & ~ddpPktFull;
-assign reqAckPkt  = isAck ? {1'b1,1'b1,7'd8,ddpCtrl,rdmapCtrl,ddpHeader,rdmapHeader[47:32],32'd0,176'd0} :
-                            {1'b1,1'b1,7'd10,ddpCtrl,rdmapCtrl,ddpHeader,rdmapHeader,176'd0};
+assign reqAckPkt  = isAck ? {1'b1,1'b1,9'd8,ddpCtrl,rdmapCtrl,ddpHeader,rdmapHeader,168'd0} :
+                            {1'b1,1'b1,9'd10,ddpCtrl,rdmapCtrl,ddpHeader,rdmapHeader,168'd0};
 // FETCH_DATA
 assign    sendSlice1Int = (CS == IDLE) | (~(CS == TRAN_SEND))&sendSlice1;
 always @(posedge clock or negedge reset) begin
@@ -164,7 +165,7 @@ always @(posedge clock or negedge reset) begin
         sendSlice1 <= sendSlice1Int;
     end
 end
-assign    lastDataSliceInt = sendSlice1 ? {ddpCtrl,rdmapCtrl,ddpHeader,rdmapHeader[47:40]} : lastDataSlice;
+assign    lastDataSliceInt = sendSlice1 ? {ddpCtrl,rdmapCtrl,ddpHeader,rdmapHeader[`SEND_TID_RANGE]} : lastDataSlice;
 always@(posedge clock or negedge reset ) begin
     if(!reset) begin
         {currentDataSlice,lastDataSlice} <= 295'd0;
@@ -178,26 +179,27 @@ end
 assign dataPop = CS == FETCH_DATA;
 // TRAN_SEND
 
-assign PID      = ddpHeader[15:13];
+assign PID      = ddpHeader[`DDP_PID_RANGE];
 assign curEmpty = emptyArray[PID];
-assign dataLen  = ddpHeader[7:0];
-assign totalLen = dataLen + 8'd5;
+assign dataLen  = ddpHeader[`DDP_LEN_RANGE];
+assign totalLen = dataLen + `DDP_ASSMBLE_REST_LEN;
 
-assign totalLenSmall32 = (totalLen <= 8'd32);
-assign lastLenSmall32  = lastLenCur <= 8'd32;
+assign totalLenSmall32 = (totalLen <= 9'd32);
+assign lastLenSmall32  = lastLenCur <= 9'd32;
 assign lastLenNxt = (CS == FETCH_DATA & sendSlice1)? totalLen : 
-                    (~(CS==SEND_DONE) && (CS == TRAN_SEND && (totalLenSmall32 | lastLenSmall32))) ? 8'd0 : 
-                    (CS == TRAN_SEND) ? lastLenCur - 8'd32 : lastLenCur;
+                    (~(CS==SEND_DONE) && (CS == TRAN_SEND && (totalLenSmall32 | lastLenSmall32))) ? 9'd0 : 
+                    (CS == TRAN_SEND) ? lastLenCur - 9'd32 : 
+                    (CS == TRAN_REST) ? 9'd0 : lastLenCur;
 always @(posedge clock or negedge reset) begin
     if (!reset) begin
-        lastLenCur <= 8'd0;
+        lastLenCur <= 9'd0;
     end else begin
         lastLenCur <= lastLenNxt;
     end
 end
 
 assign curLen = totalLenSmall32 ? totalLen :
-                lastLenSmall32 ?  lastLenCur : 8'd32;
+                lastLenSmall32 ?  lastLenCur : 9'd32;
 assign sendSop = (lastLenCur == totalLen);
 assign sendEop = ~(|lastLenNxt);
 assign sendPktSlice = {sendSop,sendEop,curLen,currentDataSlice};
@@ -206,9 +208,9 @@ assign sendAllData = sendEop;
 assign tranLast = curEmpty & ~(|lastLenNxt[7:5]) & (|lastLenNxt[4:0]);
 // TRAN_REST
 wire         lastPush;
-wire [264:0] lastPktSlice;
+wire [266:0] lastPktSlice;
 assign  lastPush = CS == TRAN_REST;
-assign  lastPktSlice = {1'b0,1'b1,lastLenCur,lastDataSlice};
+assign  lastPktSlice = {1'b0,1'b1,lastLenCur,lastDataSlice,216'd0};
 // SEND_DONE
 wire   sendDonePkgPop;
 assign sendDoneCtrl    = {WR_DONE_OPCODE,2'd0,2'd0};
@@ -219,6 +221,7 @@ assign sendDonePkgPop  = sendDoneValid;
 // Assemble
 assign pkgFifoPop = (sendDonePkgPop | reqAckPush) & ~pkgFifoEmpty;
 assign ddpPktDataIn  = reqAckPush ? reqAckPkt :
-                       sendPush   ? sendPktSlice : lastPktSlice;
+                       sendPush   ? sendPktSlice : 
+                       lastPush   ? lastPktSlice : 267'd0;
 assign ddpPktPush = reqAckPush | sendPush | lastPush;
 endmodule // DdpAssmble

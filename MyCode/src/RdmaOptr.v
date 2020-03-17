@@ -17,26 +17,26 @@ module RdmaOptr(
     input            reset;
 // QP to RO
     output          SqPop;
-    input  [111:0]  SqData;
+    input  [115:0]  SqData;
     input           SqEmpty;
     input           SqFifoDepth;
     input           SqFull;
 
     output          RqPop;
-    input  [111:0]  RqData;
+    input  [115:0]  RqData;
     input           RqEmpty;
     input           RqFifoDepth;
     input           RqFull;      
 
 // PrefetchFifo to RT
     input           SqDmaFifoPop;
-    output [111:0]  SqDmaFifoData;
+    output [115:0]  SqDmaFifoData;
     output          SqDmaFifoEmpty;
     output [4:0]    SqDmaFifoDepth;
     output          SqDmaFifoFull;
 
     input           RqDmaFifoPop;
-    output [111:0]  RqDmaFifoData;
+    output [115:0]  RqDmaFifoData;
     output          RqDmaFifoEmpty;
     output [4:0]    RqDmaFifoDepth;
     output          RqDmaFifoFull;      
@@ -56,7 +56,7 @@ module RdmaOptr(
     output          wrDoneFifoFull;
 // TO HeaderGen
     output [15:0]   rdmaControl;
-    output [47:0]   rdmaWR;
+    output [51:0]   rdmaWR;
     output          infoValid;
     
     parameter       RV = 2'b00;
@@ -72,23 +72,23 @@ module RdmaOptr(
 
     wire          SqPrePop;
     wire          SqPrePush;
-    wire [111:0]  SqPreData;
+    wire [115:0]  SqPreData;
     wire          SqPreEmpty;
     wire [4:0]    SqPreFifoDepth;
     wire          SqPreFull;
-    wire [111:0]  SqPreFifoDataIn;
+    wire [115:0]  SqPreFifoDataIn;
 
     wire          RqPrePop;
     wire          RqPrePush;
-    wire [111:0]  RqPreData;
+    wire [115:0]  RqPreData;
     wire          RqPreEmpty;
     wire [4:0]    RqPreFifoDepth;
     wire          RqPreFull;      
-    wire [111:0]  RqPreFifoDataIn;
+    wire [115:0]  RqPreFifoDataIn;
 
-    wire [111:0]  SqDmaFifoDataIn;
+    wire [115:0]  SqDmaFifoDataIn;
     wire          SqDmaFifoPush;
-    wire [111:0]  RqDmaFifoDataIn;
+    wire [115:0]  RqDmaFifoDataIn;
     wire          RqDmaFifoPush;
 //  Ack Fifo 
     wire          ackFifoPop;
@@ -150,11 +150,11 @@ module RdmaOptr(
     assign infoValid = (CS == GEN_REQ) || 
                        (CS == GEN_ACK) ||
                        (CS == GEN_SEND);
-    assign rdmaWR = (CS == GEN_REQ) ? SqData[111:64] :
-                    (CS == GEN_ACK) ? RqData[111:64] : SqPreData[111:64];
+    assign rdmaWR = (CS == GEN_REQ) ? SqData[115:64] :
+                    (CS == GEN_ACK) ? RqData[115:64] : SqPreData[115:64];
     assign rdmaControl = (CS == GEN_REQ) ? {RV,2'b0,REQ_OPCODE} :
                          (CS == GEN_ACK) ? {RV,2'b0,ACK_OPCODE} : {RV,2'b0,SEND_OPCODE};
-GenRamFifo16D112W uSqPrefetch( // Waiting For Ack
+GenRamFifo16D116W uSqPrefetch( // Waiting For Ack
     // Outputs;
     .dataOut                            (SqPreData),
     .full                               (SqPreFull),
@@ -177,7 +177,7 @@ GenRamFifo16D112W uSqPrefetch( // Waiting For Ack
     .cpuReadValid                       (1'd0),
     .cpuReadAddress                     (4'd0)
     );
-GenRamFifo16D112W uRqPrefetch(
+GenRamFifo16D116W uRqPrefetch(
     // Outputs;
     .dataOut                            (RqPreData),
     .full                               (RqPreFull),
@@ -201,7 +201,7 @@ GenRamFifo16D112W uRqPrefetch(
     .cpuReadAddress                     (4'd0)
     );
 // to gen dma request
-GenRamFifo16D112W uSqDmaFifo( 
+GenRamFifo16D116W uSqDmaFifo( 
     // Outputs;
     .dataOut                            (SqDmaFifoData),
     .full                               (SqDmaFifoFull),
@@ -224,7 +224,7 @@ GenRamFifo16D112W uSqDmaFifo(
     .cpuReadValid                       (1'd0),
     .cpuReadAddress                     (4'd0)
     );
-GenRamFifo16D112W uRqDmaFifo(
+GenRamFifo16D116W uRqDmaFifo(
     // Outputs;
     .dataOut                            (RqDmaFifoData),
     .full                               (RqDmaFifoFull),

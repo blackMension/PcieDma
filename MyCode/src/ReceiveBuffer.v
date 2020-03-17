@@ -57,7 +57,7 @@ always @(posedge clock or negedge reset) begin
         releasePtr  <= releasePtrInt;
     end
 end
-
+assign rgstrPtr = registerPtr;
 always @(*) begin
     case({bufRelease,bufRegister})
         2'b00 : nextLastNum = lastNumReg;

@@ -96,7 +96,7 @@ input              clock;
 input   [2:0]      dataNumRdData;
 input   [7:0]      ddp2RdmapControl;
 input              ddp2RdmapHdrValid;
-input   [47:0]     ddp2RdmapHeader;
+input   [55:0]     ddp2RdmapHeader;
 input   [4:0]      lastNum;
 input              poolEmpty;
 input              poolFull;
@@ -127,13 +127,13 @@ output  [7:0]      dataNumRdAddr;
 output  [15:0]     queueNumRdData;
 output  [7:0]      rdmap2DdpCtrl;
 output             rdmap2DdpHdrValid;
-output  [47:0]     rdmap2DdpHeader;
-output  [47:0]     reqInfo;
+output  [55:0]     rdmap2DdpHeader;
+output  [55:0]     reqInfo;
 output             reqValid;
 output  [2:0]      rgstrNum;
 
 
-   wire [111:0]    RqData;
+   wire [115:0]    RqData;
    wire [111:0]    RqDmaFifoData;
    wire [4:0]      RqDmaFifoDepth;
    wire            RqDmaFifoEmpty;
@@ -143,7 +143,7 @@ output  [2:0]      rgstrNum;
    wire [4:0]      RqFifoDepth;
    wire            RqFull;
    wire            RqPop;
-   wire [111:0]    SqData;
+   wire [115:0]    SqData;
    wire [111:0]    SqDmaFifoData;
    wire [4:0]      SqDmaFifoDepth;
    wire            SqDmaFifoEmpty;
@@ -161,7 +161,7 @@ output  [2:0]      rgstrNum;
    wire            offloadFifoFull;
    wire            offloadFifoPush;
    wire [15:0]     rdmaControl;
-   wire [47:0]     rdmaWR;
+   wire [51:0]     rdmaWR;
    wire [7:0]      wrDoneFifoDataIn;
    wire            wrDoneFifoFull;
    wire            wrDoneFifoPush;
@@ -186,13 +186,13 @@ QueuePair  uQueuePair (
 
    .RQReadData_o                  (RQReadData_o[31:0]),
    .RQWaitRequest_o               (RQWaitRequest_o),
-   .RqData                        (RqData[111:0]),
+   .RqData                        (RqData[115:0]),
    .RqEmpty                       (RqEmpty),
    .RqFifoDepth                   (RqFifoDepth[4:0]),
    .RqFull                        (RqFull),
    .SQReadData_o                  (SQReadData_o[31:0]),
    .SQWaitRequest_o               (SQWaitRequest_o),
-   .SqData                        (SqData[111:0]),
+   .SqData                        (SqData[115:0]),
    .SqEmpty                       (SqEmpty),
    .SqFifoDepth                   (SqFifoDepth),
    .SqFull                        (SqFull)
@@ -231,12 +231,12 @@ DmaRequest  uDmaRequest (
 );
 
 RdmaOptr  uRdmaOptr (
-   .RqData                        (RqData[111:0]),
+   .RqData                        (RqData[115:0]),
    .RqDmaFifoPop                  (RqDmaFifoPop),
    .RqEmpty                       (RqEmpty),
    .RqFifoDepth                   (RqFifoDepth),
    .RqFull                        (RqFull),
-   .SqData                        (SqData[111:0]),
+   .SqData                        (SqData[115:0]),
    .SqDmaFifoPop                  (SqDmaFifoPop),
    .SqEmpty                       (SqEmpty),
    .SqFifoDepth                   (SqFifoDepth),
@@ -264,7 +264,7 @@ RdmaOptr  uRdmaOptr (
    .infoValid                     (infoValid),
    .offloadFifoFull               (offloadFifoFull),
    .rdmaControl                   (rdmaControl[15:0]),
-   .rdmaWR                        (rdmaWR[47:0]),
+   .rdmaWR                        (rdmaWR[51:0]),
    .wrDoneFifoFull                (wrDoneFifoFull)
 );
 
@@ -275,14 +275,14 @@ HeaderGen  uHeaderGen (
    .poolEmpty                     (poolEmpty),
    .poolFull                      (poolFull),
    .rdmaControl                   (rdmaControl[15:0]),
-   .rdmaWR                        (rdmaWR[47:0]),
+   .rdmaWR                        (rdmaWR[51:0]),
    .reset                         (reset),
    .rgstrPtr                      (rgstrPtr[4:0]),
 
    .bufRegister                   (bufRegister),
    .rdmap2DdpCtrl                 (rdmap2DdpCtrl[7:0]),
    .rdmap2DdpHdrValid             (rdmap2DdpHdrValid),
-   .rdmap2DdpHeader               (rdmap2DdpHeader[47:0]),
+   .rdmap2DdpHeader               (rdmap2DdpHeader[55:0]),
    .rgstrNum                      (rgstrNum[2:0])
 );
 
@@ -292,7 +292,7 @@ HeaderProc  uHeaderProc (
    .dataNumRdData                 (dataNumRdData[2:0]),
    .ddp2RdmapControl              (ddp2RdmapControl[7:0]),
    .ddp2RdmapHdrValid             (ddp2RdmapHdrValid),
-   .ddp2RdmapHeader               (ddp2RdmapHeader[47:0]),
+   .ddp2RdmapHeader               (ddp2RdmapHeader[55:0]),
    .offloadFifoFull               (offloadFifoFull),
    .queueNumRd                    (queueNumRd),
    .queueNumRdAddr                (queueNumRdAddr[7:0]),
@@ -306,7 +306,7 @@ HeaderProc  uHeaderProc (
    .offloadFifoDataIn             (offloadFifoDataIn[7:0]),
    .offloadFifoPush               (offloadFifoPush),
    .queueNumRdData                (queueNumRdData[15:0]),
-   .reqInfo                       (reqInfo[47:0]),
+   .reqInfo                       (reqInfo[55:0]),
    .reqValid                      (reqValid),
    .wrDoneFifoDataIn              (wrDoneFifoDataIn[7:0]),
    .wrDoneFifoPush                (wrDoneFifoPush)

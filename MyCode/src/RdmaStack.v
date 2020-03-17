@@ -116,7 +116,7 @@ output             bufRegister;
 output             dataPop;
 output             push;
 output  [255:0]    pushData;
-output  [47:0]     reqInfo;
+output  [55:0]     reqInfo;
 output             reqValid;
 output  [2:0]      rgstrNum;
 
@@ -126,9 +126,9 @@ output  [2:0]      rgstrNum;
    wire [2:0]      dataNumRdData;
    wire [7:0]      ddp2RdmapControl;
    wire            ddp2RdmapHdrValid;
-   wire [47:0]     ddp2RdmapHeader;
-   wire [264:0]    ddpPktDataIn;
-   wire [264:0]    ddpPktDataOut;
+   wire [55:0]     ddp2RdmapHeader;
+   wire [266:0]    ddpPktDataIn;
+   wire [266:0]    ddpPktDataOut;
    wire            ddpPktEmpty;
    wire            ddpPktFull;
    wire            ddpPktPop;
@@ -138,7 +138,7 @@ output  [2:0]      rgstrNum;
    wire [15:0]     queueNumRdData;
    wire [7:0]      rdmap2DdpCtrl;
    wire            rdmap2DdpHdrValid;
-   wire [47:0]     rdmap2DdpHeader;
+   wire [55:0]     rdmap2DdpHeader;
 
 Rdmap  uRdmap (
    .RQAddress_i                   (RQAddress_i[7:0]),
@@ -161,7 +161,7 @@ Rdmap  uRdmap (
    .dataNumRdData                 (dataNumRdData[2:0]),
    .ddp2RdmapControl              (ddp2RdmapControl[7:0]),
    .ddp2RdmapHdrValid             (ddp2RdmapHdrValid),
-   .ddp2RdmapHeader               (ddp2RdmapHeader[47:0]),
+   .ddp2RdmapHeader               (ddp2RdmapHeader[55:0]),
    .lastNum                       (lastNum[4:0]),
    .poolEmpty                     (poolEmpty),
    .poolFull                      (poolFull),
@@ -192,8 +192,8 @@ Rdmap  uRdmap (
    .queueNumRdData                (queueNumRdData[15:0]),
    .rdmap2DdpCtrl                 (rdmap2DdpCtrl[7:0]),
    .rdmap2DdpHdrValid             (rdmap2DdpHdrValid),
-   .rdmap2DdpHeader               (rdmap2DdpHeader[47:0]),
-   .reqInfo                       (reqInfo[47:0]),
+   .rdmap2DdpHeader               (rdmap2DdpHeader[55:0]),
+   .reqInfo                       (reqInfo[55:0]),
    .reqValid                      (reqValid),
    .rgstrNum                      (rgstrNum[2:0])
 );
@@ -203,14 +203,14 @@ DDP  uDDP (
    .dataNumProcRd                 (dataNumRd),
    .dataNumProcRdAddr             (dataNumRdAddr[7:0]),
    .dataOut                       (dataOut[255:0]),
-   .ddpPktDataOut                 (ddpPktDataOut[264:0]),
+   .ddpPktDataOut                 (ddpPktDataOut[266:0]),
    .ddpPktFull                    (ddpPktFull),
    .ddpPktPop                     (ddpPktPop),
    .emptyArray                    (emptyArray[3:0]),
    .queueNumRdData                (queueNumRdData[15:0]),
    .rdmap2DdpCtrl                 (rdmap2DdpCtrl[7:0]),
    .rdmap2DdpHdrValid             (rdmap2DdpHdrValid),
-   .rdmap2DdpHeader               (rdmap2DdpHeader[47:0]),
+   .rdmap2DdpHeader               (rdmap2DdpHeader[55:0]),
    .ready                         (ready),
    .reset                         (reset),
 
@@ -219,8 +219,8 @@ DDP  uDDP (
    .dataPop                       (dataPop),
    .ddp2RdmapControl              (ddp2RdmapControl[7:0]),
    .ddp2RdmapHdrValid             (ddp2RdmapHdrValid),
-   .ddp2RdmapHeader               (ddp2RdmapHeader[47:0]),
-   .ddpPktDataIn                  (ddpPktDataIn[264:0]),
+   .ddp2RdmapHeader               (ddp2RdmapHeader[55:0]),
+   .ddpPktDataIn                  (ddpPktDataIn[266:0]),
    .ddpPktEmpty                   (ddpPktEmpty),
    .ddpPktPush                    (ddpPktPush),
    .push                          (push),
@@ -231,7 +231,7 @@ DDP  uDDP (
 
 DdpLoop  uDdpLoop (
    .clock                         (clock),
-   .ddpPktDataIn                  (ddpPktDataIn[264:0]),
+   .ddpPktDataIn                  (ddpPktDataIn[266:0]),
    .ddpPktEmpty                   (ddpPktEmpty),
    .ddpPktPush                    (ddpPktPush),
    .reset                         (reset),

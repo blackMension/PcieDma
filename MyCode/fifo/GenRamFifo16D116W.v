@@ -1,4 +1,4 @@
-module GenRamFifo16D112W
+module GenRamFifo16D116W
 	(
 	// Outputs;
 	dataOut,
@@ -31,10 +31,10 @@ input		clockCore;
 input		resetCore;
 
 input		push;
-input  [111:0] 	dataIn;
+input  [115:0] 	dataIn;
 
 input		pop;
-output [111:0]	dataOut;
+output [115:0]	dataOut;
 
 input  [4:0]	almostFullThreshold;
 input  [4:0]	almostEmptyThreshold;
@@ -50,7 +50,7 @@ output		underrun;
 input		cpuReadValid;
 input  [3:0]	cpuReadAddress;
 output		cpuReadAck;
-output [111:0]	cpuReadData;
+output [115:0]	cpuReadData;
 
 /////////////////////////////////////////////////////////////////////////////
 // internal wire/reg declaration
@@ -58,10 +58,10 @@ output [111:0]	cpuReadData;
 
 wire [3:0]	ramReadAddress;
 wire [3:0]	ramWriteAddress;
-wire [111:0]	ramWriteData;
+wire [115:0]	ramWriteData;
 wire		ramWriteEnable;
 wire		ramReadEnable;
-wire [111:0]	ramReadData;
+wire [115:0]	ramReadData;
 
 wire		overrun;
 wire		underrun;
@@ -70,7 +70,7 @@ wire		underrun;
 // Module Instantiations
 /////////////////////////////////////////////////////////////////////////////
 
-  IP_RamFifoCtrl #(16, 112) uIP_RamFifoCtrl
+  IP_RamFifoCtrl #(16, 116) uIP_RamFifoCtrl
 	(
 	// Outputs;
 	.dataOut				( dataOut		),
@@ -101,7 +101,7 @@ wire		underrun;
 	.cpuReadAddress				( cpuReadAddress	) 
 	);
 
-  GenRam2P16D112W uGenRam2P16D112W
+  GenRam2P16D116W uGenRam2P16D116W
 	(
 	// Outputs;
 	.readData     		 ( ramReadData     ),

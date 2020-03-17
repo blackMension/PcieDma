@@ -8,16 +8,16 @@ module DdpLoop(
 input clock;
 input reset;
 // to DdpCut
-output[264:0]   ddpPktDataOut; // sop : 1 , eop :1 , byteenable : 7, pkt : 256
+output[266:0]   ddpPktDataOut; // sop : 1 , eop :1 , byteenable : 7, pkt : 256
 output          ddpPktPop;
 input           ddpPktEmpty;
 // From DdpAssmble
-input  [264:0]  ddpPktDataIn; // sop : 1 , eop :1 , byteenable : 7, pkt : 256
+input  [266:0]  ddpPktDataIn; // sop : 1 , eop :1 , byteenable : 7, pkt : 256
 input           ddpPktPush;
 output          ddpPktFull;
 
 
-GenRegFifo8D265W uDdpPktFifo(
+GenRegFifo8D267W uDdpPktFifo(
     // Outputs;
     .dataOut                            (ddpPktDataOut),
     .full                               (ddpPktFull),

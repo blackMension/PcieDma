@@ -1,4 +1,4 @@
-module GenRegFifo8D56W
+module GenRegFifo16D84W
 	(
 	// Outputs;
 	dataOut,
@@ -27,19 +27,19 @@ input		clockCore;
 input		resetCore;
 
 input		push;
-input  [55:0] 	dataIn;
+input  [83:0] 	dataIn;
 
 input		pop;
-output [55:0]	dataOut;
+output [83:0]	dataOut;
 
-input  [3:0]	almostFullThreshold;
-input  [3:0]	almostEmptyThreshold;
+input  [4:0]	almostFullThreshold;
+input  [4:0]	almostEmptyThreshold;
 
 output		full;
 output		empty;
 output		almostFullFlag;
 output		almostEmptyFlag;
-output [3:0]	fifoDepth;
+output [4:0]	fifoDepth;
 output		overrun;
 output		underrun;
 
@@ -51,19 +51,19 @@ wire		clockCore;
 wire		resetCore;
 
 wire		push;
-wire   [55:0] 	dataIn;
+wire   [83:0] 	dataIn;
 
 wire		pop;
-wire   [55:0]	dataOut;
+wire   [83:0]	dataOut;
 
-wire   [3:0]	almostFullThreshold;
-wire   [3:0]	almostEmptyThreshold;
+wire   [4:0]	almostFullThreshold;
+wire   [4:0]	almostEmptyThreshold;
 
 wire		full;
 wire		empty;
 wire		almostFullFlag;
 wire		almostEmptyFlag;
-wire   [3:0]	fifoDepth;
+wire   [4:0]	fifoDepth;
 
 wire		overrun;
 wire		underrun;
@@ -72,7 +72,7 @@ wire		underrun;
 // GenRegFifo Instantiation
 /////////////////////////////////////////////////////////////////////////////
 
-  IP_RegFifo #(8, 56) uIP_RegFifo
+  IP_RegFifo #(16, 84) uIP_RegFifo
 	(
 	// Outputs;
 	.dataOut               ( dataOut               ),

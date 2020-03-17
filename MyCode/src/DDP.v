@@ -51,14 +51,14 @@ input              clock;
 input              dataNumProcRd;
 input   [7:0]      dataNumProcRdAddr;
 input   [255:0]    dataOut;
-input   [264:0]    ddpPktDataOut;
+input   [266:0]    ddpPktDataOut;
 input              ddpPktFull;
 input              ddpPktPop;
 input   [3:0]      emptyArray;
 input   [15:0]     queueNumRdData;
 input   [7:0]      rdmap2DdpCtrl;
 input              rdmap2DdpHdrValid;
-input   [47:0]     rdmap2DdpHeader;
+input   [55:0]     rdmap2DdpHeader;
 input              ready;
 input              reset;
 
@@ -67,8 +67,8 @@ output  [2:0]      dataNumRdData;
 output             dataPop;
 output  [7:0]      ddp2RdmapControl;
 output             ddp2RdmapHdrValid;
-output  [47:0]     ddp2RdmapHeader;
-output  [264:0]    ddpPktDataIn;
+output  [55:0]     ddp2RdmapHeader;
+output  [266:0]    ddpPktDataIn;
 output             ddpPktEmpty;
 output             ddpPktPush;
 output             push;
@@ -80,7 +80,7 @@ output  [7:0]      queueNumRdAddr;
    wire [7:0]      gen2PkgDdpCtrl;
    wire [15:0]     gen2PkgDdpHeader;
    wire [7:0]      gen2PkgRdmapCtrl;
-   wire [47:0]     gen2PkgRdmapHeader;
+   wire [55:0]     gen2PkgRdmapHeader;
    wire            gen2PkgValid;
    wire            pkgFifoFull;
    wire [7:0]      sendDoneCtrl;
@@ -95,14 +95,14 @@ DdpHdrGen  uDdpHdrGen (
    .queueNumRdData                (queueNumRdData[15:0]),
    .rdmap2DdpCtrl                 (rdmap2DdpCtrl[7:0]),
    .rdmap2DdpHdrValid             (rdmap2DdpHdrValid),
-   .rdmap2DdpHeader               (rdmap2DdpHeader[47:0]),
+   .rdmap2DdpHeader               (rdmap2DdpHeader[55:0]),
    .reset                         (reset),
 
    .dataNumRdData                 (dataNumRdData[2:0]),
    .gen2PkgDdpCtrl                (gen2PkgDdpCtrl[7:0]),
    .gen2PkgDdpHeader              (gen2PkgDdpHeader[15:0]),
    .gen2PkgRdmapCtrl              (gen2PkgRdmapCtrl[7:0]),
-   .gen2PkgRdmapHeader            (gen2PkgRdmapHeader[47:0]),
+   .gen2PkgRdmapHeader            (gen2PkgRdmapHeader[55:0]),
    .gen2PkgValid                  (gen2PkgValid),
    .queueNumRd                    (queueNumRd),
    .queueNumRdAddr                (queueNumRdAddr[7:0])
@@ -116,13 +116,13 @@ DdpAssmble  uDdpAssmble (
    .gen2PkgDdpCtrl                (gen2PkgDdpCtrl[7:0]),
    .gen2PkgDdpHeader              (gen2PkgDdpHeader[15:0]),
    .gen2PkgRdmapCtrl              (gen2PkgRdmapCtrl[7:0]),
-   .gen2PkgRdmapHeader            (gen2PkgRdmapHeader[47:0]),
+   .gen2PkgRdmapHeader            (gen2PkgRdmapHeader[55:0]),
    .gen2PkgValid                  (gen2PkgValid),
    .ready                         (ready),
    .reset                         (reset),
 
    .dataPop                       (dataPop),
-   .ddpPktDataIn                  (ddpPktDataIn[264:0]),
+   .ddpPktDataIn                  (ddpPktDataIn[266:0]),
    .ddpPktPush                    (ddpPktPush),
    .pkgFifoFull                   (pkgFifoFull),
    .sendDoneCtrl                  (sendDoneCtrl[7:0]),
@@ -132,7 +132,7 @@ DdpAssmble  uDdpAssmble (
 
 DdpCut  uDdpCut (
    .clock                         (clock),
-   .ddpPktDataOut                 (ddpPktDataOut[264:0]),
+   .ddpPktDataOut                 (ddpPktDataOut[266:0]),
    .ddpPktPop                     (ddpPktPop),
    .reset                         (reset),
    .sendDoneCtrl                  (sendDoneCtrl[7:0]),
@@ -142,7 +142,7 @@ DdpCut  uDdpCut (
    .QN                            (QN[3:0]),
    .ddp2RdmapControl              (ddp2RdmapControl[7:0]),
    .ddp2RdmapHdrValid             (ddp2RdmapHdrValid),
-   .ddp2RdmapHeader               (ddp2RdmapHeader[47:0]),
+   .ddp2RdmapHeader               (ddp2RdmapHeader[55:0]),
    .ddpPktEmpty                   (ddpPktEmpty),
    .push                          (push),
    .pushData                      (pushData[255:0])
