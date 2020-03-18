@@ -220,10 +220,10 @@ always @(*) begin
 end
 always @(*) begin
     case (counter)
-        3'd0 : rdmapPktQN = payloadQN[3:0];
-        3'd1 : rdmapPktQN = payloadQN[7:4];
-        3'd2 : rdmapPktQN = payloadQN[11:8];
-        3'd3 : rdmapPktQN = payloadQN[15:12]; 
+        3'd3 : rdmapPktQN = payloadQN[3:0];
+        3'd2 : rdmapPktQN = payloadQN[7:4];
+        3'd1 : rdmapPktQN = payloadQN[11:8];
+        3'd0 : rdmapPktQN = payloadQN[15:12]; 
         default: rdmapPktQN = 4'd0;
     endcase
 end
