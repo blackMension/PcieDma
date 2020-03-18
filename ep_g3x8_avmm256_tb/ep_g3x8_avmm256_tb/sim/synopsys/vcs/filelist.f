@@ -1,14 +1,14 @@
-  -v /home/dalys/share/libs/sim_lib/altera_primitives.v 
-  -v /home/dalys/share/libs/sim_lib/220model.v 
-  -v /home/dalys/share/libs/sim_lib/sgate.v 
-  -v /home/dalys/share/libs/sim_lib/altera_mf.v 
-  /home/tools/intelFPGA_pro/17.1/quartus//eda/sim_lib/altera_lnsim.sv 
-  -v /home/dalys/share/libs/sim_lib/twentynm_atoms.v 
-  -v /home/dalys/share/libs/sim_lib/synopsys/twentynm_atoms_ncrypt.v 
-  -v /home/dalys/share/libs/sim_lib/synopsys/twentynm_hssi_atoms_ncrypt.v 
-  -v /home/dalys/share/libs/sim_lib/twentynm_hssi_atoms.v 
-  -v /home/dalys/share/libs/sim_lib/synopsys/twentynm_hip_atoms_ncrypt.v 
-  -v /home/dalys/share/libs/sim_lib/twentynm_hip_atoms.v 
+  -v /home/dalys/MySpace/libs/sim_lib/altera_primitives.v 
+  -v /home/dalys/MySpace/libs/sim_lib/220model.v 
+  -v /home/dalys/MySpace/libs/sim_lib/sgate.v 
+  -v /home/dalys/MySpace/libs/sim_lib/altera_mf.v 
+     /home/dalys/MySpace/libs/sim_lib/altera_lnsim.sv 
+  -v /home/dalys/MySpace/libs/sim_lib/twentynm_atoms.v 
+  -v /home/dalys/MySpace/libs/sim_lib/synopsys/twentynm_atoms_ncrypt.v 
+  -v /home/dalys/MySpace/libs/sim_lib/synopsys/twentynm_hssi_atoms_ncrypt.v 
+  -v /home/dalys/MySpace/libs/sim_lib/twentynm_hssi_atoms.v 
+  -v /home/dalys/MySpace/libs/sim_lib/synopsys/twentynm_hip_atoms_ncrypt.v 
+  -v /home/dalys/MySpace/libs/sim_lib/twentynm_hip_atoms.v 
   ../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_clk_0/sim/ep_g3x8_avmm256_clk_0.v 
   ../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0/dma_control_171/sim/dma_controller.sv 
   ../..//../../../ip/ep_g3x8_avmm256/ep_g3x8_avmm256_dma_control_0/dma_control_171/sim/altpcie_dynamic_control.sv 
@@ -146,7 +146,44 @@
   ../..//../../../ep_g3x8_avmm256/altera_avalon_st_adapter_171/sim/ep_g3x8_avmm256_altera_avalon_st_adapter_171_5moluky.v 
   ../..//../../../ep_g3x8_avmm256/altera_reset_controller_171/sim/altera_reset_controller.v 
   ../..//../../../ep_g3x8_avmm256/altera_reset_controller_171/sim/altera_reset_synchronizer.v 
-  ../..//../../../ep_g3x8_avmm256/sim/ep_g3x8_avmm256.v 
+
+../../../../../MyCode/src/MacroDefine.h
+../../../../../MyCode/common/IP_RamFifoCtrl.v
+../../../../../MyCode/common/IP_Reg.v
+../../../../../MyCode/common/IP_RegFifo.v
+../../../../../MyCode/ram/IP_Ram2P.v
+../../../../../MyCode/ram/GenRam2P16D112W.v
+../../../../../MyCode/ram/GenRam2P16D116W.v
+../../../../../MyCode/ram/GenRam2P256D16W.v
+../../../../../MyCode/ram/GenRam2P256D36W.v
+../../../../../MyCode/ram/GenRam2P256D3W.v
+../../../../../MyCode/ram/GenRam2P8D256W.v
+../../../../../MyCode/fifo/GenRamFifo16D116W.v
+../../../../../MyCode/fifo/GenRamFifo8D256W.v
+../../../../../MyCode/fifo/GenRegFifo16D88W.v
+../../../../../MyCode/fifo/GenRegFifo4D16W.v
+../../../../../MyCode/fifo/GenRegFifo4D28W.v
+../../../../../MyCode/fifo/GenRegFifo4D8W.v
+../../../../../MyCode/fifo/GenRegFifo8D267W.v
+../../../../../MyCode/fifo/GenRegFifo8D64W.v
+../../../../../MyCode/src/DdpAssmble.v
+../../../../../MyCode/src/DdpCut.v
+../../../../../MyCode/src/DdpHdrGen.v
+../../../../../MyCode/src/DdpLoop.v
+../../../../../MyCode/src/DmaRequest.v
+../../../../../MyCode/src/HeaderGen.v
+../../../../../MyCode/src/HeaderProc.v
+../../../../../MyCode/src/Loop.v
+../../../../../MyCode/src/QueuePair.v
+../../../../../MyCode/src/RdmaOptr.v
+../../../../../MyCode/src/RdmapLoop.v
+../../../../../MyCode/src/ReceiveBuffer.v
+../../../../../MyCode/src/SendBuffer.v
+../../../../../MyCode/src/DDP.v
+../../../../../MyCode/src/Rdmap.v
+../../../../../MyCode/src/RdmaStack.v
+  ../..//../../../ep_g3x8_avmm256/synth/ep_g3x8_avmm256.v 
+
   ../..//../../ip/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst_reconfig_xcvr_reset_bfm_ip/altera_avalon_reset_source_171/sim/verbosity_pkg.sv 
   ../..//../../ip/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst_reconfig_xcvr_reset_bfm_ip/altera_avalon_reset_source_171/sim/altera_avalon_reset_source.sv 
   ../..//../../ip/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst_reconfig_xcvr_reset_bfm_ip/sim/ep_g3x8_avmm256_inst_reconfig_xcvr_reset_bfm_ip.v 
@@ -168,4 +205,5 @@
   +incdir+../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/ ../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcied_a10_hwtcl.sv 
   +incdir+../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/ ../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_bfm_rp_gen3_x8.sv 
   ../..//../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/sim/DUT_pcie_tb_ip.v 
+   
   ../..//ep_g3x8_avmm256_tb.v 
