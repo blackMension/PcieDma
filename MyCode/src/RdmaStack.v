@@ -10,7 +10,9 @@
 // instance "DDP.v","uDDP";
 //     connect "dataNumProcRd","dataNumRd";
 //     connect "dataNumProcRdAddr","dataNumRdAddr";
-// instance "DdpLoop.v","uDdpLoop";
+// #instance "DdpLoop.v","uDdpLoop";
+// instance "GearBox.v","uGearBox";
+// instance "StackLoop.v","uStackLoop";
 // endmodule
 // VWEAVE: END PERL
 // VWEAVE: BEGIN GENERATED
@@ -34,6 +36,7 @@ module RdmaStack (
                     WrDCSWaitRequest,
                     clock,
                     dataOut,
+                    ddpPktEmpty,
                     emptyArray,
                     lastNum,
                     poolEmpty,
@@ -87,6 +90,7 @@ input   [31:0]     WrDCSReadData;
 input              WrDCSWaitRequest;
 input              clock;
 input   [255:0]    dataOut;
+input              ddpPktEmpty;
 input   [3:0]      emptyArray;
 input   [4:0]      lastNum;
 input              poolEmpty;
@@ -121,6 +125,7 @@ output             reqValid;
 output  [2:0]      rgstrNum;
 
 
+   wire            clockMac;
    wire            dataNumRd;
    wire [7:0]      dataNumRdAddr;
    wire [2:0]      dataNumRdData;
@@ -129,7 +134,7 @@ output  [2:0]      rgstrNum;
    wire [55:0]     ddp2RdmapHeader;
    wire [266:0]    ddpPktDataIn;
    wire [266:0]    ddpPktDataOut;
-   wire            ddpPktEmpty;
+   wire            ddpPktDataValid;
    wire            ddpPktFull;
    wire            ddpPktPop;
    wire            ddpPktPush;
@@ -139,6 +144,21 @@ output  [2:0]      rgstrNum;
    wire [7:0]      rdmap2DdpCtrl;
    wire            rdmap2DdpHdrValid;
    wire [55:0]     rdmap2DdpHeader;
+   wire            resetNMac;
+   wire [63:0]     rx_data;
+   wire [2:0]      rx_empty;
+   wire            rx_eop;
+   wire            rx_error;
+   wire            rx_ready;
+   wire            rx_sop;
+   wire            rx_valid;
+   wire [63:0]     tx_data;
+   wire [2:0]      tx_empty;
+   wire            tx_eop;
+   wire            tx_error;
+   wire            tx_ready;
+   wire            tx_sop;
+   wire            tx_valid;
 
 Rdmap  uRdmap (
    .RQAddress_i                   (RQAddress_i[7:0]),
@@ -204,6 +224,8 @@ DDP  uDDP (
    .dataNumProcRdAddr             (dataNumRdAddr[7:0]),
    .dataOut                       (dataOut[255:0]),
    .ddpPktDataOut                 (ddpPktDataOut[266:0]),
+   .ddpPktDataValid               (ddpPktDataValid),
+   .ddpPktEmpty                   (ddpPktEmpty),
    .ddpPktFull                    (ddpPktFull),
    .ddpPktPop                     (ddpPktPop),
    .emptyArray                    (emptyArray[3:0]),
@@ -221,7 +243,6 @@ DDP  uDDP (
    .ddp2RdmapHdrValid             (ddp2RdmapHdrValid),
    .ddp2RdmapHeader               (ddp2RdmapHeader[55:0]),
    .ddpPktDataIn                  (ddpPktDataIn[266:0]),
-   .ddpPktEmpty                   (ddpPktEmpty),
    .ddpPktPush                    (ddpPktPush),
    .push                          (push),
    .pushData                      (pushData[255:0]),
@@ -229,16 +250,53 @@ DDP  uDDP (
    .queueNumRdAddr                (queueNumRdAddr[7:0])
 );
 
-DdpLoop  uDdpLoop (
+GearBox  uGearBox (
    .clock                         (clock),
+   .clockMac                      (clockMac),
    .ddpPktDataIn                  (ddpPktDataIn[266:0]),
    .ddpPktEmpty                   (ddpPktEmpty),
    .ddpPktPush                    (ddpPktPush),
    .reset                         (reset),
+   .resetNMac                     (resetNMac),
+   .rx_data                       (rx_data[63:0]),
+   .rx_empty                      (rx_empty[2:0]),
+   .rx_eop                        (rx_eop),
+   .rx_error                      (rx_error),
+   .rx_sop                        (rx_sop),
+   .rx_valid                      (rx_valid),
+   .tx_ready                      (tx_ready),
 
-   .ddpPktDataOut                 (ddpPktDataOut),
+   .ddpPktDataOut                 (ddpPktDataOut[266:0]),
+   .ddpPktDataValid               (ddpPktDataValid),
    .ddpPktFull                    (ddpPktFull),
-   .ddpPktPop                     (ddpPktPop)
+   .ddpPktPop                     (ddpPktPop),
+   .rx_ready                      (rx_ready),
+   .tx_data                       (tx_data[63:0]),
+   .tx_empty                      (tx_empty[2:0]),
+   .tx_eop                        (tx_eop),
+   .tx_error                      (tx_error),
+   .tx_sop                        (tx_sop),
+   .tx_valid                      (tx_valid)
+);
+
+StackLoop  uStackLoop (
+   .rx_ready                      (rx_ready),
+   .tx_data                       (tx_data[63:0]),
+   .tx_empty                      (tx_empty[2:0]),
+   .tx_eop                        (tx_eop),
+   .tx_error                      (tx_error),
+   .tx_sop                        (tx_sop),
+   .tx_valid                      (tx_valid),
+
+   .clockMac                      (clockMac),
+   .resetNMac                     (resetNMac),
+   .rx_data                       (rx_data[63:0]),
+   .rx_empty                      (rx_empty[2:0]),
+   .rx_eop                        (rx_eop),
+   .rx_error                      (rx_error),
+   .rx_sop                        (rx_sop),
+   .rx_valid                      (rx_valid),
+   .tx_ready                      (tx_ready)
 );
 
 endmodule

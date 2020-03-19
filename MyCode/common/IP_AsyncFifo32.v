@@ -343,10 +343,10 @@ module IP_AsyncFifo32(/*AUTOARG*/
      end // always @ (posedge readClock)
 
      // synopsys translate_off
-     assert_overrun :	assert property (@ (posedge writeClock) disable iff (reset!=1'd1) !(push & fifoRealFull))
-                                                                else $fatal(0,"%m %t [FATAL] : Fifo overrun,\t ",$time);	
-     assert_underrun : assert property (@ (posedge readClock) disable iff (reset!=1'd1) !(pop & !dataOutValid))
-                                                              else $fatal(0,"%m %t [FATAL] : Fifo underrun,\t ",$time);
+   //   assert_overrun :	assert property (@ (posedge writeClock) disable iff (reset!=1'd1) !(push & fifoRealFull))
+   //                                                              else $fatal(0,"%m %t [FATAL] : Fifo overrun,\t ",$time);	
+   //   assert_underrun : assert property (@ (posedge readClock) disable iff (reset!=1'd1) !(pop & !dataOutValid))
+   //                                                            else $fatal(0,"%m %t [FATAL] : Fifo underrun,\t ",$time);
      // synopsys translate_on
    
 endmodule // IP_AsyncFifo32

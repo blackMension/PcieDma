@@ -21,6 +21,8 @@ module DDP (
               dataNumProcRdAddr,
               dataOut,
               ddpPktDataOut,
+              ddpPktDataValid,
+              ddpPktEmpty,
               ddpPktFull,
               ddpPktPop,
               emptyArray,
@@ -39,7 +41,6 @@ module DDP (
               ddp2RdmapHdrValid,
               ddp2RdmapHeader,
               ddpPktDataIn,
-              ddpPktEmpty,
               ddpPktPush,
               push,
               pushData,
@@ -52,6 +53,8 @@ input              dataNumProcRd;
 input   [7:0]      dataNumProcRdAddr;
 input   [255:0]    dataOut;
 input   [266:0]    ddpPktDataOut;
+input              ddpPktDataValid;
+input              ddpPktEmpty;
 input              ddpPktFull;
 input              ddpPktPop;
 input   [3:0]      emptyArray;
@@ -69,7 +72,6 @@ output  [7:0]      ddp2RdmapControl;
 output             ddp2RdmapHdrValid;
 output  [55:0]     ddp2RdmapHeader;
 output  [266:0]    ddpPktDataIn;
-output             ddpPktEmpty;
 output             ddpPktPush;
 output             push;
 output  [255:0]    pushData;
@@ -133,6 +135,8 @@ DdpAssmble  uDdpAssmble (
 DdpCut  uDdpCut (
    .clock                         (clock),
    .ddpPktDataOut                 (ddpPktDataOut[266:0]),
+   .ddpPktDataValid               (ddpPktDataValid),
+   .ddpPktEmpty                   (ddpPktEmpty),
    .ddpPktPop                     (ddpPktPop),
    .reset                         (reset),
    .sendDoneCtrl                  (sendDoneCtrl[7:0]),
@@ -143,7 +147,6 @@ DdpCut  uDdpCut (
    .ddp2RdmapControl              (ddp2RdmapControl[7:0]),
    .ddp2RdmapHdrValid             (ddp2RdmapHdrValid),
    .ddp2RdmapHeader               (ddp2RdmapHeader[55:0]),
-   .ddpPktEmpty                   (ddpPktEmpty),
    .push                          (push),
    .pushData                      (pushData[255:0])
 );
