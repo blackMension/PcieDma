@@ -68,7 +68,7 @@ always @(posedge clock or negedge reset) begin
         wrCounter <= wrCounterInt;
     end
 end
-assign RqDmaFifoPop           = (wrCounter == 3'd4) & ~RqDmaFifoEmpty & ~WrDCSWaitRequest;
+assign RqDmaFifoPop    = (wrCounter == 3'd4) & ~RqDmaFifoEmpty & ~WrDCSWaitRequest;
 assign WrDCSWrite      = (wrCounter != 3'd5);
 assign WrDCSChipSelect = WrDCSWrite;
 assign WrDCSAddress    = {3'd0,wrCounter,2'd0};

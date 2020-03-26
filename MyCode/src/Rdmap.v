@@ -13,11 +13,21 @@
 // instance "HeaderGen.v","uHeaderGen";
 // instance "HeaderProc.v","uHeaderProc";
 // # instance "Loop.v","uLoop";
+// instance "PCIeArbiter.v" ,"uPcieArb";
+//    connect "ArbConfChipSelect_i" ,"RQChipSelect_i";
+//    connect "ArbConfWrite_i"      ,"RQWrite_i";         
+//    connect "ArbConfAddress_i"    ,"RQAddress_i";       
+//    connect "ArbConfWriteData_i"  ,"RQWriteData_i";     
+//    connect "ArbConfByteEnable_i" ,"RQByteEnable_i";    
+//    connect "ArbConfWaitRequest_o","RQWaitRequest_o";   
+//    connect "ArbConfRead_i"       ,"RQRead_i";          
+//    connect "ArbConfReadData_o"   ,"RQReadData_o";      
 // endmodule
 // VWEAVE: END PERL
 // VWEAVE: BEGIN GENERATED
 module Rdmap ( 
                 // inputs
+                ArbWaitRequest,
                 RQAddress_i,
                 RQByteEnable_i,
                 RQChipSelect_i,
@@ -48,6 +58,11 @@ module Rdmap (
                 rgstrPtr,
 
                 // outputs
+                ArbAddress,
+                ArbByteEnable,
+                ArbChipSelect,
+                ArbWrite,
+                ArbWriteData,
                 RQReadData_o,
                 RQWaitRequest_o,
                 RdDCSAddress,
@@ -71,11 +86,10 @@ module Rdmap (
                 rdmap2DdpCtrl,
                 rdmap2DdpHdrValid,
                 rdmap2DdpHeader,
-                reqInfo,
-                reqValid,
                 rgstrNum
 );
 
+input              ArbWaitRequest;
 input   [7:0]      RQAddress_i;
 input   [3:0]      RQByteEnable_i;
 input              RQChipSelect_i;
@@ -105,6 +119,11 @@ input   [7:0]      queueNumRdAddr;
 input              reset;
 input   [4:0]      rgstrPtr;
 
+output  [63:0]     ArbAddress;
+output  [3:0]      ArbByteEnable;
+output             ArbChipSelect;
+output             ArbWrite;
+output  [31:0]     ArbWriteData;
 output  [31:0]     RQReadData_o;
 output             RQWaitRequest_o;
 output  [7:0]      RdDCSAddress;
@@ -128,13 +147,11 @@ output  [15:0]     queueNumRdData;
 output  [7:0]      rdmap2DdpCtrl;
 output             rdmap2DdpHdrValid;
 output  [55:0]     rdmap2DdpHeader;
-output  [55:0]     reqInfo;
-output             reqValid;
 output  [2:0]      rgstrNum;
 
 
    wire [115:0]    RqData;
-   wire [111:0]    RqDmaFifoData;
+   wire [115:0]    RqDmaFifoData;
    wire [4:0]      RqDmaFifoDepth;
    wire            RqDmaFifoEmpty;
    wire            RqDmaFifoFull;
@@ -144,7 +161,7 @@ output  [2:0]      rgstrNum;
    wire            RqFull;
    wire            RqPop;
    wire [115:0]    SqData;
-   wire [111:0]    SqDmaFifoData;
+   wire [115:0]    SqDmaFifoData;
    wire [4:0]      SqDmaFifoDepth;
    wire            SqDmaFifoEmpty;
    wire            SqDmaFifoFull;
@@ -162,6 +179,8 @@ output  [2:0]      rgstrNum;
    wire            offloadFifoPush;
    wire [15:0]     rdmaControl;
    wire [51:0]     rdmaWR;
+   wire [55:0]     reqInfo;
+   wire            reqValid;
    wire [7:0]      wrDoneFifoDataIn;
    wire            wrDoneFifoFull;
    wire            wrDoneFifoPush;
@@ -201,11 +220,11 @@ QueuePair  uQueuePair (
 DmaRequest  uDmaRequest (
    .RdDCSReadData                 (RdDCSReadData[31:0]),
    .RdDCSWaitRequest              (RdDCSWaitRequest),
-   .RqDmaFifoData                 (RqDmaFifoData[111:0]),
+   .RqDmaFifoData                 (RqDmaFifoData[115:0]),
    .RqDmaFifoDepth                (RqDmaFifoDepth),
    .RqDmaFifoEmpty                (RqDmaFifoEmpty),
    .RqDmaFifoFull                 (RqDmaFifoFull),
-   .SqDmaFifoData                 (SqDmaFifoData[111:0]),
+   .SqDmaFifoData                 (SqDmaFifoData[115:0]),
    .SqDmaFifoDepth                (SqDmaFifoDepth),
    .SqDmaFifoEmpty                (SqDmaFifoEmpty),
    .SqDmaFifoFull                 (SqDmaFifoFull),
@@ -250,12 +269,12 @@ RdmaOptr  uRdmaOptr (
    .wrDoneFifoDataIn              (wrDoneFifoDataIn[7:0]),
    .wrDoneFifoPush                (wrDoneFifoPush),
 
-   .RqDmaFifoData                 (RqDmaFifoData[111:0]),
+   .RqDmaFifoData                 (RqDmaFifoData[115:0]),
    .RqDmaFifoDepth                (RqDmaFifoDepth[4:0]),
    .RqDmaFifoEmpty                (RqDmaFifoEmpty),
    .RqDmaFifoFull                 (RqDmaFifoFull),
    .RqPop                         (RqPop),
-   .SqDmaFifoData                 (SqDmaFifoData[111:0]),
+   .SqDmaFifoData                 (SqDmaFifoData[115:0]),
    .SqDmaFifoDepth                (SqDmaFifoDepth[4:0]),
    .SqDmaFifoEmpty                (SqDmaFifoEmpty),
    .SqDmaFifoFull                 (SqDmaFifoFull),
@@ -310,6 +329,28 @@ HeaderProc  uHeaderProc (
    .reqValid                      (reqValid),
    .wrDoneFifoDataIn              (wrDoneFifoDataIn[7:0]),
    .wrDoneFifoPush                (wrDoneFifoPush)
+);
+
+PCIeArbiter  uPcieArb (
+   .ArbConfAddress_i              (RQAddress_i[7:0]),
+   .ArbConfByteEnable_i           (RQByteEnable_i[3:0]),
+   .ArbConfChipSelect_i           (RQChipSelect_i),
+   .ArbConfRead_i                 (RQRead_i),
+   .ArbConfWriteData_i            (RQWriteData_i[31:0]),
+   .ArbConfWrite_i                (RQWrite_i),
+   .ArbWaitRequest                (ArbWaitRequest),
+   .clock                         (clock),
+   .reqInfo                       (reqInfo[55:0]),
+   .reqValid                      (reqValid),
+   .reset                         (reset),
+
+   .ArbAddress                    (ArbAddress[63:0]),
+   .ArbByteEnable                 (ArbByteEnable[3:0]),
+   .ArbChipSelect                 (ArbChipSelect),
+   .ArbConfReadData_o             (RQReadData_o[31:0]),
+   .ArbConfWaitRequest_o          (RQWaitRequest_o),
+   .ArbWrite                      (ArbWrite),
+   .ArbWriteData                  (ArbWriteData[31:0])
 );
 
 endmodule

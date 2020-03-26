@@ -1,0 +1,119 @@
+module PCIeArbiter(
+   /*AUTOARG*/
+   // Outputs
+   ArbConfWaitRequest_o,  ArbChipSelect, ArbWrite,
+   ArbAddress, ArbWriteData, ArbByteEnable, 
+   // Inputs
+   clock, reset, ArbConfChipSelect_i, ArbConfWrite_i,
+   ArbConfAddress_i, ArbConfWriteData_i, ArbConfByteEnable_i,
+   ArbConfRead_i, ArbWaitRequest, ArbReadData, reqValid, reqInfo
+   );
+    // global
+input            clock;
+input            reset;
+
+// Configuration
+input            ArbConfChipSelect_i;    
+input            ArbConfWrite_i;         
+input   [7:0]    ArbConfAddress_i;       
+input   [31:0]   ArbConfWriteData_i;     
+input   [3:0]    ArbConfByteEnable_i;    
+output           ArbConfWaitRequest_o;   
+input            ArbConfRead_i;          
+output  [31:0]   ArbConfReadData_o;      
+
+// IRRQ & CQ
+output           ArbChipSelect;    
+output           ArbWrite;         
+output   [63:0]  ArbAddress;       
+output   [31:0]  ArbWriteData;     
+output   [3:0]   ArbByteEnable;    
+input            ArbWaitRequest;   
+
+// To IRRQ , Reques 
+input         reqValid;
+input [55:0]  reqInfo;
+
+reg   [63:0]  irrqBaseAddr;
+reg   [63:0]  cqBaseAddr;
+
+always @(posedge clock or negedge reset) begin
+    if(!reset) begin
+        irrqBaseAddr <= 64'd0;
+    end
+    else begin
+        if(ArbConfAddress_i & ArbConfWrite_i & (ArbConfAddress_i == 8'h10)) begin
+            irrqBaseAddr[63:32] <= ArbConfWriteData_i;
+        end
+        if(ArbConfAddress_i & ArbConfWrite_i & (ArbConfAddress_i == 8'h11)) begin
+            irrqBaseAddr[31:0] <= ArbConfWriteData_i;
+        end 
+    end
+end
+always @(posedge clock or negedge reset) begin
+    if(!reset) begin
+        irrqBaseAddr <= 64'd0;
+    end
+    else begin
+        if(ArbConfAddress_i & ArbConfWrite_i & (ArbConfAddress_i == 8'h20)) begin
+            cqBaseAddr[63:32] <= ArbConfWriteData_i;
+        end
+        if(ArbConfAddress_i & ArbConfWrite_i & (ArbConfAddress_i == 8'h21)) begin
+            cqBaseAddr[31:0] <= ArbConfWriteData_i;
+        end 
+    end
+end
+    
+wire  [55:0] irrqDataOut;
+wire  [55:0] irrqDataIn;
+wire         irrqPush;
+wire         irrqPop;
+wire         irrqFull;
+wire         irrqEmpty;
+
+wire irrqStart;
+reg  irrqEnd;
+
+GenRegFifo8D56W uIRRQ(
+    // Outputs;
+    .dataOut                            (irrqDataOut),
+    .full                               (irrqFull),
+    .empty                              (irrqEmpty)  ,
+    .almostFullFlag                     (),
+    .almostEmptyFlag                    (),
+    .fifoDepth                          (),
+    .overrun                            (),
+    .underrun                           (),
+    // Inputs
+    .clockCore                          (clock),
+    .resetCore                          (reset),
+    .push                               (irrqPush ) ,
+    .dataIn                             (irrqDataIn)   ,
+    .pop                                (irrqPop),
+    .almostFullThreshold                (4'd8),
+    .almostEmptyThreshold               (4'd0) 
+    );
+assign irrqDataIn =  reqInfo;
+assign irrqPush = reqValid & ~irrqFull;
+assign irrqPop  = irrqEnd & ~ArbWaitRequest & ~irrqEmpty;
+always @(posedge clock or negedge reset) begin
+    if(!reset) begin
+        irrqEnd <= 1'd0;
+    end
+    else begin
+        if(~ArbWaitRequest) begin
+            irrqEnd <= irrqStart;
+        end
+        else if(~ArbWaitRequest & irrqEnd) begin
+            irrqEnd <= 1'd0;
+        end
+    end
+end
+assign irrqStart = ~irrqEnd & ~irrqEmpty;
+
+assign ArbWrite = irrqStart & irrqEnd;
+assign ArbChipSelect = ArbWrite;
+assign ArbAddress    = irrqStart ? irrqBaseAddr : irrqBaseAddr + 64'd1;
+assign ArbWriteData  = irrqStart ? {8'd0,irrqDataOut[55:32]} : irrqDataOut[31:0];
+assign ArbByteEnable = irrqStart ? 4'he : 4'hf; 
+endmodule // PCIeArbiter

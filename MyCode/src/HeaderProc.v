@@ -34,7 +34,7 @@ output         wrDoneFifoPush;
 output [7:0]   wrDoneFifoDataIn;
 input          wrDoneFifoFull;
 
-// To IRRQ , Request 
+// To IRRQ , Reques 
 output         reqValid;
 output [55:0]  reqInfo;
 

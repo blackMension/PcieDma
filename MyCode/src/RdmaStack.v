@@ -18,6 +18,7 @@
 // VWEAVE: BEGIN GENERATED
 module RdmaStack ( 
                     // inputs
+                    ArbWaitRequest,
                     RQAddress_i,
                     RQByteEnable_i,
                     RQChipSelect_i,
@@ -36,7 +37,7 @@ module RdmaStack (
                     WrDCSWaitRequest,
                     clock,
                     dataOut,
-                    ddpPktEmpty,
+                    ddpPktPop,
                     emptyArray,
                     lastNum,
                     poolEmpty,
@@ -46,6 +47,11 @@ module RdmaStack (
                     rgstrPtr,
 
                     // outputs
+                    ArbAddress,
+                    ArbByteEnable,
+                    ArbChipSelect,
+                    ArbWrite,
+                    ArbWriteData,
                     QN,
                     RQReadData_o,
                     RQWaitRequest_o,
@@ -67,11 +73,10 @@ module RdmaStack (
                     dataPop,
                     push,
                     pushData,
-                    reqInfo,
-                    reqValid,
                     rgstrNum
 );
 
+input              ArbWaitRequest;
 input   [7:0]      RQAddress_i;
 input   [3:0]      RQByteEnable_i;
 input              RQChipSelect_i;
@@ -90,7 +95,7 @@ input   [31:0]     WrDCSReadData;
 input              WrDCSWaitRequest;
 input              clock;
 input   [255:0]    dataOut;
-input              ddpPktEmpty;
+input              ddpPktPop;
 input   [3:0]      emptyArray;
 input   [4:0]      lastNum;
 input              poolEmpty;
@@ -99,6 +104,11 @@ input              ready;
 input              reset;
 input   [4:0]      rgstrPtr;
 
+output  [63:0]     ArbAddress;
+output  [3:0]      ArbByteEnable;
+output             ArbChipSelect;
+output             ArbWrite;
+output  [31:0]     ArbWriteData;
 output  [3:0]      QN;
 output  [31:0]     RQReadData_o;
 output             RQWaitRequest_o;
@@ -120,8 +130,6 @@ output             bufRegister;
 output             dataPop;
 output             push;
 output  [255:0]    pushData;
-output  [55:0]     reqInfo;
-output             reqValid;
 output  [2:0]      rgstrNum;
 
 
@@ -135,8 +143,8 @@ output  [2:0]      rgstrNum;
    wire [266:0]    ddpPktDataIn;
    wire [266:0]    ddpPktDataOut;
    wire            ddpPktDataValid;
+   wire            ddpPktEmpty;
    wire            ddpPktFull;
-   wire            ddpPktPop;
    wire            ddpPktPush;
    wire            queueNumRd;
    wire [7:0]      queueNumRdAddr;
@@ -161,6 +169,7 @@ output  [2:0]      rgstrNum;
    wire            tx_valid;
 
 Rdmap  uRdmap (
+   .ArbWaitRequest                (ArbWaitRequest),
    .RQAddress_i                   (RQAddress_i[7:0]),
    .RQByteEnable_i                (RQByteEnable_i[3:0]),
    .RQChipSelect_i                (RQChipSelect_i),
@@ -190,6 +199,11 @@ Rdmap  uRdmap (
    .reset                         (reset),
    .rgstrPtr                      (rgstrPtr[4:0]),
 
+   .ArbAddress                    (ArbAddress[63:0]),
+   .ArbByteEnable                 (ArbByteEnable[3:0]),
+   .ArbChipSelect                 (ArbChipSelect),
+   .ArbWrite                      (ArbWrite),
+   .ArbWriteData                  (ArbWriteData[31:0]),
    .RQReadData_o                  (RQReadData_o[31:0]),
    .RQWaitRequest_o               (RQWaitRequest_o),
    .RdDCSAddress                  (RdDCSAddress[7:0]),
@@ -213,8 +227,6 @@ Rdmap  uRdmap (
    .rdmap2DdpCtrl                 (rdmap2DdpCtrl[7:0]),
    .rdmap2DdpHdrValid             (rdmap2DdpHdrValid),
    .rdmap2DdpHeader               (rdmap2DdpHeader[55:0]),
-   .reqInfo                       (reqInfo[55:0]),
-   .reqValid                      (reqValid),
    .rgstrNum                      (rgstrNum[2:0])
 );
 
@@ -254,7 +266,7 @@ GearBox  uGearBox (
    .clock                         (clock),
    .clockMac                      (clockMac),
    .ddpPktDataIn                  (ddpPktDataIn[266:0]),
-   .ddpPktEmpty                   (ddpPktEmpty),
+   .ddpPktPop                     (ddpPktPop),
    .ddpPktPush                    (ddpPktPush),
    .reset                         (reset),
    .resetNMac                     (resetNMac),
@@ -268,8 +280,8 @@ GearBox  uGearBox (
 
    .ddpPktDataOut                 (ddpPktDataOut[266:0]),
    .ddpPktDataValid               (ddpPktDataValid),
+   .ddpPktEmpty                   (ddpPktEmpty),
    .ddpPktFull                    (ddpPktFull),
-   .ddpPktPop                     (ddpPktPop),
    .rx_ready                      (rx_ready),
    .tx_data                       (tx_data[63:0]),
    .tx_empty                      (tx_empty[2:0]),
