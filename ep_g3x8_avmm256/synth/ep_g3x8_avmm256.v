@@ -751,6 +751,18 @@ wire [5:0]    lastNum;
 wire          poolFull;
 wire          poolEmpty;
 
+wire           ArbChipSelect;    
+wire           ArbWrite;         
+wire   [63:0]  ArbAddress;       
+wire   [31:0]  ArbWriteData;     
+wire   [3:0]   ArbByteEnable;    
+wire           ArbWaitRequest;   
+
+wire           QpChipSelect;    
+wire           QpWrite;         
+wire   [63:0]  QpAddress;       
+wire   [31:0]  QpWriteData;     
+wire   [3:0]   QpByteEnable;    
  RdmaStack uRdmaStack( 
     // inputs
     .clock                (dut_coreclkout_hip_clk           ),
@@ -778,7 +790,9 @@ wire          poolEmpty;
     .poolFull             (poolFull  ),     
     .ready                (ready     ),  
     .rgstrPtr             (rgstrPtr  ),     
-
+    .ArbWaitRequest       (dma_control_0_rddcm_master_waitrequest),
+    .QpWaitRequest        (dma_control_0_rddcm_master_waitrequest),
+    
     // outputs
     .RQReadData_o         (mm_interconnect_3_dma_control_0_wrdcs_slave_readdata   ),
     .RQWaitRequest_o      (mm_interconnect_3_dma_control_0_wrdcs_slave_waitrequest),
@@ -802,10 +816,22 @@ wire          poolEmpty;
     .push                 (push       ),   
     .pushData             (pushData   ),       
     .rgstrNum             (rgstrNum   ),       
-    .QN                   (QN         )
+    .QN                   (QN         ),
+    // IRRQ & CQ
+    .ArbAddress           (ArbAddress   ),          
+    .ArbByteEnable        (ArbByteEnable),             
+    .ArbChipSelect        (ArbChipSelect),             
+    .ArbWrite             (ArbWrite     ),        
+    .ArbWriteData         (ArbWriteData ),            
+    // 
+    .QpAddress           (QpAddress   ),          
+    .QpByteEnable        (QpByteEnable),             
+    .QpChipSelect        (QpChipSelect),             
+    .QpWrite             (QpWrite     ),        
+    .QpWriteData         (QpWriteData )            
 );
 assign bufRelease = 1'd0;
-    ReceiveBuffer uReceiveBuffer(
+ReceiveBuffer uReceiveBuffer(
     // global
         .clock             (dut_coreclkout_hip_clk),   
         .reset             (dut_app_nreset_status_reset),   
@@ -832,23 +858,23 @@ assign bufRelease = 1'd0;
     // fresh
         .freshMapping      (bufRelease)  // input fresh Mapping location
     );
-    SendBuffer uSendBuffer(
+SendBufferV2 uSendBuffer(
     // global
-        .clock             (dut_coreclkout_hip_clk),   
-        .reset             (dut_app_nreset_status_reset),   
+    .clock             (dut_coreclkout_hip_clk),   
+    .reset             (dut_app_nreset_status_reset),   
     // To PCIe (data In)
-        .address           (mm_interconnect_1_onchip_memory2_0_s1_address   ),     
-        .clken             (mm_interconnect_1_onchip_memory2_0_s1_clken     ),   
-        .chipselect        (mm_interconnect_1_onchip_memory2_0_s1_chipselect),        
-        .write             (mm_interconnect_1_onchip_memory2_0_s1_write     ),   
-        .readdata          (mm_interconnect_1_onchip_memory2_0_s1_readdata  ),      
-        .writedata         (mm_interconnect_1_onchip_memory2_0_s1_writedata ),       
-        .byteenable        (mm_interconnect_1_onchip_memory2_0_s1_byteenable),        
+    .address           (mm_interconnect_1_onchip_memory2_0_s1_address   ),     
+    .clken             (mm_interconnect_1_onchip_memory2_0_s1_clken     ),   
+    .chipselect        (mm_interconnect_1_onchip_memory2_0_s1_chipselect),        
+    .write             (mm_interconnect_1_onchip_memory2_0_s1_write     ),   
+    .readdata          (mm_interconnect_1_onchip_memory2_0_s1_readdata  ),      
+    .writedata         (mm_interconnect_1_onchip_memory2_0_s1_writedata ),       
+    .byteenable        (mm_interconnect_1_onchip_memory2_0_s1_byteenable),        
     // To Rdma (data out)
-        .dataPop           (dataPop),  
-        .dataOut           (dataOut),      
-        .ready             (ready   ),
-        .emptyArray        (emptyArray)
+    .dataPop           (dataPop),  
+    .dataOut           (dataOut),      
+    .ready             (ready   ),
+    .emptyArray        (emptyArray)
     );
     // ep_g3x8_avmm256_onchip_memory2_0 onchip_memory2_0 (
     // 	.clk         (dut_coreclkout_hip_clk),                           //   input,    width = 1,   clk1.clk
@@ -873,6 +899,16 @@ assign bufRelease = 1'd0;
     // 	.byteenable2 (mm_interconnect_2_onchip_memory2_0_s2_byteenable)  //   input,   width = 32,       .byteenable
     // );
 
+
+wire  [63:0] rddcm_master_address;
+wire  [3:0]  rddcm_master_byteenable;   
+wire         rddcm_master_write;        
+wire  [31:0] rddcm_master_writedata;    
+assign      rddcm_master_address    = ArbChipSelect ? ArbAddress    : QpChipSelect ? QpAddress   : dma_control_0_rddcm_master_address      ;
+assign      rddcm_master_byteenable = ArbChipSelect ? ArbByteEnable : QpChipSelect ? QpByteEnable: dma_control_0_rddcm_master_byteenable   ;
+assign      rddcm_master_write      = ArbChipSelect ? ArbWrite      : QpChipSelect ? QpWrite     : dma_control_0_rddcm_master_write        ;
+assign      rddcm_master_writedata  = ArbChipSelect ? ArbWriteData  : QpChipSelect ? QpWriteData : dma_control_0_rddcm_master_writedata    ;
+
     ep_g3x8_avmm256_altera_mm_interconnect_171_7t36psq mm_interconnect_0 (
         .DUT_coreclkout_hip_clk                                                  (dut_coreclkout_hip_clk),                   //   input,   width = 1,                                                DUT_coreclkout_hip.clk
         .DUT_txs_address                                                         (mm_interconnect_0_dut_txs_address),        //  output,  width = 32,                                                           DUT_txs.address
@@ -884,14 +920,14 @@ assign bufRelease = 1'd0;
         .DUT_txs_readdatavalid                                                   (mm_interconnect_0_dut_txs_readdatavalid),  //   input,   width = 1,                                                                  .readdatavalid
         .DUT_txs_waitrequest                                                     (mm_interconnect_0_dut_txs_waitrequest),    //   input,   width = 1,                                                                  .waitrequest
         .DUT_txs_chipselect                                                      (mm_interconnect_0_dut_txs_chipselect),     //  output,   width = 1,                                                                  .chipselect
-        .dma_control_0_RdDCM_Master_address                                      (dma_control_0_rddcm_master_address),       //   input,  width = 64,                                        dma_control_0_RdDCM_Master.address
-        .dma_control_0_RdDCM_Master_waitrequest                                  (dma_control_0_rddcm_master_waitrequest),   //  output,   width = 1,                                                                  .waitrequest
-        .dma_control_0_RdDCM_Master_byteenable                                   (dma_control_0_rddcm_master_byteenable),    //   input,   width = 4,                                                                  .byteenable
-        .dma_control_0_RdDCM_Master_read                                         (dma_control_0_rddcm_master_read),          //   input,   width = 1,                                                                  .read
-        .dma_control_0_RdDCM_Master_readdata                                     (dma_control_0_rddcm_master_readdata),      //  output,  width = 32,                                                                  .readdata
+        .dma_control_0_RdDCM_Master_address                                      (rddcm_master_address   ),       //   input,  width = 64,                                        dma_control_0_RdDCM_Master.address
+        .dma_control_0_RdDCM_Master_byteenable                                   (rddcm_master_byteenable),    //   input,   width = 4,                                                                  .byteenable
+        .dma_control_0_RdDCM_Master_write                                        (rddcm_master_write     ),         //   input,   width = 1,                                                                  .write
+        .dma_control_0_RdDCM_Master_writedata                                    (rddcm_master_writedata ),     //   input,  width = 32,                                                                  .writedata
+        .dma_control_0_RdDCM_Master_waitrequest                                  (dma_control_0_rddcm_master_waitrequest  ),   //  output,   width = 1,                                                                  .waitrequest
+        .dma_control_0_RdDCM_Master_read                                         (dma_control_0_rddcm_master_read         ),          //   input,   width = 1,                                                                  .read
+        .dma_control_0_RdDCM_Master_readdata                                     (dma_control_0_rddcm_master_readdata     ),      //  output,  width = 32,                                                                  .readdata
         .dma_control_0_RdDCM_Master_readdatavalid                                (dma_control_0_rddcm_master_readdatavalid), //  output,   width = 1,                                                                  .readdatavalid
-        .dma_control_0_RdDCM_Master_write                                        (dma_control_0_rddcm_master_write),         //   input,   width = 1,                                                                  .write
-        .dma_control_0_RdDCM_Master_writedata                                    (dma_control_0_rddcm_master_writedata),     //   input,  width = 32,                                                                  .writedata
         .dma_control_0_RdDCM_Master_translator_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),           //   input,   width = 1, dma_control_0_RdDCM_Master_translator_reset_reset_bridge_in_reset.reset
         .dma_control_0_Resetn_reset_bridge_in_reset_reset                        (rst_controller_reset_out_reset),           //   input,   width = 1,                        dma_control_0_Resetn_reset_bridge_in_reset.reset
         .dma_control_0_WrDCM_Master_address                                      (dma_control_0_wrdcm_master_address),       //   input,  width = 64,                                        dma_control_0_WrDCM_Master.address
