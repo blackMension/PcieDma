@@ -28,6 +28,7 @@
 module Rdmap ( 
                 // inputs
                 ArbWaitRequest,
+                QpWaitRequest,
                 RQAddress_i,
                 RQByteEnable_i,
                 RQChipSelect_i,
@@ -63,6 +64,11 @@ module Rdmap (
                 ArbChipSelect,
                 ArbWrite,
                 ArbWriteData,
+                QpAddress,
+                QpByteEnable,
+                QpChipSelect,
+                QpWrite,
+                QpWriteData,
                 RQReadData_o,
                 RQWaitRequest_o,
                 RdDCSAddress,
@@ -90,6 +96,7 @@ module Rdmap (
 );
 
 input              ArbWaitRequest;
+input              QpWaitRequest;
 input   [7:0]      RQAddress_i;
 input   [3:0]      RQByteEnable_i;
 input              RQChipSelect_i;
@@ -124,6 +131,11 @@ output  [3:0]      ArbByteEnable;
 output             ArbChipSelect;
 output             ArbWrite;
 output  [31:0]     ArbWriteData;
+output  [63:0]     QpAddress;
+output  [3:0]      QpByteEnable;
+output             QpChipSelect;
+output             QpWrite;
+output  [31:0]     QpWriteData;
 output  [31:0]     RQReadData_o;
 output             RQWaitRequest_o;
 output  [7:0]      RdDCSAddress;
@@ -186,6 +198,7 @@ output  [2:0]      rgstrNum;
    wire            wrDoneFifoPush;
 
 QueuePair  uQueuePair (
+   .QpWaitRequest                 (QpWaitRequest),
    .RQAddress_i                   (RQAddress_i[7:0]),
    .RQByteEnable_i                (RQByteEnable_i[3:0]),
    .RQChipSelect_i                (RQChipSelect_i),
@@ -203,6 +216,11 @@ QueuePair  uQueuePair (
    .clock                         (clock),
    .reset                         (reset),
 
+   .QpAddress                     (QpAddress[63:0]),
+   .QpByteEnable                  (QpByteEnable[3:0]),
+   .QpChipSelect                  (QpChipSelect),
+   .QpWrite                       (QpWrite),
+   .QpWriteData                   (QpWriteData[31:0]),
    .RQReadData_o                  (RQReadData_o[31:0]),
    .RQWaitRequest_o               (RQWaitRequest_o),
    .RqData                        (RqData[115:0]),

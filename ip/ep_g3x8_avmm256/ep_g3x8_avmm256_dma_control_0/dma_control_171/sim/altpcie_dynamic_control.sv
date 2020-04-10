@@ -691,7 +691,8 @@ endgenerate
 
 assign current_desc_id[7:0] = ep_last_pntr_reg[7:0];
 
-assign sent_dt_size[7:0] =  current_desc_id[7:0] - prev_desc_id_reg[7:0];  /// software ensures no roll over
+assign sent_dt_size[7:0] =  current_desc_id[7:0] + 8'd1;  /// software ensures no roll over
+// assign sent_dt_size[7:0] =  current_desc_id[7:0] - prev_desc_id_reg[7:0];  /// software ensures no roll over
 
 generate if(READ_CONTROL == 1)
   begin

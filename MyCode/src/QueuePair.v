@@ -3,11 +3,13 @@ module QueuePair(
    // Outputs
    SQWaitRequest_o, SQReadData_o, RQWaitRequest_o, RQReadData_o,
    SqData, SqEmpty, SqFifoDepth, SqFull, RqData, RqEmpty, RqFifoDepth,
-   RqFull,
+   RqFull, QpChipSelect, QpWrite, QpAddress, QpWriteData,
+   QpByteEnable,
    // Inputs
    clock, reset, SQChipSelect_i, SQWrite_i, SQAddress_i,
    SQWriteData_i, SQByteEnable_i, SQRead_i, RQChipSelect_i, RQWrite_i,
-   RQAddress_i, RQWriteData_i, RQByteEnable_i, RQRead_i, SqPop, RqPop
+   RQAddress_i, RQWriteData_i, RQByteEnable_i, RQRead_i, SqPop, RqPop,
+   QpWaitRequest
    );
     // global
         input            clock;
@@ -45,6 +47,28 @@ module QueuePair(
         output  [4:0]    RqFifoDepth;
         output           RqFull;      
 
+// AVMM
+output           QpChipSelect;    
+output           QpWrite;         
+output   [63:0]  QpAddress;       
+output   [31:0]  QpWriteData;     
+output   [3:0]   QpByteEnable;    
+input            QpWaitRequest;   
+
+reg SqEnableWRLock;
+reg RqEnableWRLock;
+reg SqDisableWRLock;
+reg RqDisableWRLock;
+
+wire  SqEnableWR;
+wire  RqEnableWR;
+wire SqDisableWR;
+wire RqDisableWR;
+
+wire  SqEnableWRInt;
+wire  RqEnableWRInt;
+wire SqDisableWRInt;
+wire RqDisableWRInt;
         WorkQueue SQ (
             .clock            (clock),
             .reset            (reset),
@@ -59,6 +83,8 @@ module QueuePair(
             .rdData           (SQReadData_o      ),
 
             // Pop Data
+            .enableWR         (SqEnableWRInt   ),
+            .disableWR        (SqDisableWRInt  ),
             .fifoPop          (SqPop        ),
             .data             (SqData       ),
             .empty            (SqEmpty      ),
@@ -79,6 +105,8 @@ module QueuePair(
             .rdData           (RQReadData_o      ),
 
             // Pop Data
+            .enableWR         (RqEnableWRInt   ),
+            .disableWR        (RqDisableWRInt  ),
             .fifoPop          (RqPop        ),
             .data             (RqData       ),
             .empty            (RqEmpty      ),
@@ -86,12 +114,60 @@ module QueuePair(
             .full             (Rqfull       )
         );
      
+always @(posedge clock or negedge reset) begin
+    if(!reset) begin
+        SqEnableWRLock <= 1'd0;
+    end
+    else begin
+        if(~QpWaitRequest) SqEnableWRLock <= 1'd0;
+        else if(SqEnableWRInt) SqEnableWRLock <= 1'd1;
+    end
+end
+assign SqEnableWR = SqEnableWRInt | SqEnableWRLock;
+always @(posedge clock or negedge reset) begin
+    if(!reset) begin
+        RqEnableWRLock <= 1'd0;
+    end
+    else begin
+        if(~QpWaitRequest) RqEnableWRLock <= 1'd0;
+        else if(RqEnableWRInt) RqEnableWRLock <= 1'd1;
+    end
+end
+assign RqEnableWR = RqEnableWRInt | RqEnableWRLock;
+
+always @(posedge clock or negedge reset) begin
+    if(!reset) begin
+        SqDisableWRLock <= 1'd0;
+    end
+    else begin
+        if(~QpWaitRequest) SqDisableWRLock <= 1'd0;
+        else if(SqDisableWRInt) SqDisableWRLock <= 1'd1;
+    end
+end
+assign SqDisableWR = SqDisableWRInt | SqDisableWRLock;
+always @(posedge clock or negedge reset) begin
+    if(!reset) begin
+        RqDisableWRLock <= 1'd0;
+    end
+    else begin
+        if(~QpWaitRequest) RqDisableWRLock <= 1'd0;
+        else if(RqDisableWRInt) RqDisableWRLock <= 1'd1;
+    end
+end
+assign RqDisableWR = RqDisableWRInt | RqDisableWRLock;
+
+assign QpChipSelect = RqEnableWR | SqEnableWR | RqDisableWR | SqDisableWR;
+assign QpWrite = QpChipSelect;
+assign QpAddress = RqEnableWR | RqDisableWR ? 64'h9900 : 64'h9800;
+assign QpWriteData = RqEnableWR | SqEnableWR ? 32'd1 : 32'd0; 
+assign QpByteEnable = 4'hf;
 endmodule
 
 module WorkQueue(
     /*AUTOARG*/
    // Outputs
-   waitRequest, rdData, data, empty, fifoDepth, full,
+   waitRequest, rdData, data, empty, fifoDepth, full, disableWR,
+   enableWR,
    // Inputs
    clock, reset, select, write, address, wrData, byteEnable, read,
    fifoPop
@@ -116,6 +192,8 @@ module WorkQueue(
         output           fifoDepth;
         output           full;
 
+        output  disableWR;
+        output  enableWR;
 
 wire slot0;
 wire slot1;
@@ -166,13 +244,17 @@ wire         fifoPush;
 wire [115:0] fifoDataIn;
 assign fifoPush = slot3;
 assign fifoDataIn = {opcode,dataNum,TID,dataLen0,dataLen1,dataLen2,dataLen3,descTableAddrHi,descTableAddrMe,descTableAddrLo};
-GenRamFifo16D116W WorkFifo(
+wire almostEmptyFlag;
+wire almostFullFlag;
+reg  credit;
+reg  creditF1;
+GenRamFifo256D116W WorkFifo(
     // Outputs;
     .dataOut                            (data),
     .full                               (full),
     .empty                              (empty)  ,
-    .almostFullFlag                     ()           ,
-    .almostEmptyFlag                    ()            ,
+    .almostFullFlag                     (almostFullFlag)           ,
+    .almostEmptyFlag                    (almostEmptyFlag)            ,
     .fifoDepth                          (fifoDepth)      ,
     .overrun                            ()    ,
     .underrun                           ()     ,
@@ -184,14 +266,38 @@ GenRamFifo16D116W WorkFifo(
     .push                               (fifoPush) ,
     .dataIn                             (fifoDataIn)   ,
     .pop                                (fifoPop),
-    .almostFullThreshold                (5'd16)                ,
-    .almostEmptyThreshold               (5'd0)                 ,
+    .almostFullThreshold                (9'd200)                ,
+    .almostEmptyThreshold               (9'd100)                 ,
     .cpuReadValid                       (1'd0)         ,
-    .cpuReadAddress                     (4'd0)
+    .cpuReadAddress                     (10'd0)
     );
 
     assign readdata = 32'd0;
     assign waitRequest = 1'd0;
+
+   always @(posedge clock or negedge reset) begin
+       if(!reset) begin
+           credit <= 1'd0;
+       end
+       else begin
+           if(credit == 1'd0 && almostFullFlag == 1'd1) begin
+               credit <= 1'd1;
+           end
+           else if(credit == 1'd1 && almostEmptyFlag)begin
+               credit <= 1'd0;
+           end
+       end
+   end
+  always @(posedge clock or negedge reset) begin
+      if(!reset) begin
+        creditF1 <= 1'd0;
+      end
+      else begin
+          creditF1 <= credit;
+      end
+  end
+    assign disableWR = ~creditF1 & credit;
+    assign enableWR = creditF1 & ~credit;
 endmodule // WorkQueue
 
     // // QP to DMA

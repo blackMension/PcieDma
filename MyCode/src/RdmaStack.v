@@ -19,6 +19,7 @@
 module RdmaStack ( 
                     // inputs
                     ArbWaitRequest,
+                    QpWaitRequest,
                     RQAddress_i,
                     RQByteEnable_i,
                     RQChipSelect_i,
@@ -53,6 +54,11 @@ module RdmaStack (
                     ArbWrite,
                     ArbWriteData,
                     QN,
+                    QpAddress,
+                    QpByteEnable,
+                    QpChipSelect,
+                    QpWrite,
+                    QpWriteData,
                     RQReadData_o,
                     RQWaitRequest_o,
                     RdDCSAddress,
@@ -77,6 +83,7 @@ module RdmaStack (
 );
 
 input              ArbWaitRequest;
+input              QpWaitRequest;
 input   [7:0]      RQAddress_i;
 input   [3:0]      RQByteEnable_i;
 input              RQChipSelect_i;
@@ -110,6 +117,11 @@ output             ArbChipSelect;
 output             ArbWrite;
 output  [31:0]     ArbWriteData;
 output  [3:0]      QN;
+output  [63:0]     QpAddress;
+output  [3:0]      QpByteEnable;
+output             QpChipSelect;
+output             QpWrite;
+output  [31:0]     QpWriteData;
 output  [31:0]     RQReadData_o;
 output             RQWaitRequest_o;
 output  [7:0]      RdDCSAddress;
@@ -170,6 +182,7 @@ output  [2:0]      rgstrNum;
 
 Rdmap  uRdmap (
    .ArbWaitRequest                (ArbWaitRequest),
+   .QpWaitRequest                 (QpWaitRequest),
    .RQAddress_i                   (RQAddress_i[7:0]),
    .RQByteEnable_i                (RQByteEnable_i[3:0]),
    .RQChipSelect_i                (RQChipSelect_i),
@@ -204,6 +217,11 @@ Rdmap  uRdmap (
    .ArbChipSelect                 (ArbChipSelect),
    .ArbWrite                      (ArbWrite),
    .ArbWriteData                  (ArbWriteData[31:0]),
+   .QpAddress                     (QpAddress[63:0]),
+   .QpByteEnable                  (QpByteEnable[3:0]),
+   .QpChipSelect                  (QpChipSelect),
+   .QpWrite                       (QpWrite),
+   .QpWriteData                   (QpWriteData[31:0]),
    .RQReadData_o                  (RQReadData_o[31:0]),
    .RQWaitRequest_o               (RQWaitRequest_o),
    .RdDCSAddress                  (RdDCSAddress[7:0]),

@@ -59,6 +59,10 @@ reg   [2:0] wrCounter;
 wire  [2:0] rdCounterInt;
 reg   [2:0] rdCounter;
 
+wire  [6:0] WrDCSAddressInt;
+wire  [6:0] RdDCSAddressInt;
+reg   [6:0] WrDCSAddressReg;
+reg   [6:0] RdDCSAddressReg;
 assign wrCounterInt = (~RqDmaFifoEmpty & (wrCounter == 3'd5)) ? 3'd0 : ( ~RqDmaFifoEmpty & ~WrDCSWaitRequest) ? wrCounter + 3'd1 : wrCounter ;
 always @(posedge clock or negedge reset) begin
     if(!reset) begin
@@ -77,6 +81,7 @@ assign WrDCSWriteData  = (wrCounter == 3'd4) ? wrDescriptor[31:0]   :
                          (wrCounter == 3'd2) ? wrDescriptor[95:64]  :
                          (wrCounter == 3'd1) ? wrDescriptor[127:96] : wrDescriptor[159:128];
                          
+wire [3:0] rdBaseAddr;
 assign rdCounterInt = (~SqDmaFifoEmpty & (rdCounter == 3'd5)) ? 3'd0 : ( ~SqDmaFifoEmpty & ~RdDCSWaitRequest) ? rdCounter + 3'd1 : rdCounter;
 always @(posedge clock or negedge reset) begin
     if(!reset) begin
@@ -99,7 +104,23 @@ assign RdDCSRead = 1'd0;
 assign WrDCSRead = 1'd0;
 assign RdDCSByteEnable = 4'hf;
 assign WrDCSByteEnable = 4'hf;
+
+// assign WrDCSAddressInt = WrDCSWrite & ~WrDCSWaitRequest ? WrDCSAddressReg + 7'd4 : WrDCSAddressReg;
+// assign RdDCSAddressInt = RdDCSWrite & ~RdDCSWaitRequest ? RdDCSAddressReg + 7'd4 : RdDCSAddressReg;
+// always @(posedge clock or negedge reset) begin
+//     if(!reset) begin
+//         WrDCSAddressReg <= 7'd0;
+//         RdDCSAddressReg <= 7'd0;
+//     end
+//     else begin
+//         WrDCSAddressReg <= WrDCSAddressInt;
+//         RdDCSAddressReg <= RdDCSAddressInt;
+//     end
+// end
+// assign WrDCSAddress = {1'd0,WrDCSAddressReg};
+// assign RdDCSAddress = {1'd0,RdDCSAddressReg};
 endmodule // RequestTraffic
+
 // GenRamFifo16D112W SqDmaFifofetch(
 // 	// Outputs;
 // 	dataOut                            (data),

@@ -2,11 +2,11 @@ Magic 271485
 Revision Verdi3_L-2016.06-1
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 60 19 1850 1016 346 199
+viewPort 60 19 1850 1016 276 317
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "/home/dalys/MySpace/FPGA/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_tb/sim/synopsys/vcs/PcieDma.fsdb"
+openDirFile -d / -i 0 "" "/mnt/hgfs/Share/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_tb/sim/synopsys/vcs/PcieDma.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -15,17 +15,17 @@ openDirFile -d / "" "/home/dalys/MySpace/FPGA/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8
 signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
-; waveform viewport range
-zoom 0.000000 73207436100.000000
-cursor 67068811000.000000
-marker 67996811000.000000
+windowTimeUnit 1ns
 
-; user define markers
-; userMarker time_pos marker_name color linestyle
+; waveform viewport range
+zoom 67671.044099 67831.852435 1n
+cursor 67728.811000
+marker 71904.811000
+
 ; visible top row signal index
-top 1
+top 183
 ; marker line index
-markerPos 81
+markerPos 225
 
 ; event list
 ; addEvent event_name event_expression
@@ -45,26 +45,172 @@ COMPLEX_EVENT_END
 curSTATUS ByChange
 
 
-addGroup "MemoryPort"
-addSubGroup "MemoryPort-1" -e FALSE
-activeDirFile "" "/home/dalys/MySpace/FPGA/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_tb/sim/synopsys/vcs/PcieDma.fsdb"
-addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/onchip_memory2_0/clk
-addSignal -h 15 -UNSIGNED -HEX -holdScope address[9:0]
-addSignal -h 15 -holdScope chipselect
-addSignal -h 15 -holdScope write
-addSignal -h 15 -UNSIGNED -HEX -holdScope readdata[255:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope writedata[255:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope byteenable[31:0]
+aliasmapname altpcie_dynamic_control.dcs_current_state
+nalias DCS_WRITE_ACK		4'b0100		NULL
+nalias DCS_IDLE		4'b0001		NULL
+nalias DCS_READ_ACK		4'b1000		NULL
+nalias DCS_PIPE		4'b0010		NULL
+
+aliasmapname altpcie_dynamic_control.dts_state
+nalias DTS_BURST		3'b010		NULL
+nalias DTS_WAIT		3'b100		NULL
+nalias DTS_IDLE		3'b001		NULL
+
+aliasmapname altpcie_dynamic_control.dma_tx_state
+nalias DMA_TX_PROGRAM		6'b001000		NULL
+nalias DMA_TX_FIFO_RD		6'b000010		NULL
+nalias DMA_WRDESC_SEND		6'b100000		NULL
+nalias DMA_TX_WAIT		6'b000100		NULL
+nalias DMA_TX_DT_SEND		6'b010000		NULL
+nalias DMA_TX_IDLE		6'b000001		NULL
+
+aliasmapname altpcie_dynamic_control.dcm_state
+nalias DCM_WR		3'b010		NULL
+nalias DCM_MSI_WR		3'b100		NULL
+nalias DCM_IDLE		3'b001		NULL
+
+aliasmapname altpcieav_dma_txs.txs_state
+nalias TXS_RDATA_VALID		6'b100000		NULL
+nalias TXS_READ_HEADER		6'b001000		NULL
+nalias TXS_ARB_REQ		6'b000010		NULL
+nalias TXS_WAIT_CPL		6'b010000		NULL
+nalias TXS_WRITE_HEADER		6'b000100		NULL
+nalias TXS_IDLE		6'b000001		NULL
+
+aliasmapname altpcieav_hip_interface.rx_underflow_state
+nalias RX_UNDERFLOW_IDLE		2'b00		NULL
+nalias RX_UNDERFLOW_STREAM		2'b01		NULL
+nalias RX_UNDERFLOW_WAIT		2'b10		NULL
+
+aliasmapname altpcieav_dma_rd.rd_dma_state
+nalias RD_LD_SUB_DESC		9'b100000000		NULL
+nalias RD_WAIT_TAG		9'b000010000		NULL
+nalias RD_ARB_REQ		9'b000000100		NULL
+nalias RD_PIPE		9'b001000000		NULL
+nalias RD_IDLE		9'b000000001		NULL
+nalias RD_CHECK_SUB_DESC		9'b010000000		NULL
+nalias RD_SEND		9'b000001000		NULL
+nalias RD_PAUSE		9'b000100000		NULL
+
+aliasmapname altpcieav_dma_rd.rd_cpl_state
+nalias RDCPL_WAIT		3'b010		NULL
+nalias RDCPL_WRITE		3'b100		NULL
+nalias RDCPL_IDLE		3'b001		NULL
+
+aliasmapname altpcieav_dma_rd.avmmwr_state
+nalias AVMMWR_IDLE		2'b00		NULL
+nalias AVMMWR_PIPE		2'b01		NULL
+nalias AVMMWR_WR		2'b10		NULL
+
+aliasmapname altera_merlin_burst_adapter_13_1.state
+nalias ST_UNCOMP_TRANS		3'b010		NULL
+nalias ST_IDLE		3'b000		NULL
+nalias ST_UNCOMP_WR_SUBBURST		3'b100		NULL
+nalias ST_COMP_TRANS		3'b001		NULL
+
+aliasmapname altpcieav_dma_rxm.rxm_state
+nalias RXM_SEND_CPL		8'b00100000		NULL
+nalias RXM_CLEAR_BUF		8'b00001000		NULL
+nalias RXM_WAIT_DATA		8'b10000000		NULL
+nalias RXM_WRITE		8'b00000010		NULL
+nalias RXM_CPL_REQ		8'b00010000		NULL
+nalias RXM_READ		8'b00000100		NULL
+nalias RXM_POP_TLP		8'b01000000		NULL
+nalias RXM_IDLE		8'b00000001		NULL
+
+aliasmapname altpcieav_arbiter.arb_state
+nalias ARB_WR_GRANT		5'b01000		NULL
+nalias ARB_TXS_GRANT		5'b00010		NULL
+nalias ARB_RXM_GRANT		5'b10000		NULL
+nalias ARB_RD_GRANT		5'b00100		NULL
+nalias ARB_IDLE		5'b00001		NULL
+
+aliasmapname altpcieav_arbiter.arb_burst_state
+nalias ARB_BURST_IDLE		2'b00		NULL
+nalias ARB_BURST_WR_GRANT		2'b01		NULL
+nalias ARB_BURST_HPRXM_GRANT		2'b10		NULL
+
+aliasmapname altpcieav_dma_wr_tlpgen_2.tlpgen_state
+nalias TLPGEN_SEND		3'b010		NULL
+nalias TLPGEN_CREDIT_PIPE		3'b011		NULL
+nalias TLPGEN_ARB_REQ_FOR_SIDE_FIFO		3'b110		NULL
+nalias TLPGEN_IDLE		3'b000		NULL
+nalias TLPGEN_CHECK_PAYLOAD		3'b100		NULL
+nalias TLPGEN_ARB_REQ		3'b001		NULL
+nalias TLPGEN_YIELD_SIDE_FIFO		3'b101		NULL
+
+aliasmapname altpcieav_dma_wr_wdalign_2.wralign_data_state
+nalias WRALIGN_DATA_WAIT		5'b01000		NULL
+nalias WRALIGN_DATA_ACCESSIVE_RECOVER		5'b01100		NULL
+nalias WRALIGN_DATA_SEND_32B_BOUNDARY2		5'b00110		NULL
+nalias WRALIGN_DATA_SEND_MAX		5'b01001		NULL
+nalias WRALIGN_DATA_SEND_IMMWR		5'b10010		NULL
+nalias WRALIGN_DATA_DESC_DECODE		5'b00011		NULL
+nalias WRALIGN_DATA_SEND_LAST		5'b00111		NULL
+nalias WRALIGN_DATA_SEND_4KB_BOUNDARY		5'b01101		NULL
+nalias WRALIGN_DATA_IDLE		5'b00000		NULL
+nalias WRALIGN_DATA_32B_PIPE2		5'b10000		NULL
+nalias WRALIGN_DATA_PREFETCH		5'b00100		NULL
+nalias WRALIGN_DATA_RD_DESC		5'b00001		NULL
+nalias WRALIGN_DATA_BUFF_FULL		5'b10001		NULL
+nalias WRALIGN_DATA_PAUSE		5'b01010		NULL
+nalias WRALIGN_DATA_SEND_32B_BOUNDARY		5'b00101		NULL
+nalias WRALIGN_DATA_32B_PIPE		5'b01110		NULL
+nalias WRALIGN_DATA_CHECK_ACCESSIVE_DATA		5'b01011		NULL
+nalias WRALIGN_DATA_LINES_CALC_PIPE		5'b01111		NULL
+
+aliasmapname altpcieav_dma_wr_wdalign_2.align_header_state
+nalias ALIGN_HDR_IDLE		4'b0000		NULL
+nalias ALIGN_HDR_MAX		4'b0100		NULL
+nalias ALIGN_HDR_LATCH		4'b0001		NULL
+nalias ALIGN_HDR_32B		4'b0101		NULL
+nalias ALIGN_HDR_PIPE3		4'b1000		NULL
+nalias ALIGN_HDR_DECODE		4'b0010		NULL
+nalias ALIGN_HDR_PIPE1		4'b0110		NULL
+nalias ALIGN_HDR_4KB		4'b0011		NULL
+nalias ALIGN_HDR_IMM_WR		4'b1001		NULL
+nalias ALIGN_HDR_PIPE2		4'b0111		NULL
+
+aliasmapname altpcieav_dma_wr_readmem_2.wrdma_rd_state
+nalias WRDMA_RD_UPDATE_DESC		5'b01000		NULL
+nalias WRDMA_RD_CHECK_DESC		5'b00010		NULL
+nalias WRDMA_RD_SEND_TAIL		5'b00110		NULL
+nalias WRDMA_RD_SEND_HEAD		5'b00011		NULL
+nalias WRDMA_RD_ADDER_PIPE		5'b00111		NULL
+nalias WRDMA_RD_IDLE		5'b00000		NULL
+nalias WRDMA_RD_SEND_MAX		5'b00100		NULL
+nalias WRDMA_RD_POP_DESC		5'b00001		NULL
+nalias WRDMA_RD_SEND_LAST		5'b00101		NULL
+
+aliasmapname DdpAssmble.CS
+nalias IDLE		4'b0000		NULL
+nalias TRAN_PKT		4'b0001		NULL
+nalias FETCH_DATA		4'b1111		NULL
+nalias TRAN_REST		4'b0010		NULL
+nalias TRAN_SEND		4'b0011		NULL
+nalias WAIT		4'b0110		NULL
+nalias SEND_DONE		4'b0111		NULL
+
+aliasmapname DdpHdrGen.CS
+nalias SEND_INFO		3'b010		NULL
+nalias WAIT		3'b011		NULL
+nalias IDLE		3'b000		NULL
+nalias POP		3'b100		NULL
+nalias RD_TBL		3'b001		NULL
+
+aliasmapname RdmaOptr.CS
+nalias GEN_ACK		3'b010		NULL
+nalias GEN_SEND		3'b011		NULL
+nalias IDLE		3'b000		NULL
+nalias GEN_DMA_WRITE		3'b100		NULL
+nalias GEN_REQ		3'b001		NULL
+
+addGroup "MemoryPort" -e FALSE
+addSubGroup "MemoryPort-1"
 endSubGroup "MemoryPort-1"
 addSubGroup "MemoryPort-2" -e FALSE
-addSignal -h 15 -UNSIGNED -HEX /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/onchip_memory2_0/address2[9:0]
-addSignal -h 15 -holdScope clk2
-addSignal -h 15 -holdScope chipselect2
-addSignal -h 15 -holdScope write2
-addSignal -h 15 -UNSIGNED -HEX -holdScope readdata2[255:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope writedata2[255:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope byteenable2[31:0]
 endSubGroup "MemoryPort-2"
+activeDirFile "" "/mnt/hgfs/Share/PcieDma/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_tb/sim/synopsys/vcs/PcieDma.fsdb"
 addSignal -h 15 /BLANK
 addGroup "DMA Controller"
 addSubGroup "WrDTS" -e FALSE
@@ -102,7 +248,7 @@ addSignal -h 15 -holdScope WrDCMWaitRequest_i
 addSignal -h 15 -holdScope WrDCMReadDataValid_i
 addSignal -h 15 -UNSIGNED -HEX -holdScope WrDCMReadData_i[31:0]
 endSubGroup "WrDCM"
-addSubGroup "RdDTS"
+addSubGroup "RdDTS" -e FALSE
 addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dma_control_0/RdDTSChipSelect_i
 addSignal -h 15 -holdScope RdDTSWrite_i
 addSignal -h 15 -UNSIGNED -HEX -holdScope RdDTSBurstCount_i[4:0]
@@ -110,7 +256,7 @@ addSignal -h 15 -UNSIGNED -HEX -holdScope RdDTSAddress_i[7:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope RdDTSWriteData_i[255:0]
 addSignal -h 15 -holdScope RdDTSWaitRequest_o
 endSubGroup "RdDTS"
-addSubGroup "RdDMATx/Rx"
+addSubGroup "RdDMATx/Rx" -e FALSE
 addSignal -h 15 -UNSIGNED -HEX /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dma_control_0/RdDmaRxData_i[31:0]
 addSignal -h 15 -holdScope RdDmaRxValid_i
 addSignal -h 15 -UNSIGNED -HEX -holdScope RdDmaTxData_o[159:0]
@@ -137,7 +283,7 @@ addSignal -h 15 -holdScope RdDCMWaitRequest_i
 addSignal -h 15 -UNSIGNED -HEX -holdScope RdDCMReadData_i[31:0]
 addSignal -h 15 -holdScope RdDCMReadDataValid_i
 endSubGroup "RdDCM"
-addGroup "Read Data Mover"
+addGroup "Read Data Mover" -e FALSE
 addSubGroup "clk&rst" -e FALSE
 addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut/dut/g_avmm_256_dma/avmm_256_dma/altpcieav_256_app/genblk3/read_data_mover/Clk_i
 addSignal -h 15 -holdScope Rstn_i
@@ -162,28 +308,28 @@ addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut/dut/g_avmm_256_dma/
 addSignal -h 15 -UNSIGNED -HEX -holdScope RxFifoDataq_i[265:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope RxFifoCount_i[3:0]
 endSubGroup "AST Interface"
-addSubGroup "Rx Compeletion"
+addSubGroup "Rx Compeletion" -e FALSE
 addSignal -h 15 -UNSIGNED -HEX /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut/dut/g_avmm_256_dma/avmm_256_dma/altpcieav_256_app/genblk3/read_data_mover/ko_cpl_spc_header[7:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope ko_cpl_spc_data[11:0]
 endSubGroup "Rx Compeletion"
-addSubGroup "Arbiter Interface"
+addSubGroup "Arbiter Interface" -e FALSE
 addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut/dut/g_avmm_256_dma/avmm_256_dma/altpcieav_256_app/genblk3/read_data_mover/RdDMmaArbReq_o
 addSignal -h 15 -holdScope RdDMmaArbGranted_i
 addSignal -h 15 -UNSIGNED -HEX -holdScope BusDev_i[12:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope DevCsr_i[31:0]
 addSignal -h 15 -holdScope MasterEnable_i
 endSubGroup "Arbiter Interface"
-addSubGroup "CRA Interface"
+addSubGroup "CRA Interface" -e FALSE
 addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut/dut/g_avmm_256_dma/avmm_256_dma/altpcieav_256_app/genblk3/read_data_mover/RdDMACntrlLoad_i
 addSignal -h 15 -UNSIGNED -HEX -holdScope RdDMACntrlData_i[31:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope RdDMAStatus_o[31:0]
 endSubGroup "CRA Interface"
-addSubGroup "PreDecode"
+addSubGroup "PreDecode" -e FALSE
 addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut/dut/g_avmm_256_dma/avmm_256_dma/altpcieav_256_app/genblk3/read_data_mover/PreDecodeTagRdReq_o
 addSignal -h 15 -UNSIGNED -HEX -holdScope PreDecodeTag_i[7:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope PreDecodeTagCount_i[3:0]
 endSubGroup "PreDecode"
-addSubGroup "TxFifo Interface"
+addSubGroup "TxFifo Interface" -e FALSE
 addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut/dut/g_avmm_256_dma/avmm_256_dma/altpcieav_256_app/genblk3/read_data_mover/TxFifoWrReq_o
 addSignal -h 15 -UNSIGNED -HEX -holdScope TxFifoData_o[259:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope TxFifoCount_i[3:0]
@@ -230,7 +376,91 @@ addSignal -h 15 -UNSIGNED -HEX /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut/dut/
 addSignal -h 15 -UNSIGNED -HEX -holdScope SideFifoCount_i[3:0]
 addSignal -h 15 -holdScope SideFifoRdreq_o
 endSubGroup "Side FIFO"
-addGroup "G10" -e FALSE
+addGroup "Arbiter" -e FALSE
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut/dut/g_avmm_256_dma/avmm_256_dma/altpcieav_256_app/arbiter_inst/Clk_i
+addSignal -h 15 -holdScope Rstn_i
+addSubGroup "ArbiterReq"
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut/dut/g_avmm_256_dma/avmm_256_dma/altpcieav_256_app/arbiter_inst/TxsArbReq_i
+addSignal -h 15 -holdScope RxmArbReq_i
+addSignal -h 15 -holdScope HPRxmArbReq_i
+addSignal -h 15 -holdScope DMAWrArbReq_i
+addSignal -h 15 -holdScope DMARdArbReq_i
+endSubGroup "ArbiterReq"
+addSubGroup "ArbiterGrant"
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut/dut/g_avmm_256_dma/avmm_256_dma/altpcieav_256_app/arbiter_inst/TxsArbGrant_o
+addSignal -h 15 -holdScope RxmArbGrant_o
+addSignal -h 15 -holdScope DMAWrArbGrant_o
+endSubGroup "ArbiterGrant"
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut/dut/g_avmm_256_dma/avmm_256_dma/altpcieav_256_app/arbiter_inst/DMARdArbGrant_o
+addSignal -h 15 -holdScope HPRxmArbGrant_o
+addGroup "SendQueue" -e FALSE
+addGroup "G7"
+addGroup "G8"
+addGroup "G9"
+addGroup "G10"
+addGroup "G11"
+addGroup "G12"
+addGroup "G13"
+addGroup "G14"
+addGroup "G15"
+addGroup "G16"
+addGroup "G17"
+addGroup "G18"
+addGroup "G19"
+addGroup "G20"
+addSignal -h 15 -UNSIGNED -HEX /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uSendBuffer/address[9:0]
+addSignal -h 15 -holdScope clken
+addSignal -h 15 -holdScope chipselect
+addSignal -h 15 -holdScope write
+addSignal -h 15 -UNSIGNED -HEX -holdScope readdata[255:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope writedata[255:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope byteenable[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope wPtr[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rPtr[2:0]
+addGroup "G21"
+addSignal -h 15 -UNSIGNED -HEX /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uSendBuffer/dataOut[255:0]
+addSignal -h 15 -holdScope dataPop
+addSignal -h 15 -holdScope ready
+addSignal -h 15 -UNSIGNED -HEX -holdScope emptyArray[3:0]
+addGroup "G22"
+addSignal -h 15 -UNSIGNED -HEX /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uReceiveBuffer/address[9:0]
+addSignal -h 15 -holdScope clken
+addSignal -h 15 -holdScope chipselect
+addSignal -h 15 -holdScope write
+addSignal -h 15 -UNSIGNED -HEX -holdScope readdata[255:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope writedata[255:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope byteenable[31:0]
+addGroup "G23"
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uRdmaStack/uRdmap/uQueuePair/SQChipSelect_i
+addSignal -h 15 -holdScope SQWrite_i
+addSignal -h 15 -UNSIGNED -HEX -holdScope SQAddress_i[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope SQWriteData_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope SQByteEnable_i[3:0]
+addSignal -h 15 -holdScope SQWaitRequest_o
+addSignal -h 15 -holdScope SQRead_i
+addSignal -h 15 -UNSIGNED -HEX -holdScope SQReadData_o[31:0]
+addGroup "G24"
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uRdmaStack/uRdmap/uHeaderGen/isAck
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uRdmaStack/uRdmap/uRdmaOptr/ackArb
+addSignal -h 15 -holdScope SqPreFull
+addSignal -h 15 -holdScope reqArb
+addSignal -h 15 -holdScope ackArb
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uRdmaStack/uRdmap/uPcieArb/ArbChipSelect
+addSignal -h 15 -holdScope ArbWrite
+addSignal -h 15 -UNSIGNED -HEX -holdScope ArbAddress[63:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ArbWriteData[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ArbByteEnable[3:0]
+addSignal -h 15 -holdScope ArbWaitRequest
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uRdmaStack/uRdmap/uRdmaOptr/reqArb
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uRdmaStack/uRdmap/uQueuePair/RQ/fifoPush
+addSignal -h 15 -holdScope fifoPop
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uRdmaStack/uRdmap/uQueuePair/RQChipSelect_i
+addSignal -h 15 -holdScope RQWrite_i
+addSignal -h 15 -UNSIGNED -HEX -holdScope RQAddress_i[7:0]
+addSignal -h 15 -UNSIGNED -HEX /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut_rxm_bar0_address[63:0]
+addSignal -h 15 -holdScope dut_rxm_bar0_write
+addSignal -h 15 -UNSIGNED -HEX -holdScope dut_rxm_bar0_writedata[31:0]
+addGroup "G25"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm

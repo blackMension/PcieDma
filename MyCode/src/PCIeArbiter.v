@@ -113,7 +113,7 @@ assign irrqStart = ~irrqEnd & ~irrqEmpty;
 
 assign ArbWrite = irrqStart | irrqEnd;
 assign ArbChipSelect = ArbWrite;
-assign ArbAddress    = irrqStart ? irrqBaseAddr : irrqBaseAddr + 64'd1;
+assign ArbAddress    = irrqStart ? irrqBaseAddr : irrqBaseAddr + 64'd4;
 assign ArbWriteData  = irrqStart ? {8'd0,irrqDataOut[55:32]} : irrqDataOut[31:0];
-assign ArbByteEnable = irrqStart ? 4'he : 4'hf; 
+assign ArbByteEnable = 4'hf; 
 endmodule // PCIeArbiter
