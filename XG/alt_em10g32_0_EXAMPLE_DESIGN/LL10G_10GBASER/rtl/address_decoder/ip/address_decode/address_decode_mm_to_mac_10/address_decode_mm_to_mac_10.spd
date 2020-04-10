@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_merlin_slave_translator_171/sim/altera_merlin_slave_translator.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_slave_translator_171" />
+ <file
+   path="sim/address_decode_mm_to_mac_10.v"
+   type="VERILOG"
+   library="address_decode_mm_to_mac_10"
+   hasInlineConfiguration="true" />
+ <topLevel name="address_decode_mm_to_mac_10.address_decode_mm_to_mac_10" />
+ <deviceFamily name="arria10" />
+</simPackage>

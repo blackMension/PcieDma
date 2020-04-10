@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pinplan
+ variation_name="alt_em10g32_0"
+ megafunction_name="ALT_EM10G32"
+ intended_family="Arria 10"
+ specifies="all_ports">
+ <global>
+  <pin name="csr_read" direction="input" scope="external" />
+  <pin name="csr_write" direction="input" scope="external" />
+  <pin name="csr_writedata[31..0]" direction="input" scope="external" />
+  <pin name="csr_readdata[31..0]" direction="output" scope="external" />
+  <pin name="csr_waitrequest" direction="output" scope="external" />
+  <pin name="csr_address[9..0]" direction="input" scope="external" />
+  <pin name="tx_312_5_clk" direction="input" scope="external" />
+  <pin name="tx_156_25_clk" direction="input" scope="external" />
+  <pin name="rx_312_5_clk" direction="input" scope="external" />
+  <pin name="rx_156_25_clk" direction="input" scope="external" />
+  <pin name="csr_clk" direction="input" scope="external" />
+  <pin name="csr_rst_n" direction="input" scope="external" />
+  <pin name="tx_rst_n" direction="input" scope="external" />
+  <pin name="rx_rst_n" direction="input" scope="external" />
+  <pin name="avalon_st_tx_startofpacket" direction="input" scope="external" />
+  <pin name="avalon_st_tx_endofpacket" direction="input" scope="external" />
+  <pin name="avalon_st_tx_valid" direction="input" scope="external" />
+  <pin name="avalon_st_tx_data[63..0]" direction="input" scope="external" />
+  <pin name="avalon_st_tx_empty[2..0]" direction="input" scope="external" />
+  <pin name="avalon_st_tx_error" direction="input" scope="external" />
+  <pin name="avalon_st_tx_ready" direction="output" scope="external" />
+  <pin name="avalon_st_pause_data[1..0]" direction="input" scope="external" />
+  <pin name="xgmii_tx[71..0]" direction="output" scope="external" />
+  <pin name="avalon_st_txstatus_valid" direction="output" scope="external" />
+  <pin
+     name="avalon_st_txstatus_data[39..0]"
+     direction="output"
+     scope="external" />
+  <pin
+     name="avalon_st_txstatus_error[6..0]"
+     direction="output"
+     scope="external" />
+  <pin name="xgmii_rx[71..0]" direction="input" scope="external" />
+  <pin
+     name="link_fault_status_xgmii_rx_data[1..0]"
+     direction="output"
+     scope="external" />
+  <pin name="avalon_st_rx_data[63..0]" direction="output" scope="external" />
+  <pin name="avalon_st_rx_startofpacket" direction="output" scope="external" />
+  <pin name="avalon_st_rx_valid" direction="output" scope="external" />
+  <pin name="avalon_st_rx_empty[2..0]" direction="output" scope="external" />
+  <pin name="avalon_st_rx_error[5..0]" direction="output" scope="external" />
+  <pin name="avalon_st_rx_ready" direction="input" scope="external" />
+  <pin name="avalon_st_rx_endofpacket" direction="output" scope="external" />
+  <pin name="avalon_st_rxstatus_valid" direction="output" scope="external" />
+  <pin
+     name="avalon_st_rxstatus_data[39..0]"
+     direction="output"
+     scope="external" />
+  <pin
+     name="avalon_st_rxstatus_error[6..0]"
+     direction="output"
+     scope="external" />
+ </global>
+</pinplan>

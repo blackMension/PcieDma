@@ -1,0 +1,16 @@
+
+WORK > DEFAULT
+DEFAULT:                   ./libraries/work/                     
+work:                      ./libraries/work/                     
+altera_avalon_sc_fifo_171: ./libraries/altera_avalon_sc_fifo_171/
+sc_fifo_tx_sc_fifo:        ./libraries/sc_fifo_tx_sc_fifo/       
+sc_fifo_rx_sc_fifo:        ./libraries/sc_fifo_rx_sc_fifo/       
+sc_fifo:                   ./libraries/sc_fifo/                  
+altera_ver:                ./libraries/altera_ver/               
+lpm_ver:                   ./libraries/lpm_ver/                  
+sgate_ver:                 ./libraries/sgate_ver/                
+altera_mf_ver:             ./libraries/altera_mf_ver/            
+altera_lnsim_ver:          ./libraries/altera_lnsim_ver/         
+twentynm_ver:              ./libraries/twentynm_ver/             
+twentynm_hssi_ver:         ./libraries/twentynm_hssi_ver/        
+twentynm_hip_ver:          ./libraries/twentynm_hip_ver/         

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey.vo"
+   type="VERILOG"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_rf_ram_b.dat"
+   type="DAT"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_ic_tag_ram.mif"
+   type="MIF"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_test_bench.v"
+   type="VERILOG"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_nios2_waves.do"
+   type="OTHER"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_rf_ram_a.mif"
+   type="MIF"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_rf_ram_a.dat"
+   type="DAT"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_rf_ram_a.hex"
+   type="HEX"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_ociram_default_contents.mif"
+   type="MIF"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_debug_slave_tck.v"
+   type="VERILOG"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_debug_slave_wrapper.v"
+   type="VERILOG"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_rf_ram_b.mif"
+   type="MIF"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_ociram_default_contents.hex"
+   type="HEX"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_dc_tag_ram.dat"
+   type="DAT"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey.sdc"
+   type="SDC_ENTITY"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_rf_ram_b.hex"
+   type="HEX"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_bht_ram.dat"
+   type="DAT"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_mult_cell.v"
+   type="VERILOG"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_ic_tag_ram.dat"
+   type="DAT"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_ic_tag_ram.hex"
+   type="HEX"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_bht_ram.mif"
+   type="MIF"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_bht_ram.hex"
+   type="HEX"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_dc_tag_ram.mif"
+   type="MIF"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_dc_tag_ram.hex"
+   type="HEX"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_debug_slave_sysclk.v"
+   type="VERILOG"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_unit_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_unit_171_yoexwey_ociram_default_contents.dat"
+   type="DAT"
+   library="altera_nios2_gen2_unit_171" />
+ <file
+   path="altera_nios2_gen2_171/sim/Nios_nios2_gen2_0_altera_nios2_gen2_171_2az3xjq.v"
+   type="VERILOG"
+   library="altera_nios2_gen2_171"
+   hasInlineConfiguration="true" />
+ <file
+   path="sim/Nios_nios2_gen2_0.v"
+   type="VERILOG"
+   library="Nios_nios2_gen2_0"
+   hasInlineConfiguration="true" />
+ <topLevel name="Nios_nios2_gen2_0.Nios_nios2_gen2_0" />
+ <deviceFamily name="arria10" />
+</simPackage>

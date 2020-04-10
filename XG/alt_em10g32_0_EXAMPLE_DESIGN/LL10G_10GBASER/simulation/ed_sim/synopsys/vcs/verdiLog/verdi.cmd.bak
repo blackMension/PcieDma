@@ -1,0 +1,421 @@
+debImport "-sv" "-f" "filelist.f"
+verdiDockWidgetDisplay -dock widgetDock_WelcomePage
+verdiWindowWorkMode -win $_Verdi_1 -hardwareDebug
+verdiWindowResize -win $_Verdi_1 -2 "31" "1920" "1023"
+srcHBSelect "tb_top" -win $_nTrace1
+srcSetScope -win $_nTrace1 "tb_top" -delim "."
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcSetScope -win $_nTrace1 "tb_top.dut" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "atx_pll_inst" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "csr_clk" -win $_nTrace1
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 \
+           {/home/dai/WorkStation/fpga/project/intel/IPs/XG/alt_em10g32_0_EXAMPLE_DESIGN/LL10G_10GBASER/simulation/ed_sim/synopsys/vcs/IpSim.fsdb}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_in_endofpacket\[portid\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_out_ready\[portid\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_in_ready\[portid\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 47909702477.732796 70434413344.129562
+wvZoom -win $_nWave2 54501665287.676079 56364611299.182579
+wvZoom -win $_nWave2 54898174328.869759 55145992479.619614
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcAction -pos 294 2 10 -win $_nTrace1 -name "wrapper_inst" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcAction -pos 294 2 5 -win $_nTrace1 -name "wrapper_inst" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {297 307 4 1 11 1}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "csr_clk" -win $_nTrace1
+srcSelect -signal "csr_rst_n" -win $_nTrace1
+srcSelect -signal "core_clk_312" -win $_nTrace1
+srcSelect -signal "core_clk_156" -win $_nTrace1
+srcSelect -signal "tx_rst_n" -win $_nTrace1
+srcSelect -signal "core_clk_312" -win $_nTrace1
+srcSelect -signal "core_clk_156" -win $_nTrace1
+srcSelect -signal "rx_rst_n" -win $_nTrace1
+srcSelect -signal "ref_clk_clk" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "atx_pll_locked" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcHBSelect "tb_top.dut.tx_reset_synchronizer_inst" -win $_nTrace1
+srcHBSelect "tb_top.dut.tx_half_clk_reset_synchronizer_inst" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sync_tx_half_rst_n" -win $_nTrace1
+wvZoom -win $_nWave2 45853875692.307693 74724834461.538467
+wvZoom -win $_nWave2 51564614789.510483 60047233097.647690
+wvZoom -win $_nWave2 52761699154.568115 55597415396.386108
+wvZoom -win $_nWave2 53237325360.532944 53968805663.512016
+wvZoom -win $_nWave2 53393013475.912476 53571970195.496132
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 52805541594.825516 55205154030.357803
+wvZoom -win $_nWave2 53720319221.052147 54135177589.881737
+wvZoom -win $_nWave2 53869441196.910393 53897304818.697449
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "tx_serial_clk" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoom -win $_nWave2 21434749528.366879 30661628464.418846
+wvZoom -win $_nWave2 23460301931.610214 24648090451.363174
+wvZoom -win $_nWave2 23765374480.526649 23880607695.129551
+wvZoom -win $_nWave2 23796404320.024387 23811453433.871784
+wvSetCursor -win $_nWave2 23800241469.695023 -snap {("G1" 11)}
+wvSetMarker -win $_nWave2 23800461500.000000
+wvShowDeltaFreq -win $_nWave2 -freq
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 23746427785.222923 -snap {("G1" 3)}
+wvSetMarker -win $_nWave2 23753600000.000000
+wvSetCursor -win $_nWave2 23748224694.339031 -snap {("G1" 5)}
+wvSetMarker -win $_nWave2 23751323000.000000
+wvSetMarker -win $_nWave2 23754524000.000000
+wvSetCursor -win $_nWave2 23746128300.370239 -snap {("G1" 3)}
+wvSetMarker -win $_nWave2 23753600000.000000
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcAction -pos 294 2 6 -win $_nTrace1 -name "wrapper_inst" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcAction -pos 294 2 1 -win $_nTrace1 -name "wrapper_inst" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcAction -pos 294 2 3 -win $_nTrace1 -name "wrapper_inst" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcAction -pos 294 2 3 -win $_nTrace1 -name "wrapper_inst" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcAction -pos 294 2 3 -win $_nTrace1 -name "wrapper_inst" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcAction -pos 294 2 3 -win $_nTrace1 -name "wrapper_inst" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcAction -pos 294 2 3 -win $_nTrace1 -name "wrapper_inst" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+wvZoom -win $_nWave2 51214305687.873451 61717838441.224747
+wvZoom -win $_nWave2 53624631301.045769 57080084551.370911
+wvZoom -win $_nWave2 54194093434.955528 55648908018.581223
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "tx_rst_n" -win $_nTrace1
+srcAction -pos 300 2 5 -win $_nTrace1 -name "tx_rst_n" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "avalon_st_tx_valid" -win $_nTrace1
+srcAction -pos 309 2 13 -win $_nTrace1 -name "avalon_st_tx_valid" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "avalon_st_rx_startofpacket" -win $_nTrace1
+srcAction -pos 315 2 11 -win $_nTrace1 -name "avalon_st_rx_startofpacket" \
+          -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "avalon_st_rx_endofpacket" -win $_nTrace1
+srcAction -pos 316 2 11 -win $_nTrace1 -name "avalon_st_rx_endofpacket" -ctrlKey \
+          off
+wvZoom -win $_nWave2 48535444477.611946 71986233492.537323
+wvSetCursor -win $_nWave2 52779337265.758812 -snap {("G1" 1)}
+wvZoom -win $_nWave2 8881548824.682558 18769381506.348854
+wvZoom -win $_nWave2 10904619068.629892 12995329959.031969
+wvZoom -win $_nWave2 11476704138.133007 12003282440.752934
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "core_clk_312" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ref_clk_clk" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoom -win $_nWave2 15760671982.892921 27371592566.034782
+wvZoom -win $_nWave2 18966672442.414246 20742969994.312813
+wvZoom -win $_nWave2 19406328179.758030 19742145627.380642
+wvZoom -win $_nWave2 19506572193.965706 19548340533.222248
+wvSetCursor -win $_nWave2 19516390870.725529 -snap {("G1" 12)}
+wvSetMarker -win $_nWave2 19519504000.000000
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 3940501432.835821 24700216298.507465
+wvSelectSignal -win $_nWave2 {( "G1" 5 6 )} 
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {278 282 1 1 2 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "atx_pll_inst" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "atx_pll_inst" -win $_nTrace1
+srcAction -pos 277 2 3 -win $_nTrace1 -name "atx_pll_inst" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcAction -pos 14 1 40 -win $_nTrace1 -name \
+          "altera_xcvr_atx_pll_ip_altera_xcvr_atx_pll_a10_171_guozvvi" \
+          -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcShowCalling -win $_nTrace1
+srcSelect -win $_nTrace1 -range {278 278 3 4 1 1}
+srcHBSelect "tb_top.dut" -win $_nTrace1
+wvScrollDown -win $_nWave2 3
+wvSelectSignal -win $_nWave2 {( "G1" 12 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 1 2 3 4 5 6 7 8 9 10 11 12 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_in_startofpacket\[portid\]" -win $_nTrace1
+srcSelect -signal "mac_in_endofpacket\[portid\]" -win $_nTrace1
+srcSelect -signal "mac_in_valid\[portid\]" -win $_nTrace1
+srcSelect -signal "mac_in_data\[portid\]" -win $_nTrace1
+srcSelect -win $_nTrace1 -range {311 312 6 6 10 10}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_in_startofpacket\[portid\]" -win $_nTrace1
+srcSelect -signal "mac_in_endofpacket\[portid\]" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "avalon_st_tx_startofpacket" -win $_nTrace1
+srcSelect -signal "avalon_st_tx_endofpacket" -win $_nTrace1
+srcSelect -signal "avalon_st_tx_valid" -win $_nTrace1
+srcSelect -signal "avalon_st_tx_data" -win $_nTrace1
+srcSelect -signal "avalon_st_tx_empty" -win $_nTrace1
+srcSelect -signal "avalon_st_tx_ready" -win $_nTrace1
+srcSelect -signal "avalon_st_tx_error" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_in_endofpacket\[portid\]" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_in_startofpacket\[portid\]" -win $_nTrace1
+srcSelect -signal "mac_in_endofpacket\[portid\]" -win $_nTrace1
+srcSelect -signal "mac_in_valid\[portid\]" -win $_nTrace1
+srcSelect -signal "mac_in_data\[portid\]" -win $_nTrace1
+srcSelect -signal "mac_in_empty\[portid\]" -win $_nTrace1
+srcSelect -signal "mac_in_ready\[portid\]" -win $_nTrace1
+srcSelect -signal "mac_in_error\[portid\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 49208213014.925377 66796304776.119408
+wvZoom -win $_nWave2 53080218290.705254 57378800418.907524
+wvZoom -win $_nWave2 53716451217.635406 54855254691.897949
+wvZoom -win $_nWave2 53947328041.392181 54275937999.139580
+wvSelectSignal -win $_nWave2 {( "G1" 1 )} 
+wvPartialBus -win $_nWave2 {("G1" 1)} -range 0 0
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvPartialBus -win $_nWave2 {("G1" 2)} -range 0 0
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 53921170034.796844 -snap {("G1" 1)}
+wvSetCursor -win $_nWave2 53987382488.969826 -snap {("G1" 2)}
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvPartialBus -win $_nWave2 {("G1" 3)} -range 0 0
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 52071308506.483482 56747052183.884277
+wvZoom -win $_nWave2 52856414720.968941 54167832879.244911
+wvZoom -win $_nWave2 53083955558.123550 53356352115.874908
+wvSelectGroup -win $_nWave2 {G2}
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvPartialBus -win $_nWave2 {("G1" 4)} -range 0 0
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_in_empty\[portid\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcSetSnipSignal -signal "tb_top.dut.mac_in_empty\[1:0\]"
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "portid" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_in_empty\[portid\]" -win $_nTrace1
+srcUnsetSnipSignal -signal "tb_top.dut.mac_in_empty\[1:0\]"
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "avalon_st_tx_data" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "avalon_st_tx_empty" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 1 2 3 4 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 0)}
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcAction -pos 294 2 1 -win $_nTrace1 -name "wrapper_inst" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcAction -pos 294 2 1 -win $_nTrace1 -name "wrapper_inst" -ctrlKey off
+wvSetCursor -win $_nWave2 52972151000.831032
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "csr_clk" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+debReload
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "csr_clk" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "avalon_st_tx_startofpacket" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_in_startofpacket\[0\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoom -win $_nWave2 44979382208.955231 63528571880.597023
+wvZoom -win $_nWave2 50839449592.777130 57772324588.210411
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_out_startofpacket\[0\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -inst "wrapper_inst" -win $_nTrace1
+srcAction -pos 287 2 10 -win $_nTrace1 -name "wrapper_inst" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "tx_reset_n" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "tx_reset_n" -win $_nTrace1
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "tb_top.dut.wrapper_inst" -win $_nTrace1
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_out_valid\[0\]" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_in_valid\[0\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mac_out_valid\[0\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoom -win $_nWave2 49477018934.469940 65239824272.345612
+wvZoom -win $_nWave2 53388312050.014969 59054295560.768784
+wvZoom -win $_nWave2 54293882797.686455 56816795853.469864
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G1" 1 )} 
+wvZoom -win $_nWave2 51739590226.282959 66073752961.131981
+wvZoom -win $_nWave2 54092960227.523865 57640843790.005157
+wvZoom -win $_nWave2 54730608454.856499 56674442670.370193
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+debExit

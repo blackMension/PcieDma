@@ -1,0 +1,10 @@
+	component XG_inst_rx_312_5_clk_bfm_ip is
+		generic (
+			CLOCK_RATE : positive := 10;
+			CLOCK_UNIT : positive := 1000000
+		);
+		port (
+			clk : out std_logic   -- clk
+		);
+	end component XG_inst_rx_312_5_clk_bfm_ip;
+

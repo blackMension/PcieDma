@@ -1,0 +1,18 @@
+# system info address_decode_eth_gen_mon_6 on 2019.05.31.10:45:58
+system_info:
+name,value
+DEVICE,10AT115S2F45E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,0
+#
+#
+# Files generated for address_decode_eth_gen_mon_6 on 2019.05.31.10:45:58
+files:
+filepath,kind,attributes,module,is_top
+sim/address_decode_eth_gen_mon_6.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,address_decode_eth_gen_mon_6,true
+altera_merlin_slave_translator_171/sim/altera_merlin_slave_translator.sv,SYSTEM_VERILOG,,altera_merlin_slave_translator,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+address_decode_eth_gen_mon_6.eth_gen_mon_6,altera_merlin_slave_translator

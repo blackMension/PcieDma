@@ -1,0 +1,446 @@
+{
+    "Modules": {
+        "alt_em10g32_rst_cnt": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "...MASTER...": {},
+        "_vcs_unit__2049179656": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_crc32_gf_mult32_kc": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "altera_xcvr_native_a10_functions_h": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "altera_lnsim_functions": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "avalon_if_params_pkt": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "avalon_utilities_pkg": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "verbosity_pkg": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "twentynm_prblock_test_pkg": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_clock_crosser_0000_0007": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "altera_generic_pll_functions": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "pcie_mgmt_program": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "a10_avmm_h": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "fourteennm_iopll_functions": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "avalon_mm_pkg": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "eth_register_map_params_pkg": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "default_test_params_pkt": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "altera_xcvr_native_pcie_dfe_params_h": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_std_synchronizer": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "pcie_mgmt_commands_h": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_stat_reg_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_clock_crosser_0000_0006": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_clock_crosser_0000_0008": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_crc32_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "pcie_mgmt_functions_h": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "altera_std_synchronizer_nocut_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_tx_err_aligner_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "altera_std_synchronizer_nocut_0001": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "altera_xcvr_functions": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_rx_frm_control": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_clock_crosser_0000_000B": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_clk_rst_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_pipeline_base_0001_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_clock_crosser_0000_0009": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_clock_crosser_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_clock_crosser_0000_0001": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_clock_crosser_0000_0002": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_reset_synchronizer_0001": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_clock_crosser_0000_0003": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "altera_eth_10g_mac": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_clock_crosser_0000_000A": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_tx_flow_control": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_creg_map": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "altsyncram_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_frm_decoder": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_pipeline_base_0000_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_tx_gmii_mii_encoder_if_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_pipeline_base_0000_0001": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_pipeline_base_0001_0001": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_reset_synchronizer_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_rx_pfc_flow_control": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_rx_pkt_backpressure_control": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_rx_status_aligner": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_rx_top_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "alt_em10g32_stat_mem_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_tx_top_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_tx_pause_req": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g_32_64_xgmii_conversion_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_altsyncram_bundle_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "alt_em10g32_std_synchronizer_0001": {
+            "Compiled": "Yes",
+            "Compiled Times": 4
+        },
+        "lpm_mult": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        }
+    },
+    "CompUnits": {},
+    "reusePaths": {
+        "YsF4A_d": {
+            "icPath": "csrc"
+        },
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "vGiYj_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "hsI7n_d": {
+            "icPath": "csrc"
+        },
+        "q2aeC_d": {
+            "icPath": "csrc"
+        },
+        "vfyIE_d": {
+            "icPath": "csrc"
+        },
+        "eaBmU_d": {
+            "icPath": "csrc"
+        },
+        "fu2xR_d": {
+            "icPath": "csrc"
+        },
+        "E3yCV_d": {
+            "icPath": "csrc"
+        },
+        "Zvby1_d": {
+            "icPath": "csrc"
+        },
+        "xvIZT_d": {
+            "icPath": "csrc"
+        },
+        "TtWhz_d": {
+            "icPath": "csrc"
+        },
+        "me7bh_d": {
+            "icPath": "csrc"
+        },
+        "yrCav_d": {
+            "icPath": "csrc"
+        },
+        "RDhWp_d": {
+            "icPath": "csrc"
+        },
+        "uRbVd_d": {
+            "icPath": "csrc"
+        },
+        "sVHj8_d": {
+            "icPath": "csrc"
+        },
+        "N5YQU_d": {
+            "icPath": "csrc"
+        },
+        "RRRg0_d": {
+            "icPath": "csrc"
+        },
+        "St2bh_d": {
+            "icPath": "csrc"
+        },
+        "zdKyc_d": {
+            "icPath": "csrc"
+        },
+        "s5Ezg_d": {
+            "icPath": "csrc"
+        },
+        "rt92k_d": {
+            "icPath": "csrc"
+        },
+        "MDY6d_d": {
+            "icPath": "csrc"
+        },
+        "edmwR_d": {
+            "icPath": "csrc"
+        },
+        "CyLxV_d": {
+            "icPath": "csrc"
+        },
+        "eij06_d": {
+            "icPath": "csrc"
+        },
+        "qWAEF_d": {
+            "icPath": "csrc"
+        },
+        "VCrDN_d": {
+            "icPath": "csrc"
+        },
+        "ZCKra_d": {
+            "icPath": "csrc"
+        },
+        "zE4xh_d": {
+            "icPath": "csrc"
+        },
+        "LAC8G_d": {
+            "icPath": "csrc"
+        },
+        "YGMsx_d": {
+            "icPath": "csrc"
+        },
+        "BAYgW_d": {
+            "icPath": "csrc"
+        },
+        "ERPx5_d": {
+            "icPath": "csrc"
+        },
+        "yZZtk_d": {
+            "icPath": "csrc"
+        },
+        "iLczv_d": {
+            "icPath": "csrc"
+        },
+        "Zj56f_d": {
+            "icPath": "csrc"
+        },
+        "gHyje_d": {
+            "icPath": "csrc"
+        },
+        "eZLEp_d": {
+            "icPath": "csrc"
+        },
+        "Sh0dV_d": {
+            "icPath": "csrc"
+        },
+        "FCEz7_d": {
+            "icPath": "csrc"
+        },
+        "UjI7z_d": {
+            "icPath": "csrc"
+        },
+        "PFrZW_d": {
+            "icPath": "csrc"
+        },
+        "B0a2i_d": {
+            "icPath": "csrc"
+        },
+        "gvrLs_d": {
+            "icPath": "csrc"
+        },
+        "hvr6F_d": {
+            "icPath": "csrc"
+        },
+        "W73uI_d": {
+            "icPath": "csrc"
+        },
+        "nULyY_d": {
+            "icPath": "csrc"
+        },
+        "SWqi8_d": {
+            "icPath": "csrc"
+        },
+        "SDMzt_d": {
+            "icPath": "csrc"
+        },
+        "NsyZt_d": {
+            "icPath": "csrc"
+        },
+        "Cw5F4_d": {
+            "icPath": "csrc"
+        },
+        "Zqk0Q_d": {
+            "icPath": "csrc"
+        },
+        "pevNU_d": {
+            "icPath": "csrc"
+        },
+        "KF1Nj_d": {
+            "icPath": "csrc"
+        },
+        "aMe7R_d": {
+            "icPath": "csrc"
+        },
+        "yYSHI_d": {
+            "icPath": "csrc"
+        },
+        "k0qJS_d": {
+            "icPath": "csrc"
+        },
+        "Iy9ig_d": {
+            "icPath": "csrc"
+        },
+        "Q0s3L_d": {
+            "icPath": "csrc"
+        },
+        "rRr71_d": {
+            "icPath": "csrc"
+        }
+    },
+    "ObjArchives": []
+}

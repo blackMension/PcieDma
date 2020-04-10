@@ -1,0 +1,18 @@
+# system info sc_fifo_rx_sc_fifo on 2019.05.31.10:48:46
+system_info:
+name,value
+DEVICE,10AT115S2F45E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,0
+#
+#
+# Files generated for sc_fifo_rx_sc_fifo on 2019.05.31.10:48:46
+files:
+filepath,kind,attributes,module,is_top
+sim/sc_fifo_rx_sc_fifo.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,sc_fifo_rx_sc_fifo,true
+altera_avalon_sc_fifo_171/sim/altera_avalon_sc_fifo.v,VERILOG,,altera_avalon_sc_fifo,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+sc_fifo_rx_sc_fifo.rx_sc_fifo,altera_avalon_sc_fifo

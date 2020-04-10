@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altera="http://www.altera.com/XMLSchema/Qsys/SystemTree">
+  <instanceKey xsi:type="xs:string">XG_inst_tx_rst_n_bfm_ip</instanceKey>
+  <instanceData xsi:type="data">
+    <parameters></parameters>
+    <interconnectAssignments>
+      <interconnectAssignment>
+        <name>qsys_mm.clockCrossingAdapter</name>
+        <value>HANDSHAKE</value>
+      </interconnectAssignment>
+      <interconnectAssignment>
+        <name>qsys_mm.maxAdditionalLatency</name>
+        <value>0</value>
+      </interconnectAssignment>
+    </interconnectAssignments>
+    <className>XG_inst_tx_rst_n_bfm_ip</className>
+    <version>1.0</version>
+    <name>XG_inst_tx_rst_n_bfm_ip</name>
+    <uniqueName>XG_inst_tx_rst_n_bfm_ip</uniqueName>
+    <nonce>0</nonce>
+    <incidentConnections></incidentConnections>
+  </instanceData>
+  <children>
+    <node>
+      <instanceKey xsi:type="xs:string">XG_inst_tx_rst_n_bfm</instanceKey>
+      <instanceData xsi:type="data">
+        <parameters>
+          <parameter>
+            <name>ASSERT_HIGH_RESET</name>
+            <value>0</value>
+          </parameter>
+          <parameter>
+            <name>INITIAL_RESET_CYCLES</name>
+            <value>50</value>
+          </parameter>
+        </parameters>
+        <interconnectAssignments></interconnectAssignments>
+        <className>altera_avalon_reset_source</className>
+        <version>17.1</version>
+        <name>XG_inst_tx_rst_n_bfm</name>
+        <uniqueName>altera_avalon_reset_source</uniqueName>
+        <fixedName>altera_avalon_reset_source</fixedName>
+        <nonce>0</nonce>
+        <incidentConnections></incidentConnections>
+        <path>XG_inst_tx_rst_n_bfm_ip.XG_inst_tx_rst_n_bfm</path>
+      </instanceData>
+      <children></children>
+    </node>
+  </children>
+</node>

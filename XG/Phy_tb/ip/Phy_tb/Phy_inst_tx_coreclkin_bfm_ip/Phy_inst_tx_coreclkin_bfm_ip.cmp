@@ -1,0 +1,6 @@
+	component Phy_inst_tx_coreclkin_bfm_ip is
+		port (
+			sig_clk : out std_logic_vector(0 downto 0)   -- clk
+		);
+	end component Phy_inst_tx_coreclkin_bfm_ip;
+

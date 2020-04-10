@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<spirit:component xmlns:altera="http://www.altera.com/XMLSchema/IPXact/extensions" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>Altera Corporation</spirit:vendor>
+    <spirit:library>reset_control</spirit:library>
+    <spirit:name>reset_control</spirit:name>
+    <spirit:version>1.0</spirit:version>
+    <spirit:busInterfaces>
+        <spirit:busInterface>
+            <spirit:name>clock</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="clock" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>clk</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>clock</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>clockRate</spirit:name>
+                    <spirit:displayName>Clock rate</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="clockRate">0</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>externallyDriven</spirit:name>
+                    <spirit:displayName>Externally driven</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="externallyDriven">false</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>ptfSchematicName</spirit:name>
+                    <spirit:displayName>PTF schematic name</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="ptfSchematicName"></spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>pll_locked</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="conduit" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>pll_locked</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>pll_locked</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>associatedClock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedReset</spirit:name>
+                    <spirit:displayName>associatedReset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedReset"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>prSafe</spirit:name>
+                    <spirit:displayName>Partial Reconfiguration Safe</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="prSafe">false</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>ui.blockdiagram.direction</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="ui.blockdiagram.direction">input</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>pll_powerdown</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="conduit" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>pll_powerdown</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>pll_powerdown</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>associatedClock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedReset</spirit:name>
+                    <spirit:displayName>associatedReset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedReset"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>prSafe</spirit:name>
+                    <spirit:displayName>Partial Reconfiguration Safe</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="prSafe">false</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>ui.blockdiagram.direction</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="ui.blockdiagram.direction">output</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>pll_select</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="conduit" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>pll_select</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>pll_select</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>associatedClock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedReset</spirit:name>
+                    <spirit:displayName>associatedReset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedReset"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>prSafe</spirit:name>
+                    <spirit:displayName>Partial Reconfiguration Safe</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="prSafe">false</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>ui.blockdiagram.direction</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="ui.blockdiagram.direction">input</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>reset</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="reset" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>reset</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>reset</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>Associated clock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>synchronousEdges</spirit:name>
+                    <spirit:displayName>Synchronous edges</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="synchronousEdges">NONE</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>rx_analogreset</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="conduit" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>rx_analogreset</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>rx_analogreset</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>associatedClock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedReset</spirit:name>
+                    <spirit:displayName>associatedReset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedReset"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>prSafe</spirit:name>
+                    <spirit:displayName>Partial Reconfiguration Safe</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="prSafe">false</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>ui.blockdiagram.direction</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="ui.blockdiagram.direction">output</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>rx_cal_busy</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="conduit" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>rx_cal_busy</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>rx_cal_busy</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>associatedClock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedReset</spirit:name>
+                    <spirit:displayName>associatedReset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedReset"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>prSafe</spirit:name>
+                    <spirit:displayName>Partial Reconfiguration Safe</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="prSafe">false</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>ui.blockdiagram.direction</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="ui.blockdiagram.direction">input</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>rx_digitalreset</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="conduit" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>rx_digitalreset</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>rx_digitalreset</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>associatedClock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedReset</spirit:name>
+                    <spirit:displayName>associatedReset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedReset"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>prSafe</spirit:name>
+                    <spirit:displayName>Partial Reconfiguration Safe</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="prSafe">false</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>ui.blockdiagram.direction</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="ui.blockdiagram.direction">output</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>rx_is_lockedtodata</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="conduit" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>rx_is_lockedtodata</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>rx_is_lockedtodata</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>associatedClock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedReset</spirit:name>
+                    <spirit:displayName>associatedReset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedReset"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>prSafe</spirit:name>
+                    <spirit:displayName>Partial Reconfiguration Safe</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="prSafe">false</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>ui.blockdiagram.direction</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="ui.blockdiagram.direction">input</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>rx_ready</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="conduit" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>rx_ready</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>rx_ready</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>associatedClock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedReset</spirit:name>
+                    <spirit:displayName>associatedReset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedReset"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>prSafe</spirit:name>
+                    <spirit:displayName>Partial Reconfiguration Safe</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="prSafe">false</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>ui.blockdiagram.direction</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="ui.blockdiagram.direction">output</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>tx_analogreset</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="conduit" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>tx_analogreset</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>tx_analogreset</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>associatedClock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedReset</spirit:name>
+                    <spirit:displayName>associatedReset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedReset"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>prSafe</spirit:name>
+                    <spirit:displayName>Partial Reconfiguration Safe</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="prSafe">false</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>ui.blockdiagram.direction</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="ui.blockdiagram.direction">output</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>tx_cal_busy</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="conduit" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>tx_cal_busy</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>tx_cal_busy</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>associatedClock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedReset</spirit:name>
+                    <spirit:displayName>associatedReset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedReset"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>prSafe</spirit:name>
+                    <spirit:displayName>Partial Reconfiguration Safe</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="prSafe">false</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>ui.blockdiagram.direction</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="ui.blockdiagram.direction">input</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>tx_digitalreset</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="conduit" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>tx_digitalreset</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>tx_digitalreset</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>associatedClock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedReset</spirit:name>
+                    <spirit:displayName>associatedReset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedReset"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>prSafe</spirit:name>
+                    <spirit:displayName>Partial Reconfiguration Safe</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="prSafe">false</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>ui.blockdiagram.direction</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="ui.blockdiagram.direction">output</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>tx_ready</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="conduit" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>tx_ready</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>tx_ready</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>associatedClock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedReset</spirit:name>
+                    <spirit:displayName>associatedReset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedReset"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>prSafe</spirit:name>
+                    <spirit:displayName>Partial Reconfiguration Safe</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="prSafe">false</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>ui.blockdiagram.direction</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="ui.blockdiagram.direction">output</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+    </spirit:busInterfaces>
+    <spirit:model>
+        <spirit:views>
+            <spirit:view>
+                <spirit:name>QUARTUS_SYNTH</spirit:name>
+                <spirit:envIdentifier>:quartus.altera.com:</spirit:envIdentifier>
+                <spirit:modelName>reset_control</spirit:modelName>
+                <spirit:fileSetRef>
+                    <spirit:localName>QUARTUS_SYNTH</spirit:localName>
+                </spirit:fileSetRef>
+            </spirit:view>
+        </spirit:views>
+        <spirit:ports>
+            <spirit:port>
+                <spirit:name>clock</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>in</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>pll_locked</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>in</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>pll_powerdown</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>out</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>pll_select</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>in</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>reset</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>in</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>rx_analogreset</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>out</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>rx_cal_busy</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>in</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>rx_digitalreset</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>out</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>rx_is_lockedtodata</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>in</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>rx_ready</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>out</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>tx_analogreset</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>out</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>tx_cal_busy</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>in</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>tx_digitalreset</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>out</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>tx_ready</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>out</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+        </spirit:ports>
+    </spirit:model>
+    <spirit:fileSets>
+        <spirit:fileSet>
+            <spirit:name>QUARTUS_SYNTH</spirit:name>
+            <spirit:file>
+                <spirit:name>altera_xcvr_reset_control_171/synth/altera_xcvr_functions.sv</spirit:name>
+                <spirit:fileType>systemVerilogSource</spirit:fileType>
+                <spirit:isIncludeFile>false</spirit:isIncludeFile>
+                <spirit:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>reset_control</altera:altera_hdl_compilation_library>
+                </spirit:vendorExtensions>
+            </spirit:file>
+            <spirit:file>
+                <spirit:name>altera_xcvr_reset_control_171/synth/alt_xcvr_resync.sv</spirit:name>
+                <spirit:fileType>systemVerilogSource</spirit:fileType>
+                <spirit:isIncludeFile>false</spirit:isIncludeFile>
+                <spirit:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>reset_control</altera:altera_hdl_compilation_library>
+                </spirit:vendorExtensions>
+            </spirit:file>
+            <spirit:file>
+                <spirit:name>altera_xcvr_reset_control_171/synth/altera_xcvr_reset_control.sv</spirit:name>
+                <spirit:fileType>systemVerilogSource</spirit:fileType>
+                <spirit:isIncludeFile>false</spirit:isIncludeFile>
+                <spirit:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>reset_control</altera:altera_hdl_compilation_library>
+                </spirit:vendorExtensions>
+            </spirit:file>
+            <spirit:file>
+                <spirit:name>altera_xcvr_reset_control_171/synth/alt_xcvr_reset_counter.sv</spirit:name>
+                <spirit:fileType>systemVerilogSource</spirit:fileType>
+                <spirit:isIncludeFile>false</spirit:isIncludeFile>
+                <spirit:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>reset_control</altera:altera_hdl_compilation_library>
+                </spirit:vendorExtensions>
+            </spirit:file>
+            <spirit:file>
+                <spirit:name>altera_xcvr_reset_control_171/synth/plain_files.txt</spirit:name>
+                <spirit:fileType>unknown</spirit:fileType>
+                <spirit:isIncludeFile>false</spirit:isIncludeFile>
+                <spirit:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>reset_control</altera:altera_hdl_compilation_library>
+                </spirit:vendorExtensions>
+            </spirit:file>
+            <spirit:file>
+                <spirit:name>synth/reset_control.v</spirit:name>
+                <spirit:fileType>verilogSource</spirit:fileType>
+                <spirit:isIncludeFile>false</spirit:isIncludeFile>
+                <spirit:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>reset_control</altera:altera_hdl_compilation_library>
+                </spirit:vendorExtensions>
+            </spirit:file>
+        </spirit:fileSet>
+    </spirit:fileSets>
+    <spirit:vendorExtensions>
+        <altera:entity_info>
+            <spirit:vendor>Altera Corporation</spirit:vendor>
+            <spirit:library>reset_control</spirit:library>
+            <spirit:name>reset_control</spirit:name>
+            <spirit:version>1.0</spirit:version>
+        </altera:entity_info>
+        <altera:altera_module_parameters>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>AUTO_GENERATION_ID</spirit:name>
+                    <spirit:displayName>Auto GENERATION_ID</spirit:displayName>
+                    <spirit:value spirit:format="long" spirit:id="AUTO_GENERATION_ID">0</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_UNIQUE_ID</spirit:name>
+                    <spirit:displayName>Auto UNIQUE_ID</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="AUTO_UNIQUE_ID"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_DEVICE_FAMILY</spirit:name>
+                    <spirit:displayName>Auto DEVICE_FAMILY</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="AUTO_DEVICE_FAMILY">Arria 10</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_DEVICE</spirit:name>
+                    <spirit:displayName>Auto DEVICE</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="AUTO_DEVICE">10AT115S2F45E2SG</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_DEVICE_SPEEDGRADE</spirit:name>
+                    <spirit:displayName>Auto DEVICE_SPEEDGRADE</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="AUTO_DEVICE_SPEEDGRADE">2</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_CLOCK_CLOCK_RATE</spirit:name>
+                    <spirit:displayName>Auto CLOCK_RATE</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="AUTO_CLOCK_CLOCK_RATE">-1</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_CLOCK_CLOCK_DOMAIN</spirit:name>
+                    <spirit:displayName>Auto CLOCK_DOMAIN</spirit:displayName>
+                    <spirit:value spirit:format="long" spirit:id="AUTO_CLOCK_CLOCK_DOMAIN">-1</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_CLOCK_RESET_DOMAIN</spirit:name>
+                    <spirit:displayName>Auto RESET_DOMAIN</spirit:displayName>
+                    <spirit:value spirit:format="long" spirit:id="AUTO_CLOCK_RESET_DOMAIN">-1</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+        </altera:altera_module_parameters>
+    </spirit:vendorExtensions>
+</spirit:component>

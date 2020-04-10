@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi3_L-2016.06-1
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 60 19 1850 1016 276 317
+viewPort 60 19 1850 1016 323 317
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -18,14 +18,14 @@ signalSpacing 5
 windowTimeUnit 1ns
 
 ; waveform viewport range
-zoom 67671.044099 67831.852435 1n
-cursor 67728.811000
-marker 71904.811000
+zoom 70437.855777 72180.317725 1n
+cursor 71497.600000
+marker 67529.600000
 
 ; visible top row signal index
-top 183
+top 229
 ; marker line index
-markerPos 225
+markerPos 278
 
 ; event list
 ; addEvent event_name event_expression
@@ -461,6 +461,59 @@ addSignal -h 15 -UNSIGNED -HEX /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/dut_rxm_
 addSignal -h 15 -holdScope dut_rxm_bar0_write
 addSignal -h 15 -UNSIGNED -HEX -holdScope dut_rxm_bar0_writedata[31:0]
 addGroup "G25"
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uBenchMac/clk_312
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/clock644M
+addGroup "G26"
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/tx_ready
+addSignal -h 15 -holdScope tx_sop
+addSignal -h 15 -holdScope tx_valid
+addSignal -h 15 -holdScope tx_eop
+addSignal -h 15 -UNSIGNED -HEX -holdScope tx_data[63:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope tx_empty[2:0]
+addSignal -h 15 -holdScope tx_error
+addGroup "G27"
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uBenchMac/rx_startofpacket
+addSignal -h 15 -holdScope rx_endofpacket
+addSignal -h 15 -holdScope clk_156
+addSignal -h 15 -holdScope rx_valid
+addSignal -h 15 -UNSIGNED -HEX -holdScope rx_data[63:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rx_empty[2:0]
+addSignal -h 15 -holdScope rx_ready
+addSignal -h 15 -UNSIGNED -HEX -holdScope rx_error[5:0]
+addGroup "G28"
+addSignal -h 15 -UNSIGNED -HEX /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uRdmaStack/uGearBox/ptr[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rxFifoDataIn[266:0]
+addSignal -h 15 -holdScope rxFifoPush
+addSignal -h 15 -holdScope ddpPktPop
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uRdmaStack/uDDP/uDdpCut/dataReady
+addSignal -h 15 -holdScope pEdgeLastDataValid
+addGroup "G29"
+addSignal -h 15 /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uRdmaStack/uDDP/uDdpCutPad/ddpPktCutPush
+addSignal -h 15 -holdScope ddpPktPop
+addSignal -h 15 -holdScope endProc
+addSignal -h 15 -holdScope isReq
+addSignal -h 15 -holdScope ddpPktDataValid
+addSignal -h 15 -UNSIGNED -HEX -holdScope rdmapCtrl[3:0]
+addSignal -h 15 -holdScope ddpPktCutDataValid
+addSignal -h 15 -holdScope ddpPktDataValid
+addSignal -h 15 -holdScope sop
+addSignal -h 15 -holdScope eop
+addSignal -h 15 -UNSIGNED -HEX -holdScope byteenable[8:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ddpCtrl[7:0]
+addGroup "G30"
+addSignal -h 15 -UNSIGNED -HEX /ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst/uRdmaStack/uDDP/uDdpCut/ddpPktCutDataOut[266:0]
+addSignal -h 15 -holdScope ddpPktCutPop
+addSignal -h 15 -holdScope ddpPktCutEmpty
+addSignal -h 15 -holdScope ddpPktCutDataValid
+addSignal -h 15 -holdScope isReq
+addSignal -h 15 -holdScope eopF1
+addSignal -h 15 -holdScope eop
+addSignal -h 15 -holdScope sopF1
+addSignal -h 15 -holdScope sop
+addSignal -h 15 -holdScope isReq
+addSignal -h 15 -holdScope isAck
+addSignal -h 15 -holdScope isSend
+addGroup "G31"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm

@@ -1,0 +1,317 @@
+{
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module"
+    ],
+    "alt_em10g32_rst_cnt": [
+        "alt_em10g32_rst_cnt",
+        "yrCav",
+        "module"
+    ],
+    "_vcs_unit__2049179656": [
+        "_vcs_unit__2049179656",
+        "vGiYj",
+        "module"
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module"
+    ],
+    "alt_em10g32_crc32_gf_mult32_kc": [
+        "alt_em10g32_crc32_gf_mult32_kc",
+        "B0a2i",
+        "module"
+    ],
+    "altera_xcvr_native_a10_functions_h": [
+        "altera_xcvr_native_a10_functions_h",
+        "vfyIE",
+        "module"
+    ],
+    "altera_lnsim_functions": [
+        "altera_lnsim_functions",
+        "N5YQU",
+        "module"
+    ],
+    "avalon_if_params_pkt": [
+        "avalon_if_params_pkt",
+        "YsF4A",
+        "module"
+    ],
+    "avalon_utilities_pkg": [
+        "avalon_utilities_pkg",
+        "sVHj8",
+        "module"
+    ],
+    "verbosity_pkg": [
+        "verbosity_pkg",
+        "TtWhz",
+        "module"
+    ],
+    "twentynm_prblock_test_pkg": [
+        "twentynm_prblock_test_pkg",
+        "E3yCV",
+        "module"
+    ],
+    "a10_avmm_h": [
+        "a10_avmm_h",
+        "MDY6d",
+        "module"
+    ],
+    "avalon_mm_pkg": [
+        "avalon_mm_pkg",
+        "RDhWp",
+        "module"
+    ],
+    "fourteennm_iopll_functions": [
+        "fourteennm_iopll_functions",
+        "zdKyc",
+        "module"
+    ],
+    "alt_em10g32_clock_crosser_0000_0007": [
+        "alt_em10g32_clock_crosser_0000_0007",
+        "eij06",
+        "module"
+    ],
+    "altera_generic_pll_functions": [
+        "altera_generic_pll_functions",
+        "St2bh",
+        "module"
+    ],
+    "pcie_mgmt_program": [
+        "pcie_mgmt_program",
+        "VCrDN",
+        "module"
+    ],
+    "eth_register_map_params_pkg": [
+        "eth_register_map_params_pkg",
+        "xvIZT",
+        "module"
+    ],
+    "default_test_params_pkt": [
+        "default_test_params_pkt",
+        "uRbVd",
+        "module"
+    ],
+    "altera_xcvr_native_pcie_dfe_params_h": [
+        "altera_xcvr_native_pcie_dfe_params_h",
+        "fu2xR",
+        "module"
+    ],
+    "alt_em10g32_std_synchronizer": [
+        "alt_em10g32_std_synchronizer",
+        "FCEz7",
+        "module"
+    ],
+    "pcie_mgmt_commands_h": [
+        "pcie_mgmt_commands_h",
+        "CyLxV",
+        "module"
+    ],
+    "alt_em10g32_stat_reg_0000": [
+        "alt_em10g32_stat_reg_0000",
+        "ERPx5",
+        "module"
+    ],
+    "alt_em10g32_clock_crosser_0000_0006": [
+        "alt_em10g32_clock_crosser_0000_0006",
+        "Zj56f",
+        "module"
+    ],
+    "alt_em10g32_clock_crosser_0000_0008": [
+        "alt_em10g32_clock_crosser_0000_0008",
+        "eZLEp",
+        "module"
+    ],
+    "alt_em10g32_crc32_0000": [
+        "alt_em10g32_crc32_0000",
+        "UjI7z",
+        "module"
+    ],
+    "pcie_mgmt_functions_h": [
+        "pcie_mgmt_functions_h",
+        "edmwR",
+        "module"
+    ],
+    "altera_std_synchronizer_nocut_0000": [
+        "altera_std_synchronizer_nocut_0000",
+        "ZCKra",
+        "module"
+    ],
+    "alt_em10g32_tx_err_aligner_0000": [
+        "alt_em10g32_tx_err_aligner_0000",
+        "hvr6F",
+        "module"
+    ],
+    "altera_std_synchronizer_nocut_0001": [
+        "altera_std_synchronizer_nocut_0001",
+        "hsI7n",
+        "module"
+    ],
+    "altera_xcvr_functions": [
+        "altera_xcvr_functions",
+        "LAC8G",
+        "module"
+    ],
+    "alt_em10g32_rx_frm_control": [
+        "alt_em10g32_rx_frm_control",
+        "gHyje",
+        "module"
+    ],
+    "alt_em10g32_clk_rst_0000": [
+        "alt_em10g32_clk_rst_0000",
+        "Zvby1",
+        "module"
+    ],
+    "alt_em10g32_clock_crosser_0000_000B": [
+        "alt_em10g32_clock_crosser_0000_000B",
+        "eaBmU",
+        "module"
+    ],
+    "alt_em10g32_pipeline_base_0001_0000": [
+        "alt_em10g32_pipeline_base_0001_0000",
+        "W73uI",
+        "module"
+    ],
+    "alt_em10g32_clock_crosser_0000_0009": [
+        "alt_em10g32_clock_crosser_0000_0009",
+        "q2aeC",
+        "module"
+    ],
+    "alt_em10g32_clock_crosser_0000": [
+        "alt_em10g32_clock_crosser_0000",
+        "me7bh",
+        "module"
+    ],
+    "alt_em10g32_clock_crosser_0000_0001": [
+        "alt_em10g32_clock_crosser_0000_0001",
+        "zE4xh",
+        "module"
+    ],
+    "alt_em10g32_clock_crosser_0000_0002": [
+        "alt_em10g32_clock_crosser_0000_0002",
+        "BAYgW",
+        "module"
+    ],
+    "alt_em10g32_reset_synchronizer_0001": [
+        "alt_em10g32_reset_synchronizer_0001",
+        "SDMzt",
+        "module"
+    ],
+    "alt_em10g32_clock_crosser_0000_0003": [
+        "alt_em10g32_clock_crosser_0000_0003",
+        "RRRg0",
+        "module"
+    ],
+    "altera_eth_10g_mac": [
+        "altera_eth_10g_mac",
+        "PFrZW",
+        "module"
+    ],
+    "alt_em10g32_clock_crosser_0000_000A": [
+        "alt_em10g32_clock_crosser_0000_000A",
+        "Sh0dV",
+        "module"
+    ],
+    "alt_em10g32_tx_flow_control": [
+        "alt_em10g32_tx_flow_control",
+        "KF1Nj",
+        "module"
+    ],
+    "alt_em10g32_creg_map": [
+        "alt_em10g32_creg_map",
+        "qWAEF",
+        "module"
+    ],
+    "altsyncram_0000": [
+        "altsyncram_0000",
+        "Q0s3L",
+        "module"
+    ],
+    "alt_em10g32_frm_decoder": [
+        "alt_em10g32_frm_decoder",
+        "YGMsx",
+        "module"
+    ],
+    "alt_em10g32_pipeline_base_0000_0000": [
+        "alt_em10g32_pipeline_base_0000_0000",
+        "gvrLs",
+        "module"
+    ],
+    "alt_em10g32_tx_gmii_mii_encoder_if_0000": [
+        "alt_em10g32_tx_gmii_mii_encoder_if_0000",
+        "s5Ezg",
+        "module"
+    ],
+    "alt_em10g32_pipeline_base_0000_0001": [
+        "alt_em10g32_pipeline_base_0000_0001",
+        "iLczv",
+        "module"
+    ],
+    "alt_em10g32_pipeline_base_0001_0001": [
+        "alt_em10g32_pipeline_base_0001_0001",
+        "SWqi8",
+        "module"
+    ],
+    "alt_em10g32_reset_synchronizer_0000": [
+        "alt_em10g32_reset_synchronizer_0000",
+        "nULyY",
+        "module"
+    ],
+    "alt_em10g32_rx_pfc_flow_control": [
+        "alt_em10g32_rx_pfc_flow_control",
+        "Cw5F4",
+        "module"
+    ],
+    "alt_em10g32_rx_pkt_backpressure_control": [
+        "alt_em10g32_rx_pkt_backpressure_control",
+        "yZZtk",
+        "module"
+    ],
+    "alt_em10g32_rx_status_aligner": [
+        "alt_em10g32_rx_status_aligner",
+        "NsyZt",
+        "module"
+    ],
+    "alt_em10g32_rx_top_0000": [
+        "alt_em10g32_rx_top_0000",
+        "Zqk0Q",
+        "module"
+    ],
+    "alt_em10g32_stat_mem_0000": [
+        "alt_em10g32_stat_mem_0000",
+        "pevNU",
+        "module"
+    ],
+    "alt_em10g32_tx_top_0000": [
+        "alt_em10g32_tx_top_0000",
+        "rt92k",
+        "module"
+    ],
+    "alt_em10g32_tx_pause_req": [
+        "alt_em10g32_tx_pause_req",
+        "aMe7R",
+        "module"
+    ],
+    "alt_em10g_32_64_xgmii_conversion_0000": [
+        "alt_em10g_32_64_xgmii_conversion_0000",
+        "yYSHI",
+        "module"
+    ],
+    "alt_em10g32_altsyncram_bundle_0000": [
+        "alt_em10g32_altsyncram_bundle_0000",
+        "k0qJS",
+        "module"
+    ],
+    "alt_em10g32_std_synchronizer_0001": [
+        "alt_em10g32_std_synchronizer_0001",
+        "Iy9ig",
+        "module"
+    ],
+    "lpm_mult": [
+        "lpm_mult",
+        "rRr71",
+        "module"
+    ]
+}

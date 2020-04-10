@@ -1,0 +1,19 @@
+# system info XG_inst_csr_rst_n_bfm_ip on 2019.05.29.15:45:11
+system_info:
+name,value
+DEVICE,10AT115S2F45E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,0
+#
+#
+# Files generated for XG_inst_csr_rst_n_bfm_ip on 2019.05.29.15:45:11
+files:
+filepath,kind,attributes,module,is_top
+sim/XG_inst_csr_rst_n_bfm_ip.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,XG_inst_csr_rst_n_bfm_ip,true
+altera_avalon_reset_source_171/sim/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_avalon_reset_source,false
+altera_avalon_reset_source_171/sim/altera_avalon_reset_source.sv,SYSTEM_VERILOG,,altera_avalon_reset_source,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+XG_inst_csr_rst_n_bfm_ip.XG_inst_csr_rst_n_bfm,altera_avalon_reset_source

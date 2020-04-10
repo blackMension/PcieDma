@@ -1,0 +1,6 @@
+	component Phy_inst_tx_analogreset_bfm_ip is
+		port (
+			sig_tx_analogreset : out std_logic_vector(0 downto 0)   -- tx_analogreset
+		);
+	end component Phy_inst_tx_analogreset_bfm_ip;
+

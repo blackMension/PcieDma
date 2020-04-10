@@ -1,0 +1,41 @@
+# system info XG_tb on 2019.05.29.15:45:14
+system_info:
+name,value
+DEVICE,10AT115S2F45E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,0
+#
+#
+# Files generated for XG_tb on 2019.05.29.15:45:14
+files:
+filepath,kind,attributes,module,is_top
+sim/XG_tb.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,XG_tb,true
+altera_reset_controller_171/sim/altera_reset_controller.v,VERILOG,,altera_reset_controller,false
+altera_reset_controller_171/sim/altera_reset_synchronizer.v,VERILOG,,altera_reset_controller,false
+altera_reset_controller_171/sim/altera_reset_controller.sdc,SDC_ENTITY,NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION,altera_reset_controller,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+XG_tb.XG_inst,XG
+XG_tb.XG_inst_avalon_st_pause_bfm,XG_inst_avalon_st_pause_bfm_ip
+XG_tb.XG_inst_avalon_st_rx_bfm,XG_inst_avalon_st_rx_bfm_ip
+XG_tb.XG_inst_avalon_st_rxstatus_bfm,XG_inst_avalon_st_rxstatus_bfm_ip
+XG_tb.XG_inst_avalon_st_tx_bfm,XG_inst_avalon_st_tx_bfm_ip
+XG_tb.XG_inst_avalon_st_txstatus_bfm,XG_inst_avalon_st_txstatus_bfm_ip
+XG_tb.XG_inst_csr_bfm,XG_inst_csr_bfm_ip
+XG_tb.XG_inst_csr_clk_bfm,XG_inst_csr_clk_bfm_ip
+XG_tb.XG_inst_csr_rst_n_bfm,XG_inst_csr_rst_n_bfm_ip
+XG_tb.XG_inst_link_fault_status_xgmii_rx_bfm,XG_inst_link_fault_status_xgmii_rx_bfm_ip
+XG_tb.XG_inst_rx_156_25_clk_bfm,XG_inst_rx_156_25_clk_bfm_ip
+XG_tb.XG_inst_rx_312_5_clk_bfm,XG_inst_rx_312_5_clk_bfm_ip
+XG_tb.XG_inst_rx_rst_n_bfm,XG_inst_rx_rst_n_bfm_ip
+XG_tb.XG_inst_tx_156_25_clk_bfm,XG_inst_tx_156_25_clk_bfm_ip
+XG_tb.XG_inst_tx_312_5_clk_bfm,XG_inst_tx_312_5_clk_bfm_ip
+XG_tb.XG_inst_tx_rst_n_bfm,XG_inst_tx_rst_n_bfm_ip
+XG_tb.XG_inst_xgmii_rx_control_bfm,XG_inst_xgmii_rx_control_bfm_ip
+XG_tb.XG_inst_xgmii_rx_data_bfm,XG_inst_xgmii_rx_data_bfm_ip
+XG_tb.XG_inst_xgmii_tx_control_bfm,XG_inst_xgmii_tx_control_bfm_ip
+XG_tb.XG_inst_xgmii_tx_data_bfm,XG_inst_xgmii_tx_data_bfm_ip
+XG_tb.rst_controller,altera_reset_controller
+XG_tb.rst_controller_001,altera_reset_controller

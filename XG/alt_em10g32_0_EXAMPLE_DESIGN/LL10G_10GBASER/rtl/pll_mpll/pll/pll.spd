@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_iopll_171/sim/pll_altera_iopll_171_ejgq7kq.vo"
+   type="VERILOG"
+   library="altera_iopll_171" />
+ <file
+   path="sim/pll.v"
+   type="VERILOG"
+   library="pll"
+   hasInlineConfiguration="true" />
+ <topLevel name="pll.pll" />
+ <deviceFamily name="arria10" />
+</simPackage>

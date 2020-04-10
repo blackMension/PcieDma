@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+<file path="simulation/ed_sim/models/tb_top.sv" type="SYSTEM_VERILOG">
+<include path="simulation/ed_sim/models/avalon_st_eth_packet_monitor.sv" />
+</file>
+<topLevel name="tb_top" />
+<file path="rtl/eth_traffic_controller/altera_avalon_sc_fifo.v" type="VERILOG" />
+<topLevel name="altera_avalon_sc_fifo" />
+<file path="rtl/eth_traffic_controller/avalon_st_gen.v" type="VERILOG" />
+<topLevel name="avalon_st_gen" />
+<file path="rtl/eth_traffic_controller/avalon_st_loopback.sv" type="SYSTEM_VERILOG" />
+<topLevel name="avalon_st_loopback" />
+<file path="rtl/eth_traffic_controller/avalon_st_loopback_csr.v" type="VERILOG" />
+<topLevel name="avalon_st_loopback_csr" />
+<file path="rtl/eth_traffic_controller/avalon_st_mon.v" type="VERILOG" />
+<topLevel name="avalon_st_mon" />
+<file path="rtl/eth_traffic_controller/avalon_st_prtmux.v" type="VERILOG" />
+<topLevel name="avalon_st_prtmux" />
+<file path="rtl/eth_traffic_controller/eth_std_traffic_controller_top.v" type="VERILOG" />
+<topLevel name="eth_std_traffic_controller_top" />
+<file path="rtl/eth_traffic_controller/shiftreg_ctrl.v" type="VERILOG" />
+<topLevel name="shiftreg_ctrl" />
+<file path="rtl/eth_traffic_controller/shiftreg_data.v" type="VERILOG" />
+<topLevel name="shiftreg_data" />
+<file path="rtl/eth_traffic_controller/crc32/avalon_st_to_crc_if_bridge.v" type="VERILOG" />
+<topLevel name="avalon_st_to_crc_if_bridge" />
+<file path="rtl/eth_traffic_controller/crc32/bit_endian_converter.v" type="VERILOG" />
+<topLevel name="bit_endian_converter" />
+<file path="rtl/eth_traffic_controller/crc32/byte_endian_converter.v" type="VERILOG" />
+<topLevel name="byte_endian_converter" />
+<file path="rtl/eth_traffic_controller/crc32/crc_checksum_aligner.v" type="VERILOG" />
+<topLevel name="crc_checksum_aligner" />
+<file path="rtl/eth_traffic_controller/crc32/crc_comparator.v" type="VERILOG" />
+<topLevel name="crc_comparator" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_calculator.v" type="VERILOG" />
+<topLevel name="crc32_calculator" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_chk.v" type="VERILOG" />
+<topLevel name="crc32_chk" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_gen.v" type="VERILOG" />
+<topLevel name="crc32_gen" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/crc_ethernet.v" type="VERILOG" />
+<topLevel name="crc_ethernet" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/crc_register.v" type="VERILOG" />
+<topLevel name="crc_register" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/crc32_dat8.v" type="VERILOG" />
+<topLevel name="crc32_dat8" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/crc32_dat16.v" type="VERILOG" />
+<topLevel name="crc32_dat16" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/crc32_dat24.v" type="VERILOG" />
+<topLevel name="crc32_dat24" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/crc32_dat32.v" type="VERILOG" />
+<topLevel name="crc32_dat32" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/crc32_dat32_any_byte.v" type="VERILOG" />
+<topLevel name="crc32_dat32_any_byte" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/crc32_dat40.v" type="VERILOG" />
+<topLevel name="crc32_dat40" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/crc32_dat48.v" type="VERILOG" />
+<topLevel name="crc32_dat48" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/crc32_dat56.v" type="VERILOG" />
+<topLevel name="crc32_dat56" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/crc32_dat64.v" type="VERILOG" />
+<topLevel name="crc32_dat64" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/crc32_dat64_any_byte.v" type="VERILOG" />
+<topLevel name="crc32_dat64_any_byte" />
+<file path="rtl/eth_traffic_controller/crc32/crc32_lib/xor6.v" type="VERILOG" />
+<topLevel name="xor6" />
+<file path="rtl/altera_eth_10g_mac_base_r.sv" type="SYSTEM_VERILOG" />
+<topLevel name="altera_eth_10g_mac_base_r" />
+<file path="rtl/altera_eth_10g_mac_base_r_wrap.v" type="VERILOG" />
+<topLevel name="altera_eth_10g_mac_base_r_wrap" />
+</simPackage>

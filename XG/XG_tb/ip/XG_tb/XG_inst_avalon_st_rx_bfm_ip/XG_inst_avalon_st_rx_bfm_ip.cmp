@@ -1,0 +1,31 @@
+	component XG_inst_avalon_st_rx_bfm_ip is
+		generic (
+			USE_PACKET       : integer  := 0;
+			USE_CHANNEL      : integer  := 0;
+			USE_ERROR        : integer  := 0;
+			USE_READY        : integer  := 1;
+			USE_VALID        : integer  := 1;
+			USE_EMPTY        : integer  := 0;
+			ST_SYMBOL_W      : positive := 8;
+			ST_NUMSYMBOLS    : positive := 4;
+			ST_CHANNEL_W     : positive := 1;
+			ST_ERROR_W       : positive := 1;
+			ST_EMPTY_W       : positive := 1;
+			ST_READY_LATENCY : integer  := 0;
+			ST_BEATSPERCYCLE : integer  := 1;
+			ST_MAX_CHANNELS  : integer  := 1;
+			VHDL_ID          : integer  := 0
+		);
+		port (
+			clk                : in  std_logic                     := 'X';             -- clk
+			reset              : in  std_logic                     := 'X';             -- reset
+			sink_data          : in  std_logic_vector(63 downto 0) := (others => 'X'); -- data
+			sink_valid         : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- valid
+			sink_ready         : out std_logic;                                        -- ready
+			sink_startofpacket : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- startofpacket
+			sink_endofpacket   : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- endofpacket
+			sink_empty         : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- empty
+			sink_error         : in  std_logic_vector(5 downto 0)  := (others => 'X')  -- error
+		);
+	end component XG_inst_avalon_st_rx_bfm_ip;
+

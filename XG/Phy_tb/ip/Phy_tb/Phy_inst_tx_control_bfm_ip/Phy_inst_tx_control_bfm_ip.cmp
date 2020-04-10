@@ -1,0 +1,6 @@
+	component Phy_inst_tx_control_bfm_ip is
+		port (
+			sig_tx_control : out std_logic_vector(7 downto 0)   -- tx_control
+		);
+	end component Phy_inst_tx_control_bfm_ip;
+

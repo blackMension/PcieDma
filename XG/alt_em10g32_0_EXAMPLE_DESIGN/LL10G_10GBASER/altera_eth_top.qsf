@@ -1,0 +1,169 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2017  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 14.1a10s.0 Build 636 11/23/2014 SJ Full Version
+# Date created = 16:10:43  November 25, 2014
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		altera_eth_top_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Arria 10"
+set_global_assignment -name DEVICE 10AT115S2F45E2SG
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.1A10S.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:10:43  NOVEMBER 25, 2014"
+set_global_assignment -name LAST_QUARTUS_VERSION 16.0.0
+set_global_assignment -name TOP_LEVEL_ENTITY altera_eth_top
+set_global_assignment -name QIP_FILE rtl/eth_traffic_controller/eth_std_traffic_controller_top.qip
+set_global_assignment -name QSYS_FILE rtl/address_decoder/address_decode.qsys
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_eth_gen_mon_0.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_eth_gen_mon_1.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_eth_gen_mon_2.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_eth_gen_mon_3.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_eth_gen_mon_4.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_eth_gen_mon_5.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_eth_gen_mon_6.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_eth_gen_mon_7.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_eth_gen_mon_8.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_eth_gen_mon_9.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_eth_gen_mon_10.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_eth_gen_mon_11.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_mac_0.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_mac_1.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_mac_2.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_mac_3.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_mac_4.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_mac_5.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_mac_6.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_mac_7.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_mac_8.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_mac_9.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_mac_10.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_mac_11.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_phy_0.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_phy_1.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_phy_2.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_phy_3.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_phy_4.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_phy_5.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_phy_6.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_phy_7.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_phy_8.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_phy_9.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_phy_10.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_mm_to_phy_11.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_sc_fifo_0.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_sc_fifo_1.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_sc_fifo_2.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_sc_fifo_3.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_sc_fifo_4.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_sc_fifo_5.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_sc_fifo_6.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_sc_fifo_7.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_sc_fifo_8.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_sc_fifo_9.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_sc_fifo_10.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_sc_fifo_11.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_sc_fifo_0.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_sc_fifo_1.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_sc_fifo_2.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_sc_fifo_3.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_sc_fifo_4.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_sc_fifo_5.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_sc_fifo_6.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_sc_fifo_7.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_sc_fifo_8.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_sc_fifo_9.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_sc_fifo_10.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_sc_fifo_11.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_clk_csr.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_master_0.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_merlin_master_translator_0.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_rx_xcvr_clk.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_xcvr_clk.ip
+set_global_assignment -name PBIP_FILE rtl/address_decoder/ip/address_decode/address_decode_tx_xcvr_half_clk.ip
+set_global_assignment -name QSYS_FILE rtl/fifo_scfifo/sc_fifo.qsys
+set_global_assignment -name PBIP_FILE rtl/fifo_scfifo/ip/sc_fifo/sc_fifo_rx_sc_fifo.ip
+set_global_assignment -name PBIP_FILE rtl/fifo_scfifo/ip/sc_fifo/sc_fifo_tx_sc_fifo.ip
+set_global_assignment -name PBIP_FILE rtl/xcvr_reset_controller/reset_control.ip
+set_global_assignment -name PBIP_FILE rtl/mac/altera_eth_10g_mac.ip
+set_global_assignment -name PBIP_FILE rtl/phy/altera_eth_10gbaser_phy.ip
+set_global_assignment -name PBIP_FILE rtl/pll_atxpll/altera_xcvr_atx_pll_ip.ip
+set_global_assignment -name PBIP_FILE rtl/pll_mpll/pll.ip
+set_global_assignment -name VERILOG_FILE rtl/altera_eth_10g_mac_base_r_wrap.v
+set_global_assignment -name SYSTEMVERILOG_FILE rtl/altera_eth_10g_mac_base_r.sv
+set_global_assignment -name SYSTEMVERILOG_FILE altera_eth_top.sv
+set_global_assignment -name SDC_FILE altera_eth_top.sdc
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+
+
+set_instance_assignment -name VIRTUAL_PIN ON -to sfp0_txdisable
+# Channel 0
+set_instance_assignment -name VIRTUAL_PIN ON -to tx_ready_export_n[0]
+set_instance_assignment -name VIRTUAL_PIN ON -to rx_ready_export_n[0]
+set_instance_assignment -name VIRTUAL_PIN ON -to block_lock_n[0]
+# Channel 1
+set_instance_assignment -name VIRTUAL_PIN ON -to tx_ready_export_n[1]
+set_instance_assignment -name VIRTUAL_PIN ON -to rx_ready_export_n[1]
+set_instance_assignment -name VIRTUAL_PIN ON -to block_lock_n[1]
+set_instance_assignment -name VIRTUAL_PIN ON -to SFPP0_RATE_SEL
+
+set_instance_assignment -name VIRTUAL_PIN ON -to master_reset_n
+
+
+
+set_instance_assignment -name VIRTUAL_PIN ON -to avalon_st_rxstatus_valid_156
+set_instance_assignment -name VIRTUAL_PIN ON -to avalon_st_rxstatus_data_156
+set_instance_assignment -name VIRTUAL_PIN ON -to avalon_st_rxstatus_error_156
+
+
+# IO Standard
+set_instance_assignment -name IO_STANDARD LVDS -to csr_clk
+set_instance_assignment -name IO_STANDARD LVDS -to ref_clk_clk
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data[*]
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data[*]
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to tx_serial_data[*]
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to rx_serial_data[*]
+
+# Clock termination setting
+set_instance_assignment -name XCVR_REFCLK_PIN_TERMINATION AC_COUPLING -to csr_clk
+set_instance_assignment -name XCVR_REFCLK_PIN_TERMINATION AC_COUPLING -to ref_clk_clk
+
+set_global_assignment -name PRESERVE_UNUSED_XCVR_CHANNEL ON
+
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+
+

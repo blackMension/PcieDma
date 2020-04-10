@@ -1,0 +1,6 @@
+	component Phy_inst_reconfig_reset_bfm_ip is
+		port (
+			sig_reset : out std_logic_vector(0 downto 0)   -- reset
+		);
+	end component Phy_inst_reconfig_reset_bfm_ip;
+

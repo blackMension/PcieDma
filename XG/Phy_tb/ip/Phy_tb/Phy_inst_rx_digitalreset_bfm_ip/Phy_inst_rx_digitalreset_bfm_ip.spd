@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_conduit_bfm_171/sim/verbosity_pkg.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_common_sv_packages"
+   systemVerilogPackageName="avalon_vip_verbosity_pkg" />
+ <file
+   path="altera_conduit_bfm_171/sim/Phy_inst_rx_digitalreset_bfm_ip_altera_conduit_bfm_171_jemqyza.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_conduit_bfm_171" />
+ <file
+   path="sim/Phy_inst_rx_digitalreset_bfm_ip.v"
+   type="VERILOG"
+   library="Phy_inst_rx_digitalreset_bfm_ip"
+   hasInlineConfiguration="true" />
+ <topLevel
+   name="Phy_inst_rx_digitalreset_bfm_ip.Phy_inst_rx_digitalreset_bfm_ip" />
+ <deviceFamily name="arria10" />
+</simPackage>

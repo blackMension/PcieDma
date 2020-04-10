@@ -12,7 +12,7 @@
 //     connect "dataNumProcRdAddr","dataNumRdAddr";
 // #instance "DdpLoop.v","uDdpLoop";
 // instance "GearBox.v","uGearBox";
-// instance "StackLoop.v","uStackLoop";
+// #instance "StackLoop.v","uStackLoop";
 // endmodule
 // VWEAVE: END PERL
 // VWEAVE: BEGIN GENERATED
@@ -37,6 +37,7 @@ module RdmaStack (
                     WrDCSReadData,
                     WrDCSWaitRequest,
                     clock,
+                    clockMac,
                     dataOut,
                     ddpPktPop,
                     emptyArray,
@@ -45,7 +46,15 @@ module RdmaStack (
                     poolFull,
                     ready,
                     reset,
+                    resetNMac,
                     rgstrPtr,
+                    rx_data,
+                    rx_empty,
+                    rx_eop,
+                    rx_error,
+                    rx_sop,
+                    rx_valid,
+                    tx_ready,
 
                     // outputs
                     ArbAddress,
@@ -79,7 +88,14 @@ module RdmaStack (
                     dataPop,
                     push,
                     pushData,
-                    rgstrNum
+                    rgstrNum,
+                    rx_ready,
+                    tx_data,
+                    tx_empty,
+                    tx_eop,
+                    tx_error,
+                    tx_sop,
+                    tx_valid
 );
 
 input              ArbWaitRequest;
@@ -101,6 +117,7 @@ input              SQWrite_i;
 input   [31:0]     WrDCSReadData;
 input              WrDCSWaitRequest;
 input              clock;
+input              clockMac;
 input   [255:0]    dataOut;
 input              ddpPktPop;
 input   [3:0]      emptyArray;
@@ -109,7 +126,15 @@ input              poolEmpty;
 input              poolFull;
 input              ready;
 input              reset;
+input              resetNMac;
 input   [4:0]      rgstrPtr;
+input   [63:0]     rx_data;
+input   [2:0]      rx_empty;
+input              rx_eop;
+input              rx_error;
+input              rx_sop;
+input              rx_valid;
+input              tx_ready;
 
 output  [63:0]     ArbAddress;
 output  [3:0]      ArbByteEnable;
@@ -143,9 +168,15 @@ output             dataPop;
 output             push;
 output  [255:0]    pushData;
 output  [2:0]      rgstrNum;
+output             rx_ready;
+output  [63:0]     tx_data;
+output  [2:0]      tx_empty;
+output             tx_eop;
+output             tx_error;
+output             tx_sop;
+output             tx_valid;
 
 
-   wire            clockMac;
    wire            dataNumRd;
    wire [7:0]      dataNumRdAddr;
    wire [2:0]      dataNumRdData;
@@ -164,21 +195,6 @@ output  [2:0]      rgstrNum;
    wire [7:0]      rdmap2DdpCtrl;
    wire            rdmap2DdpHdrValid;
    wire [55:0]     rdmap2DdpHeader;
-   wire            resetNMac;
-   wire [63:0]     rx_data;
-   wire [2:0]      rx_empty;
-   wire            rx_eop;
-   wire            rx_error;
-   wire            rx_ready;
-   wire            rx_sop;
-   wire            rx_valid;
-   wire [63:0]     tx_data;
-   wire [2:0]      tx_empty;
-   wire            tx_eop;
-   wire            tx_error;
-   wire            tx_ready;
-   wire            tx_sop;
-   wire            tx_valid;
 
 Rdmap  uRdmap (
    .ArbWaitRequest                (ArbWaitRequest),
@@ -307,26 +323,6 @@ GearBox  uGearBox (
    .tx_error                      (tx_error),
    .tx_sop                        (tx_sop),
    .tx_valid                      (tx_valid)
-);
-
-StackLoop  uStackLoop (
-   .rx_ready                      (rx_ready),
-   .tx_data                       (tx_data[63:0]),
-   .tx_empty                      (tx_empty[2:0]),
-   .tx_eop                        (tx_eop),
-   .tx_error                      (tx_error),
-   .tx_sop                        (tx_sop),
-   .tx_valid                      (tx_valid),
-
-   .clockMac                      (clockMac),
-   .resetNMac                     (resetNMac),
-   .rx_data                       (rx_data[63:0]),
-   .rx_empty                      (rx_empty[2:0]),
-   .rx_eop                        (rx_eop),
-   .rx_error                      (rx_error),
-   .rx_sop                        (rx_sop),
-   .rx_valid                      (rx_valid),
-   .tx_ready                      (tx_ready)
 );
 
 endmodule

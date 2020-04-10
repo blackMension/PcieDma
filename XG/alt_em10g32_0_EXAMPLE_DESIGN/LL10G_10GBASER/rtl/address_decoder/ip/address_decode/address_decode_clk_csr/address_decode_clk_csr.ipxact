@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<spirit:component xmlns:altera="http://www.altera.com/XMLSchema/IPXact/extensions" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>Altera Corporation</spirit:vendor>
+    <spirit:library>address_decode_clk_csr</spirit:library>
+    <spirit:name>address_decode_clk_csr</spirit:name>
+    <spirit:version>1.0</spirit:version>
+    <spirit:busInterfaces>
+        <spirit:busInterface>
+            <spirit:name>clk</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="clock" spirit:version="17.1"/>
+            <spirit:master/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>clk</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>clk_out</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedDirectClock</spirit:name>
+                    <spirit:displayName>Associated direct clock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedDirectClock">clk_in</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>clockRate</spirit:name>
+                    <spirit:displayName>Clock rate</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="clockRate">100000000</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>clockRateKnown</spirit:name>
+                    <spirit:displayName>Clock rate known</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="clockRateKnown">true</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>externallyDriven</spirit:name>
+                    <spirit:displayName>Externally driven</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="externallyDriven">true</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>ptfSchematicName</spirit:name>
+                    <spirit:displayName>PTF schematic name</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="ptfSchematicName"></spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>clk_in</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="clock" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>clk</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>in_clk</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>clockRate</spirit:name>
+                    <spirit:displayName>Clock rate</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="clockRate">100000000</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>externallyDriven</spirit:name>
+                    <spirit:displayName>Externally driven</spirit:displayName>
+                    <spirit:value spirit:format="bool" spirit:id="externallyDriven">false</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>ptfSchematicName</spirit:name>
+                    <spirit:displayName>PTF schematic name</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="ptfSchematicName"></spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>qsys.ui.export_name</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="qsys.ui.export_name">clk</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>clk_in_reset</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="reset" spirit:version="17.1"/>
+            <spirit:slave/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>reset_n</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>reset_n</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>Associated clock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock">clk_in</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>synchronousEdges</spirit:name>
+                    <spirit:displayName>Synchronous edges</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="synchronousEdges">DEASSERT</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+            <spirit:vendorExtensions>
+                <altera:altera_assignments>
+                    <spirit:parameters>
+                        <spirit:parameter>
+                            <spirit:name>qsys.ui.export_name</spirit:name>
+                            <spirit:value spirit:format="string" spirit:id="qsys.ui.export_name">reset</spirit:value>
+                        </spirit:parameter>
+                    </spirit:parameters>
+                </altera:altera_assignments>
+            </spirit:vendorExtensions>
+        </spirit:busInterface>
+        <spirit:busInterface>
+            <spirit:name>clk_reset</spirit:name>
+            <spirit:busType spirit:vendor="altera" spirit:library="altera" spirit:name="reset" spirit:version="17.1"/>
+            <spirit:master/>
+            <spirit:portMaps>
+                <spirit:portMap>
+                    <spirit:logicalPort>
+                        <spirit:name>reset_n</spirit:name>
+                    </spirit:logicalPort>
+                    <spirit:physicalPort>
+                        <spirit:name>reset_n_out</spirit:name>
+                    </spirit:physicalPort>
+                </spirit:portMap>
+            </spirit:portMaps>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>associatedClock</spirit:name>
+                    <spirit:displayName>Associated clock</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedClock">clk</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedDirectReset</spirit:name>
+                    <spirit:displayName>Associated direct reset</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedDirectReset">clk_in_reset</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>associatedResetSinks</spirit:name>
+                    <spirit:displayName>Associated reset sinks</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="associatedResetSinks">clk_in_reset</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>synchronousEdges</spirit:name>
+                    <spirit:displayName>Synchronous edges</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="synchronousEdges">DEASSERT</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+        </spirit:busInterface>
+    </spirit:busInterfaces>
+    <spirit:model>
+        <spirit:views>
+            <spirit:view>
+                <spirit:name>QUARTUS_SYNTH</spirit:name>
+                <spirit:envIdentifier>:quartus.altera.com:</spirit:envIdentifier>
+                <spirit:modelName>address_decode_clk_csr</spirit:modelName>
+                <spirit:fileSetRef>
+                    <spirit:localName>QUARTUS_SYNTH</spirit:localName>
+                </spirit:fileSetRef>
+            </spirit:view>
+        </spirit:views>
+        <spirit:ports>
+            <spirit:port>
+                <spirit:name>clk_out</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>out</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>in_clk</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>in</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>reset_n</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>in</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+            <spirit:port>
+                <spirit:name>reset_n_out</spirit:name>
+                <spirit:wire>
+                    <spirit:direction>out</spirit:direction>
+                    <spirit:wireTypeDefs>
+                        <spirit:wireTypeDef>
+                            <spirit:typeName>STD_LOGIC</spirit:typeName>
+                            <spirit:viewNameRef>QUARTUS_SYNTH</spirit:viewNameRef>
+                        </spirit:wireTypeDef>
+                    </spirit:wireTypeDefs>
+                </spirit:wire>
+            </spirit:port>
+        </spirit:ports>
+    </spirit:model>
+    <spirit:fileSets>
+        <spirit:fileSet>
+            <spirit:name>QUARTUS_SYNTH</spirit:name>
+            <spirit:file>
+                <spirit:name>synth/address_decode_clk_csr.v</spirit:name>
+                <spirit:fileType>verilogSource</spirit:fileType>
+                <spirit:isIncludeFile>false</spirit:isIncludeFile>
+                <spirit:vendorExtensions>
+                    <altera:altera_hdl_compilation_library>address_decode_clk_csr</altera:altera_hdl_compilation_library>
+                </spirit:vendorExtensions>
+            </spirit:file>
+        </spirit:fileSet>
+    </spirit:fileSets>
+    <spirit:vendorExtensions>
+        <altera:entity_info>
+            <spirit:vendor>Altera Corporation</spirit:vendor>
+            <spirit:library>address_decode_clk_csr</spirit:library>
+            <spirit:name>address_decode_clk_csr</spirit:name>
+            <spirit:version>1.0</spirit:version>
+        </altera:entity_info>
+        <altera:altera_module_parameters>
+            <spirit:parameters>
+                <spirit:parameter>
+                    <spirit:name>AUTO_GENERATION_ID</spirit:name>
+                    <spirit:displayName>Auto GENERATION_ID</spirit:displayName>
+                    <spirit:value spirit:format="long" spirit:id="AUTO_GENERATION_ID">0</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_UNIQUE_ID</spirit:name>
+                    <spirit:displayName>Auto UNIQUE_ID</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="AUTO_UNIQUE_ID"></spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_DEVICE_FAMILY</spirit:name>
+                    <spirit:displayName>Auto DEVICE_FAMILY</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="AUTO_DEVICE_FAMILY">Arria 10</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_DEVICE</spirit:name>
+                    <spirit:displayName>Auto DEVICE</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="AUTO_DEVICE">10AT115S2F45E2SG</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_DEVICE_SPEEDGRADE</spirit:name>
+                    <spirit:displayName>Auto DEVICE_SPEEDGRADE</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="AUTO_DEVICE_SPEEDGRADE">2</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_CLK_IN_CLOCK_RATE</spirit:name>
+                    <spirit:displayName>Auto CLOCK_RATE</spirit:displayName>
+                    <spirit:value spirit:format="string" spirit:id="AUTO_CLK_IN_CLOCK_RATE">-1</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_CLK_IN_CLOCK_DOMAIN</spirit:name>
+                    <spirit:displayName>Auto CLOCK_DOMAIN</spirit:displayName>
+                    <spirit:value spirit:format="long" spirit:id="AUTO_CLK_IN_CLOCK_DOMAIN">-1</spirit:value>
+                </spirit:parameter>
+                <spirit:parameter>
+                    <spirit:name>AUTO_CLK_IN_RESET_DOMAIN</spirit:name>
+                    <spirit:displayName>Auto RESET_DOMAIN</spirit:displayName>
+                    <spirit:value spirit:format="long" spirit:id="AUTO_CLK_IN_RESET_DOMAIN">-1</spirit:value>
+                </spirit:parameter>
+            </spirit:parameters>
+        </altera:altera_module_parameters>
+    </spirit:vendorExtensions>
+</spirit:component>

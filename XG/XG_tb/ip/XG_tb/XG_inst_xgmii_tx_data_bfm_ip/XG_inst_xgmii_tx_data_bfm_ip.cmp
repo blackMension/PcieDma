@@ -1,0 +1,6 @@
+	component XG_inst_xgmii_tx_data_bfm_ip is
+		port (
+			sig_export : in std_logic_vector(31 downto 0) := (others => 'X')  -- export
+		);
+	end component XG_inst_xgmii_tx_data_bfm_ip;
+

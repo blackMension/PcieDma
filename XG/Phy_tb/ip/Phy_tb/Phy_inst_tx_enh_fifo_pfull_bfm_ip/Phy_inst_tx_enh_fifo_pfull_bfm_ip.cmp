@@ -1,0 +1,6 @@
+	component Phy_inst_tx_enh_fifo_pfull_bfm_ip is
+		port (
+			sig_tx_enh_fifo_pfull : in std_logic_vector(0 downto 0) := (others => 'X')  -- tx_enh_fifo_pfull
+		);
+	end component Phy_inst_tx_enh_fifo_pfull_bfm_ip;
+

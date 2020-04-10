@@ -1,0 +1,19 @@
+# system info Phy_inst_tx_enh_data_valid_bfm_ip on 2019.05.30.09:37:00
+system_info:
+name,value
+DEVICE,10AT115S2F45E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,0
+#
+#
+# Files generated for Phy_inst_tx_enh_data_valid_bfm_ip on 2019.05.30.09:37:00
+files:
+filepath,kind,attributes,module,is_top
+sim/Phy_inst_tx_enh_data_valid_bfm_ip.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,Phy_inst_tx_enh_data_valid_bfm_ip,true
+altera_conduit_bfm_171/sim/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,Phy_inst_tx_enh_data_valid_bfm_ip_altera_conduit_bfm_171_ku5zdby,false
+altera_conduit_bfm_171/sim/Phy_inst_tx_enh_data_valid_bfm_ip_altera_conduit_bfm_171_ku5zdby.sv,SYSTEM_VERILOG,,Phy_inst_tx_enh_data_valid_bfm_ip_altera_conduit_bfm_171_ku5zdby,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+Phy_inst_tx_enh_data_valid_bfm_ip.Phy_inst_tx_enh_data_valid_bfm,Phy_inst_tx_enh_data_valid_bfm_ip_altera_conduit_bfm_171_ku5zdby

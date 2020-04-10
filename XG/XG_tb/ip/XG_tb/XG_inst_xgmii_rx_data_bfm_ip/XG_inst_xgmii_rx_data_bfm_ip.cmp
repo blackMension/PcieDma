@@ -1,0 +1,6 @@
+	component XG_inst_xgmii_rx_data_bfm_ip is
+		port (
+			sig_export : out std_logic_vector(31 downto 0)   -- export
+		);
+	end component XG_inst_xgmii_rx_data_bfm_ip;
+

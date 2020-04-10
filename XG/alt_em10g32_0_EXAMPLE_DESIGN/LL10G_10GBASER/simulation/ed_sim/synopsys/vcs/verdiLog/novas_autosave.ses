@@ -1,0 +1,72 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[Verdi_1]
+workMode = hardwareDebug
+[hb]
+postSimFile = /home/dai/WorkStation/fpga/project/intel/IPs/XG/alt_em10g32_0_EXAMPLE_DESIGN/LL10G_10GBASER/simulation/ed_sim/synopsys/vcs/IpSim.fsdb
+syncTime = 52972151000.831
+viewport = 0 31 1920 1023 629 491 190 1918
+activeNode = "tb_top.dut"
+activeScope = "tb_top.dut"
+activeFile = "./../../../../rtl/altera_eth_10g_mac_base_r.sv"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 295
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "tb_top.dut"
+Scope2 = "tb_top.dut.wrapper_inst"
+multipleSelection = 1 310 5 0 0
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = tb_top.dut
+File = /home/dai/WorkStation/fpga/project/intel/IPs/XG/alt_em10g32_0_EXAMPLE_DESIGN/LL10G_10GBASER/rtl/altera_eth_10g_mac_base_r.sv
+Line = 296
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/dai/WorkStation/fpga/project/intel/IPs/XG/alt_em10g32_0_EXAMPLE_DESIGN/LL10G_10GBASER/simulation/ed_sim/synopsys/vcs
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.f
+[nMemoryManager]
+FsdbFile = /home/dai/WorkStation/fpga/project/intel/IPs/XG/alt_em10g32_0_EXAMPLE_DESIGN/LL10G_10GBASER/simulation/ed_sim/synopsys/vcs/IpSim.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 28 1920 344 221 65
+SessionFile = /home/dai/WorkStation/fpga/project/intel/IPs/XG/alt_em10g32_0_EXAMPLE_DESIGN/LL10G_10GBASER/simulation/ed_sim/synopsys/vcs/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_reset_controller_171/sim/altera_reset_controller.v"
+   type="VERILOG"
+   library="altera_reset_controller_171" />
+ <file
+   path="altera_reset_controller_171/sim/altera_reset_synchronizer.v"
+   type="VERILOG"
+   library="altera_reset_controller_171" />
+ <file
+   path="altera_reset_controller_171/sim/altera_reset_controller.sdc"
+   type="SDC_ENTITY"
+   library="altera_reset_controller_171" />
+ <file
+   path="sim/XG_tb.v"
+   type="VERILOG"
+   library="XG_tb"
+   hasInlineConfiguration="true" />
+ <topLevel name="XG_tb.XG_tb" />
+ <deviceFamily name="arria10" />
+</simPackage>

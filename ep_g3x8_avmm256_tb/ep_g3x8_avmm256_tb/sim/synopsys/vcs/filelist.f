@@ -147,6 +147,167 @@
   ../..//../../../ep_g3x8_avmm256/altera_reset_controller_171/sim/altera_reset_controller.v 
   ../..//../../../ep_g3x8_avmm256/altera_reset_controller_171/sim/altera_reset_synchronizer.v 
 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/alt_em10g32.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/alt_em10g32unit.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_clk_rst.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_clock_crosser.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_crc32.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_crc32_gf_mult32_kc.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_creg_map.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_creg_top.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_frm_decoder.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_rs_gmii_mii_layer.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_pipeline_base.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_reset_synchronizer.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rr_clock_crosser.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rst_cnt.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_fctl_filter_crcpad_rem.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_fctl_overflow.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_fctl_preamble.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_frm_control.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_pfc_flow_control.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_pfc_pause_conversion.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_pkt_backpressure_control.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_rs_gmii16b.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_rs_gmii16b_top.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_rs_gmii_mii.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_rs_layer.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_rs_xgmii.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_status_aligner.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_top.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_stat_mem.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_stat_reg.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_data_frm_gen.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_srcaddr_inserter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_err_aligner.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_flow_control.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_frm_arbiter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_frm_muxer.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_pause_beat_conversion.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_pause_frm_gen.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_pause_req.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_pfc_frm_gen.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rr_buffer.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_rs_gmii16b.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_rs_gmii16b_top.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_rs_layer.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_rs_xgmii_layer.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_sc_fifo.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_top.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_gmii_decoder.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_gmii_decoder_dfa.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_gmii_encoder.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_gmii_encoder_dfa.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_gmii_mii_decoder_if.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_gmii_mii_encoder_if.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_avalon_mm_adapter/altera_eth_avalon_mm_adapter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_avalon_st_adapter/altera_eth_avalon_st_adapter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_avalon_st_adapter/avalon_st_adapter_avalon_st_rx.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_avalon_st_adapter/avalon_st_adapter_avalon_st_tx.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_avalon_st_adapter/avalon_st_adapter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_avalon_st_adapter/alt_em10g32_vldpkt_rddly.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_avalon_st_adapter/sideband_adapter_rx.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_avalon_st_adapter/sideband_adapter_tx.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_avalon_st_adapter/sideband_adapter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_avalon_st_adapter/altera_eth_sideband_crosser.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_avalon_st_adapter/altera_eth_sideband_crosser_sync.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_xgmii_width_adaptor/alt_em10g_32_64_xgmii_conversion.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_xgmii_width_adaptor/alt_em10g_32_to_64_xgmii_conversion.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_xgmii_width_adaptor/alt_em10g_64_to_32_xgmii_conversion.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_xgmii_width_adaptor/alt_em10g_dcfifo_32_to_64_xgmii_conversion.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_xgmii_width_adaptor/alt_em10g_dcfifo_64_to_32_xgmii_conversion.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_xgmii_data_format_adapter/alt_em10g32_xgmii_32_to_64_adapter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_xgmii_data_format_adapter/alt_em10g32_xgmii_64_to_32_adapter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/adapters/altera_eth_xgmii_data_format_adapter/alt_em10g32_xgmii_data_format_adapter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_altsyncram_bundle.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_altsyncram.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_avalon_dc_fifo_lat_calc.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_avalon_dc_fifo_hecc.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_avalon_dc_fifo_secc.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_avalon_sc_fifo.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_avalon_sc_fifo_hecc.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_avalon_sc_fifo_secc.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_ecc_dec_18_12.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_ecc_dec_39_32.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_ecc_enc_12_18.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_ecc_enc_32_39.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_rs_xgmii_layer_ultra.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_rs_xgmii_ultra.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_avst_to_gmii_if.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_gmii_to_avst_if.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_gmii_tsu.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_gmii16b_tsu.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_lpm_mult.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_ptp_aligner.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_ptp_detector.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_rx_ptp_top.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_gmii_crc_inserter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_gmii16b_crc_inserter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_gmii_ptp_inserter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_gmii16b_ptp_inserter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_gmii16b_ptp_inserter_1g2p5g10g.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_ptp_processor.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_ptp_top.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_xgmii_crc_inserter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_tx_xgmii_ptp_inserter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_xgmii_tsu.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_crc328generator.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_crc32ctl8.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_crc32galois8.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_gmii_crc_inserter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_gmii16b_crc_inserter.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/synopsys/rtl/alt_em10g32_gmii16b_crc32.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/alt_em10g32_avalon_dc_fifo.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/alt_em10g32_dcfifo_synchronizer_bundle.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/alt_em10g32_std_synchronizer.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/alt_em10g32_171/sim/altera_std_synchronizer_nocut.v 
+  ../../../../../XG/XG_tb/XG_tb/sim/../../../XG/sim/XG.v 
+
+
+  // ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/altera_xcvr_native_a10_functions_h.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/alt_xcvr_resync.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/alt_xcvr_arbiter.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/twentynm_pcs.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/twentynm_pma.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/twentynm_xcvr_avmm.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/twentynm_xcvr_native.sv 
+  //../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/a10_avmm_h.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/alt_xcvr_native_pipe_retry.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/alt_xcvr_native_avmm_csr.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/alt_xcvr_native_prbs_accum.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/alt_xcvr_native_odi_accel.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/alt_xcvr_native_rcfg_arb.sv 
+  // ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/altera_xcvr_native_pcie_dfe_params_h.sv 
+  // ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/pcie_mgmt_commands_h.sv 
+  // ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/pcie_mgmt_functions_h.sv 
+  // ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/pcie_mgmt_program.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/pcie_mgmt_cpu.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/pcie_mgmt_master.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/altera_xcvr_native_pcie_dfe_ip.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/Phy_altera_xcvr_native_a10_1711_y7cueai.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/altera_xcvr_native_a10_1711/sim/alt_xcvr_native_rcfg_opt_logic_y7cueai.sv 
+  ../../../../../XG/Phy_tb/Phy_tb/sim/../../../Phy/sim/Phy.v 
+
+  ../../../../../XG/Phy_rst/sim/../altera_xcvr_reset_control_171/sim/altera_xcvr_functions.sv 
+  ../../../../../XG/Phy_rst/sim/../altera_xcvr_reset_control_171/sim/alt_xcvr_resync.sv 
+  ../../../../../XG/Phy_rst/sim/../altera_xcvr_reset_control_171/sim/altera_xcvr_reset_control.sv 
+  ../../../../../XG/Phy_rst/sim/../altera_xcvr_reset_control_171/sim/alt_xcvr_reset_counter.sv 
+  ../../../../../XG/Phy_rst/sim/Phy_rst.v 
+
+  ../../../../../XG/atx_pll/sim/../altera_xcvr_atx_pll_a10_171/sim/twentynm_xcvr_avmm.sv 
+  ../../../../../XG/atx_pll/sim/../altera_xcvr_atx_pll_a10_171/sim/alt_xcvr_resync.sv 
+  ../../../../../XG/atx_pll/sim/../altera_xcvr_atx_pll_a10_171/sim/alt_xcvr_arbiter.sv 
+  ../../../../../XG/atx_pll/sim/../altera_xcvr_atx_pll_a10_171/sim/alt_xcvr_atx_pll_rcfg_arb.sv 
+  ../../../../../XG/atx_pll/sim/../altera_xcvr_atx_pll_a10_171/sim/a10_xcvr_atx_pll.sv 
+  ../../../../../XG/atx_pll/sim/../altera_xcvr_atx_pll_a10_171/sim/alt_xcvr_pll_embedded_debug.sv 
+  ../../../../../XG/atx_pll/sim/../altera_xcvr_atx_pll_a10_171/sim/alt_xcvr_pll_avmm_csr.sv 
+  ../../../../../XG/atx_pll/sim/../altera_xcvr_atx_pll_a10_171/sim/atx_pll_altera_xcvr_atx_pll_a10_171_pyejpdi.sv 
+  ../../../../../XG/atx_pll/sim/../altera_xcvr_atx_pll_a10_171/sim/alt_xcvr_atx_pll_rcfg_opt_logic_pyejpdi.sv 
+  ../../../../../XG/atx_pll/sim/atx_pll.v 
+
+//  ../../../../project/intel/IPs/XG/atx_pll/sim/../altera_xcvr_atx_pll_a10_171/sim/a10_avmm_h.sv 
+//  ../../../../project/intel/IPs/XG/atx_pll/sim/../altera_xcvr_atx_pll_a10_171/sim/altera_xcvr_native_a10_functions_h.sv 
+
 ../../../../../MyCode/src/MacroDefine.h
 ../../../../../MyCode/common/IP_RamFifoCtrl.v
 ../../../../../MyCode/common/IP_Reg.v
@@ -169,6 +330,7 @@
 ../../../../../MyCode/fifo/GenRegFifo4D16W.v
 ../../../../../MyCode/fifo/GenRegFifo4D28W.v
 ../../../../../MyCode/fifo/GenRegFifo4D8W.v
+../../../../../MyCode/fifo/GenRegFifo32D267W.v
 ../../../../../MyCode/fifo/GenRegFifo8D267W.v
 ../../../../../MyCode/fifo/GenRegFifo8D64W.v
 ../../../../../MyCode/fifo/GenRegFifo8D56W.v
@@ -187,9 +349,14 @@
 ../../../../../MyCode/src/SendBuffer.v
 ../../../../../MyCode/src/SendBufferV2.v
 ../../../../../MyCode/src/StackLoop.v
+../../../../../MyCode/src/DdpCutPad.v
 ../../../../../MyCode/src/DDP.v
 ../../../../../MyCode/src/Rdmap.v
 ../../../../../MyCode/src/RdmaStack.v
+../../../../../IpTop/nfv_dc_sync.sv
+../../../../../IpTop/nfv_reset_sync.sv
+../../../../../IpTop/mac_10g_reset_controller.sv
+../../../../../IpTop/MacPhy.v
   ../..//../../../ep_g3x8_avmm256/synth/ep_g3x8_avmm256.v 
 
   ../..//../../ip/ep_g3x8_avmm256_tb/ep_g3x8_avmm256_inst_reconfig_xcvr_reset_bfm_ip/altera_avalon_reset_source_171/sim/verbosity_pkg.sv 

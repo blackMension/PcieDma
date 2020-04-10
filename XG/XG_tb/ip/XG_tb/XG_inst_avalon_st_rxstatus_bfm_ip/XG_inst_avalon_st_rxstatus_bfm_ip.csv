@@ -1,0 +1,20 @@
+# system info XG_inst_avalon_st_rxstatus_bfm_ip on 2019.05.29.15:45:10
+system_info:
+name,value
+DEVICE,10AT115S2F45E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,0
+#
+#
+# Files generated for XG_inst_avalon_st_rxstatus_bfm_ip on 2019.05.29.15:45:10
+files:
+filepath,kind,attributes,module,is_top
+sim/XG_inst_avalon_st_rxstatus_bfm_ip.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,XG_inst_avalon_st_rxstatus_bfm_ip,true
+altera_avalon_st_sink_bfm_171/sim/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_avalon_st_sink_bfm,false
+altera_avalon_st_sink_bfm_171/sim/avalon_utilities_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_avalon_utilities_pkg,altera_avalon_st_sink_bfm,false
+altera_avalon_st_sink_bfm_171/sim/altera_avalon_st_sink_bfm.sv,SYSTEM_VERILOG,,altera_avalon_st_sink_bfm,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+XG_inst_avalon_st_rxstatus_bfm_ip.XG_inst_avalon_st_rxstatus_bfm,altera_avalon_st_sink_bfm

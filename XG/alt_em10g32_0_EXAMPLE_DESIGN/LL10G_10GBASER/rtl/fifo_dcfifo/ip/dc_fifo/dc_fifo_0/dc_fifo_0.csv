@@ -1,0 +1,20 @@
+# system info dc_fifo_0 on 2019.05.31.10:47:59
+system_info:
+name,value
+DEVICE,10AT115S2F45E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,0
+#
+#
+# Files generated for dc_fifo_0 on 2019.05.31.10:47:59
+files:
+filepath,kind,attributes,module,is_top
+sim/dc_fifo_0.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,dc_fifo_0,true
+altera_avalon_dc_fifo_171/sim/altera_avalon_dc_fifo.v,VERILOG,,altera_avalon_dc_fifo,false
+altera_avalon_dc_fifo_171/sim/altera_dcfifo_synchronizer_bundle.v,VERILOG,,altera_avalon_dc_fifo,false
+altera_avalon_dc_fifo_171/sim/altera_std_synchronizer_nocut.v,VERILOG,,altera_avalon_dc_fifo,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+dc_fifo_0.dc_fifo_0,altera_avalon_dc_fifo

@@ -294,8 +294,8 @@ always @(posedge clockMac or negedge realResetN) begin
     end
 end
 assign combineDone = (ptr == 2'd3) | rx_valid & rx_eop & ~rx_sop;
-assign rxSopSliceInt = ~combineDone & (rx_sop & ~pushDirect | rxSopSlice);
-assign rxEopSliceInt = ~combineDone & (rx_eop & ~pushDirect | rxEopSlice);
+assign rxSopSliceInt = ~combineDone & (rx_sop & ~pushDirect & rx_valid| rxSopSlice);
+assign rxEopSliceInt = ~combineDone & (rx_eop & ~pushDirect & rx_valid| rxEopSlice);
 always @(posedge clockMac or negedge realResetN) begin
     if(!realResetN) begin
         rxSopSlice <= 1'd0;

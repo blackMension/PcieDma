@@ -1,0 +1,18 @@
+# system info pll on 2019.05.31.10:50:33
+system_info:
+name,value
+DEVICE,10AT115S2F45E2SG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,0
+#
+#
+# Files generated for pll on 2019.05.31.10:50:33
+files:
+filepath,kind,attributes,module,is_top
+sim/pll.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,pll,true
+altera_iopll_171/sim/pll_altera_iopll_171_ejgq7kq.vo,VERILOG,,pll_altera_iopll_171_ejgq7kq,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+pll.iopll_0,pll_altera_iopll_171_ejgq7kq

@@ -1,0 +1,2 @@
+Command Line: /home/tools/synopsys/VERDI2016/platform/LINUXAMD64/bin/Novas -sv -f filelist.f
+uname(Linux fdz 4.15.0-51-generic #55~16.04.1-Ubuntu SMP Thu May 16 09:24:37 UTC 2019 x86_64)

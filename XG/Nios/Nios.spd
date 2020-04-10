@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_merlin_master_translator_171/sim/altera_merlin_master_translator.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_master_translator_171" />
+ <file
+   path="altera_merlin_slave_translator_171/sim/altera_merlin_slave_translator.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_slave_translator_171" />
+ <file
+   path="altera_merlin_master_agent_171/sim/altera_merlin_master_agent.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_master_agent_171" />
+ <file
+   path="altera_merlin_slave_agent_171/sim/altera_merlin_slave_agent.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_slave_agent_171" />
+ <file
+   path="altera_merlin_slave_agent_171/sim/altera_merlin_burst_uncompressor.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_slave_agent_171" />
+ <file
+   path="altera_avalon_sc_fifo_171/sim/altera_avalon_sc_fifo.v"
+   type="VERILOG"
+   library="altera_avalon_sc_fifo_171" />
+ <file
+   path="altera_merlin_router_171/sim/Nios_altera_merlin_router_171_bvdyedq.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_router_171" />
+ <file
+   path="altera_merlin_router_171/sim/Nios_altera_merlin_router_171_exfq7ma.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_router_171" />
+ <file
+   path="altera_merlin_traffic_limiter_171/sim/altera_merlin_traffic_limiter.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_traffic_limiter_171" />
+ <file
+   path="altera_merlin_traffic_limiter_171/sim/altera_merlin_reorder_memory.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_traffic_limiter_171" />
+ <file
+   path="altera_merlin_traffic_limiter_171/sim/altera_avalon_sc_fifo.v"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_traffic_limiter_171" />
+ <file
+   path="altera_merlin_traffic_limiter_171/sim/altera_avalon_st_pipeline_base.v"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_traffic_limiter_171" />
+ <file
+   path="altera_merlin_demultiplexer_171/sim/Nios_altera_merlin_demultiplexer_171_3ssvi5a.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_demultiplexer_171" />
+ <file
+   path="altera_merlin_multiplexer_171/sim/Nios_altera_merlin_multiplexer_171_rreylyq.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_multiplexer_171" />
+ <file
+   path="altera_merlin_multiplexer_171/sim/altera_merlin_arbitrator.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_multiplexer_171" />
+ <file
+   path="altera_merlin_demultiplexer_171/sim/Nios_altera_merlin_demultiplexer_171_wqjhr4q.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_demultiplexer_171" />
+ <file
+   path="altera_merlin_multiplexer_171/sim/Nios_altera_merlin_multiplexer_171_v6nl2fq.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_multiplexer_171" />
+ <file
+   path="altera_merlin_multiplexer_171/sim/altera_merlin_arbitrator.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_merlin_multiplexer_171" />
+ <file
+   path="error_adapter_171/sim/Nios_error_adapter_171_nt3czwq.sv"
+   type="SYSTEM_VERILOG"
+   library="error_adapter_171" />
+ <file
+   path="altera_avalon_st_adapter_171/sim/Nios_altera_avalon_st_adapter_171_yxzsrmq.v"
+   type="VERILOG"
+   library="altera_avalon_st_adapter_171"
+   hasInlineConfiguration="true" />
+ <file
+   path="altera_mm_interconnect_171/sim/Nios_altera_mm_interconnect_171_gpud3si.v"
+   type="VERILOG"
+   library="altera_mm_interconnect_171"
+   hasInlineConfiguration="true" />
+ <file
+   path="altera_irq_mapper_171/sim/Nios_altera_irq_mapper_171_p76tqpi.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_irq_mapper_171" />
+ <file
+   path="altera_reset_controller_171/sim/altera_reset_controller.v"
+   type="VERILOG"
+   library="altera_reset_controller_171" />
+ <file
+   path="altera_reset_controller_171/sim/altera_reset_synchronizer.v"
+   type="VERILOG"
+   library="altera_reset_controller_171" />
+ <file
+   path="altera_reset_controller_171/sim/altera_reset_controller.sdc"
+   type="SDC_ENTITY"
+   library="altera_reset_controller_171" />
+ <file
+   path="sim/Nios.v"
+   type="VERILOG"
+   library="Nios"
+   hasInlineConfiguration="true" />
+ <topLevel name="Nios.Nios" />
+ <deviceFamily name="arria10" />
+ <modelMap
+   controllerPath="Nios.onchip_memory2_0"
+   modelPath="Nios.onchip_memory2_0" />
+</simPackage>

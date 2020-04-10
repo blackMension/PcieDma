@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/Phy_tb.v"
+   type="VERILOG"
+   library="Phy_tb"
+   hasInlineConfiguration="true" />
+ <topLevel name="Phy_tb.Phy_tb" />
+ <deviceFamily name="arria10" />
+</simPackage>

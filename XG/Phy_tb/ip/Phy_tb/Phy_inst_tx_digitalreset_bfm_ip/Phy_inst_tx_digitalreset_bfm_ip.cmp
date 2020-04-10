@@ -1,0 +1,6 @@
+	component Phy_inst_tx_digitalreset_bfm_ip is
+		port (
+			sig_tx_digitalreset : out std_logic_vector(0 downto 0)   -- tx_digitalreset
+		);
+	end component Phy_inst_tx_digitalreset_bfm_ip;
+

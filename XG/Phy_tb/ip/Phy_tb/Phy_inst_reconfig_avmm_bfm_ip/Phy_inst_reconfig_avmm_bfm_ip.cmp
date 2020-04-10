@@ -1,0 +1,11 @@
+	component Phy_inst_reconfig_avmm_bfm_ip is
+		port (
+			sig_address     : out std_logic_vector(9 downto 0);                     -- address
+			sig_read        : out std_logic_vector(0 downto 0);                     -- read
+			sig_readdata    : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			sig_waitrequest : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- waitrequest
+			sig_write       : out std_logic_vector(0 downto 0);                     -- write
+			sig_writedata   : out std_logic_vector(31 downto 0)                     -- writedata
+		);
+	end component Phy_inst_reconfig_avmm_bfm_ip;
+

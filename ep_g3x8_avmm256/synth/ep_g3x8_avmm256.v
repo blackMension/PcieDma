@@ -763,6 +763,22 @@ wire           QpWrite;
 wire   [63:0]  QpAddress;       
 wire   [31:0]  QpWriteData;     
 wire   [3:0]   QpByteEnable;    
+wire           clockMac;
+wire           resetNMac;
+wire   [63:0]  rx_data;
+wire   [2:0]   rx_empty;
+wire           rx_eop;
+wire           rx_error;
+wire           rx_sop;
+wire           rx_valid;
+wire           tx_ready;
+wire           rx_ready;
+wire   [63:0]  tx_data;
+wire   [2:0]   tx_empty;
+wire           tx_eop;
+wire           tx_error;
+wire           tx_sop;
+wire           tx_valid;
  RdmaStack uRdmaStack( 
     // inputs
     .clock                (dut_coreclkout_hip_clk           ),
@@ -828,7 +844,27 @@ wire   [3:0]   QpByteEnable;
     .QpByteEnable        (QpByteEnable),             
     .QpChipSelect        (QpChipSelect),             
     .QpWrite             (QpWrite     ),        
-    .QpWriteData         (QpWriteData )            
+    .QpWriteData         (QpWriteData ),
+    // Mac Side
+    .clockMac            (clockMac ),
+    .resetNMac           (resetNMac),
+
+    .rx_ready            (rx_ready),
+    .rx_data             (rx_data ),
+    .rx_empty            (rx_empty),
+    .rx_eop              (rx_eop  ),
+    .rx_error            (rx_error),
+    .rx_sop              (rx_sop  ),
+    .rx_valid            (rx_valid),
+                                  
+    .tx_ready            (tx_ready),
+    .tx_data             (tx_data ),
+    .tx_empty            (tx_empty),
+    .tx_eop              (tx_eop  ),
+    .tx_error            (tx_error),
+    .tx_sop              (tx_sop  ),
+    .tx_valid            (tx_valid)
+                
 );
 assign bufRelease = 1'd0;
 ReceiveBuffer uReceiveBuffer(
@@ -876,28 +912,6 @@ SendBufferV2 uSendBuffer(
     .ready             (ready   ),
     .emptyArray        (emptyArray)
     );
-    // ep_g3x8_avmm256_onchip_memory2_0 onchip_memory2_0 (
-    // 	.clk         (dut_coreclkout_hip_clk),                           //   input,    width = 1,   clk1.clk
-    // 	.clk2        (dut_coreclkout_hip_clk),                           //   input,    width = 1,   clk2.clk
-    // 	.reset       (rst_controller_reset_out_reset),                   //   input,    width = 1, reset1.reset
-    // 	.reset_req   (rst_controller_reset_out_reset_req),               //   input,    width = 1,       .reset_req
-    // 	.reset2      (rst_controller_reset_out_reset),                   //   input,    width = 1, reset2.reset
-    // 	.reset_req2  (rst_controller_reset_out_reset_req),               //   input,    width = 1,       .reset_req
-    // 	.address     (mm_interconnect_1_onchip_memory2_0_s1_address   ),    //   input,   width = 10,     s1.address
-    // 	.clken       (mm_interconnect_1_onchip_memory2_0_s1_clken     ),      //   input,    width = 1,       .clken
-    // 	.chipselect  (mm_interconnect_1_onchip_memory2_0_s1_chipselect), //   input,    width = 1,       .chipselect
-    // 	.write       (mm_interconnect_1_onchip_memory2_0_s1_write     ),      //   input,    width = 1,       .write
-    // 	.readdata    (mm_interconnect_1_onchip_memory2_0_s1_readdata  ),   //  output,  width = 256,       .readdata
-    // 	.writedata   (mm_interconnect_1_onchip_memory2_0_s1_writedata ),  //   input,  width = 256,       .writedata
-    // 	.byteenable  (mm_interconnect_1_onchip_memory2_0_s1_byteenable), //   input,   width = 32,       .byteenable
-    // 	.address2    (mm_interconnect_2_onchip_memory2_0_s2_address),    //   input,   width = 10,     s2.address
-    // 	.chipselect2 (mm_interconnect_2_onchip_memory2_0_s2_chipselect), //   input,    width = 1,       .chipselect
-    // 	.clken2      (mm_interconnect_2_onchip_memory2_0_s2_clken),      //   input,    width = 1,       .clken
-    // 	.write2      (mm_interconnect_2_onchip_memory2_0_s2_write),      //   input,    width = 1,       .write
-    // 	.readdata2   (mm_interconnect_2_onchip_memory2_0_s2_readdata),   //  output,  width = 256,       .readdata
-    // 	.writedata2  (mm_interconnect_2_onchip_memory2_0_s2_writedata),  //   input,  width = 256,       .writedata
-    // 	.byteenable2 (mm_interconnect_2_onchip_memory2_0_s2_byteenable)  //   input,   width = 32,       .byteenable
-    // );
 
 
 wire  [63:0] rddcm_master_address;
@@ -1145,5 +1159,84 @@ assign      rddcm_master_writedata  = ArbChipSelect ? ArbWriteData  : QpChipSele
         .reset_in15     (1'b0),                               // (terminated),                       
         .reset_req_in15 (1'b0)                                // (terminated),                       
     );
+   // synthesis translate_off
+   reg clock644M;
+   reg clock156M;
+   reg clock312M;
+   wire benchOutTxRst;
+   wire benchOutRxRst;
+   wire tx_serial_data;
+   initial begin
+       clock644M = 0;
+       clock156M = 0;
+       clock312M = 0;
+       #10;
+   end
+   always #1600 clock312M <= ~clock312M;
+   always #3200 clock156M <= ~clock156M;
+   always #780 clock644M <= ~clock644M;
+   assign clockMac = clock156M;
+   assign resetNMac = benchOutRxRst & benchOutTxRst;
+   // synthesis translate_on
+   
+   MacPhy uBenchMac(         
+       .csr_clk             (clock156M)
+      ,.csr_rst_n           (dut_app_nreset_status_reset)
+      ,.tx_rst_n            (dut_app_nreset_status_reset)//(benchTxRstN)
+      ,.rx_rst_n            (dut_app_nreset_status_reset)//(benchRxRstN)
+      ,.o_tx_rst_n          (benchOutTxRst)
+      ,.o_rx_rst_n          (benchOutRxRst)
+      ,.pll_ref_clk         (clock644M)
+      ,.clk_156             (clock156M)
+      ,.clk_312             (clock312M)
+      ,.core_pll_locked     (dut_app_nreset_status_reset)
+      ,.mac_csr_read        (1'd0 )
+      ,.mac_csr_write       (1'd0 )
+      ,.mac_csr_writedata   (32'd0)
+      ,.mac_csr_readdata    (     )
+      ,.mac_csr_address     (32'd0)
+      ,.mac_csr_waitrequest (     )
+      ,.phy_csr_read        (1'd0 )
+      ,.phy_csr_write       (1'd0 )
+      ,.phy_csr_writedata   (32'd0)
+      ,.phy_csr_readdata    (     )
+      ,.phy_csr_address     (32'd0)
+      ,.phy_csr_waitrequest (     )
+      // 64bit TX data       
+      ,.tx_ready            (tx_ready)
+      ,.tx_startofpacket    (tx_sop  )
+      ,.tx_valid            (tx_valid)
+      ,.tx_endofpacket      (tx_eop  )
+      ,.tx_data             (tx_data )
+      ,.tx_empty            (tx_empty)
+      ,.tx_error            (tx_error)
+      // 64bit RX data       
+      ,.rx_ready            (rx_ready)
+      ,.rx_startofpacket    (rx_sop  )
+      ,.rx_valid            (rx_valid)
+      ,.rx_endofpacket      (rx_eop  )
+      ,.rx_data             (rx_data )
+      ,.rx_empty            (rx_empty)
+      ,.rx_error            (rx_error)
+      ,.pause_data          (1'b0)
+      ,.txstatus_valid      ()
+      ,.rxstatus_valid      ()
+      ,.block_lock          ()
+      // ATX PLL signals     
+      ,.tx_pll_locked       (bench_atx_pll_locked)
+      ,.tx_serial_clk       (bench_tx_serial_clk)
+      ,.pll_powerdown       (bench_atx_pll_powerdown    )
+      ,.phy_ready           ()
+      ,.tx_serial_data      (tx_serial_data)
+      ,.rx_serial_data      (tx_serial_data)
+   );                                                  
+  atx_pll atx_pll_bench(
+       .pll_cal_busy  (),
+       .pll_locked    (bench_atx_pll_locked),
+       .pll_powerdown (bench_atx_pll_powerdown),
+       .pll_refclk0   (clock644M),
+       .tx_serial_clk (bench_tx_serial_clk)
+
+  );
 
 endmodule
