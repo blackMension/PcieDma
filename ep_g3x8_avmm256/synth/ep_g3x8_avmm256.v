@@ -669,6 +669,7 @@ wire             RdDCSWrite;
 wire  [31:0]     RdDCSWriteData;
 wire  [31:0]     RdDCSReadData;
 wire             RdDCSWaitRequest;
+
 wire  [7:0]      WrDCSAddress;
 wire  [3:0]      WrDCSByteEnable;
 wire             WrDCSChipSelect;
@@ -677,6 +678,121 @@ wire             WrDCSWrite;
 wire  [31:0]     WrDCSWriteData;
 wire  [31:0]     WrDCSReadData;
 wire             WrDCSWaitRequest;
+
+wire  [7:0]      rd_req_address;
+wire  [3:0]      rd_req_byteenable;
+wire             rd_req_chipselect;
+wire             rd_req_read;
+wire             rd_req_write;
+wire  [31:0]     rd_req_writedata;
+wire  [31:0]     rd_req_readData;
+wire             rd_req_waitrequest;
+
+wire  [7:0]      wr_req_address;
+wire  [3:0]      wr_req_byteenable;
+wire             wr_req_chipselect;
+wire             wr_req_read;
+wire             wr_req_write;
+wire  [31:0]     wr_req_writdData;
+wire  [31:0]     wr_req_readData;
+wire             wr_req_waitrequest;
+
+wire             rd_desc_tbl_chipselect;
+wire             rd_desc_tbl_write;
+wire [4:0]       rd_desc_tbl_burstcount;
+wire [7:0]       rd_desc_tbl_address;
+wire [255:0]     rd_desc_tbl_writedata;
+wire             rd_desc_tbl_waitrequest;
+
+wire             wr_desc_tbl_chipselect;
+wire             wr_desc_tbl_write;
+wire [4:0]       wr_desc_tbl_burstcount;
+wire [7:0]       wr_desc_tbl_address;
+wire [255:0]     wr_desc_tbl_writedata;
+wire             wr_desc_tbl_waitrequest;
+
+wire  [63:0]     wr_cpl_address;
+wire  [3:0]      wr_cpl_byteEnable;
+wire             wr_cpl_chipSelect;
+wire             wr_cpl_read;
+wire             wr_cpl_write;
+wire  [31:0]     wr_cpl_writeData;
+wire  [31:0]     wr_cpl_readData;
+wire             wr_cpl_waitRequest;
+
+wire  [63:0]     rd_cpl_address;
+wire  [3:0]      rd_cpl_byteEnable;
+wire             rd_cpl_chipSelect;
+wire             rd_cpl_read;
+wire             rd_cpl_write;
+wire  [31:0]     rd_cpl_writeData;
+wire  [31:0]     rd_cpl_readData;
+wire             rd_cpl_waitRequest;
+
+wire  [159:0]    wr_desc_data;
+wire             wr_desc_valid;
+wire             wr_desc_ready;
+wire             wr_desc_done_id;
+wire             wr_desc_done_valid;
+
+wire  [159:0]    rd_desc_data;
+wire             rd_desc_valid;
+wire             rd_desc_ready;
+wire             rd_desc_done_id;
+wire             rd_desc_done_valid;
+
+assign rd_req_address     = RdDCSAddress;
+assign rd_req_byteenable  = RdDCSByteEnable;
+assign rd_req_chipselect  = RdDCSChipSelect;
+assign rd_req_read        = RdDCSRead;
+assign rd_req_write       = RdDCSWrite;
+assign rd_req_writedata   = RdDCSWriteData;
+assign rd_req_readData    = RdDCSReadData;
+assign rd_req_waitrequest = RdDCSWaitRequest;
+assign rd_desc_tbl_chipselect   = mm_interconnect_1_dma_control_0_rddts_slave_chipselect;
+assign rd_desc_tbl_write        = mm_interconnect_1_dma_control_0_rddts_slave_write;
+assign rd_desc_tbl_burstcount   = mm_interconnect_1_dma_control_0_rddts_slave_burstcount;
+assign rd_desc_tbl_address      = mm_interconnect_1_dma_control_0_rddts_slave_address;
+assign rd_desc_tbl_writedata    = mm_interconnect_1_dma_control_0_rddts_slave_writedata;
+assign rd_desc_tbl_waitrequest  = mm_interconnect_1_dma_control_0_rddts_slave_waitrequest;
+assign rd_cpl_address           = dma_control_0_rddcm_master_address;
+assign rd_cpl_write             = dma_control_0_rddcm_master_write;
+assign rd_cpl_writeData         = dma_control_0_rddcm_master_writedata;
+assign rd_cpl_read              = dma_control_0_rddcm_master_read;
+assign rd_cpl_byteEnable        = dma_control_0_rddcm_master_byteenable;
+assign rd_cpl_waitRequest       = dma_control_0_rddcm_master_waitrequest;
+assign rd_desc_data             = dma_control_0_rddma_tx_data;
+assign rd_desc_valid            = dma_control_0_rddma_tx_valid;
+assign rd_desc_ready            = dma_control_0_rddma_tx_ready;
+assign rd_desc_done_id          = dut_rd_ast_tx_data;
+assign rd_desc_done_valid       = dut_rd_ast_tx_valid;
+
+assign wr_req_address     = WrDCSAddress;
+assign wr_req_byteenable  = WrDCSByteEnable;
+assign wr_req_chipselect  = WrDCSChipSelect;
+assign wr_req_read        = WrDCSRead;
+assign wr_req_write       = WrDCSWrite;
+assign wr_req_writedata   = WrDCSWriteData;
+assign wr_req_readData    = WrDCSReadData;
+assign wr_req_waitrequest = WrDCSWaitRequest;
+assign wr_desc_tbl_chipselect   = mm_interconnect_1_dma_control_0_wrdts_slave_chipselect;
+assign wr_desc_tbl_write        = mm_interconnect_1_dma_control_0_wrdts_slave_write;
+assign wr_desc_tbl_burstcount   = mm_interconnect_1_dma_control_0_wrdts_slave_burstcount;
+assign wr_desc_tbl_address      = mm_interconnect_1_dma_control_0_wrdts_slave_address;
+assign wr_desc_tbl_writedata    = mm_interconnect_1_dma_control_0_wrdts_slave_writedata;
+assign wr_desc_tbl_waitrequest  = mm_interconnect_1_dma_control_0_wrdts_slave_waitrequest;
+assign wr_cpl_address           = dma_control_0_wrdcm_master_address;
+assign wr_cpl_write             = dma_control_0_wrdcm_master_write;
+assign wr_cpl_writeData         = dma_control_0_wrdcm_master_writedata;
+assign wr_cpl_read              = dma_control_0_wrdcm_master_read;
+assign wr_cpl_byteEnable        = dma_control_0_wrdcm_master_byteenable;
+assign wr_cpl_waitRequest       = dma_control_0_wrdcm_master_waitrequest;
+assign wr_desc_data             = dma_control_0_wrdma_tx_data;
+assign wr_desc_valid            = dma_control_0_wrdma_tx_valid;
+assign wr_desc_ready            = dma_control_0_wrdma_tx_ready;
+assign wr_desc_done_id          = dut_wr_ast_tx_data;
+assign wr_desc_done_valid       = dut_wr_ast_tx_valid;
+
     ep_g3x8_avmm256_dma_control_0 dma_control_0 (
         .MsiInterface_i       (dut_msi_intfc_msi_intfc),                                 //   input,   width = 82, MsiInterface.msi_intfc
         .RdDCMAddress_o       (dma_control_0_rddcm_master_address),                      //  output,   width = 64, RdDCM_Master.address
@@ -751,18 +867,18 @@ wire [5:0]    lastNum;
 wire          poolFull;
 wire          poolEmpty;
 
-wire           ArbChipSelect;    
-wire           ArbWrite;         
-wire   [63:0]  ArbAddress;       
-wire   [31:0]  ArbWriteData;     
-wire   [3:0]   ArbByteEnable;    
-wire           ArbWaitRequest;   
+wire           ArbChipSelect;
+wire           ArbWrite;
+wire   [63:0]  ArbAddress;
+wire   [31:0]  ArbWriteData;
+wire   [3:0]   ArbByteEnable;
+wire           ArbWaitRequest;
 
-wire           QpChipSelect;    
-wire           QpWrite;         
-wire   [63:0]  QpAddress;       
-wire   [31:0]  QpWriteData;     
-wire   [3:0]   QpByteEnable;    
+wire           QpChipSelect;
+wire           QpWrite;
+wire   [63:0]  QpAddress;
+wire   [31:0]  QpWriteData;
+wire   [3:0]   QpByteEnable;
 wire           clockMac;
 wire           resetNMac;
 wire   [63:0]  rx_data;
@@ -779,7 +895,11 @@ wire           tx_eop;
 wire           tx_error;
 wire           tx_sop;
 wire           tx_valid;
- RdmaStack uRdmaStack( 
+wire           wrDmaDone;
+wire           rdDmaDone;
+assign wrDmaDone = dma_control_0_wrdcm_master_write & ~dma_control_0_wrdcm_master_waitrequest;
+assign rdDmaDone = dma_control_0_rddcm_master_write & ~dma_control_0_rddcm_master_waitrequest;
+ RdmaStack uRdmaStack(
     // inputs
     .clock                (dut_coreclkout_hip_clk           ),
     .reset                (dut_app_nreset_status_reset      ),
@@ -802,13 +922,15 @@ wire           tx_valid;
     .dataOut              (dataOut   ),
     .emptyArray           (emptyArray),
     .lastNum              (lastNum   ),
-    .poolEmpty            (poolEmpty ),      
-    .poolFull             (poolFull  ),     
-    .ready                (ready     ),  
-    .rgstrPtr             (rgstrPtr  ),     
+    .poolEmpty            (poolEmpty ),
+    .poolFull             (poolFull  ),
+    .ready                (ready     ),
+    .rgstrPtr             (rgstrPtr  ),
     .ArbWaitRequest       (dma_control_0_rddcm_master_waitrequest),
     .QpWaitRequest        (dma_control_0_rddcm_master_waitrequest),
-    
+    .wrDmaDone            (wrDmaDone),
+    .rdDmaDone            (rdDmaDone),
+
     // outputs
     .RQReadData_o         (mm_interconnect_3_dma_control_0_wrdcs_slave_readdata   ),
     .RQWaitRequest_o      (mm_interconnect_3_dma_control_0_wrdcs_slave_waitrequest),
@@ -824,100 +946,101 @@ wire           tx_valid;
     .WrDCSWrite           (WrDCSWrite     ),
     .WrDCSAddress         (WrDCSAddress   ),
     .WrDCSByteEnable      (WrDCSByteEnable),
-    .WrDCSWriteData       (WrDCSWriteData ),      
+    .WrDCSWriteData       (WrDCSWriteData ),
     .WrDCSRead            (WrDCSRead      ),
-    .bufRegister          (bufRegister),          
-    //.bufRelease           (bufRelease ),         
-    .dataPop              (dataPop    ),      
-    .push                 (push       ),   
-    .pushData             (pushData   ),       
-    .rgstrNum             (rgstrNum   ),       
+    .bufRegister          (bufRegister),
+    .dataPop              (dataPop    ),
+    .push                 (push       ),
+    .pushData             (pushData   ),
+    .rgstrNum             (rgstrNum   ),
     .QN                   (QN         ),
     // IRRQ & CQ
-    .ArbAddress           (ArbAddress   ),          
-    .ArbByteEnable        (ArbByteEnable),             
-    .ArbChipSelect        (ArbChipSelect),             
-    .ArbWrite             (ArbWrite     ),        
-    .ArbWriteData         (ArbWriteData ),            
-    // 
-    .QpAddress           (QpAddress   ),          
-    .QpByteEnable        (QpByteEnable),             
-    .QpChipSelect        (QpChipSelect),             
-    .QpWrite             (QpWrite     ),        
-    .QpWriteData         (QpWriteData ),
+    .ArbAddress           (ArbAddress   ),
+    .ArbByteEnable        (ArbByteEnable),
+    .ArbChipSelect        (ArbChipSelect),
+    .ArbWrite             (ArbWrite     ),
+    .ArbWriteData         (ArbWriteData ),
+    //
+    .QpAddress           (QpAddress   ),
+    .QpByteEnable        (QpByteEnable),
+    .QpChipSelect        (QpChipSelect),
+    .QpWrite             (QpWrite     ),
+    .QpWriteData         (QpWriteData )
     // Mac Side
-    .clockMac            (clockMac ),
-    .resetNMac           (resetNMac),
+    //.clockMac            (clockMac ),
+    //.resetNMac           (resetNMac),
+//
+    //.rx_ready            (rx_ready),
+    //.rx_data             (rx_data ),
+    //.rx_empty            (rx_empty),
+    //.rx_eop              (rx_eop  ),
+    //.rx_error            (rx_error),
+    //.rx_sop              (rx_sop  ),
+    //.rx_valid            (rx_valid),
+//
+    //.tx_ready            (tx_ready),
+    //.tx_data             (tx_data ),
+    //.tx_empty            (tx_empty),
+    //.tx_eop              (tx_eop  ),
+    //.tx_error            (tx_error),
+    //.tx_sop              (tx_sop  ),
+    //.tx_valid            (tx_valid)
 
-    .rx_ready            (rx_ready),
-    .rx_data             (rx_data ),
-    .rx_empty            (rx_empty),
-    .rx_eop              (rx_eop  ),
-    .rx_error            (rx_error),
-    .rx_sop              (rx_sop  ),
-    .rx_valid            (rx_valid),
-                                  
-    .tx_ready            (tx_ready),
-    .tx_data             (tx_data ),
-    .tx_empty            (tx_empty),
-    .tx_eop              (tx_eop  ),
-    .tx_error            (tx_error),
-    .tx_sop              (tx_sop  ),
-    .tx_valid            (tx_valid)
-                
 );
-assign bufRelease = 1'd0;
+assign bufRelease = wr_desc_done_valid;
+wire recv_buffer_waitrequest;
 ReceiveBuffer uReceiveBuffer(
     // global
-        .clock             (dut_coreclkout_hip_clk),   
-        .reset             (dut_app_nreset_status_reset),   
+        .clock             (dut_coreclkout_hip_clk),
+        .reset             (dut_app_nreset_status_reset),
     // To PCIe (data out)
-        .address           (mm_interconnect_2_onchip_memory2_0_s2_address   ),     
-        .clken             (mm_interconnect_2_onchip_memory2_0_s2_clken     ),   
-        .chipselect        (mm_interconnect_2_onchip_memory2_0_s2_chipselect),        
-        .write             (mm_interconnect_2_onchip_memory2_0_s2_write     ),   
-        .readdata          (mm_interconnect_2_onchip_memory2_0_s2_readdata  ),      
-        .writedata         (mm_interconnect_2_onchip_memory2_0_s2_writedata ),       
-        .byteenable        (mm_interconnect_2_onchip_memory2_0_s2_byteenable),        
+        .address           (mm_interconnect_2_onchip_memory2_0_s2_address   ),
+        .clken             (mm_interconnect_2_onchip_memory2_0_s2_clken     ),
+        .chipselect        (mm_interconnect_2_onchip_memory2_0_s2_chipselect),
+        .write             (mm_interconnect_2_onchip_memory2_0_s2_write     ),
+        .readdata          (mm_interconnect_2_onchip_memory2_0_s2_readdata  ),
+        .writedata         (mm_interconnect_2_onchip_memory2_0_s2_writedata ),
+        .byteenable        (mm_interconnect_2_onchip_memory2_0_s2_byteenable),
+        .waitrequest       (recv_buffer_waitrequest),
     // To Rdma (data in)
         .QN                (QN),
-        .push              (push    ),  
-        .pushData          (pushData),      
+        .push              (push    ),
+        .pushData          (pushData),
     // buffer register
-        .bufRegister       (bufRegister),         
-        .rgstrNum          ( rgstrNum),      
-        .bufRelease        (bufRelease    ),        
-        .rgstrPtr          (rgstrPtr ), // output 
-        .lastNum           (lastNum  ), // output last queue buffer number     
+        .bufRegister       (bufRegister),
+        .rgstrNum          ( rgstrNum),
+        .bufRelease        (bufRelease    ),
+        .rgstrPtr          (rgstrPtr ), // output
+        .lastNum           (lastNum  ), // output last queue buffer number
         .poolFull          (poolFull ), // output
         .poolEmpty         (poolEmpty), // output
     // fresh
-        .freshMapping      (bufRelease)  // input fresh Mapping location
+        .freshMapping      (wrDmaDone)  // input fresh Mapping location
     );
 SendBufferV2 uSendBuffer(
     // global
-    .clock             (dut_coreclkout_hip_clk),   
-    .reset             (dut_app_nreset_status_reset),   
+    .clock             (dut_coreclkout_hip_clk),
+    .reset             (dut_app_nreset_status_reset),
     // To PCIe (data In)
-    .address           (mm_interconnect_1_onchip_memory2_0_s1_address   ),     
-    .clken             (mm_interconnect_1_onchip_memory2_0_s1_clken     ),   
-    .chipselect        (mm_interconnect_1_onchip_memory2_0_s1_chipselect),        
-    .write             (mm_interconnect_1_onchip_memory2_0_s1_write     ),   
-    .readdata          (mm_interconnect_1_onchip_memory2_0_s1_readdata  ),      
-    .writedata         (mm_interconnect_1_onchip_memory2_0_s1_writedata ),       
-    .byteenable        (mm_interconnect_1_onchip_memory2_0_s1_byteenable),        
+    .address           (mm_interconnect_1_onchip_memory2_0_s1_address   ),
+    .clken             (mm_interconnect_1_onchip_memory2_0_s1_clken     ),
+    .chipselect        (mm_interconnect_1_onchip_memory2_0_s1_chipselect),
+    .write             (mm_interconnect_1_onchip_memory2_0_s1_write     ),
+    .readdata          (mm_interconnect_1_onchip_memory2_0_s1_readdata  ),
+    .writedata         (mm_interconnect_1_onchip_memory2_0_s1_writedata ),
+    .byteenable        (mm_interconnect_1_onchip_memory2_0_s1_byteenable),
     // To Rdma (data out)
-    .dataPop           (dataPop),  
-    .dataOut           (dataOut),      
+    .dataPop           (dataPop),
+    .dataOut           (dataOut),
     .ready             (ready   ),
     .emptyArray        (emptyArray)
     );
 
 
 wire  [63:0] rddcm_master_address;
-wire  [3:0]  rddcm_master_byteenable;   
-wire         rddcm_master_write;        
-wire  [31:0] rddcm_master_writedata;    
+wire  [3:0]  rddcm_master_byteenable;
+wire         rddcm_master_write;
+wire  [31:0] rddcm_master_writedata;
 assign      rddcm_master_address    = ArbChipSelect ? ArbAddress    : QpChipSelect ? QpAddress   : dma_control_0_rddcm_master_address      ;
 assign      rddcm_master_byteenable = ArbChipSelect ? ArbByteEnable : QpChipSelect ? QpByteEnable: dma_control_0_rddcm_master_byteenable   ;
 assign      rddcm_master_write      = ArbChipSelect ? ArbWrite      : QpChipSelect ? QpWrite     : dma_control_0_rddcm_master_write        ;
@@ -1002,6 +1125,7 @@ assign      rddcm_master_writedata  = ArbChipSelect ? ArbWriteData  : QpChipSele
         .DUT_dma_wr_master_readdata                          (dut_dma_wr_master_readdata),                       //  output,  width = 256,                                              .readdata
         .DUT_dma_wr_master_readdatavalid                     (dut_dma_wr_master_readdatavalid),                  //  output,    width = 1,                                              .readdatavalid
         .onchip_memory2_0_reset2_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                   //   input,    width = 1, onchip_memory2_0_reset2_reset_bridge_in_reset.reset
+        .recv_buffer_waitrequest                             (recv_buffer_waitrequest),
         .onchip_memory2_0_s2_address                         (mm_interconnect_2_onchip_memory2_0_s2_address),    //  output,   width = 10,                           onchip_memory2_0_s2.address
         .onchip_memory2_0_s2_write                           (mm_interconnect_2_onchip_memory2_0_s2_write),      //  output,    width = 1,                                              .write
         .onchip_memory2_0_s2_readdata                        (mm_interconnect_2_onchip_memory2_0_s2_readdata),   //   input,  width = 256,                                              .readdata
@@ -1127,37 +1251,37 @@ assign      rddcm_master_writedata  = ArbChipSelect ? ArbWriteData  : QpChipSele
         .clk            (dut_coreclkout_hip_clk),             //   input,  width = 1,       clk.clk
         .reset_out      (rst_controller_reset_out_reset),     //  output,  width = 1, reset_out.reset
         .reset_req      (rst_controller_reset_out_reset_req), //  output,  width = 1,          .reset_req
-        .reset_req_in0  (1'b0),                               // (terminated),                       
-        .reset_in1      (1'b0),                               // (terminated),                       
-        .reset_req_in1  (1'b0),                               // (terminated),                       
-        .reset_in2      (1'b0),                               // (terminated),                       
-        .reset_req_in2  (1'b0),                               // (terminated),                       
-        .reset_in3      (1'b0),                               // (terminated),                       
-        .reset_req_in3  (1'b0),                               // (terminated),                       
-        .reset_in4      (1'b0),                               // (terminated),                       
-        .reset_req_in4  (1'b0),                               // (terminated),                       
-        .reset_in5      (1'b0),                               // (terminated),                       
-        .reset_req_in5  (1'b0),                               // (terminated),                       
-        .reset_in6      (1'b0),                               // (terminated),                       
-        .reset_req_in6  (1'b0),                               // (terminated),                       
-        .reset_in7      (1'b0),                               // (terminated),                       
-        .reset_req_in7  (1'b0),                               // (terminated),                       
-        .reset_in8      (1'b0),                               // (terminated),                       
-        .reset_req_in8  (1'b0),                               // (terminated),                       
-        .reset_in9      (1'b0),                               // (terminated),                       
-        .reset_req_in9  (1'b0),                               // (terminated),                       
-        .reset_in10     (1'b0),                               // (terminated),                       
-        .reset_req_in10 (1'b0),                               // (terminated),                       
-        .reset_in11     (1'b0),                               // (terminated),                       
-        .reset_req_in11 (1'b0),                               // (terminated),                       
-        .reset_in12     (1'b0),                               // (terminated),                       
-        .reset_req_in12 (1'b0),                               // (terminated),                       
-        .reset_in13     (1'b0),                               // (terminated),                       
-        .reset_req_in13 (1'b0),                               // (terminated),                       
-        .reset_in14     (1'b0),                               // (terminated),                       
-        .reset_req_in14 (1'b0),                               // (terminated),                       
-        .reset_in15     (1'b0),                               // (terminated),                       
-        .reset_req_in15 (1'b0)                                // (terminated),                       
+        .reset_req_in0  (1'b0),                               // (terminated),
+        .reset_in1      (1'b0),                               // (terminated),
+        .reset_req_in1  (1'b0),                               // (terminated),
+        .reset_in2      (1'b0),                               // (terminated),
+        .reset_req_in2  (1'b0),                               // (terminated),
+        .reset_in3      (1'b0),                               // (terminated),
+        .reset_req_in3  (1'b0),                               // (terminated),
+        .reset_in4      (1'b0),                               // (terminated),
+        .reset_req_in4  (1'b0),                               // (terminated),
+        .reset_in5      (1'b0),                               // (terminated),
+        .reset_req_in5  (1'b0),                               // (terminated),
+        .reset_in6      (1'b0),                               // (terminated),
+        .reset_req_in6  (1'b0),                               // (terminated),
+        .reset_in7      (1'b0),                               // (terminated),
+        .reset_req_in7  (1'b0),                               // (terminated),
+        .reset_in8      (1'b0),                               // (terminated),
+        .reset_req_in8  (1'b0),                               // (terminated),
+        .reset_in9      (1'b0),                               // (terminated),
+        .reset_req_in9  (1'b0),                               // (terminated),
+        .reset_in10     (1'b0),                               // (terminated),
+        .reset_req_in10 (1'b0),                               // (terminated),
+        .reset_in11     (1'b0),                               // (terminated),
+        .reset_req_in11 (1'b0),                               // (terminated),
+        .reset_in12     (1'b0),                               // (terminated),
+        .reset_req_in12 (1'b0),                               // (terminated),
+        .reset_in13     (1'b0),                               // (terminated),
+        .reset_req_in13 (1'b0),                               // (terminated),
+        .reset_in14     (1'b0),                               // (terminated),
+        .reset_req_in14 (1'b0),                               // (terminated),
+        .reset_in15     (1'b0),                               // (terminated),
+        .reset_req_in15 (1'b0)                                // (terminated),
     );
    // synthesis translate_off
    reg clock644M;
@@ -1178,8 +1302,8 @@ assign      rddcm_master_writedata  = ArbChipSelect ? ArbWriteData  : QpChipSele
    assign clockMac = clock156M;
    assign resetNMac = benchOutRxRst & benchOutTxRst;
    // synthesis translate_on
-   
-   MacPhy uBenchMac(         
+
+   MacPhy uBenchMac(
        .csr_clk             (clock156M)
       ,.csr_rst_n           (dut_app_nreset_status_reset)
       ,.tx_rst_n            (dut_app_nreset_status_reset)//(benchTxRstN)
@@ -1202,7 +1326,7 @@ assign      rddcm_master_writedata  = ArbChipSelect ? ArbWriteData  : QpChipSele
       ,.phy_csr_readdata    (     )
       ,.phy_csr_address     (32'd0)
       ,.phy_csr_waitrequest (     )
-      // 64bit TX data       
+      // 64bit TX data
       ,.tx_ready            (tx_ready)
       ,.tx_startofpacket    (tx_sop  )
       ,.tx_valid            (tx_valid)
@@ -1210,7 +1334,7 @@ assign      rddcm_master_writedata  = ArbChipSelect ? ArbWriteData  : QpChipSele
       ,.tx_data             (tx_data )
       ,.tx_empty            (tx_empty)
       ,.tx_error            (tx_error)
-      // 64bit RX data       
+      // 64bit RX data
       ,.rx_ready            (rx_ready)
       ,.rx_startofpacket    (rx_sop  )
       ,.rx_valid            (rx_valid)
@@ -1222,14 +1346,14 @@ assign      rddcm_master_writedata  = ArbChipSelect ? ArbWriteData  : QpChipSele
       ,.txstatus_valid      ()
       ,.rxstatus_valid      ()
       ,.block_lock          ()
-      // ATX PLL signals     
+      // ATX PLL signals
       ,.tx_pll_locked       (bench_atx_pll_locked)
       ,.tx_serial_clk       (bench_tx_serial_clk)
       ,.pll_powerdown       (bench_atx_pll_powerdown    )
       ,.phy_ready           ()
       ,.tx_serial_data      (tx_serial_data)
       ,.rx_serial_data      (tx_serial_data)
-   );                                                  
+   );
   atx_pll atx_pll_bench(
        .pll_cal_busy  (),
        .pll_locked    (bench_atx_pll_locked),

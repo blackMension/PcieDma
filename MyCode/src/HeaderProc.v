@@ -98,6 +98,7 @@ end
 always @(posedge clock) begin
     if(isSend) begin
         sendInfo <= ddp2RdmapHeader[`SEND_TID_RANGE];
+        // sendInfo <= ddp2RdmapHeader[`PKT_TID_RANGE];
     end
 end
 assign sendedNum = readData + 3'd1;

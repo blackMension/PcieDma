@@ -53,7 +53,7 @@ wire [7:0]    rdmapCtrl;
 assign infoFifoPush = rdmap2DdpHdrValid & ~infoFifoFull;
 assign infoFifoDataIn = {rdmap2DdpCtrl,rdmap2DdpHeader};
 assign {rdmapCtrl,rdmapHeader} =  infoFifoData;
-GenRegFifo8D64W uRdmapInfoFifo(
+GenRegFifo64D64W uRdmapInfoFifo(
     // Outputs;
     .dataOut                            (infoFifoData ),
     .full                               (infoFifoFull ),
@@ -69,8 +69,8 @@ GenRegFifo8D64W uRdmapInfoFifo(
     .push                               (infoFifoPush ) ,
     .dataIn                             (infoFifoDataIn)   ,
     .pop                                (infoFifoPop),
-    .almostFullThreshold                (4'd8),
-    .almostEmptyThreshold               (4'd0) 
+    .almostFullThreshold                (7'd8),
+    .almostEmptyThreshold               (7'd0) 
     );
 
 wire  isReq =    (rdmapCtrl[3:0] == REQ_OPCODE) & ~infoFifoEmpty;
@@ -191,11 +191,12 @@ assign payloadLen = tblRdValid ? dataLenRdData : dataLenF1;
 assign payloadNum = tblRdValid ? dataNumRdData : dataNumF1;
 assign payloadQN  = tblRdValid ? queueNumRdData : queueNumF1;
 assign sendOnePiece = ((CS == SEND_INFO) & ~pkgFifoFull);
-assign counterInt =  (counter == (payloadNum - 3'd1)) ? 3'd0 :
+assign counterInt =   sendCpl ? 3'd0 :
                       sendOnePiece ? counter + 3'd1 : counter;
-assign sendCpl    = counter == (payloadNum - 3'd1);
+assign sendCpl    = (counter == (payloadNum - 3'd1)) & sendOnePiece;
 assign queueNumRd = CS == RD_TBL;
-assign queueNumRdAddr = rdmapHeader[`PKT_TID_RANGE];
+// assign queueNumRdAddr = rdmapHeader[`PKT_TID_RANGE];
+assign queueNumRdAddr = rdmapHeader[`SEND_TID_RANGE];
 always @(posedge clock or negedge reset) begin
     if(!reset) begin
         counter <= 3'd0;

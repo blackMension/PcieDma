@@ -109,11 +109,23 @@ always @(posedge clock or negedge reset) begin
         end
     end
 end
+reg [4:0] offsetAddr;
+always @(posedge clock or negedge reset) begin
+    if(!reset) begin
+        offsetAddr <= 5'd0;
+    end
+    else begin
+        if(ArbWrite & ~ArbWaitRequest) begin
+            offsetAddr <= offsetAddr + 5'd1;
+        end
+    end
+end
 assign irrqStart = ~irrqEnd & ~irrqEmpty;
 
 assign ArbWrite = irrqStart | irrqEnd;
 assign ArbChipSelect = ArbWrite;
-assign ArbAddress    = irrqStart ? irrqBaseAddr : irrqBaseAddr + 64'd4;
+// assign ArbAddress    = irrqStart ? irrqBaseAddr : irrqBaseAddr + 64'd4;
+assign ArbAddress    = irrqBaseAddr + {offsetAddr , 2'd0};
 assign ArbWriteData  = irrqStart ? {8'd0,irrqDataOut[55:32]} : irrqDataOut[31:0];
 assign ArbByteEnable = 4'hf; 
 endmodule // PCIeArbiter

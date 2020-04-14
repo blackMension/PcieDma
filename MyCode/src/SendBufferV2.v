@@ -93,4 +93,14 @@ end
 assign emptyArray = subEmptyArray[rPtr];
 assign dataOut    = subDataOut[rPtr];
 assign ready      = subReady[rPtr];
+// synthesis translate_off
+// integer wPtr;
+// initial begin
+//     wPtr=$fopen("datain.txt","w");
+//     while (1) begin
+//        @(posedge clock);
+//        if(write) $fwrite(wPtr,$sformatf("%h\n",writedata));        
+//     end
+// end
+// synthesis translate_on
 endmodule // SendBufferV2

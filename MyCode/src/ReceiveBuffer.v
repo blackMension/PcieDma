@@ -2,7 +2,7 @@
 module ReceiveBuffer( 
     /*AUTOARG*/
    // Outputs
-   readdata, rgstrPtr, lastNum, poolFull, poolEmpty,
+   readdata, rgstrPtr, lastNum, poolFull, poolEmpty,waitrequest,
    // Inputs
    clock, reset, address, clken, chipselect, write, writedata,
    byteenable, QN, push, pushData, bufRegister, rgstrNum, bufRelease,
@@ -19,6 +19,7 @@ input           write;
 output [255:0]  readdata;
 input  [255:0]  writedata;
 input  [31:0]   byteenable;
+output          waitrequest;
 // To Rdma (data in)
 input  [3:0]    QN;
 input           push;
@@ -78,11 +79,11 @@ assign lastNum   = lastNumReg;
 //==================================
 //     Mapping Address
 wire [4:0]   basePtrInt;
-reg  [4:0]   basePtr;
-wire [4:0]   realPtr;
+reg  [3:0]   basePtr;
+wire [3:0]   realPtr;
 
 assign realPtr = basePtr + address[7:3];
-assign basePtrInt = freshMapping ? releasePtr : basePtr;
+assign basePtrInt = freshMapping ? releasePtr[3:0] : basePtr;
 always @(posedge clock or negedge reset) begin
     if(!reset) begin
         basePtr <= 5'd0;
@@ -134,4 +135,6 @@ for(i=0;i<16;i=i+1) begin
         .cpuReadAddress                     (3'd0)
         );
     end
+
+assign waitrequest = emptyArray[realPtr];
 endmodule // ReceiveBuffer

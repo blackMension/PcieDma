@@ -9,8 +9,12 @@
 //
 // instance "DdpHdrGen.v","uDdpHdrGen";
 // instance "DdpAssmble.v","uDdpAssmble";
-// instance "DdpCutPad.v","uDdpCutPad";
+// #instance "DdpCutPad.v","uDdpCutPad";
 // instance "DdpCut.v","uDdpCut";
+//    connect "ddpPktCutDataOut"   , "ddpPktDataOut";    
+//    connect "ddpPktCutDataValid" , "ddpPktDataValid";      
+//    connect "ddpPktCutEmpty"     , "ddpPktEmpty";  
+//    connect "ddpPktCutPop"       , "ddpPktPop";
 // # instance "DdpLoop.v","uDdpLoop";
 // endmodule
 // VWEAVE: END PERL
@@ -80,10 +84,6 @@ output             queueNumRd;
 output  [7:0]      queueNumRdAddr;
 
 
-   wire [266:0]    ddpPktCutDataOut;
-   wire            ddpPktCutDataValid;
-   wire            ddpPktCutEmpty;
-   wire            ddpPktCutPop;
    wire [7:0]      gen2PkgDdpCtrl;
    wire [15:0]     gen2PkgDdpHeader;
    wire [7:0]      gen2PkgRdmapCtrl;
@@ -137,25 +137,11 @@ DdpAssmble  uDdpAssmble (
    .sendDoneValid                 (sendDoneValid)
 );
 
-DdpCutPad  uDdpCutPad (
-   .clock                         (clock),
-   .ddpPktCutPop                  (ddpPktCutPop),
-   .ddpPktDataOut                 (ddpPktDataOut[266:0]),
-   .ddpPktDataValid               (ddpPktDataValid),
-   .ddpPktEmpty                   (ddpPktEmpty),
-   .reset                         (reset),
-
-   .ddpPktCutDataOut              (ddpPktCutDataOut[266:0]),
-   .ddpPktCutDataValid            (ddpPktCutDataValid),
-   .ddpPktCutEmpty                (ddpPktCutEmpty),
-   .ddpPktPop                     (ddpPktPop)
-);
-
 DdpCut  uDdpCut (
    .clock                         (clock),
-   .ddpPktCutDataOut              (ddpPktCutDataOut[266:0]),
-   .ddpPktCutDataValid            (ddpPktCutDataValid),
-   .ddpPktCutEmpty                (ddpPktCutEmpty),
+   .ddpPktCutDataOut              (ddpPktDataOut[266:0]),
+   .ddpPktCutDataValid            (ddpPktDataValid),
+   .ddpPktCutEmpty                (ddpPktEmpty),
    .reset                         (reset),
    .sendDoneCtrl                  (sendDoneCtrl[7:0]),
    .sendDoneTID                   (sendDoneTID[7:0]),
@@ -165,7 +151,7 @@ DdpCut  uDdpCut (
    .ddp2RdmapControl              (ddp2RdmapControl[7:0]),
    .ddp2RdmapHdrValid             (ddp2RdmapHdrValid),
    .ddp2RdmapHeader               (ddp2RdmapHeader[55:0]),
-   .ddpPktCutPop                  (ddpPktCutPop),
+   .ddpPktCutPop                  (ddpPktPop),
    .push                          (push),
    .pushData                      (pushData[255:0])
 );

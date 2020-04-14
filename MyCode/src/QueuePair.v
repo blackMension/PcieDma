@@ -201,11 +201,11 @@ wire slot2;
 wire slot3;
 
 
-assign slot0 = select & write & ( address[3:0] == 4'd0 );
-assign slot1 = select & write & ( address[3:0] == 4'd4 );
-assign slot2 = select & write & ( address[3:0] == 4'd8 );
-assign slot3 = select & write & ( address[3:0] == 4'hc );
-
+assign slot0 = select & write & ( address[4:0] == 5'd0 );
+assign slot1 = select & write & ( address[4:0] == 5'd4 );
+assign slot2 = select & write & ( address[4:0] == 5'd8 );
+assign slot3 = select & write & ( address[4:0] == 5'hc );
+wire  slot4 = select & write & (address[4:0] == 5'h10);
 reg [4:0] opcode;
 reg [2:0] dataNum;
 reg [8:0] dataLen0;

@@ -37,7 +37,8 @@ wire [7:0]  ddpCtrl;
 wire [7:0]  rdmapCtrl;
 wire [55:0] rdmapHdr;
 wire [15:0] ddpHdr;
-
+reg   [55:0]  rdmapHdrLock;
+reg   [7:0]   rdmapCtrlLock;
 wire [255:0]  sendDataSlice;
 reg  [255:0]  sendDataAligned;
 reg  [215:0]  sendDataLast;
@@ -58,7 +59,12 @@ wire  isAck =    (rdmapCtrl[3:0] == `ACK_OPCODE) & ddpPktCutDataValid & sop;
 wire  isSend =   (rdmapCtrl[3:0] == `SEND_OPCODE)& ddpPktCutDataValid & sop;
 assign pEdgeIsSend = isSend & ~isSendF1;
 assign {sop,eop,byteEnable,ddpCtrl,rdmapCtrl,ddpHdr,rdmapHdr} = ddpPktCutDataOut[266:168];
-
+always @(posedge clock) begin
+    if(sop & ~eop) begin
+        rdmapHdrLock <= rdmapHdr;
+        rdmapCtrlLock <= rdmapCtrl;
+    end
+end
 assign dataLen = ddpHdr[8:0] - 9'd1;
 always @(posedge clock or negedge reset) begin
     if(!reset) begin
@@ -99,6 +105,6 @@ assign push     = dataValidF1 & eopF1 | dataValidF1 & ~sopF1 & ~eopF1;
 assign ddpPktCutPop = ((~lastDataValid & (dataValid | eop)) | pEdgeLastDataValid) & dataReady;
 
 assign ddp2RdmapHdrValid = eop & dataReady;
-assign ddp2RdmapHeader   = rdmapHdr;
-assign ddp2RdmapControl  = rdmapCtrl;
+assign ddp2RdmapHeader   = sop ? rdmapHdr : rdmapHdrLock;
+assign ddp2RdmapControl  = sop ? rdmapCtrl: rdmapCtrlLock;
 endmodule // DdpCut

@@ -10,7 +10,7 @@ module RdmaOptr(
    clock, reset, SqData, SqEmpty, SqFifoDepth, SqFull, RqData,
    RqEmpty, RqFifoDepth, RqFull, SqDmaFifoPop, RqDmaFifoPop,
    ackFifoPush, ackFifoDataIn, offloadFifoPush, offloadFifoDataIn,
-   wrDoneFifoPush, wrDoneFifoDataIn
+   wrDoneFifoPush, wrDoneFifoDataIn,rdDmaDone,wrDmaDone
    );
 // global
     input            clock;
@@ -59,6 +59,10 @@ module RdmaOptr(
     output [51:0]   rdmaWR;
     output          infoValid;
     
+// dma done
+    input           rdDmaDone;
+    input           wrDmaDone;
+
     parameter       RV = 2'b00;
     parameter       SEND_OPCODE = 4'b0000;
     parameter       RCV_OPCODE  = 4'b0001;
@@ -128,7 +132,20 @@ module RdmaOptr(
             default : NS = IDLE;
         endcase
     end
-    
+    reg wrCredit;
+    reg rdCredit;
+    always @(posedge clock or negedge reset) begin
+        if(!reset) begin
+            wrCredit <= 1'd0;
+            rdCredit <= 1'd0;
+        end
+        else begin
+            if(SqDmaFifoPop)       rdCredit <= 1'd1;
+            else if(rdDmaDone) rdCredit <= 1'd0;
+            if(RqDmaFifoPop)       wrCredit <= 1'd1;
+            else if(wrDmaDone) wrCredit <= 1'd0;
+        end
+    end
     assign SqPop = ( CS == GEN_REQ) & ~SqEmpty;
     assign SqPrePush = SqPop & ~SqPreFull;
     assign SqPreFifoDataIn = SqData; 
@@ -137,12 +154,12 @@ module RdmaOptr(
     assign RqPrePush = RqPop & ~RqPreFull;
     assign RqPreFifoDataIn = RqData; 
 
-    assign SqPrePop =  (CS == GEN_SEND) & ~SqPreEmpty & ~ackFifoEmpty;
+    assign SqPrePop =  (CS == GEN_SEND) & ~SqPreEmpty & ~ackFifoEmpty ;
     assign SqDmaFifoPush = SqPrePop & ~SqDmaFifoFull;
     assign ackFifoPop = SqDmaFifoPush;
     assign SqDmaFifoDataIn = SqPreData;
 
-    assign RqPrePop =  (CS == GEN_DMA_WRITE) & ~RqPreEmpty & ~offloadFifoEmpty;
+    assign RqPrePop =  (CS == GEN_DMA_WRITE) & ~RqPreEmpty & ~offloadFifoEmpty ;
     assign RqDmaFifoPush = RqPrePop & ~RqDmaFifoFull;
     assign offloadFifoPop = RqDmaFifoPush;
     assign RqDmaFifoDataIn = RqPreData;
@@ -200,12 +217,16 @@ GenRamFifo16D116W uRqPrefetch(
     .cpuReadValid                       (1'd0) ,
     .cpuReadAddress                     (4'd0)
     );
+wire          SqDmaFifoEmptyInt;
+wire          RqDmaFifoEmptyInt;
+assign SqDmaFifoEmpty = SqDmaFifoEmptyInt | rdCredit;
+assign RqDmaFifoEmpty = RqDmaFifoEmptyInt | wrCredit;
 // to gen dma request
 GenRamFifo16D116W uSqDmaFifo( 
     // Outputs;
     .dataOut                            (SqDmaFifoData),
     .full                               (SqDmaFifoFull),
-    .empty                              (SqDmaFifoEmpty),
+    .empty                              (SqDmaFifoEmptyInt),
     .almostFullFlag                     (),
     .almostEmptyFlag                    (),
     .fifoDepth                          (SqDmaFifoDepth),
@@ -228,7 +249,7 @@ GenRamFifo16D116W uRqDmaFifo(
     // Outputs;
     .dataOut                            (RqDmaFifoData),
     .full                               (RqDmaFifoFull),
-    .empty                              (RqDmaFifoEmpty)  ,
+    .empty                              (RqDmaFifoEmptyInt)  ,
     .almostFullFlag                     (),
     .almostEmptyFlag                    (),
     .fifoDepth                          (RqDmaFifoDepth),
@@ -248,7 +269,7 @@ GenRamFifo16D116W uRqDmaFifo(
     .cpuReadAddress                     (4'd0)
     );
     // ACK FIFO
-GenRegFifo4D28W uAckFifo(
+GenRegFifo16D28W uAckFifo(
     // Outputs;
     .dataOut                            (ackFifoData),
     .full                               (ackFifoFull),
@@ -269,7 +290,7 @@ GenRegFifo4D28W uAckFifo(
     );
 
     // Recv Fifo
-GenRegFifo4D8W uOffloadHdrFifo(
+GenRegFifo16D8W uOffloadHdrFifo(
     // Outputs;
     .dataOut                            (offloadFifoData),
     .full                               (offloadFifoFull),
@@ -289,7 +310,7 @@ GenRegFifo4D8W uOffloadHdrFifo(
     .almostEmptyThreshold               (3'd0) 
     );
     
-GenRegFifo4D8W uWrDoneFifo(
+GenRegFifo16D8W uWrDoneFifo(
     // Outputs;
     .dataOut                            (wrDoneFifoData),
     .full                               (wrDoneFifoFull),

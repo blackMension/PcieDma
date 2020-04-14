@@ -46,7 +46,7 @@ module DmaRequest(
 	output           WrDCSRead;          //             .read
 	input    [31:0]  WrDCSReadData;      //             .readdata
 
-
+    
 wire [63:0]  rd_dma_status_addr      = 64'h6000;
 wire [63:0]  wr_dma_status_addr      = 64'h7000;
 wire  [2:0]  SqDmaFifoDataNumberM1 = SqDmaFifoData[110:108] - 3'd1;
@@ -105,6 +105,8 @@ assign WrDCSRead = 1'd0;
 assign RdDCSByteEnable = 4'hf;
 assign WrDCSByteEnable = 4'hf;
 
+wire wrDescValid = wrCounter == 4'd4;
+wire rdDescValid = rdCounter == 4'd4;
 // assign WrDCSAddressInt = WrDCSWrite & ~WrDCSWaitRequest ? WrDCSAddressReg + 7'd4 : WrDCSAddressReg;
 // assign RdDCSAddressInt = RdDCSWrite & ~RdDCSWaitRequest ? RdDCSAddressReg + 7'd4 : RdDCSAddressReg;
 // always @(posedge clock or negedge reset) begin

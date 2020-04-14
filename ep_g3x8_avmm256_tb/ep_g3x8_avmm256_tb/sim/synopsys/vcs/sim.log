@@ -1,7 +1,7 @@
 Command: ./simv +dump -l sim.log
 Chronologic VCS simulator copyright 1991-2016
 Contains Synopsys proprietary information.
-Compiler version L-2016.06_Full64; Runtime version L-2016.06_Full64;  Apr 10 17:06 2020
+Compiler version L-2016.06_Full64; Runtime version L-2016.06_Full64;  Apr 14 18:42 2020
                    0: INFO: ep_g3x8_avmm256_tb.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm.__hello: - Hello from altera_clock_source.
                    0: INFO: ep_g3x8_avmm256_tb.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm.__hello: -   $Revision: #1 $
                    0: INFO: ep_g3x8_avmm256_tb.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm.ep_g3x8_avmm256_inst_reconfig_xcvr_clk_bfm.__hello: -   $Date: 2017/08/13 $
@@ -14249,67 +14249,214 @@ DMA Read Shmem Write : [NO.3] 00000300000000000000030000000000000c0040
 INFO:           66640 ns Setup DMA-Write descriptor entries in host memory                                                   
 INFO:           66640 ns Starting DMA Write....                                                                              
 INFO:           66640 ns Start Write SQ                                                                                      
-get one request
+INFO:           66704 ns Start Write SQ                                                                                      
+INFO:           66768 ns Start Write SQ                                                                                      
+INFO:           66832 ns Start Write SQ                                                                                      
+INFO:           66896 ns Start Write SQ                                                                                      
+INFO:           66960 ns Start Write SQ                                                                                      
+INFO:           67024 ns Start Write SQ                                                                                      
+INFO:           67088 ns Start Write SQ                                                                                      
+INFO:           67288 ns Start Write SQ                                                                                      
+INFO:           67352 ns Start Write SQ                                                                                      
+INFO:           67416 ns Start Write SQ                                                                                      
+INFO:           67480 ns Start Write SQ                                                                                      
+INFO:           67536 ns Start Write SQ                                                                                      
+INFO:           67600 ns Start Write SQ                                                                                      
+INFO:           68024 ns Start Write SQ                                                                                      
+INFO:           68088 ns Start Write SQ                                                                                      
+INFO:           68152 ns Start Write SQ                                                                                      
+INFO:           68216 ns Start Write SQ                                                                                      
+INFO:           68632 ns Start Write SQ                                                                                      
+INFO:           68697 ns Start Write SQ                                                                                      
+INFO:           68769 ns Start Write SQ                                                                                      
+INFO:           68833 ns Start Write SQ                                                                                      
+INFO:           69289 ns Start Write SQ                                                                                      
+INFO:           69353 ns Start Write SQ                                                                                      
+INFO:           69417 ns Start Write SQ                                                                                      
+INFO:           69481 ns Start Write SQ                                                                                      
+INFO:           69929 ns Start Write SQ                                                                                      
+INFO:           69993 ns Start Write SQ                                                                                      
+INFO:           70057 ns Start Write SQ                                                                                      
+INFO:           70121 ns Start Write SQ                                                                                      
+INFO:           70561 ns Start Write SQ                                                                                      
+INFO:           70625 ns Start Write SQ                                                                                      
+get one request   0
 Start Write RQ
-INFO:           67964 ns Start Write RQ                                                                                      
-INFO:           68020 ns DMA Read: Got Status                                                                                
+INFO:           70689 ns Start Write RQ                                                                                      
+get one request   1
+Start Write RQ
+INFO:           70753 ns Start Write RQ                                                                                      
+get one request   2
+Start Write RQ
+INFO:           71209 ns Start Write RQ                                                                                      
+get one request   3
+Start Write RQ
+INFO:           71273 ns Start Write RQ                                                                                      
+get one request   4
+Start Write RQ
+INFO:           71337 ns Start Write RQ                                                                                      
+get one request   5
+Start Write RQ
+INFO:           71401 ns Start Write RQ                                                                                      
+get one request   6
+Start Write RQ
+INFO:           71849 ns Start Write RQ                                                                                      
+get one request   7
+Start Write RQ
+INFO:           71913 ns Start Write RQ                                                                                      
+get one request   8
+Start Write RQ
+INFO:           71977 ns Start Write RQ                                                                                      
+get one request   9
+Start Write RQ
+INFO:           72417 ns Start Write RQ                                                                                      
+get one request  10
+Start Write RQ
+INFO:           72481 ns Start Write RQ                                                                                      
+get one request  11
+Start Write RQ
+INFO:           72545 ns Start Write RQ                                                                                      
+get one request  12
+Start Write RQ
+INFO:           72609 ns Start Write RQ                                                                                      
+get one request  13
+Start Write RQ
+INFO:           73129 ns Start Write RQ                                                                                      
+get one request  14
+Start Write RQ
+INFO:           73193 ns Start Write RQ                                                                                      
+get one request  15
+Start Write RQ
+INFO:           73257 ns Start Write RQ                                                                                      
 get one rd rdCount =     1
+get one request  16
+Start Write RQ
+INFO:           76348 ns Start Write RQ                                                                                      
 get one wr wrCount =     1
-Get All Data          73050610000
-INFO:           73050 ns Get All Data                                                                                        
-INFO:           73050 ns DMA Write: Got Status                                                                               
-INFO:           73050 ns Passed: 0256 same bytes in BFM mem addr 0x00000000 and 0x00004000                                   
-INFO:           73050 ns                                                                                                     
-INFO:           73050 ns Shared Memory Data Display:                                                                         
-INFO:           73050 ns Address  Data                                                                                       
-INFO:           73050 ns -------  ----                                                                                       
-INFO:           73050 ns 00000100 00000040 00000041 00000042 00000043                                                        
-INFO:           73050 ns 00000110 00000044 00000045 00000046 00000047                                                        
-INFO:           73050 ns 00000120 00000048 00000049 0000004A 0000004B                                                        
-INFO:           73050 ns 00000130 0000004C 0000004D 0000004E 0000004F                                                        
-INFO:           73050 ns 00000140 00000050 00000051 00000052 00000053                                                        
-INFO:           73050 ns 00000150 00000054 00000055 00000056 00000057                                                        
-INFO:           73050 ns 00000160 00000058 00000059 0000005A 0000005B                                                        
-INFO:           73050 ns 00000170 0000005C 0000005D 0000005E 0000005F                                                        
-INFO:           73050 ns 00000180 00000060 00000061 00000062 00000063                                                        
-INFO:           73050 ns 00000190 00000064 00000065 00000066 00000067                                                        
-INFO:           73050 ns 000001A0 00000068 00000069 0000006A 0000006B                                                        
-INFO:           73050 ns 000001B0 0000006C 0000006D 0000006E 0000006F                                                        
-INFO:           73050 ns 000001C0 00000070 00000071 00000072 00000073                                                        
-INFO:           73050 ns 000001D0 00000074 00000075 00000076 00000077                                                        
-INFO:           73050 ns 000001E0 00000078 00000079 0000007A 0000007B                                                        
-INFO:           73050 ns 000001F0 0000007C 0000007D 0000007E 0000007F                                                        
-INFO:           73050 ns                                                                                                     
-INFO:           73050 ns Shared Memory Data Display:                                                                         
-INFO:           73050 ns Address  Data                                                                                       
-INFO:           73050 ns -------  ----                                                                                       
-INFO:           73050 ns 00004100 00000040 00000041 00000042 00000043                                                        
-INFO:           73050 ns 00004110 00000044 00000045 00000046 00000047                                                        
-INFO:           73050 ns 00004120 00000048 00000049 0000004A 0000004B                                                        
-INFO:           73050 ns 00004130 0000004C 0000004D 0000004E 0000004F                                                        
-INFO:           73050 ns 00004140 00000050 00000051 00000052 00000053                                                        
-INFO:           73050 ns 00004150 00000054 00000055 00000056 00000057                                                        
-INFO:           73050 ns 00004160 00000058 00000059 0000005A 0000005B                                                        
-INFO:           73050 ns 00004170 0000005C 0000005D 0000005E 0000005F                                                        
-INFO:           73050 ns 00004180 0000006E 0000006F 00000060 00000061                                                        
-INFO:           73050 ns 00004190 00000062 00000063 00000064 00000067                                                        
-INFO:           73050 ns 000041A0 00000076 00000077 00000068 00000069                                                        
-INFO:           73050 ns 000041B0 0000006A 0000006B 0000006C 0000006D                                                        
-INFO:           73050 ns 000041C0 0000007E 0000007F 00000070 00000071                                                        
-INFO:           73050 ns 000041D0 00000072 00000073 00000074 00000075                                                        
-INFO:           73050 ns 000041E0 00000078 00009279 00000078 00000079                                                        
-INFO:           73050 ns 000041F0 0000007A 0000007B 0000007C 0000007D                                                        
-INFO:           73050 ns  A: 0x00000181: 00000060                                                                            
-INFO:           73050 ns  B: 0x00004181: 0000006E                                                                            
-FATAL:          73050 ns Different memory content for 0256 bytes test                                                        
-                                 FAILURE: Simulation stopped due to Fatal error!
-FAILURE: Simulation stopped due to error!
-$finish called from file "../../../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v", line 118.
+get one rd rdCount =     2
+get one request  17
+Start Write RQ
+INFO:           78440 ns Start Write RQ                                                                                      
+get one wr wrCount =     2
+get one rd rdCount =     3
+get one request  18
+Start Write RQ
+INFO:           80546 ns Start Write RQ                                                                                      
+get one wr wrCount =     3
+get one rd rdCount =     4
+get one request  19
+Start Write RQ
+INFO:           82562 ns Start Write RQ                                                                                      
+get one wr wrCount =     4
+get one rd rdCount =     5
+get one request  20
+Start Write RQ
+INFO:           84926 ns Start Write RQ                                                                                      
+get one wr wrCount =     5
+get one rd rdCount =     6
+get one request  21
+Start Write RQ
+INFO:           87330 ns Start Write RQ                                                                                      
+get one wr wrCount =     6
+get one rd rdCount =     7
+get one request  22
+Start Write RQ
+INFO:           89706 ns Start Write RQ                                                                                      
+get one wr wrCount =     7
+get one rd rdCount =     8
+get one request  23
+Start Write RQ
+INFO:           91862 ns Start Write RQ                                                                                      
+get one wr wrCount =     8
+get one rd rdCount =     9
+get one request  24
+Start Write RQ
+INFO:           94226 ns Start Write RQ                                                                                      
+get one wr wrCount =     9
+get one rd rdCount =    10
+get one request  25
+Start Write RQ
+INFO:           96610 ns Start Write RQ                                                                                      
+get one wr wrCount =    10
+get one rd rdCount =    11
+get one request  26
+Start Write RQ
+INFO:           98954 ns Start Write RQ                                                                                      
+get one wr wrCount =    11
+get one rd rdCount =    12
+get one request  27
+Start Write RQ
+INFO:          101350 ns Start Write RQ                                                                                      
+get one wr wrCount =    12
+get one rd rdCount =    13
+get one request  28
+Start Write RQ
+INFO:          103726 ns Start Write RQ                                                                                      
+get one wr wrCount =    13
+get one rd rdCount =    14
+get one request  29
+Start Write RQ
+INFO:          106074 ns Start Write RQ                                                                                      
+get one wr wrCount =    14
+get one rd rdCount =    15
+get one request  30
+Start Write RQ
+INFO:          108214 ns Start Write RQ                                                                                      
+get one wr wrCount =    15
+get one rd rdCount =    16
+get one request  31
+Start Write RQ
+INFO:          110562 ns Start Write RQ                                                                                      
+get one wr wrCount =    16
+INFO:          110618 ns DMA Read: Got Status                                                                                
+get one rd rdCount =    17
+get one wr wrCount =    17
+get one rd rdCount =    18
+get one wr wrCount =    18
+get one rd rdCount =    19
+get one wr wrCount =    19
+get one rd rdCount =    20
+get one wr wrCount =    20
+get one rd rdCount =    21
+get one wr wrCount =    21
+get one rd rdCount =    22
+get one wr wrCount =    22
+get one rd rdCount =    23
+get one wr wrCount =    23
+get one rd rdCount =    24
+get one wr wrCount =    24
+get one rd rdCount =    25
+get one wr wrCount =    25
+get one rd rdCount =    26
+get one wr wrCount =    26
+get one rd rdCount =    27
+get one wr wrCount =    27
+get one rd rdCount =    28
+get one wr wrCount =    28
+get one rd rdCount =    29
+get one wr wrCount =    29
+get one rd rdCount =    30
+get one wr wrCount =    30
+get one rd rdCount =    31
+get one wr wrCount =    31
+get one rd rdCount =    32
+get one wr wrCount =    32
+Get All Data         148442610000
+INFO:          148442 ns Get All Data                                                                                        
+INFO:          148442 ns DMA Write: Got Status                                                                               
+INFO:          148442 ns Passed: 0256 same bytes in BFM mem addr 0x00000000 and 0x00004000                                   
+INFO:          148442 ns Passed: 0256 same bytes in BFM mem addr 0x00000100 and 0x00004100                                   
+INFO:          148442 ns Passed: 0256 same bytes in BFM mem addr 0x00000200 and 0x00004200                                   
+INFO:          148442 ns Passed: 0256 same bytes in BFM mem addr 0x00000300 and 0x00004300                                   
+Request First DW Read : 00000000
+SUCCESS: Simulation stopped due to successful completion!
+Simulation passed
+$finish called from file "../../../../ip/ep_g3x8_avmm256_tb/DUT_pcie_tb_ip/altera_pcie_a10_tbed_171/sim/altpcietb_g3bfm_log.v", line 109.
 INFO:         altpcie_monitor_a10_dlhip_sim::---------------------------------------------------------------------------------------------
 INFO:         altpcie_monitor_a10_dlhip_sim:: Generated TLP log dump file    altpcie_monitor_a10_dlhip_tlp_file_log.log
 INFO:         altpcie_monitor_a10_dlhip_sim::---------------------------------------------------------------------------------------------
-$finish at simulation time          73050610000
+$finish at simulation time         149442610000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 73050610000 fs
-CPU Time:     92.060 seconds;       Data structure size: 279.1Mb
-Fri Apr 10 17:08:02 2020
+Time: 149442610000 fs
+CPU Time:    383.190 seconds;       Data structure size: 279.1Mb
+Tue Apr 14 18:47:45 2020

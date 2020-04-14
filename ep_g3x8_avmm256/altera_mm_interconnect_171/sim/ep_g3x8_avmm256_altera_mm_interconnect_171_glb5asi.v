@@ -21,7 +21,8 @@ module ep_g3x8_avmm256_altera_mm_interconnect_171_glb5asi (
 		output wire [255:0] onchip_memory2_0_s2_writedata,                       //                                              .writedata
 		output wire [31:0]  onchip_memory2_0_s2_byteenable,                      //                                              .byteenable
 		output wire         onchip_memory2_0_s2_chipselect,                      //                                              .chipselect
-		output wire         onchip_memory2_0_s2_clken                            //                                              .clken
+		output wire         onchip_memory2_0_s2_clken,                            //                                              .clken
+		input  wire         recv_buffer_waitrequest
 	);
 
 	wire          dut_dma_wr_master_translator_avalon_universal_master_0_waitrequest;   // DUT_dma_wr_master_agent:av_waitrequest -> DUT_dma_wr_master_translator:uav_waitrequest
@@ -187,7 +188,7 @@ module ep_g3x8_avmm256_altera_mm_interconnect_171_glb5asi (
 		.UAV_BURSTCOUNT_W               (6),
 		.AV_READLATENCY                 (1),
 		.USE_READDATAVALID              (0),
-		.USE_WAITREQUEST                (0),
+		.USE_WAITREQUEST                (1),
 		.USE_UAV_CLKEN                  (0),
 		.USE_READRESPONSE               (0),
 		.USE_WRITERESPONSE              (0),
@@ -228,7 +229,7 @@ module ep_g3x8_avmm256_altera_mm_interconnect_171_glb5asi (
 		.av_beginbursttransfer  (),                                                    // (terminated),                                        
 		.av_burstcount          (),                                                    // (terminated),                                        
 		.av_readdatavalid       (1'b0),                                                // (terminated),                                        
-		.av_waitrequest         (1'b0),                                                // (terminated),                                        
+		.av_waitrequest         (recv_buffer_waitrequest),                                                // (terminated),                                        
 		.av_writebyteenable     (),                                                    // (terminated),                                        
 		.av_lock                (),                                                    // (terminated),                                        
 		.uav_clken              (1'b0),                                                // (terminated),                                        

@@ -328,11 +328,11 @@
 ../../../../../MyCode/fifo/GenRamFifo8D256W.v
 ../../../../../MyCode/fifo/GenRegFifo16D88W.v
 ../../../../../MyCode/fifo/GenRegFifo4D16W.v
-../../../../../MyCode/fifo/GenRegFifo4D28W.v
-../../../../../MyCode/fifo/GenRegFifo4D8W.v
+../../../../../MyCode/fifo/GenRegFifo16D28W.v
+../../../../../MyCode/fifo/GenRegFifo16D8W.v
 ../../../../../MyCode/fifo/GenRegFifo32D267W.v
 ../../../../../MyCode/fifo/GenRegFifo8D267W.v
-../../../../../MyCode/fifo/GenRegFifo8D64W.v
+../../../../../MyCode/fifo/GenRegFifo64D64W.v
 ../../../../../MyCode/fifo/GenRegFifo8D56W.v
 ../../../../../MyCode/src/DdpAssmble.v
 ../../../../../MyCode/src/DdpCut.v

@@ -55,8 +55,10 @@ module Rdmap (
                 poolFull,
                 queueNumRd,
                 queueNumRdAddr,
+                rdDmaDone,
                 reset,
                 rgstrPtr,
+                wrDmaDone,
 
                 // outputs
                 ArbAddress,
@@ -123,8 +125,10 @@ input              poolEmpty;
 input              poolFull;
 input              queueNumRd;
 input   [7:0]      queueNumRdAddr;
+input              rdDmaDone;
 input              reset;
 input   [4:0]      rgstrPtr;
+input              wrDmaDone;
 
 output  [63:0]     ArbAddress;
 output  [3:0]      ArbByteEnable;
@@ -283,7 +287,9 @@ RdmaOptr  uRdmaOptr (
    .clock                         (clock),
    .offloadFifoDataIn             (offloadFifoDataIn[7:0]),
    .offloadFifoPush               (offloadFifoPush),
+   .rdDmaDone                     (rdDmaDone),
    .reset                         (reset),
+   .wrDmaDone                     (wrDmaDone),
    .wrDoneFifoDataIn              (wrDoneFifoDataIn[7:0]),
    .wrDoneFifoPush                (wrDoneFifoPush),
 
