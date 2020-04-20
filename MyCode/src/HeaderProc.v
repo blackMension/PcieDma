@@ -13,7 +13,7 @@ module HeaderProc(
    // Inputs
    clock, reset, ddp2RdmapHdrValid, ddp2RdmapControl, ddp2RdmapHeader,
    ackFifoFull, offloadFifoFull, wrDoneFifoFull, dataNumRdData,
-   queueNumRdAddr, queueNumRd
+   queueNumRdAddr, queueNumRd,ddp2RdmapIsSendSop
    );
 input clock;
 input reset;
@@ -21,6 +21,7 @@ input reset;
 input          ddp2RdmapHdrValid;
 input [7:0]    ddp2RdmapControl;
 input [55:0]   ddp2RdmapHeader;
+input          ddp2RdmapIsSendSop;
 // TO Optr Ack
 output         ackFifoPush;
 output [27:0]  ackFifoDataIn;
@@ -71,6 +72,7 @@ wire  isRdDone = (ddp2RdmapControl[7:0] == RD_DONE_OPCODE) & ddp2RdmapHdrValid;
 reg  [7:0]    sendInfo; // TID
 reg           isSendF1;
 reg           isSendF2;
+reg           isSendSopF1;
 wire [2:0]    writeDataProc;
 wire          writeProc;
 wire [2:0]    sendedNum;
@@ -89,10 +91,12 @@ always @(posedge clock or negedge reset) begin
     if(!reset) begin
         isSendF1 <= 1'd0;
         isSendF2 <= 1'd0;
+        isSendSopF1 <= 1'd0;
     end
     else begin
         isSendF1 <= isSend;
         isSendF2 <= isSendF1;
+        isSendSopF1 <= ddp2RdmapIsSendSop;
     end
 end
 always @(posedge clock) begin
@@ -107,7 +111,7 @@ assign isEop = ( sendedNum == dataNumRdData ) & isSendF1;
 assign writeDataProc = isEop ? 3'd0:sendedNum;
 assign addressWrite = initDone ? sendInfo : initAddr;
 assign offloadFifoDataIn  = sendInfo;
-assign offloadFifoPush    = isSop & ~offloadFifoFull;
+assign offloadFifoPush    = isSendSopF1 & ~offloadFifoFull;
 assign writeProc    = isSendF1;
 
 assign initData = 3'd0;

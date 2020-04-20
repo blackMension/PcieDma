@@ -285,8 +285,8 @@ GenRegFifo16D28W uAckFifo(
     .push                               (ackFifoPush) ,
     .dataIn                             (ackFifoDataIn)   ,
     .pop                                (ackFifoPop),
-    .almostFullThreshold                (3'd4),
-    .almostEmptyThreshold               (3'd0) 
+    .almostFullThreshold                (5'd16),
+    .almostEmptyThreshold               (5'd0) 
     );
 
     // Recv Fifo
@@ -306,8 +306,8 @@ GenRegFifo16D8W uOffloadHdrFifo(
     .push                               (offloadFifoPush ) ,
     .dataIn                             (offloadFifoDataIn)   ,
     .pop                                (offloadFifoPop),
-    .almostFullThreshold                (3'd4),
-    .almostEmptyThreshold               (3'd0) 
+    .almostFullThreshold                (5'd16),
+    .almostEmptyThreshold               (5'd0) 
     );
     
 GenRegFifo16D8W uWrDoneFifo(
@@ -326,7 +326,7 @@ GenRegFifo16D8W uWrDoneFifo(
     .push                               (wrDoneFifoPush ) ,
     .dataIn                             (wrDoneFifoDataIn)   ,
     .pop                                (wrDoneFifoPop),
-    .almostFullThreshold                (3'd4),
-    .almostEmptyThreshold               (3'd0) 
+    .almostFullThreshold                (5'd16),
+    .almostEmptyThreshold               (5'd0) 
     );
 endmodule // RdmaOptr

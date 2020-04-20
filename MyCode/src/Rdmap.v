@@ -50,6 +50,7 @@ module Rdmap (
                 ddp2RdmapControl,
                 ddp2RdmapHdrValid,
                 ddp2RdmapHeader,
+                ddp2RdmapIsSendSop,
                 lastNum,
                 poolEmpty,
                 poolFull,
@@ -120,6 +121,7 @@ input   [2:0]      dataNumRdData;
 input   [7:0]      ddp2RdmapControl;
 input              ddp2RdmapHdrValid;
 input   [55:0]     ddp2RdmapHeader;
+input              ddp2RdmapIsSendSop;
 input   [4:0]      lastNum;
 input              poolEmpty;
 input              poolFull;
@@ -336,6 +338,7 @@ HeaderProc  uHeaderProc (
    .ddp2RdmapControl              (ddp2RdmapControl[7:0]),
    .ddp2RdmapHdrValid             (ddp2RdmapHdrValid),
    .ddp2RdmapHeader               (ddp2RdmapHeader[55:0]),
+   .ddp2RdmapIsSendSop            (ddp2RdmapIsSendSop),
    .offloadFifoFull               (offloadFifoFull),
    .queueNumRd                    (queueNumRd),
    .queueNumRdAddr                (queueNumRdAddr[7:0]),

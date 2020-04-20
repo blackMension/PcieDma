@@ -44,6 +44,7 @@ module DDP (
               ddp2RdmapControl,
               ddp2RdmapHdrValid,
               ddp2RdmapHeader,
+              ddp2RdmapIsSendSop,
               ddpPktDataIn,
               ddpPktPop,
               ddpPktPush,
@@ -75,6 +76,7 @@ output             dataPop;
 output  [7:0]      ddp2RdmapControl;
 output             ddp2RdmapHdrValid;
 output  [55:0]     ddp2RdmapHeader;
+output             ddp2RdmapIsSendSop;
 output  [266:0]    ddpPktDataIn;
 output             ddpPktPop;
 output             ddpPktPush;
@@ -151,6 +153,7 @@ DdpCut  uDdpCut (
    .ddp2RdmapControl              (ddp2RdmapControl[7:0]),
    .ddp2RdmapHdrValid             (ddp2RdmapHdrValid),
    .ddp2RdmapHeader               (ddp2RdmapHeader[55:0]),
+   .ddp2RdmapIsSendSop            (ddp2RdmapIsSendSop),
    .ddpPktCutPop                  (ddpPktPop),
    .push                          (push),
    .pushData                      (pushData[255:0])

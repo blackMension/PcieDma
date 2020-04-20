@@ -51,9 +51,10 @@ wire [63:0]  rd_dma_status_addr      = 64'h6000;
 wire [63:0]  wr_dma_status_addr      = 64'h7000;
 wire  [2:0]  SqDmaFifoDataNumberM1 = SqDmaFifoData[110:108] - 3'd1;
 wire  [2:0]  rqDataNumberM1 = RqDmaFifoData[110:108] - 3'd1;
-wire  [159:0]   wrDescriptor = {wr_dma_status_addr[31:0],wr_dma_status_addr[63:32],RqDmaFifoData[31:0],RqDmaFifoData[63:32],29'd0,rqDataNumberM1};
-wire  [159:0]   rdDescriptor = {rd_dma_status_addr[31:0],rd_dma_status_addr[63:32],SqDmaFifoData[31:0],SqDmaFifoData[63:32],29'd0,SqDmaFifoDataNumberM1};
-
+// wire  [159:0]   wrDescriptor = {wr_dma_status_addr[31:0],wr_dma_status_addr[63:32],RqDmaFifoData[31:0],RqDmaFifoData[63:32],6'd0,RqDmaFifoData[107:100],15'd0,rqDataNumberM1};
+// wire  [159:0]   rdDescriptor = {rd_dma_status_addr[31:0],rd_dma_status_addr[63:32],SqDmaFifoData[31:0],SqDmaFifoData[63:32],6'd0,SqDmaFifoData[107:100],15'd0,SqDmaFifoDataNumberM1};
+wire  [159:0]   wrDescriptor = {wr_dma_status_addr[31:0],wr_dma_status_addr[63:32],RqDmaFifoData[31:0],RqDmaFifoData[63:32],6'd0,8'd0,15'd0,rqDataNumberM1};
+wire  [159:0]   rdDescriptor = {rd_dma_status_addr[31:0],rd_dma_status_addr[63:32],SqDmaFifoData[31:0],SqDmaFifoData[63:32],6'd0,8'd0,15'd0,SqDmaFifoDataNumberM1};
 wire  [2:0] wrCounterInt;
 reg   [2:0] wrCounter;
 wire  [2:0] rdCounterInt;

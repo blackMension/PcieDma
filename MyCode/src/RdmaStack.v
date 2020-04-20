@@ -154,6 +154,7 @@ output  [2:0]      rgstrNum;
    wire [7:0]      ddp2RdmapControl;
    wire            ddp2RdmapHdrValid;
    wire [55:0]     ddp2RdmapHeader;
+   wire            ddp2RdmapIsSendSop;
    wire [266:0]    ddpPktDataIn;
    wire [266:0]    ddpPktDataOut;
    wire            ddpPktDataValid;
@@ -207,6 +208,7 @@ Rdmap  uRdmap (
    .ddp2RdmapControl              (ddp2RdmapControl[7:0]),
    .ddp2RdmapHdrValid             (ddp2RdmapHdrValid),
    .ddp2RdmapHeader               (ddp2RdmapHeader[55:0]),
+   .ddp2RdmapIsSendSop            (ddp2RdmapIsSendSop),
    .lastNum                       (lastNum[4:0]),
    .poolEmpty                     (poolEmpty),
    .poolFull                      (poolFull),
@@ -276,6 +278,7 @@ DDP  uDDP (
    .ddp2RdmapControl              (ddp2RdmapControl[7:0]),
    .ddp2RdmapHdrValid             (ddp2RdmapHdrValid),
    .ddp2RdmapHeader               (ddp2RdmapHeader[55:0]),
+   .ddp2RdmapIsSendSop            (ddp2RdmapIsSendSop),
    .ddpPktDataIn                  (ddpPktDataIn[266:0]),
    .ddpPktPop                     (ddpPktPop),
    .ddpPktPush                    (ddpPktPush),

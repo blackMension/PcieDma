@@ -3,7 +3,7 @@ module DdpCut(
     /*AUTOARG*/
    // Outputs
    QN, push, pushData, ddp2RdmapHdrValid, ddp2RdmapControl,
-   ddp2RdmapHeader,
+   ddp2RdmapHeader,ddp2RdmapIsSendSop,
    // Inputs
    clock, reset, ddpPktCutDataOut, ddpPktCutPop, ddpPktCutEmpty,
    ddpPktCutDataValid, sendDoneCtrl, sendDoneTID, sendDoneValid
@@ -28,12 +28,13 @@ input            sendDoneValid;
 output           ddp2RdmapHdrValid;
 output  [7:0]    ddp2RdmapControl;
 output  [55:0]   ddp2RdmapHeader;
-
+output           ddp2RdmapIsSendSop;
 wire sop;
 wire eop;
 wire [8:0] byteEnable;
 
 wire [7:0]  ddpCtrl;
+reg  [7:0]  ddpCtrlLock;
 wire [7:0]  rdmapCtrl;
 wire [55:0] rdmapHdr;
 wire [15:0] ddpHdr;
@@ -63,6 +64,16 @@ always @(posedge clock) begin
     if(sop & ~eop) begin
         rdmapHdrLock <= rdmapHdr;
         rdmapCtrlLock <= rdmapCtrl;
+    end
+end
+always @(posedge clock or negedge reset) begin
+    if(!reset) begin
+        ddpCtrlLock <= 8'd0;
+    end
+    else begin
+        if(sop & ~eop) begin
+            ddpCtrlLock <= ddpCtrl;
+        end
     end
 end
 assign dataLen = ddpHdr[8:0] - 9'd1;
@@ -107,4 +118,5 @@ assign ddpPktCutPop = ((~lastDataValid & (dataValid | eop)) | pEdgeLastDataValid
 assign ddp2RdmapHdrValid = eop & dataReady;
 assign ddp2RdmapHeader   = sop ? rdmapHdr : rdmapHdrLock;
 assign ddp2RdmapControl  = sop ? rdmapCtrl: rdmapCtrlLock;
+assign ddp2RdmapIsSendSop = ddp2RdmapHdrValid & ddpCtrlLock[7] & (ddp2RdmapControl[3:0] == `SEND_OPCODE);
 endmodule // DdpCut
